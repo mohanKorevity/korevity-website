@@ -1,71 +1,41 @@
-export default function Stats() {
+import SectionTitle from "../ui/SectionTitle";
 
+export default function Stats() {
   const stats = [
-    {
-      value: "50+",
-      label: "Business Processes Automated",
-    },
-    {
-      value: "30%",
-      label: "Average Productivity Improvement",
-    },
-    {
-      value: "24/7",
-      label: "AI-Powered Automation",
-    },
-    {
-      value: "100%",
-      label: "Tailored Business Solutions",
-    },
+    { value: "50+", label: "Projects Delivered" },
+    { value: "95%", label: "Client Satisfaction" },
+    { value: "24/7", label: "AI Automation" },
+    { value: "10x", label: "Faster Insights" },
   ];
 
   return (
     <section className="bg-slate-950 py-28 text-white">
-
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="text-center">
+        <SectionTitle
+          eyebrow="OUR IMPACT"
+          title="Numbers That Matter"
+          description="Helping organizations leverage AI and Business Intelligence to achieve measurable business outcomes."
+        />
 
-          <p className="uppercase tracking-[6px] text-blue-500 font-semibold">
-            RESULTS
-          </p>
-
-          <h2 className="mt-5 text-5xl font-black">
-            Built for Measurable Impact
-          </h2>
-
-          <p className="mt-6 max-w-3xl mx-auto text-xl text-slate-400">
-            We focus on delivering real business outcomes through AI,
-            automation, and data intelligence.
-          </p>
-
-        </div>
-
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-          {stats.map((item) => (
-
+        <div className="mt-20 grid gap-8 grid-cols-2 md:grid-cols-4">
+          {stats.map((stat) => (
             <div
-              key={item.label}
-              className="rounded-3xl border border-slate-800 bg-slate-900 p-10 text-center transition hover:border-blue-500 hover:-translate-y-2"
+              key={stat.label}
+              className="rounded-3xl border border-slate-800 bg-slate-900/60 p-10 text-center"
             >
-
-              <h3 className="text-5xl font-black text-blue-500">
-                {item.value}
+              <h3 className="text-5xl font-black text-blue-400">
+                {stat.value}
               </h3>
 
-              <p className="mt-5 text-slate-400 leading-7">
-                {item.label}
+              <p className="mt-4 text-slate-400">
+                {stat.label}
               </p>
-
             </div>
-
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }

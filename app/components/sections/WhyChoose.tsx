@@ -1,85 +1,49 @@
+import SectionTitle from "../ui/SectionTitle";
+
 export default function WhyChoose() {
-  const features = [
+  const reasons = [
     {
-      number: "01",
       title: "Business First",
       description:
-        "Every solution starts with your business goals—not technology. We solve problems that create measurable value.",
+        "Every solution is designed to solve real business problems, not just showcase technology.",
     },
     {
-      number: "02",
-      title: "AI Powered",
+      title: "AI + BI Expertise",
       description:
-        "We leverage modern AI to automate repetitive work, accelerate decision-making, and improve efficiency.",
+        "We combine Artificial Intelligence with Business Intelligence to create practical, measurable value.",
     },
     {
-      number: "03",
-      title: "Data Driven",
+      title: "Scalable Solutions",
       description:
-        "Turn scattered data into dashboards and insights that help leaders make confident decisions.",
-    },
-    {
-      number: "04",
-      title: "Scalable",
-      description:
-        "Our solutions grow with your business—from startups to enterprise organizations.",
+        "Our systems are built to grow with your business without requiring complete redesigns.",
     },
   ];
 
   return (
-    <section className="bg-slate-900 py-28 text-white">
+    <section className="bg-slate-950 py-28 text-white">
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="grid gap-20 lg:grid-cols-2">
+        <SectionTitle
+          eyebrow="WHY KOREVITY"
+          title="Why Businesses Choose Us"
+          description="We focus on delivering practical AI solutions that improve productivity, reduce costs, and drive growth."
+        />
 
-          <div>
-            <p className="uppercase tracking-[6px] text-blue-500 font-semibold">
-              WHY KOREVITY
-            </p>
+        <div className="mt-20 grid gap-8 md:grid-cols-3">
+          {reasons.map((reason) => (
+            <div
+              key={reason.title}
+              className="rounded-3xl border border-slate-800 bg-slate-900/60 p-10"
+            >
+              <h3 className="text-2xl font-bold text-blue-400">
+                {reason.title}
+              </h3>
 
-            <h2 className="mt-5 text-5xl font-black leading-tight">
-              Technology
-              <br />
-              That Creates
-              <br />
-              Business Value
-            </h2>
-
-            <p className="mt-8 text-xl leading-9 text-slate-400">
-              We don't build software for the sake of technology.
-              Every dashboard, workflow, and AI solution is designed
-              to improve productivity, reduce costs, and create
-              measurable business outcomes.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-
-            {features.map((item) => (
-
-              <div
-                key={item.number}
-                className="rounded-2xl border border-slate-800 bg-slate-950 p-8 transition hover:border-blue-500"
-              >
-
-                <p className="text-blue-500 text-sm font-bold">
-                  {item.number}
-                </p>
-
-                <h3 className="mt-3 text-2xl font-bold">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 leading-8 text-slate-400">
-                  {item.description}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
+              <p className="mt-5 leading-8 text-slate-400">
+                {reason.description}
+              </p>
+            </div>
+          ))}
         </div>
 
       </div>

@@ -1,41 +1,67 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur border-b border-slate-800 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="mx-auto mt-5 max-w-7xl px-6">
 
-        <div>
-          <h1 className="text-3xl font-bold text-blue-500">
-            KoreVity
-          </h1>
-        </div>
+        <nav className="flex items-center justify-between rounded-2xl border border-slate-800/70 bg-slate-950/70 px-8 py-4 backdrop-blur-xl">
 
-        <div className="hidden md:flex gap-10 text-gray-300 font-medium">
-          <a href="#" className="hover:text-blue-400 transition">
-            Home
-          </a>
+          {/* Logo */}
 
-          <a href="#" className="hover:text-blue-400 transition">
-            Services
-          </a>
+          <div className="flex items-center gap-4">
 
-          <a href="#" className="hover:text-blue-400 transition">
-            Solutions
-          </a>
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-lg font-black text-white">
+              K
+            </div>
 
-          <a href="#" className="hover:text-blue-400 transition">
-            About
-          </a>
+            <div>
 
-          <a href="#" className="hover:text-blue-400 transition">
-            Contact
-          </a>
-        </div>
+              <h1 className="text-xl font-bold text-white">
+                KoreVity
+              </h1>
 
-        <button className="bg-blue-600 hover:bg-blue-700 transition px-5 py-2 rounded-lg font-semibold">
-          Book Demo
-        </button>
+              <p className="text-xs text-slate-400">
+                Business Intelligence & AI Automation
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Navigation */}
+
+          <div className="hidden items-center gap-10 text-sm font-medium text-slate-300 lg:flex">
+
+            <a href="#" className="transition-colors hover:text-blue-400">
+              Home
+            </a>
+
+            <a href="#services" className="transition-colors hover:text-blue-400">
+              Services
+            </a>
+
+            <a href="#" className="transition-colors hover:text-blue-400">
+              Solutions
+            </a>
+
+            <a href="#" className="transition-colors hover:text-blue-400">
+              About
+            </a>
+
+            <a href="#" className="transition-colors hover:text-blue-400">
+              Contact
+            </a>
+
+          </div>
+
+          {/* CTA */}
+
+          <button className="rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.45)]">
+            Book Demo
+          </button>
+
+        </nav>
 
       </div>
-    </nav>
+    </header>
   );
 }
