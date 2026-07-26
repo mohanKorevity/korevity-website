@@ -1,89 +1,233 @@
-import {
-  BarChart3,
-  Bot,
-  TrendingUp,
-  Brain,
-} from "lucide-react";
+  "use client";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
-import SectionTitle from "../ui/SectionTitle";
-import GlassCard from "../ui/GlassCard";
-import FadeIn from "../ui/FadeIn";
+  import { motion } from "framer-motion";
+  import ServiceCard from "./ServiceCard";
 
-export default function Services() {
   const services = [
     {
-      title: "Business Intelligence",
-      icon: BarChart3,
+      title: "Save Time",
       description:
-        "Interactive dashboards, KPI tracking, and data visualization to help leaders make better decisions.",
+        "Automate repetitive processes, reduce manual effort and give your team more time to focus on important business priorities.",
+      icon: "time",
     },
     {
-      title: "AI Automation",
-      icon: Bot,
+      title: "Make Better Decisions",
       description:
-        "Automate repetitive work with AI assistants, workflows, and intelligent business processes.",
+        "Transform scattered business information into clear insights, dashboards and reports that help you act with confidence.",
+      icon: "analytics",
     },
     {
-      title: "Data Analytics",
-      icon: TrendingUp,
+      title: "Connect Your Systems",
       description:
-        "Transform raw business data into actionable insights that improve performance and profitability.",
+        "Bring your tools and platforms together so information flows smoothly across your entire business.",
+      icon: "systems",
     },
     {
-      title: "Custom AI Solutions",
-      icon: Brain,
+      title: "AI That Works For You",
       description:
-        "Tailor-made AI applications designed specifically for your business goals and operations.",
+        "Implement practical AI solutions that support your team, improve efficiency and simplify everyday operations.",
+      icon: "ai",
+    },
+    {
+      title: "Business Strategy",
+      description:
+        "Design technology solutions around your goals so every system creates measurable long-term value.",
+      icon: "strategy",
+    },
+    {
+      title: "Long-Term Partnership",
+      description:
+        "Continuously improve, optimize and support your systems as your business evolves and grows.",
+      icon: "partnership",
     },
   ];
 
-  return (
-    <section
+  export default function Services() {
+    return (
+      <section
       id="services"
-      className="bg-slate-950 py-28 text-white"
-    >
-      <div className="mx-auto max-w-7xl px-6">
+        className="
+          relative
+          py-36
+          bg-slate-950
+        "
+      >
 
-        <SectionTitle
-          eyebrow="OUR SERVICES"
-          title="What We Build"
-          description="We combine Business Intelligence, Automation and Artificial Intelligence to help businesses scale faster while reducing operational complexity."
-        />
+        <div className="mx-auto max-w-7xl px-8">
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2">
 
-          {services.map((service) => {
-            const Icon = service.icon;
+          {/* Heading */}
 
-            return (
-              <FadeIn key={service.title} delay={0.15 * services.indexOf(service)}>
-  <GlassCard>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
 
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-600/10">
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
 
-                  <Icon
-                    size={34}
-                    className="text-blue-400"
-                  />
+            viewport={{
+              once:true,
+            }}
 
-                </div>
+            transition={{
+              duration:0.7,
+            }}
 
-                <h3 className="mt-8 text-2xl font-bold transition-colors group-hover:text-blue-400">
-                  {service.title}
-                </h3>
+            className="
+              mx-auto
+              max-w-4xl
+              text-center
+            "
+          >
 
-                <p className="mt-5 leading-8 text-slate-400">
-                  {service.description}
-                </p>
+            <span
+              className="
+                inline-flex
+                rounded-full
+                border
+                border-cyan-500/20
+                bg-cyan-500/10
+                px-5
+                py-2
 
-              </GlassCard>
-</FadeIn>
-            );
-          })}
+                text-sm
+                font-semibold
+                tracking-[0.18em]
+
+                text-cyan-300
+              "
+            >
+              WHAT WE HELP YOU ACHIEVE
+            </span>
+
+
+            <h2
+              className="
+                mt-8
+
+                text-5xl
+                font-black
+                leading-[1.05]
+
+                tracking-tight
+
+                text-white
+
+                lg:text-6xl
+              "
+            >
+
+              Helping Your Business
+
+              <br />
+
+              Work Smarter,
+
+              <br />
+
+              <span
+                className="
+                  bg-gradient-to-r
+                  from-cyan-300
+                  via-white
+                  to-blue-400
+
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Not Harder.
+              </span>
+
+            </h2>
+
+
+            <p
+              className="
+                mx-auto
+                mt-8
+                max-w-3xl
+
+                text-xl
+                leading-9
+
+                text-slate-400
+              "
+            >
+              We build intelligent business systems that simplify operations,
+              automate everyday work and give your team the clarity,
+              visibility and tools needed to grow with confidence.
+            </p>
+
+
+          </motion.div>
+
+
+
+          {/* Service Cards */}
+
+
+          <div
+            className="
+              mt-24
+
+              grid
+              gap-8
+
+              md:grid-cols-2
+
+              xl:grid-cols-3
+            "
+          >
+
+            {services.map((service,index)=>(
+
+              <motion.div
+
+                key={service.title}
+
+                initial={{
+                  opacity:0,
+                  y:40,
+                }}
+
+                whileInView={{
+                  opacity:1,
+                  y:0,
+                }}
+
+                viewport={{
+                  once:true,
+                }}
+
+                transition={{
+                  duration:0.6,
+                  delay:index * 0.08,
+                }}
+
+              >
+
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                />
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
 
         </div>
 
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }

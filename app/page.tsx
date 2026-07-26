@@ -1,13 +1,23 @@
 import Navbar from "./components/sections/Navbar";
+import Hero from "./components/hero/Hero";
+
 import TrustedBy from "./components/sections/TrustedBy";
 import Services from "./components/sections/Services";
 import Stats from "./components/sections/Stats";
 import WhyChoose from "./components/sections/WhyChoose";
 import Process from "./components/sections/Process";
-import HeroDashboard from "./components/sections/HeroDashboard";
+import Solutions from "./components/sections/Solutions";
+import AnalyticsShowcase from "./components/sections/AnalyticsShowcase";
+import Industries from "./components/sections/Industries";
+import Testimonials from "./components/sections/Testimonials";
+import FAQ from "./components/sections/FAQ";
+import CTA from "./components/sections/CTA";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/sections/Footer";
 
-import Button from "./components/ui/Button";
 import BackgroundGlow from "./components/ui/BackgroundGlow";
+import AnimatedBackground from "./components/ui/AnimatedBackground";
+import MouseGlow from "./components/ui/MouseGlow";
 
 export default function Home() {
   return (
@@ -15,78 +25,38 @@ export default function Home() {
       <Navbar />
 
       <main className="relative overflow-hidden bg-slate-950 text-white">
+        <MouseGlow />
         <BackgroundGlow />
+        <AnimatedBackground />
 
-        <section className="relative flex min-h-screen items-center">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2">
-            <div>
-              <span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-semibold tracking-wider text-blue-400">
-                AI • AUTOMATION • BUSINESS INTELLIGENCE
-              </span>
-
-              <h1 className="mt-10 text-6xl font-black leading-tight md:text-7xl">
-                Transform Your
-                <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
-                  Business With AI
-                </span>
-              </h1>
-
-              <p className="mt-10 max-w-2xl text-xl leading-9 text-slate-400">
-                KoreVity helps organizations automate operations, unlock powerful
-                business intelligence, and deploy AI solutions that increase
-                productivity while reducing operational costs.
-              </p>
-
-              <div className="mt-14 flex flex-wrap gap-5">
-                <Button>
-                  Book Free Consultation
-                </Button>
-
-                <Button variant="secondary">
-                  Explore Services
-                </Button>
-              </div>
-
-              <div className="mt-16 flex gap-12">
-                <div>
-                  <h3 className="text-4xl font-black text-blue-400">
-                    50+
-                  </h3>
-                  <p className="mt-2 text-slate-400">
-                    AI Solutions
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-4xl font-black text-blue-400">
-                    95%
-                  </h3>
-                  <p className="mt-2 text-slate-400">
-                    Satisfaction
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-4xl font-black text-blue-400">
-                    24/7
-                  </h3>
-                  <p className="mt-2 text-slate-400">
-                    Automation
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <HeroDashboard />
-          </div>
-        </section>
+        <Hero />
 
         <TrustedBy />
+
         <Services />
+
         <Stats />
+
         <WhyChoose />
+
         <Process />
+
+        <Solutions />
+
+        <AnalyticsShowcase />
+
+        <Industries />
+
+        <Testimonials />
+
+        <FAQ />
+
+        <CTA />
+
+        <Contact />
       </main>
+
+      <Footer />
     </>
   );
 }
