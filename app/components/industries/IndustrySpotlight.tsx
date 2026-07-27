@@ -75,24 +75,43 @@ export default function IndustrySpotlight() {
         {/* RIGHT */}
 
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="rounded-[36px] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl"
-        >
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  whileHover={{ scale: 1.02 }}
+  transition={{ duration: 0.35 }}
+  className="
+    overflow-hidden
+    rounded-[36px]
+    border
+    border-white/10
+    bg-slate-900
+    shadow-[0_40px_100px_rgba(0,0,0,0.45)]
+  "
+>
 
-          <div className="flex h-[450px] items-center justify-center rounded-3xl border border-dashed border-cyan-500/30 bg-slate-950/70">
+  <div className="aspect-[16/10]">
 
-            <span className="text-xl text-slate-500">
-              Manufacturing Dashboard Preview
-            </span>
+    <video
+      className="h-full w-full object-cover"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+    >
+      <source
+        src="/videos/manufacturing.mp4"
+        type="video/mp4"
+      />
+    </video>
 
-          </div>
+  </div>
 
-        </motion.div>
+</motion.div>
 
-      </div>
+</div>
 
-    </section>
+</section>
   );
 }

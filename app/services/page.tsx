@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Navbar from "../components/sections/Navbar";
@@ -18,9 +18,8 @@ import TechStack from "../components/services/TechStack";
 import ServicesFAQ from "../components/services/ServicesFAQ";
 import ServicesCTA from "../components/services/ServicesCTA";
 
-export default function ServicesPage() {
-  
-const searchParams = useSearchParams();
+function ServicesContent() {
+  const searchParams = useSearchParams();
   useEffect(() => {
     
 
@@ -74,5 +73,12 @@ const searchParams = useSearchParams();
 
       <Footer />
     </>
+  );
+}
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={null}>
+      <ServicesContent />
+    </Suspense>
   );
 }
