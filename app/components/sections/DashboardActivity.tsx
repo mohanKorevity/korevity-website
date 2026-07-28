@@ -79,7 +79,7 @@ export default function DashboardActivity() {
 
             </div>
 
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-slate-400">
               Just now
             </span>
 

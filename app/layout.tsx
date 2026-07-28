@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import OrganizationSchema from "./schema";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import GoogleAnalytics from "./components/common/GoogleAnalytics";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,72 +17,64 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 
   title: {
-    default:
-      "KoreVity | Business Intelligence and AI Automation",
-    template:
-      "%s | KoreVity",
+    default: "KoreVity | Business Intelligence and AI Automation",
+    template: "%s | KoreVity",
   },
 
-
   description:
-    "KoreVity helps businesses work smarter with Business Intelligence, AI Automation, intelligent dashboards, workflow automation and data-driven solutions.",
-
-
-  keywords: [
-    "KoreVity",
+  "KoreVity helps businesses improve operations with Business Intelligence, AI Automation, dashboards, workflow automation and intelligent business systems.",
+   keywords: [
     "Business Intelligence",
     "AI Automation",
-    "Artificial Intelligence",
+    "Power BI",
     "Business Analytics",
-    "Dashboard Development",
     "Workflow Automation",
-    "Data Analytics",
+    "Business Consulting",
     "Digital Transformation",
+    "KoreVity",
   ],
-
 
   authors: [
     {
       name: "KoreVity",
+      url: "https://korevity.com",
     },
   ],
 
-
-  creator:
-    "KoreVity",
-
+  creator: "KoreVity",
+  publisher: "KoreVity",
+  
+metadataBase: new URL("https://korevity.com"),
 
   openGraph: {
-
-    title:
-      "KoreVity | Business Intelligence and AI Automation",
-
+    title: "KoreVity | Business Intelligence and AI Automation",
     description:
-      "Helping businesses make smarter decisions through Business Intelligence, AI Automation and intelligent digital solutions.",
-
-    siteName:
-      "KoreVity",
-
-    type:
-      "website",
-
+      "Helping businesses work smarter with Business Intelligence and AI Automation.",
+    url: "https://korevity.com",
+    siteName: "KoreVity",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "KoreVity",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
-
 
   twitter: {
-
-    card:
-      "summary_large_image",
-
-    title:
-      "KoreVity | Business Intelligence and AI Automation",
-
+    card: "summary_large_image",
+    title: "KoreVity | Business Intelligence and AI Automation",
     description:
-      "Business Intelligence, AI Automation and intelligent solutions designed to help businesses work smarter.",
-
+      "Helping businesses work smarter with Business Intelligence and AI Automation.",
+    images: ["/og-image.png"],
   },
 
-
+};
+export const viewport: Viewport = {
+  themeColor: "#020617",
 };
 
 
@@ -106,10 +99,10 @@ export default function RootLayout({
 >
 
       <body className="min-h-full flex flex-col bg-slate-950 text-white">
-
-        {children}
-
-      </body>
+  <OrganizationSchema />
+  <GoogleAnalytics />
+  {children}
+</body>
 
     </html>
 

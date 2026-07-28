@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Send, ShieldCheck } from "lucide-react";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
-
+const searchParams = useSearchParams();
 const [loading, setLoading] = useState(false);
 
 const [formData, setFormData] = useState({
@@ -18,7 +18,16 @@ const [formData, setFormData] = useState({
   service: "",
   message: "",
 });
+useEffect(() => {
+  const service = searchParams.get("service");
 
+  if (service) {
+    setFormData((prev) => ({
+      ...prev,
+      service,
+    }));
+  }
+}, [searchParams]);
 
   async function handleSubmit(e: React.FormEvent) {
   e.preventDefault();
@@ -96,30 +105,29 @@ const [formData, setFormData] = useState({
 
 
             <h2
-              className="
-                text-4xl
-                font-black
-                text-white
-                lg:text-5xl
-              "
-            >
+  className="
+    text-4xl
+    font-black
+    text-white
+    lg:text-5xl
+  "
+>
+  Send Us
 
-              Tell Us About
+  <span
+    className="
+      bg-gradient-to-r
+      from-cyan-300
+      via-white
+      to-blue-400
+      bg-clip-text
+      text-transparent
+    "
+  >
+    {" "}A Message
+  </span>
 
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-white
-                  to-blue-400
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                {" "}Your Business
-              </span>
-
-            </h2>
+</h2>
 
 
 
@@ -133,9 +141,8 @@ const [formData, setFormData] = useState({
               "
             >
 
-              Share your challenges and our team will identify
-              opportunities where AI, automation and business intelligence
-              can create measurable improvements.
+              Tell us about your business, project, or challenge.
+Our team will review your message and get back to you with the best next steps.
 
             </p>
 
@@ -233,7 +240,7 @@ const [formData, setFormData] = useState({
     text-white
     outline-none
     transition
-    placeholder:text-slate-500
+    placeholder:text-slate-400
     focus:border-cyan-400
   "
 />
@@ -271,7 +278,7 @@ const [formData, setFormData] = useState({
     text-white
     outline-none
     transition
-    placeholder:text-slate-500
+    placeholder:text-slate-400
     focus:border-cyan-400
   "
 />
@@ -316,7 +323,7 @@ const [formData, setFormData] = useState({
     py-4
     text-white
     outline-none
-    placeholder:text-slate-500
+    placeholder:text-slate-400
     focus:border-cyan-400
   "
 />
@@ -355,7 +362,7 @@ const [formData, setFormData] = useState({
     py-4
     text-white
     outline-none
-    placeholder:text-slate-500
+    placeholder:text-slate-400
     focus:border-cyan-400
   "
 />
@@ -377,8 +384,14 @@ const [formData, setFormData] = useState({
                 How can we help?
               </label>
 
-
+<label
+  htmlFor="service"
+  className="mb-2 block text-sm font-medium text-slate-300"
+>
+  Service
+</label>
               <select
+  id="service"
   value={formData.service}
   onChange={(e) =>
     setFormData({
@@ -387,7 +400,7 @@ const [formData, setFormData] = useState({
     })
   }
   className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition-all duration-300 focus:border-cyan-400"
-            >
+>
               <option value="" disabled className="text-black">
                 Select a service
               </option>
@@ -407,6 +420,10 @@ const [formData, setFormData] = useState({
               <option className="text-black">
                 System Integration
               </option>
+
+              <option className="text-black">
+  Business Assessment
+</option>
 
               <option className="text-black">
                 Business Consultation
@@ -444,7 +461,7 @@ const [formData, setFormData] = useState({
     py-4
     text-white
     outline-none
-    placeholder:text-slate-500
+    placeholder:text-slate-400
     focus:border-cyan-400
   "
 />
@@ -486,21 +503,29 @@ const [formData, setFormData] = useState({
 
 
             <div
-              className="
-                flex
-                items-center
-                justify-center
-                gap-2
-                text-sm
-                text-slate-500
-              "
-            >
+  className="
+    mt-6
+    space-y-2
+    text-center
+    text-sm
+    text-slate-400
+  "
+>
+  <div className="flex items-center justify-center gap-2">
+    <ShieldCheck className="h-4 w-4 text-cyan-400" />
+    <span>Usually replies within 1 business day</span>
+  </div>
 
-              <ShieldCheck className="h-4 w-4" />
+  <div className="flex items-center justify-center gap-2">
+    <ShieldCheck className="h-4 w-4 text-cyan-400" />
+    <span>No spam or sales pressure</span>
+  </div>
 
-              Your information is kept confidential.
-
-            </div>
+  <div className="flex items-center justify-center gap-2">
+    <ShieldCheck className="h-4 w-4 text-cyan-400" />
+    <span>Your information stays private</span>
+  </div>
+</div>
 
 
 

@@ -131,94 +131,80 @@ export default function Hero() {
               gap-5
             "
           >
-            <Link href="/contact">
-              <button
-                className="
-                  group
-                  relative
-                  overflow-hidden
+            <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group
+    relative
+    overflow-hidden
 
-                  inline-flex
-                  items-center
-                  justify-center
+    inline-flex
+    items-center
+    justify-center
 
-                  rounded-xl
+    rounded-xl
 
-                  bg-gradient-to-r
-                  from-cyan-500
-                  via-blue-500
-                  to-indigo-600
+    bg-gradient-to-r
+    from-cyan-500
+    via-blue-500
+    to-indigo-600
 
-                  px-8
-                  py-4
+    px-8
+    py-5
 
-                  font-bold
-                  text-white
+    font-bold
+    text-white
 
-                  shadow-lg
-                  shadow-cyan-500/30
+    shadow-lg
+    shadow-cyan-500/30
 
-                  transition-all
-                  duration-300
+    transition-all
+    duration-300
 
-                  hover:-translate-y-1
-                  hover:scale-[1.03]
+    hover:-translate-y-1
+    hover:scale-[1.03]
 
-                  hover:shadow-xl
-                  hover:shadow-cyan-500/50
+    hover:shadow-xl
+    hover:shadow-cyan-500/50
 
-                  active:scale-95
-                "
-              >
-                <span
-                  className="
-                    absolute
-                    inset-0
+    active:scale-95
+  "
+>
+  <span
+    className="
+      absolute
+      inset-0
+      -translate-x-full
+      bg-gradient-to-r
+      from-transparent
+      via-white/40
+      to-transparent
+      transition-transform
+      duration-700
+      group-hover:translate-x-full
+    "
+  />
 
-                    -translate-x-full
+  <span
+    className="
+      absolute
+      inset-0
+      rounded-xl
+      bg-cyan-300/20
+      opacity-0
+      blur-xl
+      transition-opacity
+      duration-300
+      group-hover:opacity-100
+    "
+  />
 
-                    bg-gradient-to-r
-                    from-transparent
-                    via-white/40
-                    to-transparent
-
-                    transition-transform
-                    duration-700
-
-                    group-hover:translate-x-full
-                  "
-                />
-
-                <span
-                  className="
-                    absolute
-                    inset-0
-
-                    rounded-xl
-
-                    bg-cyan-300/20
-
-                    opacity-0
-
-                    blur-xl
-
-                    transition-opacity
-                    duration-300
-
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    relative
-                    z-10
-                  "
-                >
-                  Book a Free Strategy Call
-                </span>
-              </button>
-            </Link>
+  <span className="relative z-10">
+    Book a Free Strategy Call
+  </span>
+</Link>
 
             <a
               href="#services"

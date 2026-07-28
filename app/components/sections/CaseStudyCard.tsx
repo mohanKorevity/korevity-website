@@ -74,7 +74,7 @@ export default function CaseStudyCard({
 
       <div className="relative mt-10 flex items-center justify-between border-t border-slate-800 pt-6">
 
-        <span className="text-sm text-slate-500">
+        <span className="text-sm text-slate-400">
           View Solution
         </span>
 

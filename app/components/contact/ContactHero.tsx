@@ -156,7 +156,7 @@ export default function ContactHero() {
               text-sm
               font-medium
               tracking-wide
-              text-slate-500
+              text-slate-400
             "
           >
             No pressure. Just a conversation about improving your business.

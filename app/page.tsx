@@ -1,5 +1,6 @@
 import Navbar from "./components/sections/Navbar";
 import Hero from "./components/hero/Hero";
+import type { Metadata } from "next";
 
 import TrustedBy from "./components/sections/TrustedBy";
 import Services from "./components/sections/Services";
@@ -18,7 +19,11 @@ import Footer from "./components/sections/Footer";
 import BackgroundGlow from "./components/ui/BackgroundGlow";
 import AnimatedBackground from "./components/ui/AnimatedBackground";
 import MouseGlow from "./components/ui/MouseGlow";
-
+export const metadata: Metadata = {
+  title: "Business Intelligence and AI Automation",
+  description:
+    "Helping businesses work smarter with Business Intelligence, AI Automation and intelligent digital solutions.",
+};
 export default function Home() {
   return (
     <>

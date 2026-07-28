@@ -229,25 +229,17 @@ export default function HeroStats() {
 
 
 
-              <h3
-
-                className="
-                  relative
-
-                  mt-5
-
-                  text-sm
-
-                  font-bold
-
-                  text-white
-                "
-
-              >
-
-                {item.title}
-
-              </h3>
+              <p
+  className="
+    relative
+    mt-5
+    text-sm
+    font-bold
+    text-white
+  "
+>
+  {item.title}
+</p>
 
 
 

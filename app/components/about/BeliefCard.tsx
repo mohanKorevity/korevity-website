@@ -41,7 +41,7 @@ export default function BeliefCard({
 
         <div className="mt-8 flex items-center gap-2 text-cyan-400 transition-all duration-300 group-hover:gap-4">
           <span className="font-medium">
-            Learn More
+            Learn More About KoreVity
           </span>
 
           <ArrowRight className="h-4 w-4" />

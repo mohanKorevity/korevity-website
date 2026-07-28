@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowUp,
@@ -152,47 +153,17 @@ export default function Footer() {
           <div>
 
 
-            <div
-              className="
-                flex
-                items-center
-                gap-3
-              "
-            >
+            <Link href="/" className="inline-block">
 
-              <div
-                className="
-                  flex
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-gradient-to-br
-                  from-cyan-400
-                  via-blue-500
-                  to-indigo-600
-                  font-black
-                  text-white
-                  shadow-lg
-                  shadow-cyan-500/30
-                "
-              >
-                K
-              </div>
+  <Image
+    src="/logo/KoreVity_Logo_Dark_Transparent.png"
+    alt="KoreVity"
+    width={180}
+    height={65}
+    className="h-16 w-auto"
+  />
 
-
-              <h2
-                className="
-                  text-3xl
-                  font-black
-                  text-white
-                "
-              >
-                KoreVity
-              </h2>
-
-            </div>
+</Link>
 
 
 
@@ -502,7 +473,7 @@ export default function Footer() {
             <p
               className="
                 text-sm
-                text-slate-500
+                text-slate-400
               "
             >
               © {new Date().getFullYear()} KoreVity.
@@ -525,7 +496,7 @@ export default function Footer() {
                   href={item.href}
                   className="
                     text-sm
-                    text-slate-500
+                    text-slate-400
                     transition
                     hover:text-cyan-400
                   "

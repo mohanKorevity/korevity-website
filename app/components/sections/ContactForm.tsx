@@ -107,13 +107,18 @@ export default function ContactForm() {
           {/* Name */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              Full Name
-            </label>
+            <label
+  htmlFor="name"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  Full Name
+</label>
 
             <input
-              required
-              type="text"
+  id="name"
+  name="name"
+  required
+  type="text"
               placeholder="John Smith"
               value={formData.name}
               onChange={(e) =>
@@ -122,20 +127,25 @@ export default function ContactForm() {
                   name: e.target.value,
                 })
               }
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
             />
           </div>
 
           {/* Company */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              Business / Company
-            </label>
+            <label
+  htmlFor="company"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  Business / Company
+</label>
 
             <input
-              required
-              type="text"
+  id="company"
+  name="company"
+  required
+  type="text"
               placeholder="ABC Manufacturing"
               value={formData.company}
               onChange={(e) =>
@@ -144,20 +154,25 @@ export default function ContactForm() {
                   company: e.target.value,
                 })
               }
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
             />
           </div>
 
           {/* Email */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              Email Address
-            </label>
+            <label
+  htmlFor="email"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  Email Address
+</label>
 
             <input
-              required
-              type="email"
+  id="email"
+  name="email"
+  required
+  type="email"
               placeholder="you@company.com"
               value={formData.email}
               onChange={(e) =>
@@ -166,19 +181,24 @@ export default function ContactForm() {
                   email: e.target.value,
                 })
               }
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
             />
           </div>
 
           {/* Phone */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              Phone Number (Optional)
-            </label>
+            <label
+  htmlFor="phone"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  Phone Number (Optional)
+</label>
 
             <input
-              type="text"
+  id="phone"
+  name="phone"
+  type="text"
               placeholder="+91 XXXXX XXXXX"
               value={formData.phone}
               onChange={(e) =>
@@ -187,19 +207,24 @@ export default function ContactForm() {
                   phone: e.target.value,
                 })
               }
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
+              className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
             />
           </div>
 
           {/* Service */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              I'm Interested In
-            </label>
+            <label
+  htmlFor="service"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  I'm Interested In
+</label>
 
             <select
-              required
+  id="service"
+  name="service"
+  required
               value={formData.service}
               onChange={(e) =>
                 setFormData({
@@ -230,6 +255,10 @@ export default function ContactForm() {
               </option>
 
               <option className="text-black">
+  Business Assessment
+</option>
+
+              <option className="text-black">
                 Business Consultation
               </option>
 
@@ -242,12 +271,17 @@ export default function ContactForm() {
           {/* Message */}
 
           <div>
-            <label className="mb-3 block text-sm font-medium text-slate-300">
-              Tell Us About Your Business
-            </label>
+            <label
+  htmlFor="message"
+  className="mb-3 block text-sm font-medium text-slate-300"
+>
+  Tell Us About Your Business
+</label>
 
             <textarea
-              required
+  id="message"
+  name="message"
+  required
               rows={6}
               placeholder="Tell us a little about your business, your current challenges and what you're hoping to achieve..."
               value={formData.message}
@@ -257,7 +291,7 @@ export default function ContactForm() {
                   message: e.target.value,
                 })
               }
-              className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
+              className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-cyan-400 focus:bg-white/[0.06]"
             />
           </div>
 

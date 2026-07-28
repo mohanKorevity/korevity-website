@@ -157,9 +157,19 @@ export default function HeroContent() {
           "
         >
 
-          <GlowButton>
-            Book a Free Strategy Call
-          </GlowButton>
+          <GlowButton
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    shadow-[0_0_45px_rgba(34,211,238,0.35)]
+    transition-all
+    duration-300
+    hover:shadow-[0_0_70px_rgba(34,211,238,0.55)]
+  "
+>
+  Book a Free Strategy Call
+</GlowButton>
 
         </div>
 

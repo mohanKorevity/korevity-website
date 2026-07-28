@@ -3,9 +3,20 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Read the KoreVity Terms of Service covering website usage, consulting services, intellectual property, and client agreements.",
+  alternates: {
+    canonical: "/terms",
+  },
+};
 export default function TermsPage() {
+  
   return (
+    
     <main className="relative min-h-screen overflow-hidden bg-slate-950">
 
       {/* Background Glow */}

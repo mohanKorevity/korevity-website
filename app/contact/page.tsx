@@ -1,44 +1,15 @@
-"use client";
+import type { Metadata } from "next";
+import ContactClient from "./ContactClient";
 
-import Navbar from "../components/sections/Navbar";
-import Footer from "../components/sections/Footer";
+export const metadata: Metadata = {
+  alternates: {
+  canonical: "/contact",
+},
+  title: "Contact KoreVity",
+  description:
+    "Get in touch with KoreVity to discuss Business Intelligence, AI Automation and digital transformation for your business.",
+};
 
-import MouseGlow from "../components/ui/MouseGlow";
-import BackgroundGlow from "../components/ui/BackgroundGlow";
-import AnimatedBackground from "../components/ui/AnimatedBackground";
-
-import ContactHero from "../components/contact/ContactHero";
-import ContactOptions from "../components/contact/ContactOptions";
-import ContactForm from "../components/contact/ContactForm";
-
-export default function ContactPage() {
-  return (
-    <>
-      <Navbar />
-
-      <main className="relative overflow-hidden bg-slate-950 text-white">
-
-        <MouseGlow />
-
-        <BackgroundGlow />
-
-        <AnimatedBackground />
-
-
-        <ContactHero />
-
-
-        <ContactOptions />
-
-
-        <ContactForm />
-
-
-      </main>
-
-
-      <Footer />
-
-    </>
-  );
+export default function Page() {
+  return <ContactClient />;
 }

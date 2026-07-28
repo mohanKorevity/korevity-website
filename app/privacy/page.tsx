@@ -3,7 +3,16 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
+export const metadata = {
+  title: "Privacy Policy",
+  description:
+    "Learn how KoreVity collects, uses and protects your information when you use our website or contact our team.",
+  alternates: {
+    canonical: "/privacy",
+  },
+};
 export default function PrivacyPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-slate-950">
@@ -62,7 +71,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
 
-          <p className="mt-5 text-base text-slate-500">
+          <p className="mt-5 text-base text-slate-400">
             Last Updated: July 25, 2026
           </p>
 

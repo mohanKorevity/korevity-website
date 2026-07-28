@@ -117,7 +117,7 @@ export default function DashboardMetrics() {
                 text-xs
                 uppercase
                 tracking-wider
-                text-slate-500
+                text-slate-400
               "
             >
               {metric.title}

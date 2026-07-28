@@ -229,30 +229,26 @@ export default function CTA() {
     gap-5
   "
 >
-  <GlowButton href="/contact">
-    <CalendarDays
-      className="
-        mr-2
-        h-5
-        w-5
-      "
-    />
-    Start a Free Discussion
-  </GlowButton>
+  <GlowButton
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    shadow-[0_0_45px_rgba(34,211,238,0.35)]
+    transition-all
+    duration-300
+    hover:shadow-[0_0_70px_rgba(34,211,238,0.55)]
+  "
+>
+  Start a Free Discussion
+</GlowButton>
 
-  <Link href="/contact">
-    <Button variant="secondary">
-      Let's Talk
-
-      <ArrowRight
-        className="
-          ml-2
-          h-5
-          w-5
-        "
-      />
-    </Button>
-  </Link>
+<Link href="/contact">
+  <Button variant="secondary">
+    Let's Talk
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Button>
+</Link>
 </div>
 
 

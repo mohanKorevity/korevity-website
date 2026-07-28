@@ -197,17 +197,16 @@ export default function ServicesCTA() {
 
           <div className="mt-12">
 
-  <Link href="/contact">
-
-    <GlowButton>
-
-      <CalendarDays className="mr-2 h-5 w-5" />
-
-      Book Your Free Consultation
-
-    </GlowButton>
-
-  </Link>
+  <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <GlowButton>
+    <CalendarDays className="mr-2 h-5 w-5" />
+    Book Your Free Consultation
+  </GlowButton>
+</Link>
 
 </div>
 

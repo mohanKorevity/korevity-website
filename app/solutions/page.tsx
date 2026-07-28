@@ -1,45 +1,15 @@
-"use client";
+import type { Metadata } from "next";
+import SolutionsClient from "./SolutionsClient";
 
-import Navbar from "../components/sections/Navbar";
-import Footer from "../components/sections/Footer";
+export const metadata: Metadata = {
+  alternates: {
+  canonical: "/solutions",
+},
+  title: "AI Automation Solutions",
+  description:
+    "Discover AI Automation, Business Intelligence, dashboards and intelligent digital solutions designed to help businesses work smarter.",
+};
 
-import MouseGlow from "../components/ui/MouseGlow";
-import BackgroundGlow from "../components/ui/BackgroundGlow";
-import AnimatedBackground from "../components/ui/AnimatedBackground";
-
-import SolutionsHero from "../components/solutions/SolutionsHero";
-import ProblemSolutions from "../components/solutions/ProblemSolutions";
-import BeforeAfter from "../components/solutions/BeforeAfter";
-import ExpectedResults from "../components/solutions/ExpectedResults";
-import WhyChooseKoreVity from "../components/solutions/WhyChooseKoreVity";
-import SolutionsCTA from "../components/solutions/SolutionsCTA";
-
-export default function SolutionsPage() {
-  return (
-    <>
-      <Navbar />
-
-      <main className="relative overflow-hidden bg-slate-950 text-white">
-
-        <MouseGlow />
-        <BackgroundGlow />
-        <AnimatedBackground />
-
-        <SolutionsHero />
-
-        <ProblemSolutions />
-
-        <BeforeAfter />
-
-        <ExpectedResults />
-
-        <WhyChooseKoreVity />
-
-        <SolutionsCTA />
-
-      </main>
-
-      <Footer />
-    </>
-  );
+export default function Page() {
+  return <SolutionsClient />;
 }

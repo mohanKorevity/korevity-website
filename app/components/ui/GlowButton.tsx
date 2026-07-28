@@ -7,12 +7,16 @@ type GlowButtonProps = {
   children: ReactNode;
   className?: string;
   href?: string;
+target?: string;
+rel?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function GlowButton({
   children,
   className = "",
   href,
+  target,
+  rel,
   ...buttonProps
 }: GlowButtonProps) {
   const classes = `
@@ -106,12 +110,17 @@ export default function GlowButton({
   );
 
   if (href) {
-    return (
-      <Link href={href} className={classes}>
-        {content}
-      </Link>
-    );
-  }
+  return (
+    <Link
+      href={href}
+      target={target}
+      rel={rel}
+      className={classes}
+    >
+      {content}
+    </Link>
+  );
+}
 
   return (
     <button

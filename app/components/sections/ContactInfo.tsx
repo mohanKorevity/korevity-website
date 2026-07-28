@@ -79,7 +79,7 @@ export default function ContactInfo() {
 
               <div>
 
-                <div className="text-sm uppercase tracking-wider text-slate-500">
+                <div className="text-sm uppercase tracking-wider text-slate-400">
                   {item.title}
                 </div>
 

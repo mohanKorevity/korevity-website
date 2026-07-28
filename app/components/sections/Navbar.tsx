@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -95,7 +95,7 @@ export default function Navbar() {
             flex
             items-center
             justify-between
-
+h-25
             rounded-2xl
 
             border
@@ -125,70 +125,23 @@ export default function Navbar() {
           <Link
             href="/"
             className="
-              flex
-              items-center
-              gap-3
-            "
+  flex
+  items-center
+"
           >
 
-            <div
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-
-                rounded-xl
-
-                bg-gradient-to-br
-                from-cyan-400
-                via-blue-500
-                to-indigo-600
-
-                text-xl
-                font-black
-                text-white
-
-                shadow-lg
-                shadow-cyan-500/30
-              "
-            >
-              K
-            </div>
+            <Image
+  src="/logo/KoreVity_Logo_Dark_Transparent.png"
+  alt="KoreVity Logo"
+  width={250}
+  height={100}
+  priority
+  className="h-20 w-auto"
+/>
 
 
 
-            <div
-              className="
-                hidden
-                sm:block
-              "
-            >
-
-              <h1
-                className="
-                  text-xl
-                  font-bold
-                  tracking-tight
-                  text-white
-                "
-              >
-                KoreVity
-              </h1>
-
-
-              <p
-                className="
-                  text-xs
-                  text-slate-400
-                "
-              >
-                Helping Businesses Work Smarter
-              </p>
-
-
-            </div>
+            
 
 
           </Link>
@@ -279,24 +232,24 @@ export default function Navbar() {
 
 
 
-          {/* DESKTOP CTA */}
+         {/* DESKTOP CTA */}
 
-          <div
-            className="
-              hidden
-              lg:block
-            "
-          >
-
-            <Link href="/contact">
+<div
+  className="
+    hidden
+    lg:block
+  "
+>
+  <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <GlowButton>
     Book Strategy Call
   </GlowButton>
 </Link>
-
-
-          </div>
-
+</div>
 
 
 
@@ -423,7 +376,9 @@ export default function Navbar() {
                 <div className="pt-4">
 
   <Link
-    href="/contact"
+    href="https://calendly.com/mohan-korevity/30min"
+target="_blank"
+rel="noopener noreferrer"
     onClick={() => setMobileOpen(false)}
   >
     <GlowButton>

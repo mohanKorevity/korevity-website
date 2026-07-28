@@ -239,7 +239,7 @@ export default function DashboardAnalytics() {
                 text-xs
                 uppercase
                 tracking-wider
-                text-slate-500
+                text-slate-400
               "
             >
               Performance Trend

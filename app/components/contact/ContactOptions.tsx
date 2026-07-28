@@ -13,11 +13,11 @@ import {
 const options = [
   {
     icon: CalendarCheck,
-    title: "Book A Strategy Call",
+    title: "Schedule A Consultation",
     description:
       "Discuss your business challenges with our experts and discover where AI, automation and analytics can create measurable value.",
-    action: "Schedule Call",
-    href: "/contact",
+    action: "Open Calendar",
+    href: "https://calendly.com/mohan-korevity/30min",
     color: "from-cyan-500 to-blue-600",
   },
   {
@@ -31,10 +31,10 @@ const options = [
   },
   {
     icon: BrainCircuit,
-    title: "AI Consultation",
+    title: "Explore AI Solutions",
     description:
       "Identify practical AI opportunities that improve productivity, automate workflows and support smarter decisions.",
-    action: "Explore AI",
+    action: "View Solutions",
     href: "/services",
     color: "from-emerald-500 to-green-600",
   },
@@ -43,8 +43,8 @@ const options = [
     title: "Business Assessment",
     description:
       "Understand your current processes and discover opportunities for automation and digital improvement.",
-    action: "Request Assessment",
-    href: "/contact",
+    action: "Send Assessment Request",
+    href: "/contact?service=Business%20Assessment#contact-form",
     color: "from-orange-500 to-red-500",
   },
 ];
@@ -105,7 +105,7 @@ export default function ContactOptions() {
             "
           >
 
-            Start A Conversation
+            Choose How You'd Like
 
             <span
               className="
@@ -119,7 +119,7 @@ export default function ContactOptions() {
                 text-transparent
               "
             >
-              With KoreVity
+              To Connect
             </span>
 
           </h2>
@@ -135,8 +135,7 @@ export default function ContactOptions() {
               text-slate-400
             "
           >
-            Whether you need automation, AI solutions or business intelligence,
-            we can help identify the right path forward.
+            Choose the option that best fits your needs—from scheduling a consultation to requesting a business assessment or simply sending us a message.
           </p>
 
 
@@ -241,6 +240,7 @@ export default function ContactOptions() {
 
                 <Link
                   href={option.href}
+                  target={option.href.startsWith("http") ? "_blank" : undefined}
                   className="
                     mt-8
                     inline-flex

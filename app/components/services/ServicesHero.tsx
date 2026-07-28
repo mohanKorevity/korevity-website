@@ -100,7 +100,11 @@ export default function ServicesHero() {
             "
           >
 
-            <Link href="/contact">
+            <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <GlowButton>
     Book Free Consultation
   </GlowButton>

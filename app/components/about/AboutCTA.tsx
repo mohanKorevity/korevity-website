@@ -186,25 +186,27 @@ export default function AboutCTA() {
 
 
               <Link
-                href="/contact"
-                className="
-                  rounded-2xl
-                  bg-gradient-to-r
-                  from-cyan-500
-                  to-blue-600
-                  px-10
-                  py-5
-                  text-lg
-                  font-semibold
-                  text-white
-                  shadow-[0_0_35px_rgba(34,211,238,0.35)]
-                  transition
-                  duration-300
-                  hover:scale-105
-                "
-              >
-                Book A Free Consultation
-              </Link>
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    rounded-2xl
+    bg-gradient-to-r
+    from-cyan-500
+    to-blue-600
+    px-10
+    py-5
+    text-lg
+    font-semibold
+    text-white
+    shadow-[0_0_35px_rgba(34,211,238,0.35)]
+    transition
+    duration-300
+    hover:scale-105
+  "
+>
+  Book A Free Consultation
+</Link>
 
 
 

@@ -52,40 +52,39 @@ export default function IndustriesHero() {
 
           <div className="mt-14 flex flex-col items-center justify-center gap-6 sm:flex-row">
 
+  <GlowButton
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    shadow-[0_0_45px_rgba(34,211,238,0.35)]
+    transition-all
+    duration-300
+    hover:shadow-[0_0_70px_rgba(34,211,238,0.55)]
+  "
+>
+  Discuss Your Industry Challenge
+</GlowButton>
 
-            <Link href="/contact">
+  <a
+    href="#industries-grid"
+    className="
+      rounded-xl
+      border
+      border-white/10
+      px-8
+      py-4
+      font-semibold
+      text-white
+      transition
+      hover:border-cyan-400
+      hover:bg-white/5
+    "
+  >
+    Explore Industries
+  </a>
 
-  <GlowButton>
-
-    Discuss Your Industry Challenge
-
-  </GlowButton>
-
-</Link>
-
-
-            <a
-              href="#industries-grid"
-              className="
-              rounded-xl
-              border
-              border-white/10
-              px-8
-              py-4
-              font-semibold
-              text-white
-              transition
-              hover:border-cyan-400
-              hover:bg-white/5
-              "
-            >
-
-              Explore Industries
-
-            </a>
-
-
-          </div>
+</div>
 
 
         </motion.div>

@@ -1,56 +1,15 @@
-"use client";
+import type { Metadata } from "next";
+import IndustriesClient from "./IndustriesClient";
 
-import Navbar from "../components/sections/Navbar";
-import Footer from "../components/sections/Footer";
+export const metadata: Metadata = {
+  alternates: {
+  canonical: "/industries",
+},
+  title: "Industries We Serve",
+  description:
+    "Explore how KoreVity delivers Business Intelligence and AI Automation solutions across multiple industries.",
+};
 
-import MouseGlow from "../components/ui/MouseGlow";
-import BackgroundGlow from "../components/ui/BackgroundGlow";
-import AnimatedBackground from "../components/ui/AnimatedBackground";
-
-import IndustriesHero from "../components/industries/IndustriesHero";
-import IndustriesGrid from "../components/industries/IndustriesGrid";
-import IndustrySpotlight from "../components/industries/IndustrySpotlight";
-import IndustryChallenges from "../components/industries/IndustryChallenges";
-import WhyKoreVityIndustries from "../components/industries/WhyKoreVityIndustries";
-import IndustriesCTA from "../components/industries/IndustriesCTA";
-
-export default function IndustriesPage() {
-  return (
-    <>
-      <Navbar />
-
-      <main className="relative overflow-hidden bg-slate-950 text-white">
-
-        <MouseGlow />
-
-        <BackgroundGlow />
-
-        <AnimatedBackground />
-
-
-        <IndustriesHero />
-
-
-        <IndustriesGrid />
-
-
-        <IndustrySpotlight />
-
-
-        <IndustryChallenges />
-
-
-        <WhyKoreVityIndustries />
-
-
-        <IndustriesCTA />
-
-
-      </main>
-
-
-      <Footer />
-
-    </>
-  );
+export default function Page() {
+  return <IndustriesClient />;
 }

@@ -173,14 +173,14 @@ export default function IndustriesCTA() {
               }}
             >
 
-              <Link href="/contact">
-
+              <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <GlowButton>
-
     Book A Strategy Call
-
   </GlowButton>
-
 </Link>
 
             </motion.div>

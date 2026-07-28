@@ -146,14 +146,14 @@ export default function SolutionsCTA() {
           <div className="mt-12">
 
 
-            <Link href="/contact">
-
+            <Link
+  href="https://calendly.com/mohan-korevity/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <GlowButton>
-
     Schedule A Free Strategy Call
-
   </GlowButton>
-
 </Link>
 
 

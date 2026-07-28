@@ -295,7 +295,7 @@ export default function SolutionCard({
     hover:text-cyan-300
   "
 >
-  Learn More
+  Explore Our Solutions
   <ArrowRight className="h-4 w-4" />
 </Link>
 

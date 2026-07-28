@@ -378,7 +378,7 @@ text-slate-400
     hover:text-cyan-300
   "
 >
-  Learn More
+  Discover Why Businesses Choose KoreVity
   <ArrowRight className="h-4 w-4" />
 </Link>
 

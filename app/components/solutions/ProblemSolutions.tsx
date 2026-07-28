@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   BarChart3,
@@ -220,27 +220,28 @@ group-hover:saturate-110
 />
 
 <div className="p-2 lg:p-3">
-  <img
-    src={item.image}
-    alt={item.title}
-    className="
-      relative
-      z-10
-      max-w-full
-      max-h-full
-      object-contain
+  <Image
+  src={item.image}
+  alt={item.title}
+  width={900}
+  height={700}
+  className="
+    relative
+    z-10
+    max-w-full
+    max-h-full
+    object-contain
 
-      transition-all
-      duration-500
+    transition-all
+    duration-500
 
-      group-hover:-translate-y-2
-group-hover:scale-[1.04]
-group-hover:scale-[1.10]
-      group-hover:brightness-110
-      group-hover:contrast-105
-      group-hover:saturate-110
-    "
-  />
+    group-hover:-translate-y-2
+    group-hover:scale-[1.10]
+    group-hover:brightness-110
+    group-hover:contrast-105
+    group-hover:saturate-110
+  "
+/>
 </div>
 
                 </motion.div>

@@ -12,7 +12,7 @@ export default function TrustedBy() {
     <section className="border-y border-slate-800 bg-slate-950 py-14">
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className="text-center text-sm uppercase tracking-[4px] text-slate-500">
+        <p className="text-center text-sm uppercase tracking-[4px] text-slate-400">
           Helping Businesses Across Industries
         </p>
 
