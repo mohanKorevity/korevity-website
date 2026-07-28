@@ -35,7 +35,7 @@ const solutions = [
     ],
     icon: BrainCircuit,
     color: "from-violet-500 to-fuchsia-600",
-    image: "/images/solutions/assistant.png",
+    image: "/images/solutions/assistant.webp",
   },
   {
     number: "3.",
@@ -49,7 +49,7 @@ const solutions = [
     ],
     icon: Clock3,
     color: "from-emerald-500 to-green-600",
-    image: "/images/solutions/workflow.png",
+    image: "/images/solutions/workflow.webp",
   },
   {
     number: "4.",
@@ -63,7 +63,7 @@ const solutions = [
     ],
     icon: Network,
     color: "from-purple-500 to-indigo-600",
-    image: "/images/solutions/integration.png",
+    image: "/images/solutions/integration.webp",
   },
 ];
 
