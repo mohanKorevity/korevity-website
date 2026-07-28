@@ -31,7 +31,7 @@ const showcases = [
       "from-cyan-400 via-blue-500 to-indigo-600",
 
     image:
-      "/images/showcase/business-intelligence.png",
+      "/images/showcase/business-intelligence.webp",
   },
 
 
@@ -53,7 +53,7 @@ const showcases = [
       "from-purple-400 via-fuchsia-500 to-indigo-600",
 
     image:
-      "/images/showcase/ai-insights.png",
+      "/images/showcase/ai-insights.webp",
   },
 
 
@@ -75,7 +75,7 @@ const showcases = [
       "from-emerald-400 via-green-500 to-teal-600",
 
     image:
-      "/images/showcase/workflow-automation.png",
+      "/images/showcase/workflow-automation.webp",
   },
 
 ];
