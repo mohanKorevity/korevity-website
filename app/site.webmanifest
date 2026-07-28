@@ -1,0 +1,15 @@
+{
+  "name": "KoreVity",
+  "short_name": "KoreVity",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081323",
+  "theme_color": "#081323",
+  "icons": [
+    {
+      "src": "/logo/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

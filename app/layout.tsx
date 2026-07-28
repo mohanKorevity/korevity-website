@@ -45,7 +45,20 @@ export const metadata: Metadata = {
   publisher: "KoreVity",
   
 metadataBase: new URL("https://korevity.com"),
-
+alternates: {
+  canonical: "/",
+},
+robots: {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+},
   openGraph: {
     title: "KoreVity | Business Intelligence and AI Automation",
     description:
@@ -71,6 +84,13 @@ metadataBase: new URL("https://korevity.com"),
       "Helping businesses work smarter with Business Intelligence and AI Automation.",
     images: ["/og-image.png"],
   },
+  icons: {
+  icon: "/favicon.ico",
+  apple: "/apple-icon.png",
+},
+manifest: "/site.webmanifest",
+
+category: "Technology",
 
 };
 export const viewport: Viewport = {
