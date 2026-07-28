@@ -31,6 +31,7 @@ export default function Home() {
 
       <main className="relative overflow-hidden bg-slate-950 text-white">
   <Hero />
+  <TrustedBy />
 </main>
 
       <Footer />
