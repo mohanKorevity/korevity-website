@@ -66,7 +66,7 @@ export default function ContactForm() {
 
       {submitted ? (
 
-        <div className="pt-66 pb-60 text-center">
+        <div className="pt-20 pb-10 text-center">
 
           <CheckCircle2 className="mx-auto h-14 w-14 text-cyan-400" />
 
