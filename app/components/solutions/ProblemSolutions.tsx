@@ -21,7 +21,7 @@ const solutions = [
     ],
     icon: BarChart3,
     color: "from-cyan-500 to-blue-600",
-    image: "/images/solutions/business-intelligence.png",
+    image: "/images/solutions/business-intelligence.webp",
   },
   {
     number: "2.",
