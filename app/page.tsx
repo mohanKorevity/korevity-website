@@ -30,9 +30,36 @@ export default function Home() {
       <Navbar />
 
       <main className="relative overflow-hidden bg-slate-950 text-white">
-  <Hero />
-  <TrustedBy />
-</main>
+        <MouseGlow />
+        <BackgroundGlow />
+        <AnimatedBackground />
+
+        <Hero />
+
+        <TrustedBy />
+
+        <Services />
+
+        <Stats />
+
+        <WhyChoose />
+
+        <Process />
+
+        <Solutions />
+
+        <AnalyticsShowcase />
+
+        <Industries />
+
+        <Testimonials />
+
+        <FAQ />
+
+        <CTA />
+
+        <Contact />
+      </main>
 
       <Footer />
     </>
