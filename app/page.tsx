@@ -31,8 +31,8 @@ export default function Home() {
 
       <main className="relative overflow-hidden bg-slate-950 text-white">
         <MouseGlow />
-        <BackgroundGlow />
-        <AnimatedBackground />
+        {/* <BackgroundGlow /> */}
+{/* <AnimatedBackground /> */}
 
         <Hero />
 
