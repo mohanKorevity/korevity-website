@@ -86,8 +86,14 @@ robots: {
     images: ["/og-image.png"],
   },
   icons: {
-  icon: "/favicon.ico",
-  apple: "/apple-icon.png",
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/icon.png", type: "image/png" },
+  ],
+  apple: [
+    { url: "/apple-icon.png" },
+  ],
+  shortcut: ["/favicon.ico"],
 },
 manifest: "/site.webmanifest",
 
