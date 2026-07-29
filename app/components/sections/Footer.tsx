@@ -93,15 +93,37 @@ export default function Footer() {
 
       {/* Background Glow */}
 
-      {/* Background Glow
+      <div className="absolute inset-0">
 
-<div className="absolute inset-0">
+        <div
+          className="
+            absolute
+            left-1/2
+            top-0
+            h-[600px]
+            w-[600px]
+            -translate-x-1/2
+            rounded-full
+            bg-cyan-500/5
+            blur-[160px]
+          "
+        />
 
-...
 
-</div>
+        <div
+          className="
+            absolute
+            right-0
+            bottom-0
+            h-[400px]
+            w-[400px]
+            rounded-full
+            bg-blue-500/5
+            blur-[140px]
+          "
+        />
 
-*/}
+      </div>
 
 
 
