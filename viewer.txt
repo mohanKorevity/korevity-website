@@ -1,0 +1,425 @@
+1:"use client";
+2:
+3:import { kbomIndex } from "../data/knowledge/KBOM/metadata/kbomIndex";
+4:import { kbomContent } from "../data/knowledge/KBOM/generated/kbomContent";
+5:
+6:type DocumentType = {
+7:  category: string;
+8:  updated: string;
+9:  version: string;
+10:  summary: string;
+11:  tags: string[];
+12:  status: string;
+13:
+14:  history: {
+15:    version: string;
+16:    date: string;
+17:    note: string;
+18:  }[];
+19:
+20:  sections: {
+21:    id: string;
+22:    title: string;
+23:    paragraphs: string[];
+24:  }[];
+25:};
+26:export default function DocumentViewer({
+27:  category,
+28:  docName,
+29:}: {
+30:  category: string;
+31:  docName: string;
+32:}) {
+33:
+34:const kbomDocument = kbomIndex.find(
+35:  (item) => item.id === docName
+36:);
+37:  const kbomContentDoc = kbomContent.find(
+38:  (item: any) => item.id === docName
+39:);
+40:
+41:
+42:const doc =
+43:  kbomDocument && kbomContentDoc
+44:    ? {
+45:        category: kbomDocument.domain,
+46:        updated: "July 2026",
+47:        version: "1.0",
+48:        summary: kbomDocument.title,
+49:        tags: [
+50:          kbomDocument.code,
+51:          "KBOM",
+52:          "Architecture",
+53:        ],
+54:        status: kbomDocument.status,
+55:        history: [],
+56:
+57:        sections: kbomContentDoc.sections.map((section: any) => ({
+58:          id: section.id,
+59:          title: section.title,
+60:          paragraphs: section.content.map((line: any) => line.text),
+61:        })),
+62:      }
+63:    : null;
+64:
+65:
+66:  if (!doc) {
+67:
+68:    return (
+69:      <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-10">
+70:
+71:        <h1 className="text-2xl font-bold text-white">
+72:          Document Not Found
+73:        </h1>
+74:
+75:        <p className="mt-3 text-slate-400">
+76:          {category} / {docName}
+77:        </p>
+78:
+79:      </div>
+80:    );
+81:
+82:  }
+83:
+84:
+85:  return (
+86:
+87:    <div
+88:      className="
+89:        rounded-3xl
+90:        border
+91:        border-white/10
+92:        bg-slate-900/60
+93:        p-10
+94:        text-white
+95:      "
+96:    >
+97:      <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+98:
+99:      {/* Header */}
+100:      
+101:  {/* Left Sidebar */}
+102:
+103:  <aside
+104:    className="
+105:      lg:sticky
+106:      lg:top-24
+107:      h-fit
+108:      rounded-3xl
+109:      border
+110:      border-white/10
+111:      bg-white/5
+112:      p-6
+113:    "
+114:  >
+115:
+116:    <h3
+117:      className="
+118:        text-lg
+119:        font-bold
+120:        text-cyan-300
+121:      "
+122:    >
+123:      Contents
+124:    </h3>
+125:
+126:    <div className="mt-6 space-y-2">
+127:
+128:      {doc.sections.map((section, index) => (
+129:
+130:        <button
+131:          key={section.id}
+132:          className="
+133:            flex
+134:            w-full
+135:            items-start
+136:            gap-3
+137:            rounded-xl
+138:            px-3
+139:            py-2
+140:            text-left
+141:            transition
+142:            hover:bg-cyan-400/10
+143:          "
+144:        >
+145:
+146:          <span
+147:            className="
+148:              text-cyan-400
+149:              font-semibold
+150:              text-sm
+151:              w-8
+152:            "
+153:          >
+154:            {(index + 1).toString().padStart(2, "0")}
+155:          </span>
+156:
+157:          <span
+158:            className="
+159:              text-sm
+160:              text-slate-300
+161:            "
+162:          >
+163:            {section.title}
+164:          </span>
+165:
+166:        </button>
+167:
+168:      ))}
+169:
+170:    </div>
+171:
+172:  </aside>
+173:
+174:  {/* Main Content */}
+175:
+176:  <div>
+177:
+178:    {/* Header */}
+179:
+180:    <div> 
+181:
+182:      {/* Hero Header */}
+183:
+184:<div className="border-b border-white/10 pb-8">
+185:
+186:  <div
+187:    className="
+188:      inline-flex
+189:      items-center
+190:      rounded-full
+191:      border
+192:      border-cyan-400/20
+193:      bg-cyan-400/10
+194:      px-4
+195:      py-1
+196:      text-xs
+197:      font-semibold
+198:      uppercase
+199:      tracking-wider
+200:      text-cyan-300
+201:    "
+202:  >
+203:    {doc.tags[0]}
+204:  </div>
+205:
+206:  <h1
+207:    className="
+208:      mt-5
+209:      max-w-4xl
+210:      text-5xl
+211:      font-bold
+212:      leading-tight
+213:      text-white
+214:    "
+215:  >
+216:    {doc.summary}
+217:  </h1>
+218:
+219:  <p
+220:    className="
+221:      mt-5
+222:      max-w-3xl
+223:      text-lg
+224:      leading-relaxed
+225:      text-slate-400
+226:    "
+227:  >
+228:    {doc.category}
+229:  </p>
+230:
+231:</div>
+232:
+233:
+234:      {/* Metadata Strip */}
+235:
+236:<div
+237:  className="
+238:    mt-8
+239:    flex
+240:    flex-wrap
+241:    gap-6
+242:    rounded-2xl
+243:    border
+244:    border-white/10
+245:    bg-white/5
+246:    px-6
+247:    py-5
+248:  "
+249:>
+250:
+251:  <div>
+252:    <p className="text-xs uppercase tracking-wider text-slate-500">
+253:      Status
+254:    </p>
+255:
+256:    <p className="mt-1 font-semibold text-emerald-300">
+257:      {doc.status}
+258:    </p>
+259:  </div>
+260:
+261:  <div className="h-10 w-px bg-white/10" />
+262:
+263:  <div>
+264:    <p className="text-xs uppercase tracking-wider text-slate-500">
+265:      Version
+266:    </p>
+267:
+268:    <p className="mt-1 font-semibold">
+269:      {doc.version}
+270:    </p>
+271:  </div>
+272:
+273:  <div className="h-10 w-px bg-white/10" />
+274:
+275:  <div>
+276:    <p className="text-xs uppercase tracking-wider text-slate-500">
+277:      Updated
+278:    </p>
+279:
+280:    <p className="mt-1 font-semibold">
+281:      {doc.updated}
+282:    </p>
+283:  </div>
+284:
+285:  <div className="h-10 w-px bg-white/10" />
+286:
+287:  <div>
+288:    <p className="text-xs uppercase tracking-wider text-slate-500">
+289:      Sections
+290:    </p>
+291:
+292:    <p className="mt-1 font-semibold text-cyan-300">
+293:      {doc.sections.length}
+294:    </p>
+295:  </div>
+296:
+297:</div>
+298:
+299:
+300:
+301:      {/* Sections */}
+302:
+303:      <div className="mt-12 space-y-10">
+304:
+305:
+306:        {doc.sections.map((section, sectionIndex) => (
+307:
+308:          <div
+309:  key={section.id}
+310:  className="
+311:  rounded-3xl
+312:  border
+313:  border-white/10
+314:  bg-white/5
+315:  p-8
+316:  transition-all
+317:  duration-300
+318:  hover:border-cyan-400/30
+319:  hover:bg-white/[0.07]
+320:"
+321:>
+322:
+323:  <div className="flex items-start gap-6">
+324:
+325:    <div
+326:      className="
+327:        flex
+328:        h-12
+329:        w-12
+330:        shrink-0
+331:        items-center
+332:        justify-center
+333:        rounded-full
+334:        bg-cyan-400/10
+335:        text-lg
+336:        font-bold
+337:        text-cyan-300
+338:      "
+339:    >
+340:      {(sectionIndex + 1).toString().padStart(2, "0")}
+341:    </div>
+342:
+343:    <div className="flex-1">
+344:
+345:      <h2
+346:  className="
+347:    text-2xl
+348:    font-bold
+349:    tracking-tight
+350:    text-white
+351:  "
+352:>
+353:        {section.title}
+354:      </h2>
+355:
+356:      <div
+357:        className="
+358:          mt-4
+359:          h-px
+360:          bg-white/10
+361:        "
+362:      />
+363:
+364:      <div className="mt-6 space-y-5">
+365:
+366:        {section.paragraphs.map(
+367:          (paragraph: any, index: number) => (
+368:
+369:            <p
+370:              key={index}
+371:              className="
+372:  text-[16px]
+373:  leading-8
+374:  text-slate-300
+375:  selection:bg-cyan-400/30
+376:"
+377:            >
+378:              {paragraph}
+379:            </p>
+380:
+381:          )
+382:        )}
+383:
+384:      </div>
+385:
+386:    </div>
+387:
+388:  </div>
+389:
+390:</div>
+391:
+392:                ))}
+393:
+394:      </div> {/* End Sections */}
+395:
+396:      {/* Tags */}
+397:
+398:      <div className="mt-10 flex flex-wrap gap-3">
+399:        {doc.tags.map((tag) => (
+400:          <span
+401:            key={tag}
+402:            className="
+403:              rounded-full
+404:              bg-cyan-400/10
+405:              px-4
+406:              py-2
+407:              text-sm
+408:              text-cyan-300
+409:            "
+410:          >
+411:            {tag}
+412:          </span>
+413:        ))}
+414:      </div>
+415:
+416:    </div> {/* closes Header wrapper */}
+417:
+418:  </div> {/* closes Main Content */}
+419:
+420:</div> {/* closes Grid */}
+421:
+422:</div> {/* closes Container */}
+423:
+424:);
+425:}

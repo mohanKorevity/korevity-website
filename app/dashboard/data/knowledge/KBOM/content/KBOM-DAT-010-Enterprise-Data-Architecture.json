@@ -1,0 +1,6812 @@
+{
+  "id": "KBOM-DAT-010-Enterprise-Data-Architecture",
+  "file": "KBOM-DAT-010-Enterprise-Data-Architecture.docx",
+  "extractedAt": "2026-08-01T12:19:11.655Z",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        "Excellent.",
+        "This is one of the most important phases in the entire KoreVity architecture.",
+        "Most software is built around screens.",
+        "Enterprise platforms are built around data.",
+        "Screens change.",
+        "Workflows change.",
+        "Technology changes.",
+        "But the business data model often survives for decades.",
+        "If we design this correctly now, every future module becomes dramatically easier to build."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-1-master-data-management-mdm",
+      "title": "Component 1 — Master Data Management (MDM)",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle",
+      "title": "First Principle",
+      "paragraphs": [
+        "Not all data is equal.",
+        "There are two categories.",
+        "Master Data",
+        "Transaction Data",
+        "Master Data changes slowly.",
+        "Transaction Data changes constantly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-example",
+      "title": "Example",
+      "paragraphs": [
+        "Master Data.",
+        "Customer",
+        "Employee",
+        "Supplier",
+        "Product",
+        "Warehouse",
+        "Transaction Data.",
+        "Invoice",
+        "Purchase Order",
+        "Shipment",
+        "Payment",
+        "Leave Request",
+        "Transactions reference master data."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-master-data-management-mdm-is-the-centralized-discipline-responsible-for-creating-governing-maintaining-and-distributing-trusted-business-entities-consistently-across-every-module-in-the-korevity-ecosystem",
+      "title": "Master Data Management (MDM) is the centralized discipline responsible for creating, governing, maintaining, and distributing trusted business entities consistently across every module in the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Trusted.",
+        "There should only be one truth."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-mdm-exists",
+      "title": "Why MDM Exists",
+      "paragraphs": [
+        "Without MDM.",
+        "CRM.",
+        "ABC Corporation",
+        "Finance.",
+        "ABC Corp.",
+        "Projects.",
+        "A.B.C.",
+        "Three systems.",
+        "Three customers.",
+        "Actually the same company.",
+        "With MDM.",
+        "Customer",
+        "↓",
+        "Unique Identity",
+        "↓",
+        "Referenced Everywhere",
+        "One customer.",
+        "Entire platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture",
+      "title": "Architecture",
+      "paragraphs": [
+        "Master Data",
+        "↓",
+        "Validation",
+        "↓",
+        "Governance",
+        "↓",
+        "Distribution",
+        "↓",
+        "Business Modules",
+        "Everything consumes master data.",
+        "Nothing duplicates it."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-core-master-entities",
+      "title": "Core Master Entities",
+      "paragraphs": [
+        "Customer",
+        "Supplier",
+        "Employee",
+        "Product",
+        "Asset",
+        "Location",
+        "Organization",
+        "Currency",
+        "Tax",
+        "Unit",
+        "These become platform-wide entities."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-single-source-of-truth",
+      "title": "Single Source of Truth",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "CRM",
+        "Finance",
+        "Projects",
+        "Support",
+        "Sales",
+        "AI",
+        "Nobody owns their own copy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-unique-identity",
+      "title": "Unique Identity",
+      "paragraphs": [
+        "Every master entity receives.",
+        "Global ID",
+        "Never reused.",
+        "Never changes."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-entity-lifecycle",
+      "title": "Entity Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Active",
+        "↓",
+        "Inactive",
+        "↓",
+        "Archived",
+        "Never physically deleted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validation",
+      "title": "Validation",
+      "paragraphs": [
+        "Every entity validates.",
+        "Example.",
+        "Email",
+        "Phone",
+        "Tax Number",
+        "Country",
+        "Currency",
+        "Before activation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-duplicate-detection",
+      "title": "Duplicate Detection",
+      "paragraphs": [
+        "Support.",
+        "ABC Ltd",
+        "ABC Limited",
+        "ABC Ltd.",
+        "AI and rules identify likely duplicates."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-merge",
+      "title": "Merge",
+      "paragraphs": [
+        "Duplicates become.",
+        "Customer A",
+        "+",
+        "Customer B",
+        "↓",
+        "Single Customer",
+        "References preserved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-reference-data",
+      "title": "Reference Data",
+      "paragraphs": [
+        "Reference data differs.",
+        "Example.",
+        "Countries",
+        "Currencies",
+        "Units",
+        "Departments",
+        "Job Titles",
+        "Rarely changes.",
+        "Shared globally."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ownership",
+      "title": "Ownership",
+      "paragraphs": [
+        "Every entity has.",
+        "Business Owner",
+        "Data Steward",
+        "Technical Owner",
+        "Clear accountability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-version-history",
+      "title": "Version History",
+      "paragraphs": [
+        "Changes tracked.",
+        "Version 1",
+        "↓",
+        "Version 2",
+        "↓",
+        "Version 3",
+        "Full audit."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-approval",
+      "title": "Approval",
+      "paragraphs": [
+        "Critical entities require.",
+        "Create",
+        "↓",
+        "Review",
+        "↓",
+        "Approve",
+        "↓",
+        "Publish",
+        "Enterprise governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationships",
+      "title": "Relationships",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Addresses",
+        "↓",
+        "Contacts",
+        "↓",
+        "Contracts",
+        "Relationships remain centralized."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-synchronization",
+      "title": "Synchronization",
+      "paragraphs": [
+        "Modules never duplicate manually.",
+        "Master Data",
+        "↓",
+        "Events",
+        "↓",
+        "Consumers Updated",
+        "Event-driven consistency."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search",
+      "title": "Search",
+      "paragraphs": [
+        "Global master search.",
+        "Customer",
+        "Supplier",
+        "Employee",
+        "Product",
+        "One search experience."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI always uses master entities.",
+        "Question",
+        "↓",
+        "Master Data",
+        "↓",
+        "AI Response",
+        "No hallucinated customer identities."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-rule-integration",
+      "title": "Rule Integration",
+      "paragraphs": [
+        "Rules validate.",
+        "Customer Status",
+        "↓",
+        "Rule Engine",
+        "↓",
+        "Decision"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions.",
+        "MASTER_VIEW",
+        "MASTER_CREATE",
+        "MASTER_EDIT",
+        "MASTER_APPROVE",
+        "Governed carefully."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Every tenant owns.",
+        "Master Data",
+        "No shared business entities.",
+        "Reference data may be global."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Duplicates",
+        "Validation Errors",
+        "Approval Queue",
+        "Entity Count",
+        "Measure data quality."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Master Data Platform provides:",
+        "Master data becomes the foundation for every business module."
+      ],
+      "lists": [
+        [
+          "Single source of truth",
+          "Global identities",
+          "Duplicate detection",
+          "Entity lifecycle",
+          "Validation",
+          "Governance",
+          "Relationships",
+          "Versioning",
+          "Event synchronization",
+          "AI-ready trusted entities"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "⬜ Enterprise Entity Model",
+        "⬜ Reference Data Management",
+        "⬜ Relationship Architecture",
+        "⬜ Data Lifecycle Management",
+        "⬜ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Treat Master Data as a platform service, not as a module.",
+        "Master Data Platform",
+        "│",
+        "├── CRM",
+        "├── Finance",
+        "├── HR",
+        "├── Inventory",
+        "├── Projects",
+        "└── AI",
+        "No business module should own its own version of core entities like customers, employees, suppliers, or products. Instead, every module references the centralized master records, ensuring consistency, reducing duplication, and enabling reliable reporting across the entire platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would assign globally unique, immutable business identifiers separate from database IDs.",
+        "Example:",
+        "Database ID",
+        "48392",
+        "Business ID",
+        "CUST-2026-000184",
+        "Database IDs may change during migrations or integrations, but business identifiers remain permanent and human-readable, making them ideal for documents, APIs, audits, and cross-system integration."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Enterprise Entity Model.",
+        "Why?",
+        "MDM defines what the trusted business entities are.",
+        "The Enterprise Entity Model defines how every entity in the entire platform is structured—including common fields, inheritance, metadata, ownership, status, lifecycle, auditing, relationships, and extensibility.",
+        "It becomes the blueprint from which every current and future KoreVity module will build its data model.",
+        "Excellent.",
+        "This is arguably the single most important document for the long-term maintainability of KoreVity.",
+        "Every table.",
+        "Every API.",
+        "Every workflow.",
+        "Every AI agent.",
+        "Every report.",
+        "Everything ultimately depends on one thing:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-enterprise-entity-model",
+      "title": "The Enterprise Entity Model.",
+      "paragraphs": [
+        "If this is designed well, adding new modules years from now becomes straightforward.",
+        "If it is designed poorly, technical debt grows forever."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-1",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-2-enterprise-entity-model",
+      "title": "Component 2 — Enterprise Entity Model",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-1",
+      "title": "First Principle",
+      "paragraphs": [
+        "An Entity is not a Database Table.",
+        "A table stores data.",
+        "An entity represents a business concept.",
+        "Example.",
+        "Bad.",
+        "tbl_customer",
+        "Good.",
+        "Customer",
+        "The entity exists independent of the database."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-1",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-enterprise-entity-model-is-the-standardized-business-object-architecture-that-defines-the-structure-identity-lifecycle-ownership-relationships-metadata-and-behavior-of-every-business-entity-across-the-korevity-ecosystem",
+      "title": "The Enterprise Entity Model is the standardized business object architecture that defines the structure, identity, lifecycle, ownership, relationships, metadata, and behavior of every business entity across the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Business objects.",
+        "Not tables."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without a shared model.",
+        "CRM.",
+        "CustomerName",
+        "Finance.",
+        "ClientName",
+        "Projects.",
+        "AccountName",
+        "Three names.",
+        "One concept.",
+        "With Enterprise Entity Model.",
+        "Customer",
+        "Everyone uses the same definition."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-1",
+      "title": "Architecture",
+      "paragraphs": [
+        "Base Entity",
+        "↓",
+        "Business Entity",
+        "↓",
+        "Module Entity",
+        "Everything inherits.",
+        "Nothing starts from scratch."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-base-entity",
+      "title": "Base Entity",
+      "paragraphs": [
+        "Every entity contains.",
+        "ID",
+        "Business ID",
+        "Created",
+        "Updated",
+        "Status",
+        "Owner",
+        "Tenant",
+        "Version",
+        "Universal fields."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-example-1",
+      "title": "Example",
+      "paragraphs": [
+        "Customer.",
+        "Base Entity",
+        "↓",
+        "Customer",
+        "↓",
+        "Customer-specific Fields",
+        "Invoice.",
+        "Base Entity",
+        "↓",
+        "Invoice",
+        "↓",
+        "Invoice-specific Fields"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-universal-identity",
+      "title": "Universal Identity",
+      "paragraphs": [
+        "Every entity owns.",
+        "System ID",
+        "Business ID",
+        "Tenant ID",
+        "Different purposes.",
+        "Never confused."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-metadata",
+      "title": "Metadata",
+      "paragraphs": [
+        "Every entity carries metadata.",
+        "Created By",
+        "Updated By",
+        "Source",
+        "Tags",
+        "Labels",
+        "Platform-wide consistency."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-status-model",
+      "title": "Status Model",
+      "paragraphs": [
+        "Support.",
+        "Draft",
+        "Active",
+        "Inactive",
+        "Archived",
+        "Shared lifecycle."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ownership-1",
+      "title": "Ownership",
+      "paragraphs": [
+        "Every entity.",
+        "Owner",
+        "Department",
+        "Organization",
+        "Clear responsibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-audit",
+      "title": "Audit",
+      "paragraphs": [
+        "Automatically inherited.",
+        "Created",
+        "Modified",
+        "Deleted",
+        "Restored",
+        "No duplication."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-soft-delete",
+      "title": "Soft Delete",
+      "paragraphs": [
+        "Entities become.",
+        "Archived",
+        "↓",
+        "Recoverable",
+        "Never permanently removed during normal operations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-version",
+      "title": "Version",
+      "paragraphs": [
+        "Every entity.",
+        "Version Number",
+        "Supports optimistic concurrency."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-extensibility",
+      "title": "Extensibility",
+      "paragraphs": [
+        "Support custom fields.",
+        "Standard Fields",
+        "+",
+        "Tenant Fields",
+        "Core schema remains stable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-entity-categories",
+      "title": "Entity Categories",
+      "paragraphs": [
+        "Master",
+        "Transaction",
+        "Reference",
+        "Configuration",
+        "Analytical",
+        "System",
+        "Different governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-examples",
+      "title": "Examples",
+      "paragraphs": [
+        "Master.",
+        "Customer",
+        "Supplier",
+        "Employee",
+        "Transaction.",
+        "Invoice",
+        "Order",
+        "Payment",
+        "Reference.",
+        "Currency",
+        "Country",
+        "Tax Code"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationships-1",
+      "title": "Relationships",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "↓",
+        "Projects",
+        "Business-first relationships."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-cardinality",
+      "title": "Cardinality",
+      "paragraphs": [
+        "Support.",
+        "One-to-One",
+        "One-to-Many",
+        "Many-to-Many",
+        "Standardized."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-inheritance",
+      "title": "Inheritance",
+      "paragraphs": [
+        "Example.",
+        "Party",
+        "↓",
+        "Customer",
+        "Supplier",
+        "Partner",
+        "Shared characteristics reused."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validation-1",
+      "title": "Validation",
+      "paragraphs": [
+        "Every entity validates.",
+        "Required",
+        "Unique",
+        "Range",
+        "Pattern",
+        "Business Rules",
+        "Platform-level enforcement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-1",
+      "title": "Search",
+      "paragraphs": [
+        "Every entity becomes searchable.",
+        "Metadata",
+        "Business Fields",
+        "Tags",
+        "Unified indexing."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-1",
+      "title": "AI Integration",
+      "paragraphs": [
+        "Entities become AI-native.",
+        "Entity",
+        "↓",
+        "Embedding",
+        "↓",
+        "Knowledge Graph",
+        "↓",
+        "AI",
+        "Structured intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-api-integration",
+      "title": "API Integration",
+      "paragraphs": [
+        "Every entity automatically exposes.",
+        "Create",
+        "Read",
+        "Update",
+        "Delete",
+        "Search",
+        "Consistent behavior."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Entities participate.",
+        "Entity",
+        "↓",
+        "Workflow",
+        "↓",
+        "State Changes"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-event-integration",
+      "title": "Event Integration",
+      "paragraphs": [
+        "Every entity publishes.",
+        "Created",
+        "Updated",
+        "Archived",
+        "Deleted",
+        "Standard event model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-1",
+      "title": "Security",
+      "paragraphs": [
+        "Entity-level permissions.",
+        "Read",
+        "Create",
+        "Update",
+        "Delete",
+        "Approve",
+        "Shared authorization model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-1",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Every entity includes.",
+        "Tenant Context",
+        "Built into the model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-1",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Enterprise Entity Model provides:",
+        "Every business object follows one architecture."
+      ],
+      "lists": [
+        [
+          "Common base entity",
+          "Shared metadata",
+          "Universal identity",
+          "Ownership",
+          "Lifecycle",
+          "Relationships",
+          "Inheritance",
+          "Validation",
+          "Searchability",
+          "Workflow participation",
+          "Event publishing",
+          "AI readiness"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-1",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "⬜ Reference Data Management",
+        "⬜ Relationship Architecture",
+        "⬜ Data Lifecycle Management",
+        "⬜ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-1",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Separate the business entity from the storage implementation.",
+        "Business Entity",
+        "│",
+        "▼",
+        "Repository",
+        "│",
+        "▼",
+        "Database",
+        "Modules should interact with entities such as Customer, Invoice, and Project, never with database tables directly. This abstraction allows future changes—such as moving from SQL to distributed storage, introducing caching layers, or supporting event sourcing—without changing business logic."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-1",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce entity capabilities.",
+        "Customer",
+        "├── Searchable",
+        "├── Auditable",
+        "├── Versioned",
+        "├── Workflow Enabled",
+        "└── AI Indexable",
+        "Instead of every entity supporting every feature, capabilities explicitly declare which platform services apply. This keeps the model clean while allowing specialized entities to participate only in the services they actually need."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-1",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Reference Data Management.",
+        "Why?",
+        "The Enterprise Entity Model defines how business entities are structured.",
+        "Reference Data Management defines the controlled values those entities rely on:",
+        "Centralizing this data ensures that every module, workflow, report, AI agent, and integration speaks the same business language across the entire KoreVity platform.",
+        "Excellent.",
+        "This is one of those architectural components that almost nobody notices...",
+        "Until it doesn't exist.",
+        "When reference data is unmanaged, organizations end up with:",
+        "Reference Data Management prevents all of that."
+      ],
+      "lists": [
+        [
+          "Countries",
+          "States",
+          "Currencies",
+          "Tax Codes",
+          "Units of Measure",
+          "Languages",
+          "Payment Terms",
+          "Departments",
+          "Job Titles"
+        ],
+        [
+          "Three names for the same country.",
+          "Five different department lists.",
+          "Different payment terms in every module.",
+          "Different tax codes across reports."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-2",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-3-reference-data-management",
+      "title": "Component 3 — Reference Data Management",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-2",
+      "title": "First Principle",
+      "paragraphs": [
+        "Reference Data is not Master Data.",
+        "Master Data represents business entities.",
+        "Reference Data represents controlled values.",
+        "Example.",
+        "Master Data.",
+        "Customer",
+        "Employee",
+        "Supplier",
+        "Reference Data.",
+        "Country",
+        "Currency",
+        "Language",
+        "Department",
+        "Tax Code",
+        "Reference data describes master and transaction data."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-2",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-reference-data-management-rdm-is-the-centralized-platform-responsible-for-governing-standardizing-versioning-validating-and-distributing-controlled-business-values-consistently-across-every-module-within-the-korevity-ecosystem",
+      "title": "Reference Data Management (RDM) is the centralized platform responsible for governing, standardizing, versioning, validating, and distributing controlled business values consistently across every module within the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Controlled values."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-1",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without RDM.",
+        "CRM.",
+        "USA",
+        "Finance.",
+        "United States",
+        "HR.",
+        "US",
+        "Three values.",
+        "Same country.",
+        "With RDM.",
+        "Country",
+        "↓",
+        "United States",
+        "Every module references one definition."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-2",
+      "title": "Architecture",
+      "paragraphs": [
+        "Reference Data",
+        "↓",
+        "Validation",
+        "↓",
+        "Distribution",
+        "↓",
+        "Business Modules",
+        "Shared everywhere."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-common-reference-data",
+      "title": "Common Reference Data",
+      "paragraphs": [
+        "Countries",
+        "Currencies",
+        "Languages",
+        "Units",
+        "Tax Codes",
+        "Payment Terms",
+        "Departments",
+        "Job Titles",
+        "Core business vocabulary."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-geographic-data",
+      "title": "Geographic Data",
+      "paragraphs": [
+        "Examples.",
+        "Country",
+        "State",
+        "Province",
+        "City",
+        "Region",
+        "Used across all modules."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-financial-reference-data",
+      "title": "Financial Reference Data",
+      "paragraphs": [
+        "Examples.",
+        "Currency",
+        "Tax Rate",
+        "Tax Category",
+        "Payment Method",
+        "Payment Terms",
+        "Shared by Finance, Sales, Procurement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-organizational-reference-data",
+      "title": "Organizational Reference Data",
+      "paragraphs": [
+        "Department",
+        "Business Unit",
+        "Division",
+        "Cost Center",
+        "One source."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-human-resources",
+      "title": "Human Resources",
+      "paragraphs": [
+        "Examples.",
+        "Job Title",
+        "Employment Type",
+        "Leave Type",
+        "Shift Type",
+        "Shared by HR."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-inventory",
+      "title": "Inventory",
+      "paragraphs": [
+        "Examples.",
+        "Unit of Measure",
+        "Warehouse Type",
+        "Item Category",
+        "Consistent inventory."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-controlled-lists",
+      "title": "Controlled Lists",
+      "paragraphs": [
+        "Reference values are curated.",
+        "Approved",
+        "↓",
+        "Published",
+        "↓",
+        "Used",
+        "No ad-hoc entries."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-codes",
+      "title": "Codes",
+      "paragraphs": [
+        "Every reference value has.",
+        "Display Name",
+        "↓",
+        "Business Code",
+        "Example.",
+        "United States",
+        "↓",
+        "US",
+        "Machines use codes.",
+        "People see names."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-localization",
+      "title": "Localization",
+      "paragraphs": [
+        "Display values differ.",
+        "US",
+        "↓",
+        "United States",
+        "↓",
+        "États-Unis",
+        "↓",
+        "Vereinigte Staaten",
+        "One code.",
+        "Many languages."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-versioning",
+      "title": "Versioning",
+      "paragraphs": [
+        "Reference data evolves.",
+        "Version 1",
+        "↓",
+        "Version 2",
+        "↓",
+        "Version 3",
+        "History preserved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-effective-dates",
+      "title": "Effective Dates",
+      "paragraphs": [
+        "Support.",
+        "Start Date",
+        "End Date",
+        "Useful for taxes and regulations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-hierarchies",
+      "title": "Hierarchies",
+      "paragraphs": [
+        "Reference data may form trees.",
+        "Country",
+        "↓",
+        "State",
+        "↓",
+        "City",
+        "Or.",
+        "Department",
+        "↓",
+        "Team",
+        "↓",
+        "Unit"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validation-2",
+      "title": "Validation",
+      "paragraphs": [
+        "Reference values validate.",
+        "Unique Code",
+        "Required Name",
+        "Status",
+        "Effective Dates"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationships-2",
+      "title": "Relationships",
+      "paragraphs": [
+        "Example.",
+        "Country",
+        "↓",
+        "Currencies",
+        "↓",
+        "Languages",
+        "Business-aware relationships."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-distribution",
+      "title": "Distribution",
+      "paragraphs": [
+        "Changes publish events.",
+        "Reference Updated",
+        "↓",
+        "Event Bus",
+        "↓",
+        "Platform Modules",
+        "Everyone stays synchronized."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-2",
+      "title": "Search",
+      "paragraphs": [
+        "Global lookup.",
+        "Country",
+        "Currency",
+        "Department",
+        "Tax",
+        "Fast access."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-2",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI references.",
+        "Standard Codes",
+        "↓",
+        "Trusted Responses",
+        "No invented values."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-rule-engine",
+      "title": "Rule Engine",
+      "paragraphs": [
+        "Rules consume.",
+        "Country",
+        "↓",
+        "Tax Rule",
+        "↓",
+        "Decision"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-template-engine",
+      "title": "Template Engine",
+      "paragraphs": [
+        "Templates display.",
+        "Localized Name",
+        "↓",
+        "Document"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-api-integration-1",
+      "title": "API Integration",
+      "paragraphs": [
+        "Expose.",
+        "Lookup APIs",
+        "Search APIs",
+        "Validation APIs",
+        "Standard interface."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-2",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions.",
+        "REFERENCE_VIEW",
+        "REFERENCE_EDIT",
+        "REFERENCE_APPROVE",
+        "Controlled governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-2",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Global.",
+        "Countries",
+        "Currencies",
+        "Languages",
+        "Tenant-specific.",
+        "Departments",
+        "Job Titles",
+        "Approval Types",
+        "Both coexist."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-1",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Lookup Count",
+        "Changes",
+        "Approvals",
+        "Unused Values",
+        "Measure quality."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-2",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Reference Data Platform provides:",
+        "Every module speaks the same business language."
+      ],
+      "lists": [
+        [
+          "Controlled vocabularies",
+          "Shared lookup values",
+          "Localization",
+          "Versioning",
+          "Effective dating",
+          "Hierarchies",
+          "Validation",
+          "Event synchronization",
+          "AI consistency",
+          "API access"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-2",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "⬜ Relationship Architecture",
+        "⬜ Data Lifecycle Management",
+        "⬜ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-2",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Reference data should be referenced, never duplicated.",
+        "Invoice",
+        "│",
+        "├── Country Code → US",
+        "├── Currency Code → USD",
+        "└── Payment Term → NET30",
+        "│",
+        "▼",
+        "Reference Data Platform",
+        "Business entities store only stable reference codes. Display names, translations, descriptions, and hierarchy information are resolved from the Reference Data Platform. This ensures that changing a display name or translation automatically updates every module without modifying stored business records."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-2",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would classify reference data into global, regional, and tenant-specific scopes.",
+        "Global",
+        "├── ISO Countries",
+        "├── ISO Currencies",
+        "└── Languages",
+        "Regional",
+        "├── Tax Categories",
+        "├── Holiday Calendars",
+        "└── Regulatory Codes",
+        "Tenant",
+        "├── Departments",
+        "├── Cost Centers",
+        "└── Approval Types",
+        "This layered model prevents unnecessary duplication while still allowing organizations to customize business-specific reference values."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-2",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Relationship Architecture.",
+        "Why?",
+        "We've defined:",
+        "Now we need to define how every business entity connects to every other entity.",
+        "Customers own projects.",
+        "Projects generate invoices.",
+        "Invoices receive payments.",
+        "Employees belong to departments.",
+        "Assets are assigned to employees.",
+        "Contracts reference suppliers.",
+        "The Relationship Architecture becomes the blueprint that defines the interconnected business graph powering the entire KoreVity platform.",
+        "Excellent.",
+        "We're now designing what separates enterprise platforms from collections of disconnected applications.",
+        "Data has value.",
+        "Relationships create intelligence.",
+        "A customer alone tells you very little.",
+        "A customer connected to invoices, projects, support tickets, contracts, payments, assets, AI conversations, and employees tells you everything.",
+        "This is where KoreVity becomes a connected enterprise platform."
+      ],
+      "lists": [
+        [
+          "Trusted entities (MDM)",
+          "Common entity structure (Enterprise Entity Model)",
+          "Standard reference values (Reference Data Management)"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-3",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-4-relationship-architecture",
+      "title": "Component 4 — Relationship Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-3",
+      "title": "First Principle",
+      "paragraphs": [
+        "An Entity without Relationships is an Island.",
+        "Example.",
+        "Customer",
+        "Useful.",
+        "But isolated.",
+        "Now.",
+        "Customer",
+        "↓",
+        "Projects",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "↓",
+        "Support Tickets",
+        "↓",
+        "Contracts",
+        "Now the platform understands the business."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-3",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-architecture-is-the-standardized-enterprise-framework-that-defines-how-business-entities-are-connected-navigated-governed-validated-and-traversed-consistently-across-the-korevity-ecosystem",
+      "title": "Relationship Architecture is the standardized enterprise framework that defines how business entities are connected, navigated, governed, validated, and traversed consistently across the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Relationships are architecture.",
+        "Not merely foreign keys."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-2",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without relationship architecture.",
+        "CRM creates.",
+        "CustomerID",
+        "Finance creates.",
+        "ClientID",
+        "Projects create.",
+        "AccountID",
+        "Different concepts.",
+        "Same relationship.",
+        "With Relationship Architecture.",
+        "Customer",
+        "↓",
+        "Relationship Definition",
+        "↓",
+        "Shared Platform",
+        "Everyone uses the same model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-3",
+      "title": "Architecture",
+      "paragraphs": [
+        "Entity",
+        "↓",
+        "Relationship",
+        "↓",
+        "Entity",
+        "Relationships become first-class citizens."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-types",
+      "title": "Relationship Types",
+      "paragraphs": [
+        "Support.",
+        "One-to-One",
+        "One-to-Many",
+        "Many-to-Many",
+        "Hierarchical",
+        "Associative"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-to-one",
+      "title": "One-to-One",
+      "paragraphs": [
+        "Example.",
+        "Employee",
+        "↓",
+        "Passport",
+        "Exactly one."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-to-many",
+      "title": "One-to-Many",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Invoices",
+        "Most common."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-many-to-many",
+      "title": "Many-to-Many",
+      "paragraphs": [
+        "Example.",
+        "Employee",
+        "↓",
+        "Projects",
+        "Multiple employees.",
+        "Multiple projects."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-hierarchical",
+      "title": "Hierarchical",
+      "paragraphs": [
+        "Example.",
+        "Organization",
+        "↓",
+        "Division",
+        "↓",
+        "Department",
+        "↓",
+        "Team",
+        "Tree structure."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-associative",
+      "title": "Associative",
+      "paragraphs": [
+        "Example.",
+        "Employee",
+        "↓",
+        "Role",
+        "↓",
+        "Project",
+        "Relationship carries its own data."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-metadata",
+      "title": "Relationship Metadata",
+      "paragraphs": [
+        "Every relationship includes.",
+        "Created",
+        "Effective Date",
+        "Status",
+        "Owner",
+        "Relationships evolve."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-direction",
+      "title": "Relationship Direction",
+      "paragraphs": [
+        "Support.",
+        "Parent",
+        "↓",
+        "Child",
+        "And.",
+        "Bidirectional",
+        "Depending on the model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-cardinality-1",
+      "title": "Cardinality",
+      "paragraphs": [
+        "Explicitly defined.",
+        "1",
+        "0..1",
+        "1..N",
+        "N..N",
+        "Never implied."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-navigation",
+      "title": "Navigation",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "↓",
+        "Receipts",
+        "Traverse naturally."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-constraints",
+      "title": "Relationship Constraints",
+      "paragraphs": [
+        "Example.",
+        "Invoice",
+        "Must Belong To",
+        "Customer",
+        "Platform validation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-cascade-rules",
+      "title": "Cascade Rules",
+      "paragraphs": [
+        "Support.",
+        "Archive Customer",
+        "↓",
+        "Archive Relationships",
+        "↓",
+        "Keep Transactions",
+        "Controlled behavior."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-lifecycle",
+      "title": "Relationship Lifecycle",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Active",
+        "↓",
+        "Expired",
+        "↓",
+        "Archived",
+        "Relationships have history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-temporal-relationships",
+      "title": "Temporal Relationships",
+      "paragraphs": [
+        "Example.",
+        "Employee",
+        "↓",
+        "Department",
+        "↓",
+        "Effective Dates",
+        "Track changes over time."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-graph-traversal",
+      "title": "Graph Traversal",
+      "paragraphs": [
+        "Platform supports.",
+        "Customer",
+        "↓",
+        "Projects",
+        "↓",
+        "Assets",
+        "↓",
+        "Maintenance",
+        "↓",
+        "Invoices",
+        "Business graph navigation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-3",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI traverses.",
+        "Customer",
+        "↓",
+        "Entire Relationship Graph",
+        "↓",
+        "Contextual Response",
+        "Much richer answers."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-integration",
+      "title": "Search Integration",
+      "paragraphs": [
+        "Search expands.",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Contracts",
+        "↓",
+        "Tickets",
+        "Connected search."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-1",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Relationships trigger.",
+        "Project Closed",
+        "↓",
+        "Close Related Tasks"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-rule-engine-integration",
+      "title": "Rule Engine Integration",
+      "paragraphs": [
+        "Rules inspect.",
+        "Customer",
+        "↓",
+        "Outstanding Invoices",
+        "↓",
+        "Decision",
+        "Relationship-aware logic."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-3",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions apply.",
+        "Read",
+        "Create",
+        "Update",
+        "Delete",
+        "Traverse",
+        "Relationship-level security."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-3",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Relationships never cross tenants.",
+        "Tenant A",
+        "↓",
+        "Relationships",
+        "≠",
+        "Tenant B",
+        "Strict isolation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-2",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Relationship Count",
+        "Broken Links",
+        "Traversal Speed",
+        "Orphan Records",
+        "Healthy graph."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-3",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Relationship Architecture provides:",
+        "Relationships become enterprise knowledge."
+      ],
+      "lists": [
+        [
+          "Standard relationship definitions",
+          "Cardinality rules",
+          "Hierarchies",
+          "Associative entities",
+          "Relationship metadata",
+          "Temporal relationships",
+          "Graph traversal",
+          "Constraint validation",
+          "Workflow integration",
+          "AI context",
+          "Search expansion",
+          "Secure navigation"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-3",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "⬜ Data Lifecycle Management",
+        "⬜ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-3",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Treat relationships as business objects, not implementation details.",
+        "Employee",
+        "│",
+        "▼",
+        "Assignment",
+        "│",
+        "▼",
+        "Project",
+        "Instead of storing only a foreign key, the relationship itself can carry important business information:",
+        "This makes relationships meaningful, auditable, and reusable across workflows, reporting, and AI."
+      ],
+      "lists": [
+        [
+          "Assignment date",
+          "Role",
+          "Allocation percentage",
+          "Billing rate",
+          "Effective period",
+          "Approval status"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-3",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce a Relationship Registry.",
+        "Customer → Invoice",
+        "Customer → Contract",
+        "Customer → Project",
+        "Employee → Department",
+        "Project → Asset",
+        "Supplier → Purchase Order",
+        "Every valid relationship in KoreVity is centrally registered with:",
+        "This becomes the authoritative catalog for developers, AI agents, reporting, and governance, ensuring that every module follows the same enterprise relationship model."
+      ],
+      "lists": [
+        [
+          "Cardinality",
+          "Constraints",
+          "Ownership",
+          "Lifecycle rules",
+          "Security policies",
+          "Cascade behavior"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-3",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Lifecycle Management.",
+        "Why?",
+        "We now know:",
+        "The next question is:"
+      ],
+      "lists": [
+        [
+          "What entities exist.",
+          "How they're structured.",
+          "What reference values they use.",
+          "How they're connected."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-what-happens-to-data-from-the-moment-it-is-created-until-the-day-it-is-permanently-retired",
+      "title": "What happens to data from the moment it is created until the day it is permanently retired?",
+      "paragraphs": [
+        "Data Lifecycle Management defines every stage of that journey—creation, validation, approval, active use, archival, restoration, and eventual disposal—ensuring enterprise data remains accurate, compliant, and manageable throughout its entire life.",
+        "Excellent.",
+        "This is where enterprise systems begin to separate from ordinary software.",
+        "Most applications answer:",
+        "\"Where is my data?\"",
+        "Enterprise platforms answer:",
+        "\"Where is my data in its lifetime?\"",
+        "Every piece of business data has a life.",
+        "It is born.",
+        "It grows.",
+        "It changes.",
+        "It becomes historical.",
+        "Eventually...",
+        "It retires.",
+        "Managing that journey correctly is what makes an enterprise platform sustainable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-4",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-5-data-lifecycle-management",
+      "title": "Component 5 — Data Lifecycle Management",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-4",
+      "title": "First Principle",
+      "paragraphs": [
+        "Data is not static.",
+        "Every business entity moves through time.",
+        "Create",
+        "↓",
+        "Validate",
+        "↓",
+        "Active",
+        "↓",
+        "Updated",
+        "↓",
+        "Archived",
+        "↓",
+        "Disposed",
+        "The platform must understand every stage."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-4",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-lifecycle-management-dlm-is-the-enterprise-framework-responsible-for-governing-how-business-data-is-created-validated-maintained-retained-archived-restored-and-securely-disposed-throughout-its-entire-lifecycle",
+      "title": "Data Lifecycle Management (DLM) is the enterprise framework responsible for governing how business data is created, validated, maintained, retained, archived, restored, and securely disposed throughout its entire lifecycle.",
+      "paragraphs": [
+        "Notice.",
+        "Entire lifecycle."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-3",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without lifecycle management.",
+        "Create Data",
+        "↓",
+        "Forever",
+        "Databases grow endlessly.",
+        "Compliance suffers.",
+        "Performance declines.",
+        "With lifecycle management.",
+        "Create",
+        "↓",
+        "Use",
+        "↓",
+        "Archive",
+        "↓",
+        "Dispose",
+        "Healthy enterprise data."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-lifecycle-architecture",
+      "title": "Lifecycle Architecture",
+      "paragraphs": [
+        "Business Entity",
+        "↓",
+        "Lifecycle Engine",
+        "↓",
+        "State Management",
+        "↓",
+        "Policies",
+        "The platform governs the journey."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-lifecycle-states",
+      "title": "Lifecycle States",
+      "paragraphs": [
+        "Every entity supports.",
+        "Draft",
+        "Validated",
+        "Approved",
+        "Active",
+        "Inactive",
+        "Archived",
+        "Disposed",
+        "Shared lifecycle model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-draft",
+      "title": "Draft",
+      "paragraphs": [
+        "Being Created",
+        "Editable.",
+        "Not operational."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validation-3",
+      "title": "Validation",
+      "paragraphs": [
+        "Business Rules",
+        "↓",
+        "Validated",
+        "Ensures correctness."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-approval-1",
+      "title": "Approval",
+      "paragraphs": [
+        "Validated",
+        "↓",
+        "Approval",
+        "↓",
+        "Operational",
+        "Critical business entities require governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-active",
+      "title": "Active",
+      "paragraphs": [
+        "Business Operations",
+        "Primary working state."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-inactive",
+      "title": "Inactive",
+      "paragraphs": [
+        "Temporarily Unused",
+        "Retained.",
+        "Not deleted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-archive",
+      "title": "Archive",
+      "paragraphs": [
+        "Historical",
+        "↓",
+        "Read Only",
+        "Supports reporting.",
+        "Reduces operational load."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-disposal",
+      "title": "Disposal",
+      "paragraphs": [
+        "Retention Complete",
+        "↓",
+        "Secure Deletion",
+        "Policy-driven."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-state-transitions",
+      "title": "State Transitions",
+      "paragraphs": [
+        "Not every transition is allowed.",
+        "Draft",
+        "↓",
+        "Approved",
+        "↓",
+        "Active",
+        "But.",
+        "Archived",
+        "↓",
+        "Draft",
+        "Not permitted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-transition-rules",
+      "title": "Transition Rules",
+      "paragraphs": [
+        "Each transition validates.",
+        "Permissions",
+        "Business Rules",
+        "Dependencies",
+        "Approvals",
+        "Controlled progression."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-retention-policies",
+      "title": "Retention Policies",
+      "paragraphs": [
+        "Example.",
+        "Invoices",
+        "↓",
+        "7 Years",
+        "Contracts.",
+        "10 Years",
+        "Policies differ."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-archive-policies",
+      "title": "Archive Policies",
+      "paragraphs": [
+        "Automatically archive.",
+        "Inactive",
+        "↓",
+        "365 Days",
+        "↓",
+        "Archive",
+        "Fully automated."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-restoration",
+      "title": "Restoration",
+      "paragraphs": [
+        "Support.",
+        "Archive",
+        "↓",
+        "Restore",
+        "↓",
+        "Active",
+        "With authorization."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-soft-delete-1",
+      "title": "Soft Delete",
+      "paragraphs": [
+        "Normal deletion.",
+        "Delete",
+        "↓",
+        "Archived",
+        "Recoverable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-hard-delete",
+      "title": "Hard Delete",
+      "paragraphs": [
+        "Only after.",
+        "Retention",
+        "↓",
+        "Approval",
+        "↓",
+        "Permanent Removal",
+        "Rare operation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-legal-hold",
+      "title": "Legal Hold",
+      "paragraphs": [
+        "Support.",
+        "Legal Investigation",
+        "↓",
+        "Retention Suspended",
+        "Nothing deleted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dependency-protection",
+      "title": "Dependency Protection",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Invoices Exist",
+        "↓",
+        "Cannot Dispose",
+        "Protect referential integrity."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-2",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Lifecycle events trigger.",
+        "Archive",
+        "↓",
+        "Workflow",
+        "↓",
+        "Notification",
+        "Platform automation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-rule-engine-1",
+      "title": "Rule Engine",
+      "paragraphs": [
+        "Rules govern.",
+        "Retention Complete",
+        "↓",
+        "Rule",
+        "↓",
+        "Archive",
+        "Policy-driven."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-event-integration-1",
+      "title": "Event Integration",
+      "paragraphs": [
+        "Publish.",
+        "Created",
+        "Activated",
+        "Archived",
+        "Disposed",
+        "Everything observable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-integration-1",
+      "title": "Search Integration",
+      "paragraphs": [
+        "Search respects lifecycle.",
+        "Active Only",
+        "Or",
+        "Include Archive",
+        "User-controlled."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-4",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI understands lifecycle.",
+        "Historical",
+        "↓",
+        "Lower Priority",
+        "↓",
+        "Operational",
+        "↓",
+        "Higher Priority",
+        "Context-aware intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-4",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions.",
+        "Archive",
+        "Restore",
+        "Dispose",
+        "Legal Hold",
+        "Highly restricted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-4",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant defines.",
+        "Retention Policies",
+        "Archive Rules",
+        "Legal Requirements",
+        "Independent governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-3",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Archived Records",
+        "Retention Queue",
+        "Disposal Queue",
+        "Restore Requests",
+        "Operational visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-4",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Data Lifecycle Platform provides:",
+        "Enterprise data is managed from creation to retirement."
+      ],
+      "lists": [
+        [
+          "Standard lifecycle states",
+          "Controlled transitions",
+          "Validation",
+          "Approval",
+          "Retention policies",
+          "Archive automation",
+          "Restoration",
+          "Legal holds",
+          "Secure disposal",
+          "Workflow integration",
+          "Event publishing",
+          "Tenant-specific policies"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-4",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "⬜ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-4",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Separate business state from lifecycle state.",
+        "Business State",
+        "──────────────",
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Lifecycle State",
+        "──────────────",
+        "Draft",
+        "Active",
+        "Archived",
+        "Disposed",
+        "An invoice may be Approved (business state) while also being Archived (lifecycle state).",
+        "These represent different dimensions and should never be combined into a single status field. Separating them simplifies workflows, reporting, auditing, and lifecycle management."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-4",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would implement Lifecycle Policies as reusable platform objects.",
+        "Financial Policy",
+        "├── Retain 7 Years",
+        "├── Archive After 1 Year",
+        "└── Secure Disposal",
+        "HR Policy",
+        "├── Retain 10 Years",
+        "├── Legal Hold Support",
+        "└── Restricted Restore",
+        "Instead of configuring every entity individually, entities inherit lifecycle behavior from standardized policy definitions. This keeps governance consistent across the platform and simplifies regulatory compliance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-4",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Quality Framework.",
+        "Why?",
+        "The platform now knows:",
+        "The next challenge is ensuring that data remains accurate, complete, consistent, timely, and trustworthy throughout its lifecycle.",
+        "The Data Quality Framework will define automated validation, profiling, scoring, anomaly detection, duplicate prevention, and continuous quality monitoring so that every module—and every AI capability—operates on reliable enterprise data rather than simply stored data.",
+        "Excellent.",
+        "This is one of the most overlooked disciplines in software engineering.",
+        "Companies don't fail because they lack data.",
+        "They fail because they can't trust it.",
+        "AI is only as good as the data it receives.",
+        "Reports are only as accurate as the data they aggregate.",
+        "Automation is only as reliable as the data it processes."
+      ],
+      "lists": [
+        [
+          "What data exists.",
+          "How it's structured.",
+          "How it's related.",
+          "How long it lives."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-quality-is-the-foundation-of-business-trust",
+      "title": "Data Quality is the foundation of business trust.",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-5",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-6-data-quality-framework",
+      "title": "Component 6 — Data Quality Framework",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-5",
+      "title": "First Principle",
+      "paragraphs": [
+        "Data stored ≠ Data trusted.",
+        "Example.",
+        "Customer",
+        "Name:",
+        "???",
+        "Phone:",
+        "123",
+        "Email:",
+        "abc@",
+        "The record exists.",
+        "But it is not useful."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-5",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-data-quality-framework-is-the-centralized-enterprise-platform-responsible-for-measuring-validating-monitoring-improving-and-governing-the-accuracy-completeness-consistency-timeliness-uniqueness-and-integrity-of-business-data-across-the-korevity-ecosystem",
+      "title": "The Data Quality Framework is the centralized enterprise platform responsible for measuring, validating, monitoring, improving, and governing the accuracy, completeness, consistency, timeliness, uniqueness, and integrity of business data across the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Quality is measurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-4",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without quality.",
+        "Duplicate Customers",
+        "Missing Emails",
+        "Invalid Taxes",
+        "Broken Addresses",
+        "Business becomes unreliable.",
+        "With quality.",
+        "Validated",
+        "Consistent",
+        "Complete",
+        "Trusted",
+        "Everything improves."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-4",
+      "title": "Architecture",
+      "paragraphs": [
+        "Business Data",
+        "↓",
+        "Quality Rules",
+        "↓",
+        "Quality Engine",
+        "↓",
+        "Score",
+        "↓",
+        "Monitoring",
+        "Continuous evaluation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-quality-dimensions",
+      "title": "Quality Dimensions",
+      "paragraphs": [
+        "The platform measures.",
+        "Accuracy",
+        "Completeness",
+        "Consistency",
+        "Validity",
+        "Uniqueness",
+        "Timeliness",
+        "Integrity",
+        "These become enterprise KPIs."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-accuracy",
+      "title": "Accuracy",
+      "paragraphs": [
+        "Question.",
+        "Is the value correct?",
+        "Example.",
+        "Tax Rate",
+        "18%",
+        "Actual",
+        "18%",
+        "Accurate."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-completeness",
+      "title": "Completeness",
+      "paragraphs": [
+        "Question.",
+        "Are required values present?",
+        "Example.",
+        "Customer",
+        "Name ✓",
+        "Email ✗",
+        "Phone ✓",
+        "Incomplete."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-consistency",
+      "title": "Consistency",
+      "paragraphs": [
+        "Question.",
+        "Is the same data represented consistently?",
+        "Example.",
+        "United States",
+        "USA",
+        "US",
+        "One reference value required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validity",
+      "title": "Validity",
+      "paragraphs": [
+        "Question.",
+        "Does the value satisfy business rules?",
+        "Example.",
+        "Email",
+        "abc@",
+        "↓",
+        "Invalid"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-uniqueness",
+      "title": "Uniqueness",
+      "paragraphs": [
+        "Question.",
+        "Does exactly one record exist?",
+        "Duplicate detection.",
+        "ABC Ltd",
+        "ABC Limited",
+        "Potential duplicate."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-timeliness",
+      "title": "Timeliness",
+      "paragraphs": [
+        "Question.",
+        "Is the data still current?",
+        "Old addresses.",
+        "Expired contracts.",
+        "Inactive employees."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-integrity",
+      "title": "Integrity",
+      "paragraphs": [
+        "Question.",
+        "Are relationships valid?",
+        "Example.",
+        "Invoice",
+        "↓",
+        "Customer Missing",
+        "Integrity violation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-validation-engine",
+      "title": "Validation Engine",
+      "paragraphs": [
+        "Checks.",
+        "Required",
+        "Format",
+        "Range",
+        "Business Rules",
+        "Reference Data",
+        "Shared platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-duplicate-detection-1",
+      "title": "Duplicate Detection",
+      "paragraphs": [
+        "Support.",
+        "Exact Match",
+        "Fuzzy Match",
+        "AI Similarity",
+        "Intelligent identification."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-quality-rules",
+      "title": "Quality Rules",
+      "paragraphs": [
+        "Examples.",
+        "Email Required",
+        "Phone Optional",
+        "Country Mandatory",
+        "Tax Valid",
+        "Centralized."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-quality-score",
+      "title": "Quality Score",
+      "paragraphs": [
+        "Every entity receives.",
+        "0–100",
+        "Example.",
+        "Customer",
+        "94%",
+        "Simple metric."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-quality-dashboard",
+      "title": "Quality Dashboard",
+      "paragraphs": [
+        "Track.",
+        "Overall Score",
+        "Missing Data",
+        "Duplicates",
+        "Validation Errors",
+        "Operational visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-continuous-monitoring",
+      "title": "Continuous Monitoring",
+      "paragraphs": [
+        "Run automatically.",
+        "Nightly Scan",
+        "↓",
+        "Quality Report",
+        "No manual effort."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-5",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI assists.",
+        "Missing Address",
+        "↓",
+        "Suggest Correction",
+        "Or.",
+        "Possible Duplicate",
+        "↓",
+        "Merge Recommendation",
+        "Human-approved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-3",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Quality failures.",
+        "Validation Failed",
+        "↓",
+        "Workflow",
+        "↓",
+        "Correction Task"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-rule-engine-2",
+      "title": "Rule Engine",
+      "paragraphs": [
+        "Rules enforce.",
+        "Quality < 80",
+        "↓",
+        "Block Approval",
+        "Business protection."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-integration-2",
+      "title": "Search Integration",
+      "paragraphs": [
+        "Search prefers.",
+        "High Quality Records",
+        "Better results."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-api-integration-2",
+      "title": "API Integration",
+      "paragraphs": [
+        "Reject invalid data.",
+        "API Request",
+        "↓",
+        "Validation",
+        "↓",
+        "Accepted",
+        "Or rejected."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-4",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Measure.",
+        "Duplicates",
+        "Missing Fields",
+        "Invalid Values",
+        "Quality Trend",
+        "Track improvement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-5",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions.",
+        "QUALITY_VIEW",
+        "QUALITY_EDIT",
+        "QUALITY_APPROVE",
+        "Governed changes."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-5",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant defines.",
+        "Validation Rules",
+        "Thresholds",
+        "Policies",
+        "Flexible governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-5",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Data Quality Framework provides:",
+        "Trusted data becomes a measurable platform capability."
+      ],
+      "lists": [
+        [
+          "Validation engine",
+          "Duplicate detection",
+          "Quality scoring",
+          "Completeness checks",
+          "Consistency validation",
+          "Integrity verification",
+          "AI-assisted correction",
+          "Continuous monitoring",
+          "Dashboards",
+          "Workflow integration",
+          "API validation"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-5",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "⬜ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-5",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Measure data quality continuously, not only during data entry.",
+        "Create",
+        "│",
+        "Validate",
+        "│",
+        "Store",
+        "│",
+        "──────────────",
+        "Continuous Quality Monitoring",
+        "──────────────",
+        "│",
+        "Detect Issues",
+        "│",
+        "Notify",
+        "│",
+        "Correct",
+        "Data that was correct yesterday may become incorrect tomorrow due to changing business conditions, expired relationships, outdated contact information, or regulatory changes. Data quality should be a continuous operational process, not a one-time validation step."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-5",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce Quality SLAs (Service Level Agreements) for critical business entities.",
+        "Customer",
+        "≥ 95%",
+        "Supplier",
+        "≥ 98%",
+        "Employee",
+        "≥ 97%",
+        "Product",
+        "≥ 99%",
+        "Instead of treating data quality as an abstract metric, each entity type has a minimum acceptable quality score. Falling below the SLA automatically triggers workflows, alerts, and corrective actions, making data quality an operational objective rather than a passive report."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-5",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Lineage.",
+        "Why?",
+        "Now that we can trust our data, the next question is:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-where-did-this-data-come-from-how-has-it-changed-and-where-has-it-been-used",
+      "title": "\"Where did this data come from, how has it changed, and where has it been used?\"",
+      "paragraphs": [
+        "Data Lineage will allow KoreVity to trace every value—from its original source, through every transformation, workflow, AI process, integration, report, and downstream consumer—providing complete transparency for auditing, compliance, debugging, analytics, and AI explainability.",
+        "Excellent.",
+        "This is where enterprise data becomes explainable.",
+        "Imagine your CEO asks:",
+        "\"Why is revenue different in this dashboard than in yesterday's report?\"",
+        "Or an auditor asks:",
+        "\"Where did this number come from?\"",
+        "Or an AI agent makes a recommendation and someone asks:",
+        "\"What data was used?\"",
+        "Without lineage...",
+        "You guess.",
+        "With lineage...",
+        "You prove it."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-6",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-7-data-lineage",
+      "title": "Component 7 — Data Lineage",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-6",
+      "title": "First Principle",
+      "paragraphs": [
+        "Data is not just stored.",
+        "Data travels.",
+        "Every movement should be traceable.",
+        "Source",
+        "↓",
+        "Transform",
+        "↓",
+        "Store",
+        "↓",
+        "Report",
+        "↓",
+        "AI",
+        "↓",
+        "Decision",
+        "Everything leaves a trail."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-6",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-lineage-is-the-enterprise-capability-responsible-for-recording-visualizing-and-governing-the-complete-journey-of-business-data-from-its-origin-through-every-transformation-movement-consumer-and-business-decision-across-the-korevity-platform",
+      "title": "Data Lineage is the enterprise capability responsible for recording, visualizing, and governing the complete journey of business data from its origin through every transformation, movement, consumer, and business decision across the KoreVity platform.",
+      "paragraphs": [
+        "Notice.",
+        "Complete journey."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-5",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without lineage.",
+        "Revenue",
+        "↓",
+        "???",
+        "↓",
+        "Dashboard",
+        "Nobody knows.",
+        "With lineage.",
+        "Invoice",
+        "↓",
+        "Accounting",
+        "↓",
+        "Aggregation",
+        "↓",
+        "Analytics",
+        "↓",
+        "Dashboard",
+        "Fully traceable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-5",
+      "title": "Architecture",
+      "paragraphs": [
+        "Source",
+        "↓",
+        "Transformation",
+        "↓",
+        "Storage",
+        "↓",
+        "Consumer",
+        "↓",
+        "Audit",
+        "Every step recorded."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-sources",
+      "title": "Data Sources",
+      "paragraphs": [
+        "Origins include.",
+        "Manual Entry",
+        "API",
+        "Import",
+        "Workflow",
+        "AI",
+        "Integration",
+        "System Process",
+        "Everything has an origin."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-transformations",
+      "title": "Transformations",
+      "paragraphs": [
+        "Track.",
+        "Calculated",
+        "Converted",
+        "Merged",
+        "Split",
+        "Validated",
+        "Enriched",
+        "No hidden logic."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-movement",
+      "title": "Movement",
+      "paragraphs": [
+        "Record.",
+        "CRM",
+        "↓",
+        "Finance",
+        "↓",
+        "Analytics",
+        "↓",
+        "AI",
+        "Every transfer."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-consumption",
+      "title": "Consumption",
+      "paragraphs": [
+        "Know who used data.",
+        "Reports",
+        "Dashboards",
+        "AI",
+        "Exports",
+        "Integrations",
+        "Every consumer."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-example-2",
+      "title": "Example",
+      "paragraphs": [
+        "Invoice Total.",
+        "Invoice",
+        "↓",
+        "Tax Calculation",
+        "↓",
+        "Revenue Report",
+        "↓",
+        "Dashboard",
+        "↓",
+        "Executive KPI",
+        "Complete visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-forward-lineage",
+      "title": "Forward Lineage",
+      "paragraphs": [
+        "Question.",
+        "If this changes,",
+        "what is affected?",
+        "Impact analysis."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-backward-lineage",
+      "title": "Backward Lineage",
+      "paragraphs": [
+        "Question.",
+        "Where did this originate?",
+        "Root cause analysis."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-column-lineage",
+      "title": "Column Lineage",
+      "paragraphs": [
+        "Support.",
+        "Customer Name",
+        "↓",
+        "Report Column",
+        "↓",
+        "Dashboard Widget",
+        "Field-level tracing."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-record-lineage",
+      "title": "Record Lineage",
+      "paragraphs": [
+        "Track.",
+        "Customer Record",
+        "↓",
+        "Every Change",
+        "Complete history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-transformation-metadata",
+      "title": "Transformation Metadata",
+      "paragraphs": [
+        "Record.",
+        "Rule",
+        "Time",
+        "User",
+        "Workflow",
+        "AI",
+        "Every modification explained."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-lineage",
+      "title": "AI Lineage",
+      "paragraphs": [
+        "Track.",
+        "Prompt",
+        "↓",
+        "Knowledge",
+        "↓",
+        "Model",
+        "↓",
+        "Response",
+        "AI explainability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-lineage",
+      "title": "Workflow Lineage",
+      "paragraphs": [
+        "Capture.",
+        "Workflow",
+        "↓",
+        "Updated Entity",
+        "↓",
+        "Published Event",
+        "Business process traceability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-api-lineage",
+      "title": "API Lineage",
+      "paragraphs": [
+        "Track.",
+        "External API",
+        "↓",
+        "Entity",
+        "↓",
+        "Report",
+        "Integration visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-report-lineage",
+      "title": "Report Lineage",
+      "paragraphs": [
+        "Example.",
+        "Dashboard",
+        "↓",
+        "Revenue KPI",
+        "↓",
+        "Invoice Totals",
+        "↓",
+        "Invoices",
+        "Executive transparency."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dependency-graph",
+      "title": "Dependency Graph",
+      "paragraphs": [
+        "Automatically build.",
+        "Entity",
+        "↓",
+        "Consumers",
+        "↓",
+        "Reports",
+        "↓",
+        "AI",
+        "↓",
+        "Exports",
+        "Live dependency map."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-impact-analysis",
+      "title": "Impact Analysis",
+      "paragraphs": [
+        "Before changing.",
+        "Field",
+        "↓",
+        "Affected APIs",
+        "Reports",
+        "AI",
+        "Workflows",
+        "Safe evolution."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-integration-3",
+      "title": "Search Integration",
+      "paragraphs": [
+        "Search.",
+        "Entity",
+        "↓",
+        "Origin",
+        "↓",
+        "Consumers",
+        "Trace instantly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-5",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Transformations",
+        "Failures",
+        "Broken Dependencies",
+        "Orphan Flows",
+        "Healthy data movement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-audit-1",
+      "title": "Audit",
+      "paragraphs": [
+        "Every movement records.",
+        "Source",
+        "Destination",
+        "Timestamp",
+        "User",
+        "Reason",
+        "Complete accountability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-6",
+      "title": "Security",
+      "paragraphs": [
+        "Permissions.",
+        "LINEAGE_VIEW",
+        "LINEAGE_ANALYZE",
+        "LINEAGE_ADMIN",
+        "Sensitive information protected."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-6",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant owns.",
+        "Independent Lineage Graph",
+        "No cross-tenant visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-6",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Data Lineage Platform provides:",
+        "Every piece of enterprise data becomes explainable."
+      ],
+      "lists": [
+        [
+          "Source tracking",
+          "Transformation history",
+          "Consumer tracking",
+          "AI explainability",
+          "Workflow traceability",
+          "API lineage",
+          "Report lineage",
+          "Dependency graphs",
+          "Impact analysis",
+          "Monitoring",
+          "Auditing"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-6",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "⬜ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-6",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Treat lineage as a graph, not a log.",
+        "Invoice",
+        "│",
+        "├── Revenue Report",
+        "│ │",
+        "│ ▼",
+        "│ Executive Dashboard",
+        "│",
+        "└── AI Forecast",
+        "│",
+        "▼",
+        "Strategic Recommendation",
+        "Logs tell you what happened.",
+        "A lineage graph tells you how everything is connected.",
+        "That enables:",
+        "This becomes one of the most valuable assets in an enterprise platform."
+      ],
+      "lists": [
+        [
+          "Impact analysis",
+          "Root cause analysis",
+          "AI explainability",
+          "Regulatory compliance",
+          "Safe schema evolution"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-6",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would classify lineage into four levels.",
+        "Business Lineage",
+        "Customer → Invoice → Revenue",
+        "Process Lineage",
+        "Workflow → Rule → Event",
+        "Technical Lineage",
+        "API → Service → Database",
+        "AI Lineage",
+        "Prompt → Context → Model → Response",
+        "Keeping these perspectives separate allows business users, developers, auditors, and AI engineers to view the same lineage graph through the lens most relevant to them."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-6",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Governance.",
+        "Why?",
+        "We now know:",
+        "The remaining question is:"
+      ],
+      "lists": [
+        [
+          "What data exists.",
+          "How it's structured.",
+          "How it's related.",
+          "How long it lives.",
+          "How good it is.",
+          "Where it came from."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-who-is-responsible-for-it-who-may-use-it-and-how-is-it-governed",
+      "title": "Who is responsible for it, who may use it, and how is it governed?",
+      "paragraphs": [
+        "Data Governance will define ownership, stewardship, classification, policies, approval, compliance, accountability, and enterprise controls—turning KoreVity's data architecture into a fully governed enterprise information platform.",
+        "Excellent.",
+        "We've now reached one of the pillars of enterprise software.",
+        "Many companies confuse security with governance.",
+        "Security asks:",
+        "\"Who can access this data?\"",
+        "Governance asks:",
+        "\"Who owns this data, who is responsible for it, how should it be used, and how do we prove compliance?\"",
+        "Security is technical.",
+        "Governance is organizational.",
+        "Enterprise platforms require both."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-7",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-8-data-governance",
+      "title": "Component 8 — Data Governance",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-7",
+      "title": "First Principle",
+      "paragraphs": [
+        "Data without ownership becomes everyone's responsibility...",
+        "which means it becomes no one's responsibility.",
+        "Good governance assigns clear accountability.",
+        "Data",
+        "↓",
+        "Owner",
+        "↓",
+        "Steward",
+        "↓",
+        "Custodian",
+        "Every critical data asset has accountable people."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-7",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-governance-is-the-enterprise-framework-responsible-for-defining-ownership-stewardship-policies-classifications-accountability-compliance-and-decision-authority-for-all-business-data-across-the-korevity-ecosystem",
+      "title": "Data Governance is the enterprise framework responsible for defining ownership, stewardship, policies, classifications, accountability, compliance, and decision authority for all business data across the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Governance is about decision making."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-6",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without governance.",
+        "Duplicate Policies",
+        "Unknown Ownership",
+        "Conflicting Rules",
+        "Inconsistent Data",
+        "Chaos.",
+        "With governance.",
+        "Policies",
+        "Ownership",
+        "Standards",
+        "Compliance",
+        "Everything becomes manageable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-governance-architecture",
+      "title": "Governance Architecture",
+      "paragraphs": [
+        "Business Data",
+        "↓",
+        "Policies",
+        "↓",
+        "Owners",
+        "↓",
+        "Compliance",
+        "↓",
+        "Monitoring",
+        "Governance surrounds every data asset."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-core-governance-roles",
+      "title": "Core Governance Roles",
+      "paragraphs": [
+        "Every major entity defines.",
+        "Owner",
+        "Steward",
+        "Custodian",
+        "Different responsibilities."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-owner",
+      "title": "Data Owner",
+      "paragraphs": [
+        "Responsible for.",
+        "Business Meaning",
+        "Usage",
+        "Approval",
+        "Policy",
+        "Business accountability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-steward",
+      "title": "Data Steward",
+      "paragraphs": [
+        "Responsible for.",
+        "Quality",
+        "Consistency",
+        "Definitions",
+        "Metadata",
+        "Operational quality."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-custodian",
+      "title": "Data Custodian",
+      "paragraphs": [
+        "Responsible for.",
+        "Infrastructure",
+        "Storage",
+        "Backups",
+        "Security",
+        "Technical responsibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-classification",
+      "title": "Data Classification",
+      "paragraphs": [
+        "Every entity classified.",
+        "Public",
+        "Internal",
+        "Confidential",
+        "Restricted",
+        "Standard across the platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-example-3",
+      "title": "Example",
+      "paragraphs": [
+        "Customer.",
+        "Confidential",
+        "Financial Reports.",
+        "Restricted",
+        "Product Catalog.",
+        "Public",
+        "Classification drives policy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-governance-policies",
+      "title": "Governance Policies",
+      "paragraphs": [
+        "Support.",
+        "Retention",
+        "Privacy",
+        "Access",
+        "Quality",
+        "Compliance",
+        "Reusable policies."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-business-glossary",
+      "title": "Business Glossary",
+      "paragraphs": [
+        "Define.",
+        "Customer",
+        "Invoice",
+        "Revenue",
+        "Supplier",
+        "One enterprise vocabulary."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-standards",
+      "title": "Data Standards",
+      "paragraphs": [
+        "Every entity follows.",
+        "Naming",
+        "Formats",
+        "Identifiers",
+        "Relationships",
+        "Consistency."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-policy-enforcement",
+      "title": "Policy Enforcement",
+      "paragraphs": [
+        "Policies automatically apply.",
+        "Entity",
+        "↓",
+        "Policy Engine",
+        "↓",
+        "Validation",
+        "No manual enforcement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-approval-process",
+      "title": "Approval Process",
+      "paragraphs": [
+        "Changes require.",
+        "Proposal",
+        "↓",
+        "Review",
+        "↓",
+        "Approval",
+        "↓",
+        "Publication",
+        "Governed evolution."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-compliance",
+      "title": "Compliance",
+      "paragraphs": [
+        "Support.",
+        "GDPR",
+        "ISO",
+        "SOC",
+        "Industry Rules",
+        "Framework-ready."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-audit-2",
+      "title": "Audit",
+      "paragraphs": [
+        "Track.",
+        "Policy Changes",
+        "Ownership Changes",
+        "Approvals",
+        "Exceptions",
+        "Complete accountability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-exceptions",
+      "title": "Exceptions",
+      "paragraphs": [
+        "Governed.",
+        "Policy Exception",
+        "↓",
+        "Approval",
+        "↓",
+        "Expiration",
+        "Temporary by design."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-metadata-governance",
+      "title": "Metadata Governance",
+      "paragraphs": [
+        "Manage.",
+        "Definitions",
+        "Descriptions",
+        "Owners",
+        "Tags",
+        "Categories",
+        "Rich metadata."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-governance",
+      "title": "AI Governance",
+      "paragraphs": [
+        "Define.",
+        "Allowed Models",
+        "Sensitive Data Rules",
+        "Prompt Policies",
+        "Approval Thresholds",
+        "Enterprise AI controls."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-reporting",
+      "title": "Reporting",
+      "paragraphs": [
+        "Governance dashboard.",
+        "Compliance",
+        "Ownership",
+        "Quality",
+        "Exceptions",
+        "Policies",
+        "Executive visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-integration-4",
+      "title": "Search Integration",
+      "paragraphs": [
+        "Search includes.",
+        "Owner",
+        "Classification",
+        "Policy",
+        "Steward",
+        "Find information quickly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-4",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Governance actions.",
+        "Policy Update",
+        "↓",
+        "Approval Workflow",
+        "Automated governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-integration",
+      "title": "Security Integration",
+      "paragraphs": [
+        "Classification affects.",
+        "Permissions",
+        "Encryption",
+        "Sharing",
+        "Governance drives security."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-7",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant manages.",
+        "Policies",
+        "Owners",
+        "Standards",
+        "Compliance",
+        "Independent governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-6",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Policy Violations",
+        "Missing Owners",
+        "Expired Exceptions",
+        "Compliance Score",
+        "Continuous oversight."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-7",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Data Governance Platform provides:",
+        "Governance transforms data into a managed enterprise asset."
+      ],
+      "lists": [
+        [
+          "Data ownership",
+          "Stewardship",
+          "Classification",
+          "Business glossary",
+          "Enterprise policies",
+          "Compliance",
+          "Approval workflows",
+          "Metadata governance",
+          "AI governance",
+          "Monitoring",
+          "Auditability"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-7",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "⬜ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-7",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Separate ownership from responsibility.",
+        "Business Owner",
+        "│",
+        "Defines Purpose",
+        "──────────────",
+        "Data Steward",
+        "│",
+        "Maintains Quality",
+        "──────────────",
+        "Technical Custodian",
+        "│",
+        "Operates Platform",
+        "Many organizations assign one person to all three roles.",
+        "That does not scale.",
+        "Separating these responsibilities ensures that:",
+        "Each role has clear accountability without overlapping responsibilities."
+      ],
+      "lists": [
+        [
+          "Business teams define meaning.",
+          "Data teams maintain quality.",
+          "Platform teams maintain infrastructure."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-7",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce a Governance Catalog.",
+        "Customer",
+        "├── Owner",
+        "├── Steward",
+        "├── Classification",
+        "├── Retention Policy",
+        "├── Quality SLA",
+        "├── Compliance Rules",
+        "└── AI Usage Policy",
+        "Every enterprise entity has a single governance profile.",
+        "This becomes the authoritative source for audits, onboarding, AI access decisions, reporting, and future module development."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-7",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Retention & Archiving.",
+        "Why?",
+        "Data Governance defines who is responsible for data and how it should be managed.",
+        "The next step defines how long data must be kept, where archived data lives, how it is restored, and when it is permanently removed.",
+        "This complements the lifecycle model by implementing enterprise-grade retention, archival storage, legal holds, regulatory compliance, and recovery strategies—ensuring KoreVity remains scalable and compliant even after decades of operation.",
+        "Excellent.",
+        "This is where enterprise systems begin thinking in years, not releases.",
+        "A startup usually asks:",
+        "\"Can we store this?\"",
+        "An enterprise asks:",
+        "\"Where will this data be 15 years from now?\"",
+        "Some records live for days.",
+        "Some must live for decades.",
+        "Some can never be deleted because of legal requirements.",
+        "This component ensures KoreVity can operate for decades without becoming bloated or non-compliant."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-8",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-9-data-retention-archiving",
+      "title": "Component 9 — Data Retention & Archiving",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-8",
+      "title": "First Principle",
+      "paragraphs": [
+        "Not all data should remain operational forever.",
+        "Operational data is expensive.",
+        "Historical data is valuable.",
+        "Archived data is necessary.",
+        "Deleted data may be illegal.",
+        "Operational",
+        "↓",
+        "Historical",
+        "↓",
+        "Archived",
+        "↓",
+        "Disposed",
+        "Each stage serves a purpose."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-8",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-retention-archiving-is-the-enterprise-framework-responsible-for-preserving-business-information-for-the-required-duration-while-optimizing-operational-performance-ensuring-regulatory-compliance-and-supporting-secure-long-term-recovery",
+      "title": "Data Retention & Archiving is the enterprise framework responsible for preserving business information for the required duration while optimizing operational performance, ensuring regulatory compliance, and supporting secure long-term recovery.",
+      "paragraphs": [
+        "Notice.",
+        "Retention is not storage.",
+        "It is policy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-7",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without retention.",
+        "Everything",
+        "↓",
+        "Database",
+        "↓",
+        "Forever",
+        "Eventually.",
+        "With retention.",
+        "Operational",
+        "↓",
+        "Archive",
+        "↓",
+        "Cold Storage",
+        "↓",
+        "Disposal",
+        "Healthy platform."
+      ],
+      "lists": [
+        [
+          "Slow queries",
+          "Huge backups",
+          "Expensive storage",
+          "Compliance failures"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-6",
+      "title": "Architecture",
+      "paragraphs": [
+        "Business Entity",
+        "↓",
+        "Retention Policy",
+        "↓",
+        "Archive Engine",
+        "↓",
+        "Archive Storage",
+        "↓",
+        "Recovery",
+        "Entirely policy-driven."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-operational-data",
+      "title": "Operational Data",
+      "paragraphs": [
+        "Frequently accessed.",
+        "Current Customers",
+        "Current Projects",
+        "Open Invoices",
+        "Fast storage."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-historical-data",
+      "title": "Historical Data",
+      "paragraphs": [
+        "Rarely updated.",
+        "Completed Projects",
+        "Closed Tickets",
+        "Paid Invoices",
+        "Read-mostly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-archived-data",
+      "title": "Archived Data",
+      "paragraphs": [
+        "Very rarely accessed.",
+        "Old Contracts",
+        "Old Payroll",
+        "Historical Reports",
+        "Lower-cost storage."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-cold-storage",
+      "title": "Cold Storage",
+      "paragraphs": [
+        "Long-term.",
+        "Encrypted",
+        "Compressed",
+        "Indexed",
+        "Optimized for preservation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-retention-policies-1",
+      "title": "Retention Policies",
+      "paragraphs": [
+        "Examples.",
+        "Invoices",
+        "7 Years",
+        "Payroll.",
+        "10 Years",
+        "Audit Logs.",
+        "15 Years",
+        "Configurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-policy-assignment",
+      "title": "Policy Assignment",
+      "paragraphs": [
+        "Entities inherit.",
+        "Retention Policy",
+        "↓",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Contracts",
+        "Reusable governance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-archive-trigger",
+      "title": "Archive Trigger",
+      "paragraphs": [
+        "Automatically.",
+        "Inactive",
+        "↓",
+        "Policy",
+        "↓",
+        "Archive",
+        "No manual effort."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-archive-format",
+      "title": "Archive Format",
+      "paragraphs": [
+        "Store.",
+        "Original Data",
+        "Metadata",
+        "Relationships",
+        "Audit Trail",
+        "Nothing lost."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-relationship-preservation",
+      "title": "Relationship Preservation",
+      "paragraphs": [
+        "Archive maintains.",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "Business context remains intact."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-search-3",
+      "title": "Search",
+      "paragraphs": [
+        "Support.",
+        "Operational Search",
+        "Archive Search",
+        "Unified experience."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-restore",
+      "title": "Restore",
+      "paragraphs": [
+        "Authorized recovery.",
+        "Archive",
+        "↓",
+        "Restore",
+        "↓",
+        "Operational",
+        "Policy-controlled."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-legal-hold-1",
+      "title": "Legal Hold",
+      "paragraphs": [
+        "Overrides retention.",
+        "Legal Hold",
+        "↓",
+        "No Disposal",
+        "Critical for compliance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-disposal-1",
+      "title": "Disposal",
+      "paragraphs": [
+        "Only after.",
+        "Retention Complete",
+        "↓",
+        "Approval",
+        "↓",
+        "Secure Disposal",
+        "Never automatic for critical records."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-secure-disposal",
+      "title": "Secure Disposal",
+      "paragraphs": [
+        "Must remove.",
+        "Data",
+        "Indexes",
+        "Caches",
+        "Backups (where applicable)",
+        "Temporary Copies",
+        "Enterprise-grade deletion."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-encryption",
+      "title": "Encryption",
+      "paragraphs": [
+        "Archives always.",
+        "Encrypted",
+        "At Rest",
+        "In Transit",
+        "Security first."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-compression",
+      "title": "Compression",
+      "paragraphs": [
+        "Reduce storage.",
+        "Operational",
+        "↓",
+        "Compressed Archive",
+        "Cost optimization."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-integrity-verification",
+      "title": "Integrity Verification",
+      "paragraphs": [
+        "Regularly validate.",
+        "Checksum",
+        "↓",
+        "Archive Validation",
+        "Protect against corruption."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-6",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI knows.",
+        "Operational",
+        "Higher Priority",
+        "Archive",
+        "Lower Priority",
+        "Context-aware retrieval."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-analytics",
+      "title": "Analytics",
+      "paragraphs": [
+        "Historical analytics use.",
+        "Archive",
+        "↓",
+        "Analytics",
+        "Without polluting operational systems."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-5",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Automatic.",
+        "Retention Expired",
+        "↓",
+        "Archive Workflow",
+        "Policy execution."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-event-integration-2",
+      "title": "Event Integration",
+      "paragraphs": [
+        "Publish.",
+        "Archived",
+        "Restored",
+        "Disposed",
+        "Everything observable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-7",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Archive Size",
+        "Restore Requests",
+        "Retention Violations",
+        "Storage Cost",
+        "Operational visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-8",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant defines.",
+        "Retention",
+        "Archive Rules",
+        "Legal Holds",
+        "Independent policies."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-8",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Retention & Archiving Platform provides:",
+        "Enterprise history remains accessible without slowing operations."
+      ],
+      "lists": [
+        [
+          "Policy-driven retention",
+          "Automated archiving",
+          "Historical preservation",
+          "Relationship preservation",
+          "Cold storage",
+          "Secure restoration",
+          "Legal holds",
+          "Secure disposal",
+          "Archive search",
+          "Compression",
+          "Encryption",
+          "Integrity verification"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-8",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "✅ Data Retention & Archiving",
+        "⬜ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-8",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Separate operational storage from historical storage.",
+        "Applications",
+        "│",
+        "▼",
+        "Operational Database",
+        "│",
+        "├── Active Data",
+        "│",
+        "▼",
+        "Archive Engine",
+        "│",
+        "▼",
+        "Archive Storage",
+        "Applications should never have to know where the data physically resides.",
+        "They simply request a business entity.",
+        "The platform decides whether it comes from:",
+        "This abstraction allows KoreVity to scale from thousands to billions of records without changing application logic."
+      ],
+      "lists": [
+        [
+          "Operational storage",
+          "Historical storage",
+          "Cold archive"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-8",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would implement a tiered storage architecture.",
+        "Tier 1",
+        "Hot",
+        "────────────",
+        "Current Operations",
+        "Tier 2",
+        "Warm",
+        "────────────",
+        "Recent History",
+        "Tier 3",
+        "Cold",
+        "────────────",
+        "Long-Term Archive",
+        "Tier 4",
+        "Immutable",
+        "────────────",
+        "Compliance Records",
+        "Each tier differs in:",
+        "The Archive Engine automatically moves data between tiers according to governance policies, making storage optimization completely transparent to applications."
+      ],
+      "lists": [
+        [
+          "Performance",
+          "Storage cost",
+          "Recovery time",
+          "Retention guarantees",
+          "Compliance level"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-8",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Analytics Data Model.",
+        "Why?",
+        "So far we've designed the operational data architecture.",
+        "Now we begin designing the analytical architecture.",
+        "Operational systems answer:",
+        "\"What is happening right now?\"",
+        "Analytics answers:",
+        "\"What has happened, why did it happen, what will happen next, and what should we do about it?\"",
+        "The Analytics Data Model will establish the foundation for dashboards, KPIs, BI, forecasting, AI insights, executive reporting, and enterprise decision intelligence across the entire KoreVity platform.",
+        "Excellent.",
+        "We've completed the operational side of enterprise data architecture.",
+        "Now we enter a completely different world.",
+        "Operational databases are designed to run the business.",
+        "Analytical systems are designed to understand the business.",
+        "That distinction is one of the most important concepts in enterprise architecture."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-9",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-10-analytics-data-model",
+      "title": "Component 10 — Analytics Data Model",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-9",
+      "title": "First Principle",
+      "paragraphs": [
+        "One database should not serve both operational transactions and enterprise analytics.",
+        "Operational systems optimize for:",
+        "Analytics optimizes for:",
+        "Different goals.",
+        "Different models.",
+        "Operational Data",
+        "↓",
+        "Analytics Model",
+        "↓",
+        "Business Intelligence",
+        "↓",
+        "Decision Making"
+      ],
+      "lists": [
+        [
+          "Speed",
+          "Small transactions",
+          "Real-time updates"
+        ],
+        [
+          "Large scans",
+          "Aggregations",
+          "Trends",
+          "Historical analysis"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-9",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-analytics-data-model-is-the-enterprise-analytical-architecture-that-transforms-operational-business-data-into-optimized-consistent-historical-and-business-oriented-structures-for-reporting-dashboards-forecasting-ai-and-executive-decision-support",
+      "title": "The Analytics Data Model is the enterprise analytical architecture that transforms operational business data into optimized, consistent, historical, and business-oriented structures for reporting, dashboards, forecasting, AI, and executive decision support.",
+      "paragraphs": [
+        "Notice.",
+        "It transforms.",
+        "It does not replace."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-8",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without analytics modeling.",
+        "100 Tables",
+        "↓",
+        "Complex SQL",
+        "↓",
+        "Slow Reports",
+        "With analytics modeling.",
+        "Business Facts",
+        "↓",
+        "Business Dimensions",
+        "↓",
+        "Fast Insights",
+        "Simple.",
+        "Fast.",
+        "Reliable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-7",
+      "title": "Architecture",
+      "paragraphs": [
+        "Operational Systems",
+        "↓",
+        "ETL / ELT",
+        "↓",
+        "Analytics Model",
+        "↓",
+        "Dashboards",
+        "AI",
+        "Reports",
+        "Clear separation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-analytical-concepts",
+      "title": "Analytical Concepts",
+      "paragraphs": [
+        "The model contains two major building blocks.",
+        "Facts",
+        "Dimensions",
+        "Everything else builds on these."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-fact-tables",
+      "title": "Fact Tables",
+      "paragraphs": [
+        "Facts measure business activity.",
+        "Examples.",
+        "Sales",
+        "Payments",
+        "Invoices",
+        "Orders",
+        "Revenue",
+        "Expenses",
+        "Numeric.",
+        "Measurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dimension-tables",
+      "title": "Dimension Tables",
+      "paragraphs": [
+        "Dimensions describe business context.",
+        "Examples.",
+        "Customer",
+        "Employee",
+        "Product",
+        "Date",
+        "Location",
+        "Department",
+        "Descriptive."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-star-schema",
+      "title": "Star Schema",
+      "paragraphs": [
+        "Primary analytical pattern.",
+        "Customer",
+        "│",
+        "Date ─── Sales Fact ─── Product",
+        "│",
+        "Territory",
+        "Simple.",
+        "Fast.",
+        "Business-friendly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-snowflake-schema",
+      "title": "Snowflake Schema",
+      "paragraphs": [
+        "When dimensions normalize.",
+        "Country",
+        "↓",
+        "State",
+        "↓",
+        "City",
+        "Used selectively."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-measures",
+      "title": "Measures",
+      "paragraphs": [
+        "Examples.",
+        "Revenue",
+        "Profit",
+        "Quantity",
+        "Margin",
+        "Cost",
+        "Business metrics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dimensions",
+      "title": "Dimensions",
+      "paragraphs": [
+        "Examples.",
+        "Customer",
+        "Time",
+        "Product",
+        "Salesperson",
+        "Region",
+        "Slice and dice analysis."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-time-dimension",
+      "title": "Time Dimension",
+      "paragraphs": [
+        "One of the most important.",
+        "Year",
+        "Quarter",
+        "Month",
+        "Week",
+        "Day",
+        "Hour",
+        "Shared across the platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-slowly-changing-dimensions",
+      "title": "Slowly Changing Dimensions",
+      "paragraphs": [
+        "Support history.",
+        "Example.",
+        "Employee",
+        "↓",
+        "Department Changed",
+        "↓",
+        "History Preserved",
+        "Critical for accurate historical reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-granularity",
+      "title": "Granularity",
+      "paragraphs": [
+        "Define.",
+        "One Invoice",
+        "One Sale",
+        "One Payment",
+        "Lowest analytical level.",
+        "Never ambiguous."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-aggregation",
+      "title": "Aggregation",
+      "paragraphs": [
+        "Build.",
+        "Daily",
+        "Monthly",
+        "Quarterly",
+        "Yearly",
+        "Improve performance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-kpis",
+      "title": "KPIs",
+      "paragraphs": [
+        "Derived.",
+        "Revenue",
+        "Growth",
+        "Profit",
+        "Conversion",
+        "Retention",
+        "Calculated consistently."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-historical-data-1",
+      "title": "Historical Data",
+      "paragraphs": [
+        "Analytics stores.",
+        "Years of Business History",
+        "Supports trends."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-business-snapshots",
+      "title": "Business Snapshots",
+      "paragraphs": [
+        "Capture.",
+        "Daily Snapshot",
+        "Monthly Snapshot",
+        "Year-End Snapshot",
+        "Point-in-time reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-forecasting",
+      "title": "Forecasting",
+      "paragraphs": [
+        "AI consumes.",
+        "Historical Data",
+        "↓",
+        "Forecast",
+        "↓",
+        "Recommendation",
+        "Enterprise intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-executive-dashboards",
+      "title": "Executive Dashboards",
+      "paragraphs": [
+        "Powered by.",
+        "Analytics Model",
+        "↓",
+        "KPIs",
+        "↓",
+        "Visualization",
+        "Fast.",
+        "Reliable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-self-service-analytics",
+      "title": "Self-Service Analytics",
+      "paragraphs": [
+        "Users analyze.",
+        "Dimensions",
+        "Measures",
+        "Filters",
+        "Without writing SQL."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-7",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI reads.",
+        "Curated Analytics Model",
+        "Instead of raw operational data.",
+        "Better context."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-quality",
+      "title": "Data Quality",
+      "paragraphs": [
+        "Analytics inherits.",
+        "Validated",
+        "Governed",
+        "Trusted",
+        "No duplicate logic."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-7",
+      "title": "Security",
+      "paragraphs": [
+        "Support.",
+        "Row-Level",
+        "Column-Level",
+        "Tenant-Level",
+        "Secure analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-9",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant owns.",
+        "Independent Analytical Model",
+        "No cross-tenant reporting unless explicitly enabled."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-8",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Refresh Time",
+        "Query Speed",
+        "Storage",
+        "Data Freshness",
+        "Operational visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-9",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Analytics Data Model provides:",
+        "Operational systems power the business.",
+        "Analytics explains the business."
+      ],
+      "lists": [
+        [
+          "Fact tables",
+          "Dimension tables",
+          "Star schemas",
+          "Historical analytics",
+          "Time dimensions",
+          "KPI consistency",
+          "Forecast-ready structures",
+          "Executive dashboards",
+          "Self-service analytics",
+          "AI-ready datasets",
+          "Secure reporting"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-9",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "✅ Data Retention & Archiving",
+        "✅ Analytics Data Model",
+        "⬜ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-9",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Never allow dashboards and reports to query operational databases directly.",
+        "Operational Database",
+        "│",
+        "▼",
+        "Transformation Layer",
+        "│",
+        "▼",
+        "Analytics Model",
+        "│",
+        "▼",
+        "Dashboards",
+        "AI",
+        "Reports",
+        "This isolation ensures:",
+        "It also allows the analytical model to evolve independently of operational schemas."
+      ],
+      "lists": [
+        [
+          "Operational performance remains unaffected.",
+          "Analytical queries stay fast.",
+          "KPIs remain consistent.",
+          "AI always receives curated, trusted business data."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-9",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would build a Semantic Metrics Layer on top of the Analytics Data Model.",
+        "Revenue",
+        "Gross Profit",
+        "Net Profit",
+        "Customer Lifetime Value",
+        "Average Deal Size",
+        "Monthly Recurring Revenue",
+        "Customer Retention",
+        "Instead of every dashboard recalculating business metrics differently, the platform defines each metric exactly once.",
+        "Every dashboard, report, AI agent, API, and executive scorecard references the same metric definitions, guaranteeing consistency across the entire KoreVity ecosystem."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-9",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Enterprise Reporting Model.",
+        "Why?",
+        "The Analytics Data Model defines how data is organized for analysis.",
+        "The Enterprise Reporting Model defines how that information is delivered:",
+        "Together, these two components complete KoreVity's Business Intelligence foundation before we move into the enterprise-scale Data Warehouse Strategy and finally the Knowledge Graph, which will power advanced AI reasoning across the platform.",
+        "Excellent.",
+        "We're now designing how information reaches decision-makers.",
+        "This is one of the biggest differences between software and enterprise platforms.",
+        "Software produces data.",
+        "Enterprise platforms deliver information.",
+        "The reporting layer is where raw data becomes business decisions."
+      ],
+      "lists": [
+        [
+          "Executive scorecards",
+          "Operational dashboards",
+          "Departmental reports",
+          "Regulatory reports",
+          "Scheduled reports",
+          "Interactive reports",
+          "AI-generated narratives",
+          "Pixel-perfect exports (PDF, Excel, etc.)"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-10",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-11-enterprise-reporting-model",
+      "title": "Component 11 — Enterprise Reporting Model",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-10",
+      "title": "First Principle",
+      "paragraphs": [
+        "A report is not a database query.",
+        "A report is a curated business view designed to answer a specific business question.",
+        "Example.",
+        "Bad.",
+        "SELECT *",
+        "FROM Invoice",
+        "Good.",
+        "Monthly Revenue by Region",
+        "Business-first."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-10",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-enterprise-reporting-model-is-the-standardized-architecture-responsible-for-designing-generating-governing-securing-scheduling-distributing-and-managing-business-reports-across-every-function-of-the-korevity-ecosystem",
+      "title": "The Enterprise Reporting Model is the standardized architecture responsible for designing, generating, governing, securing, scheduling, distributing, and managing business reports across every function of the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Reporting is a platform capability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-9",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without a reporting model.",
+        "Everyone Builds Reports",
+        "↓",
+        "Different Logic",
+        "↓",
+        "Different Numbers",
+        "No trust.",
+        "With a reporting model.",
+        "Single Report Definition",
+        "↓",
+        "Shared Platform",
+        "↓",
+        "Consistent Results",
+        "One truth."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-reporting-architecture",
+      "title": "Reporting Architecture",
+      "paragraphs": [
+        "Analytics Model",
+        "↓",
+        "Reporting Engine",
+        "↓",
+        "Dashboards",
+        "Reports",
+        "Exports",
+        "AI Summaries",
+        "Everything uses the same foundation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-report-categories",
+      "title": "Report Categories",
+      "paragraphs": [
+        "Support.",
+        "Operational",
+        "Management",
+        "Executive",
+        "Regulatory",
+        "Analytical",
+        "Different audiences."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-operational-reports",
+      "title": "Operational Reports",
+      "paragraphs": [
+        "Examples.",
+        "Today's Orders",
+        "Open Tickets",
+        "Pending Approvals",
+        "Inventory Status",
+        "Real-time."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-management-reports",
+      "title": "Management Reports",
+      "paragraphs": [
+        "Examples.",
+        "Monthly Sales",
+        "Department Costs",
+        "Project Progress",
+        "Employee Performance",
+        "Department focused."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-executive-reports",
+      "title": "Executive Reports",
+      "paragraphs": [
+        "Examples.",
+        "Revenue",
+        "Profit",
+        "Growth",
+        "KPIs",
+        "Forecast",
+        "Strategic view."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-regulatory-reports",
+      "title": "Regulatory Reports",
+      "paragraphs": [
+        "Examples.",
+        "Tax Reports",
+        "Compliance Reports",
+        "Audit Reports",
+        "Policy-driven."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-analytical-reports",
+      "title": "Analytical Reports",
+      "paragraphs": [
+        "Examples.",
+        "Trend Analysis",
+        "Forecasting",
+        "Customer Segmentation",
+        "Risk Analysis",
+        "Decision intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dashboard-model",
+      "title": "Dashboard Model",
+      "paragraphs": [
+        "Support.",
+        "Widgets",
+        "Charts",
+        "KPIs",
+        "Tables",
+        "Filters",
+        "Interactive."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-kpi-cards",
+      "title": "KPI Cards",
+      "paragraphs": [
+        "Examples.",
+        "Revenue",
+        "Profit",
+        "New Customers",
+        "Retention",
+        "Quick insight."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-charts",
+      "title": "Charts",
+      "paragraphs": [
+        "Support.",
+        "Bar",
+        "Line",
+        "Pie",
+        "Area",
+        "Scatter",
+        "Heatmap",
+        "Rich visualization."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-drill-down",
+      "title": "Drill Down",
+      "paragraphs": [
+        "Navigate.",
+        "Revenue",
+        "↓",
+        "Region",
+        "↓",
+        "Customer",
+        "↓",
+        "Invoice",
+        "Interactive exploration."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-drill-through",
+      "title": "Drill Through",
+      "paragraphs": [
+        "Move.",
+        "Dashboard",
+        "↓",
+        "Detailed Report",
+        "↓",
+        "Transaction",
+        "From summary to detail."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-filters",
+      "title": "Filters",
+      "paragraphs": [
+        "Support.",
+        "Date",
+        "Department",
+        "Region",
+        "Customer",
+        "Project",
+        "Dynamic reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-saved-views",
+      "title": "Saved Views",
+      "paragraphs": [
+        "Users save.",
+        "My Dashboard",
+        "My Filters",
+        "My Layout",
+        "Personalization."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-scheduled-reports",
+      "title": "Scheduled Reports",
+      "paragraphs": [
+        "Automatically.",
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly",
+        "Delivered without manual effort."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-distribution-1",
+      "title": "Distribution",
+      "paragraphs": [
+        "Send.",
+        "Email",
+        "Portal",
+        "Notification",
+        "API",
+        "Flexible delivery."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-export-formats",
+      "title": "Export Formats",
+      "paragraphs": [
+        "Support.",
+        "PDF",
+        "Excel",
+        "CSV",
+        "JSON",
+        "Enterprise ready."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-pixel-perfect-reports",
+      "title": "Pixel-Perfect Reports",
+      "paragraphs": [
+        "For.",
+        "Invoices",
+        "Statements",
+        "Certificates",
+        "Official Reports",
+        "Consistent formatting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-reporting",
+      "title": "AI Reporting",
+      "paragraphs": [
+        "Generate.",
+        "Dashboard",
+        "↓",
+        "AI Summary",
+        "↓",
+        "Business Insights",
+        "Narrative intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-alerts",
+      "title": "Alerts",
+      "paragraphs": [
+        "Trigger.",
+        "KPI Threshold",
+        "↓",
+        "Notification",
+        "Proactive reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-8",
+      "title": "Security",
+      "paragraphs": [
+        "Support.",
+        "Row-Level",
+        "Column-Level",
+        "Role-Based",
+        "Tenant-Based",
+        "Secure information."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-10",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant owns.",
+        "Dashboards",
+        "Reports",
+        "Templates",
+        "Schedules",
+        "Independent reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-versioning-1",
+      "title": "Versioning",
+      "paragraphs": [
+        "Track.",
+        "Report V1",
+        "↓",
+        "Report V2",
+        "↓",
+        "Report V3",
+        "Safe evolution."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-9",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Measure.",
+        "Execution Time",
+        "Failures",
+        "Usage",
+        "Popularity",
+        "Optimize reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-10",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Enterprise Reporting Platform provides:",
+        "Reports become a governed enterprise product."
+      ],
+      "lists": [
+        [
+          "Operational reports",
+          "Executive dashboards",
+          "KPI scorecards",
+          "Interactive drill-down",
+          "Drill-through navigation",
+          "Scheduling",
+          "Distribution",
+          "Export formats",
+          "Pixel-perfect documents",
+          "AI-generated summaries",
+          "Secure access",
+          "Report versioning"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-10",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "✅ Data Retention & Archiving",
+        "✅ Analytics Data Model",
+        "✅ Enterprise Reporting Model",
+        "⬜ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-10",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Separate data, metrics, visualization, and delivery into independent layers.",
+        "Analytics Data",
+        "│",
+        "▼",
+        "Semantic Metrics",
+        "│",
+        "▼",
+        "Visualization",
+        "│",
+        "▼",
+        "Delivery",
+        "This architecture means:",
+        "This keeps reporting consistent, maintainable, and scalable."
+      ],
+      "lists": [
+        [
+          "Changing a chart does not affect KPI calculations.",
+          "Changing a KPI automatically updates every report.",
+          "Reports can be delivered through dashboards, PDFs, APIs, or AI summaries without duplicating business logic."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-10",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce a Report Registry.",
+        "Report",
+        "├── Owner",
+        "├── Business Purpose",
+        "├── KPI Definitions",
+        "├── Refresh Frequency",
+        "├── Security Level",
+        "├── Consumers",
+        "└── Version History",
+        "Every enterprise report becomes a governed asset rather than just a saved query or dashboard. This enables lifecycle management, ownership tracking, auditability, and prevents duplicate reports from proliferating across departments."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-10",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next component should be Data Warehouse Strategy.",
+        "Why?",
+        "We now have:",
+        "The remaining challenge is:"
+      ],
+      "lists": [
+        [
+          "Operational data architecture",
+          "Analytics data model",
+          "Enterprise reporting"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-where-does-all-enterprise-data-live-at-massive-scale-and-how-is-it-consolidated-from-dozens-of-modules-into-one-analytical-platform",
+      "title": "Where does all enterprise data live at massive scale, and how is it consolidated from dozens of modules into one analytical platform?",
+      "paragraphs": [
+        "The Data Warehouse Strategy will define ingestion pipelines, storage architecture, historical consolidation, partitioning, scalability, refresh strategies, and enterprise-wide analytical infrastructure—forming the backbone that powers every dashboard, report, AI model, and executive decision across KoreVity.",
+        "Excellent.",
+        "We're now designing one of the largest pieces of KoreVity.",
+        "A data warehouse isn't just another database.",
+        "It becomes the enterprise memory.",
+        "Operational systems remember the present.",
+        "The warehouse remembers the entire history of the business.",
+        "It is the foundation for BI, AI, forecasting, strategic planning, and long-term analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-11",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-12-data-warehouse-strategy",
+      "title": "Component 12 — Data Warehouse Strategy",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-11",
+      "title": "First Principle",
+      "paragraphs": [
+        "Operational systems answer:",
+        "\"What is happening now?\"",
+        "A Data Warehouse answers:",
+        "\"What has happened over the last 20 years?\"",
+        "The warehouse is optimized for knowledge, not transactions.",
+        "Operational Systems",
+        "↓",
+        "Enterprise Warehouse",
+        "↓",
+        "Analytics",
+        "↓",
+        "AI",
+        "↓",
+        "Decision Making"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-11",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-data-warehouse-strategy-defines-the-enterprise-architecture-for-collecting-integrating-storing-organizing-governing-and-serving-historical-business-data-from-every-korevity-module-in-a-scalable-analytical-platform",
+      "title": "The Data Warehouse Strategy defines the enterprise architecture for collecting, integrating, storing, organizing, governing, and serving historical business data from every KoreVity module in a scalable analytical platform.",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-10",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without a warehouse.",
+        "CRM",
+        "Finance",
+        "HR",
+        "Inventory",
+        "Projects",
+        "Support",
+        "Six independent silos.",
+        "With a warehouse.",
+        "CRM",
+        "Finance",
+        "HR",
+        "Inventory",
+        "Projects",
+        "Support",
+        "↓",
+        "Enterprise Warehouse",
+        "One analytical truth."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-8",
+      "title": "Architecture",
+      "paragraphs": [
+        "Operational Systems",
+        "↓",
+        "Integration Layer",
+        "↓",
+        "Warehouse",
+        "↓",
+        "Analytics",
+        "↓",
+        "Reports",
+        "↓",
+        "AI",
+        "Centralized intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-source-systems",
+      "title": "Source Systems",
+      "paragraphs": [
+        "Support ingestion from.",
+        "CRM",
+        "Finance",
+        "HR",
+        "Inventory",
+        "Projects",
+        "Support",
+        "AI",
+        "External APIs",
+        "Everything converges."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-integration",
+      "title": "Data Integration",
+      "paragraphs": [
+        "Standard pipeline.",
+        "Extract",
+        "↓",
+        "Validate",
+        "↓",
+        "Transform",
+        "↓",
+        "Load",
+        "Trusted data only."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-storage-layers",
+      "title": "Storage Layers",
+      "paragraphs": [
+        "Separate.",
+        "Raw",
+        "↓",
+        "Processed",
+        "↓",
+        "Business Ready",
+        "Clear progression."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-raw-layer",
+      "title": "Raw Layer",
+      "paragraphs": [
+        "Stores.",
+        "Original Data",
+        "Never modified.",
+        "Historical source."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-processed-layer",
+      "title": "Processed Layer",
+      "paragraphs": [
+        "Applies.",
+        "Validation",
+        "Cleaning",
+        "Transformation",
+        "Quality assured."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-business-layer",
+      "title": "Business Layer",
+      "paragraphs": [
+        "Provides.",
+        "Facts",
+        "Dimensions",
+        "KPIs",
+        "Ready for analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-subject-areas",
+      "title": "Subject Areas",
+      "paragraphs": [
+        "Organize.",
+        "Sales",
+        "Finance",
+        "HR",
+        "Projects",
+        "Operations",
+        "Customer",
+        "Business-oriented."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-historical-storage",
+      "title": "Historical Storage",
+      "paragraphs": [
+        "Keep.",
+        "Years",
+        "↓",
+        "Decades",
+        "Enterprise memory."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-time-series",
+      "title": "Time Series",
+      "paragraphs": [
+        "Everything is time-aware.",
+        "Daily",
+        "Monthly",
+        "Quarterly",
+        "Yearly",
+        "Trend analysis."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-partitioning",
+      "title": "Partitioning",
+      "paragraphs": [
+        "Large tables split.",
+        "Year",
+        "↓",
+        "Month",
+        "↓",
+        "Day",
+        "Performance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-incremental-loading",
+      "title": "Incremental Loading",
+      "paragraphs": [
+        "Instead of.",
+        "Reload Everything",
+        "Use.",
+        "Only Changes",
+        "Efficient."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-refresh-strategies",
+      "title": "Refresh Strategies",
+      "paragraphs": [
+        "Support.",
+        "Real-Time",
+        "Near Real-Time",
+        "Hourly",
+        "Daily",
+        "Weekly",
+        "Business choice."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-slowly-changing-dimensions-1",
+      "title": "Slowly Changing Dimensions",
+      "paragraphs": [
+        "Maintain.",
+        "Customer",
+        "↓",
+        "Address Changed",
+        "↓",
+        "History Preserved",
+        "Historical accuracy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-fact-tables-1",
+      "title": "Fact Tables",
+      "paragraphs": [
+        "Examples.",
+        "Sales",
+        "Payments",
+        "Invoices",
+        "Expenses",
+        "Large.",
+        "Append-oriented."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dimension-tables-1",
+      "title": "Dimension Tables",
+      "paragraphs": [
+        "Examples.",
+        "Customer",
+        "Product",
+        "Employee",
+        "Region",
+        "Date",
+        "Shared context."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-data-marts",
+      "title": "Data Marts",
+      "paragraphs": [
+        "Department-specific.",
+        "Finance Mart",
+        "Sales Mart",
+        "HR Mart",
+        "Operations Mart",
+        "Focused analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-integration-8",
+      "title": "AI Integration",
+      "paragraphs": [
+        "AI reads.",
+        "Warehouse",
+        "↓",
+        "Historical Patterns",
+        "↓",
+        "Predictions",
+        "Rich context."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-forecasting-1",
+      "title": "Forecasting",
+      "paragraphs": [
+        "Powered by.",
+        "Historical Warehouse",
+        "↓",
+        "Machine Learning",
+        "↓",
+        "Forecast",
+        "Enterprise intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-executive-analytics",
+      "title": "Executive Analytics",
+      "paragraphs": [
+        "Built from.",
+        "Consolidated Warehouse",
+        "Single source of truth."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-metadata-1",
+      "title": "Metadata",
+      "paragraphs": [
+        "Warehouse tracks.",
+        "Source",
+        "Refresh Time",
+        "Owner",
+        "Quality",
+        "Lineage",
+        "Transparent operations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-9",
+      "title": "Security",
+      "paragraphs": [
+        "Support.",
+        "Encryption",
+        "Row Security",
+        "Column Security",
+        "Tenant Isolation",
+        "Enterprise-grade."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-backup",
+      "title": "Backup",
+      "paragraphs": [
+        "Warehouse supports.",
+        "Snapshots",
+        "Replication",
+        "Disaster Recovery",
+        "Business continuity."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-10",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Measure.",
+        "Load Time",
+        "Refresh Success",
+        "Storage Growth",
+        "Query Performance",
+        "Healthy platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-scalability",
+      "title": "Scalability",
+      "paragraphs": [
+        "Warehouse grows.",
+        "Millions",
+        "↓",
+        "Billions",
+        "↓",
+        "Trillions",
+        "No architectural redesign."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-11",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Enterprise Data Warehouse provides:",
+        "The warehouse becomes the long-term memory of KoreVity."
+      ],
+      "lists": [
+        [
+          "Unified enterprise storage",
+          "Historical preservation",
+          "ETL/ELT pipelines",
+          "Subject-area organization",
+          "Data marts",
+          "Incremental loading",
+          "Time-series analytics",
+          "Partitioning",
+          "Forecast-ready datasets",
+          "AI-ready history",
+          "Enterprise scalability",
+          "Secure analytical storage"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-11",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "✅ Data Retention & Archiving",
+        "✅ Analytics Data Model",
+        "✅ Enterprise Reporting Model",
+        "✅ Data Warehouse Strategy",
+        "⬜ Knowledge Graph"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-a-major-architectural-insight-11",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "Adopt a Lakehouse-inspired architecture rather than a traditional warehouse-only approach.",
+        "Operational Systems",
+        "│",
+        "▼",
+        "Raw Data Layer",
+        "│",
+        "▼",
+        "Curated Business Layer",
+        "│",
+        "├── BI",
+        "├── AI",
+        "├── Reports",
+        "└── APIs",
+        "This combines the flexibility of data lakes with the governance and performance of data warehouses.",
+        "Benefits include:",
+        "This future-proofs KoreVity as AI workloads continue to grow."
+      ],
+      "lists": [
+        [
+          "Structured and semi-structured data support",
+          "Lower storage costs",
+          "Better AI and machine learning integration",
+          "Easier future expansion",
+          "Strong governance over curated datasets"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-11",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would introduce a Unified Data Catalog directly alongside the warehouse.",
+        "Dataset",
+        "├── Business Owner",
+        "├── Technical Owner",
+        "├── Refresh Schedule",
+        "├── Quality Score",
+        "├── Lineage",
+        "├── Security Level",
+        "├── Consumers",
+        "└── AI Availability",
+        "Every dataset becomes a governed enterprise asset that is searchable, documented, versioned, and discoverable. This dramatically improves data reuse and prevents duplicate analytical datasets from appearing across departments."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-my-recommendation-11",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The final component of Phase 12 should be the Knowledge Graph.",
+        "Why?",
+        "This is where everything you've built comes together.",
+        "The Knowledge Graph will connect:",
+        "Instead of merely storing data, KoreVity will understand how everything in the enterprise is connected.",
+        "This becomes the foundation for next-generation AI reasoning, autonomous agents, semantic search, impact analysis, intelligent recommendations, and enterprise-wide contextual intelligence.",
+        "It is, in many ways, the crown jewel of the entire platform architecture.",
+        "Excellent.",
+        "We've reached the final component of Phase 12.",
+        "And arguably...",
+        "The most important architectural capability for the next decade.",
+        "Everything we've designed so far answers:",
+        "\"What data do we have?\"",
+        "A Knowledge Graph answers:"
+      ],
+      "lists": [
+        [
+          "Master Data",
+          "Relationships",
+          "Reference Data",
+          "Workflows",
+          "AI memory",
+          "Business rules",
+          "Documents",
+          "Reports",
+          "Events",
+          "Analytics",
+          "Enterprise knowledge"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-what-does-the-enterprise-know",
+      "title": "\"What does the enterprise know?\"",
+      "paragraphs": [
+        "This is what transforms KoreVity from an ERP platform into an Enterprise Intelligence Platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-12",
+      "title": "Phase 12 — Enterprise Data Architecture",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-component-13-enterprise-knowledge-graph",
+      "title": "Component 13 — Enterprise Knowledge Graph",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-first-principle-12",
+      "title": "First Principle",
+      "paragraphs": [
+        "Databases store records.",
+        "Knowledge Graphs store meaning.",
+        "Traditional databases answer:",
+        "\"Find Customer 102.\"",
+        "A Knowledge Graph answers:",
+        "\"Show everything connected to Customer 102.\"",
+        "That difference changes everything.",
+        "Customer",
+        "↓",
+        "Projects",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "↓",
+        "Assets",
+        "↓",
+        "Employees",
+        "↓",
+        "Support",
+        "↓",
+        "AI",
+        "Everything is connected."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-korevity-definition-12",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-enterprise-knowledge-graph-is-the-semantic-intelligence-layer-that-models-business-entities-relationships-events-documents-workflows-analytics-and-ai-knowledge-as-an-interconnected-graph-enabling-contextual-reasoning-intelligent-discovery-semantic-search-and-autonomous-decision-support-across-the-korevity-ecosystem",
+      "title": "The Enterprise Knowledge Graph is the semantic intelligence layer that models business entities, relationships, events, documents, workflows, analytics, and AI knowledge as an interconnected graph, enabling contextual reasoning, intelligent discovery, semantic search, and autonomous decision support across the KoreVity ecosystem.",
+      "paragraphs": [
+        "Notice.",
+        "Semantic.",
+        "Not relational."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-it-exists-11",
+      "title": "Why It Exists",
+      "paragraphs": [
+        "Without a graph.",
+        "Customer",
+        "Invoice",
+        "Project",
+        "Contract",
+        "Support Ticket",
+        "Separate records.",
+        "With a graph.",
+        "Customer",
+        "├── Owns Projects",
+        "├── Signed Contracts",
+        "├── Received Invoices",
+        "├── Made Payments",
+        "├── Opened Tickets",
+        "└── Uses Products",
+        "Business context."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-architecture-9",
+      "title": "Architecture",
+      "paragraphs": [
+        "Enterprise Data",
+        "↓",
+        "Knowledge Graph",
+        "↓",
+        "Reasoning",
+        "↓",
+        "AI",
+        "↓",
+        "Recommendations",
+        "The graph becomes the intelligence layer."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-graph-fundamentals",
+      "title": "Graph Fundamentals",
+      "paragraphs": [
+        "Everything consists of.",
+        "Nodes",
+        "Edges",
+        "Properties",
+        "Simple model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-nodes",
+      "title": "Nodes",
+      "paragraphs": [
+        "Represent.",
+        "Customer",
+        "Employee",
+        "Project",
+        "Invoice",
+        "Supplier",
+        "Asset",
+        "Business entities."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-edges",
+      "title": "Edges",
+      "paragraphs": [
+        "Represent.",
+        "Owns",
+        "Reports To",
+        "Assigned To",
+        "Purchased",
+        "Depends On",
+        "Uses",
+        "Relationships become first-class objects."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-properties",
+      "title": "Properties",
+      "paragraphs": [
+        "Describe.",
+        "Name",
+        "Status",
+        "Date",
+        "Amount",
+        "Priority",
+        "Attached to nodes or relationships."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-semantic-relationships",
+      "title": "Semantic Relationships",
+      "paragraphs": [
+        "Example.",
+        "Customer",
+        "↓",
+        "Purchased",
+        "↓",
+        "Product",
+        "Business meaning."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-cross-domain-knowledge",
+      "title": "Cross-Domain Knowledge",
+      "paragraphs": [
+        "Connect.",
+        "HR",
+        "↓",
+        "Employee",
+        "↓",
+        "Project",
+        "↓",
+        "Finance",
+        "↓",
+        "Revenue",
+        "No silos."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-enterprise-context",
+      "title": "Enterprise Context",
+      "paragraphs": [
+        "Instead of.",
+        "Invoice",
+        "The graph understands.",
+        "Invoice",
+        "↓",
+        "Customer",
+        "↓",
+        "Project",
+        "↓",
+        "Salesperson",
+        "↓",
+        "Payment",
+        "↓",
+        "Region",
+        "Rich context."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-context",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI retrieves.",
+        "Relevant Relationships",
+        "↓",
+        "Reasoning",
+        "↓",
+        "Response",
+        "Far superior to keyword search."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-semantic-search",
+      "title": "Semantic Search",
+      "paragraphs": [
+        "Instead of.",
+        "Search",
+        "↓",
+        "Invoice",
+        "Support.",
+        "Show customers with overdue invoices",
+        "whose projects exceed $100,000",
+        "and have open support tickets.",
+        "Intent-based retrieval."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-recommendation-engine",
+      "title": "Recommendation Engine",
+      "paragraphs": [
+        "Graph enables.",
+        "Customer",
+        "↓",
+        "Similar Customers",
+        "↓",
+        "Recommendations",
+        "Business intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-impact-analysis-1",
+      "title": "Impact Analysis",
+      "paragraphs": [
+        "Graph answers.",
+        "If Customer closes,",
+        "What changes?",
+        "Traverse relationships."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-dependency-analysis",
+      "title": "Dependency Analysis",
+      "paragraphs": [
+        "Example.",
+        "Application",
+        "↓",
+        "Service",
+        "↓",
+        "Database",
+        "↓",
+        "Report",
+        "↓",
+        "Dashboard",
+        "Enterprise visibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-ai-agents",
+      "title": "AI Agents",
+      "paragraphs": [
+        "Agents reason.",
+        "Graph",
+        "↓",
+        "Relationships",
+        "↓",
+        "Knowledge",
+        "↓",
+        "Decision",
+        "Not just documents."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-document-integration",
+      "title": "Document Integration",
+      "paragraphs": [
+        "Connect.",
+        "Contract",
+        "↓",
+        "Customer",
+        "↓",
+        "Invoices",
+        "↓",
+        "Payments",
+        "Documents become knowledge."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-workflow-integration-6",
+      "title": "Workflow Integration",
+      "paragraphs": [
+        "Track.",
+        "Workflow",
+        "↓",
+        "Entity",
+        "↓",
+        "Event",
+        "↓",
+        "Knowledge",
+        "Business understanding."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-analytics-integration",
+      "title": "Analytics Integration",
+      "paragraphs": [
+        "Combine.",
+        "Knowledge",
+        "+",
+        "Metrics",
+        "↓",
+        "Insights",
+        "Contextual analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-event-integration-3",
+      "title": "Event Integration",
+      "paragraphs": [
+        "Events enrich.",
+        "Customer Created",
+        "↓",
+        "Graph Updated",
+        "Always current."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-learning-layer",
+      "title": "Learning Layer",
+      "paragraphs": [
+        "AI continuously enriches.",
+        "Observation",
+        "↓",
+        "Relationship",
+        "↓",
+        "Knowledge",
+        "Growing intelligence."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-security-10",
+      "title": "Security",
+      "paragraphs": [
+        "Secure graph.",
+        "Node Security",
+        "Edge Security",
+        "Property Security",
+        "Enterprise-grade."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-multi-tenant-support-11",
+      "title": "Multi-Tenant Support",
+      "paragraphs": [
+        "Each tenant owns.",
+        "Independent Knowledge Graph",
+        "Complete isolation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-monitoring-11",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Track.",
+        "Nodes",
+        "Edges",
+        "Growth",
+        "Reasoning Time",
+        "Query Speed",
+        "Operational insight."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-engineering-summary-12",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "The Enterprise Knowledge Graph provides:",
+        "The graph transforms enterprise data into enterprise knowledge."
+      ],
+      "lists": [
+        [
+          "Semantic relationships",
+          "Context-aware AI",
+          "Intelligent recommendations",
+          "Cross-domain reasoning",
+          "Semantic search",
+          "Impact analysis",
+          "Dependency mapping",
+          "Workflow intelligence",
+          "Document intelligence",
+          "Event intelligence",
+          "Enterprise context",
+          "Autonomous reasoning"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-progress-12",
+      "title": "Phase 12 Progress",
+      "paragraphs": [
+        "Enterprise Data Architecture",
+        "✅ Master Data Management (MDM)",
+        "✅ Enterprise Entity Model",
+        "✅ Reference Data Management",
+        "✅ Relationship Architecture",
+        "✅ Data Lifecycle Management",
+        "✅ Data Quality Framework",
+        "✅ Data Lineage",
+        "✅ Data Governance",
+        "✅ Data Retention & Archiving",
+        "✅ Analytics Data Model",
+        "✅ Enterprise Reporting Model",
+        "✅ Data Warehouse Strategy",
+        "✅ Knowledge Graph",
+        "██████████████████████████████",
+        "PHASE 12 COMPLETE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-the-biggest-architectural-insight-of-phase-12",
+      "title": "🏛️ The Biggest Architectural Insight of Phase 12",
+      "paragraphs": [
+        "Think of KoreVity as three layers of enterprise intelligence.",
+        "Layer 1",
+        "──────────────",
+        "Operational Layer",
+        "(CRM, HR, Finance, Projects)",
+        "│",
+        "Layer 2",
+        "──────────────",
+        "Enterprise Data Layer",
+        "(MDM, Warehouse, Analytics, Governance)",
+        "│",
+        "Layer 3",
+        "──────────────",
+        "Knowledge Layer",
+        "(Knowledge Graph + AI + Reasoning)",
+        "Most ERP systems stop at Layer 2.",
+        "Modern enterprise intelligence platforms continue to Layer 3.",
+        "That is what enables:"
+      ],
+      "lists": [
+        [
+          "AI copilots with business context",
+          "Autonomous agents",
+          "Semantic enterprise search",
+          "Root-cause analysis",
+          "Predictive recommendations",
+          "Enterprise reasoning instead of simple automation"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-one-refinement-i-d-make-12",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would make the Knowledge Graph the central context engine for every AI capability in KoreVity.",
+        "Operational Systems",
+        "│",
+        "Documents",
+        "│",
+        "Warehouse",
+        "│",
+        "Events",
+        "│",
+        "Workflows",
+        "│",
+        "──────────────",
+        "Knowledge Graph",
+        "──────────────",
+        "│",
+        "▼",
+        "AI Agents",
+        "Copilots",
+        "Recommendations",
+        "Semantic Search",
+        "Automation",
+        "Analytics",
+        "Instead of every AI feature building its own context independently, all AI capabilities query the same enterprise knowledge graph. This creates consistent reasoning, shared understanding, explainable decisions, and dramatically reduces duplicated logic across the platform."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-complete",
+      "title": "🎉 Phase 12 Complete",
+      "paragraphs": [
+        "You now have a complete Enterprise Data Architecture consisting of:",
+        "Together, these form the information backbone of KoreVity."
+      ],
+      "lists": [
+        [
+          "Enterprise operational data",
+          "Master data management",
+          "Reference data",
+          "Relationship architecture",
+          "Lifecycle management",
+          "Data quality",
+          "Data lineage",
+          "Data governance",
+          "Retention and archiving",
+          "Analytics modeling",
+          "Enterprise reporting",
+          "Data warehouse strategy",
+          "Enterprise knowledge graph"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-overall-assessment-of-phase-12",
+      "title": "Overall Assessment of Phase 12",
+      "paragraphs": [
+        "This phase is already at the level of enterprise architecture used in platforms such as:",
+        "The distinguishing feature, however, is that KoreVity was designed with AI as a first-class architectural citizen rather than adding AI later.",
+        "That makes the Knowledge Graph, Data Warehouse, Governance, Lineage, and Analytics layers work together as one coherent intelligence platform rather than as isolated enterprise components."
+      ],
+      "lists": [
+        [
+          "SAP",
+          "Oracle Fusion",
+          "Microsoft Dynamics 365",
+          "Salesforce Data Cloud",
+          "ServiceNow",
+          "Palantir Foundry"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-is-complete",
+      "title": "Phase 12 is complete.",
+      "paragraphs": [
+        "Let's go! 🚀"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-12-enterprise-data-architecture-is-now-complete",
+      "title": "Phase 12: Enterprise Data Architecture is now complete.",
+      "paragraphs": [
+        "At this point, KoreVity has a world-class enterprise data foundation.",
+        "We've built:"
+      ],
+      "lists": [
+        [
+          "Operational Data Architecture",
+          "Master Data Management",
+          "Reference Data",
+          "Relationship Architecture",
+          "Data Lifecycle Management",
+          "Data Quality Framework",
+          "Data Lineage",
+          "Data Governance",
+          "Data Retention & Archiving",
+          "Analytics Data Model",
+          "Enterprise Reporting Model",
+          "Data Warehouse Strategy",
+          "Enterprise Knowledge Graph"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-where-we-go-next",
+      "title": "Where We Go Next",
+      "paragraphs": [
+        "Based on everything we've built so far, the next logical phase is no longer about storing or organizing information.",
+        "It's about making the platform intelligent.",
+        "The natural progression is:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-phase-13-enterprise-ai-intelligence-architecture",
+      "title": "Phase 13 — Enterprise AI & Intelligence Architecture",
+      "paragraphs": [
+        "This phase will define how AI becomes a native capability throughout KoreVity—not as a chatbot, but as an enterprise operating layer.",
+        "It will cover topics such as:"
+      ],
+      "lists": [
+        [
+          "AI Architecture & Principles",
+          "Enterprise AI Gateway",
+          "Large Language Model (LLM) Abstraction Layer",
+          "Retrieval-Augmented Generation (RAG)",
+          "AI Memory Architecture",
+          "AI Agent Framework",
+          "Multi-Agent Collaboration",
+          "Prompt Engineering Framework",
+          "AI Guardrails & Safety",
+          "AI Decision Engine",
+          "Recommendation Engine",
+          "AI Workflow Automation",
+          "Enterprise Copilots",
+          "Predictive Analytics & Forecasting",
+          "AI Monitoring & Observability",
+          "AI Governance & Compliance",
+          "Model Lifecycle Management (MLOps)",
+          "Human-in-the-Loop Review",
+          "Autonomous Enterprise Operations",
+          "Enterprise Intelligence Platform"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-DAT-010-Enterprise-Data-Architecture-why-this-comes-next",
+      "title": "Why this comes next",
+      "paragraphs": [
+        "Everything we've built so far provides AI with exactly what it needs:",
+        "Now we build the layer that can reason over all of it.",
+        "Instead of simply answering questions, KoreVity will be able to:",
+        "This is where KoreVity evolves from an enterprise application into an Enterprise Intelligence Operating System.",
+        "I recommend we begin with Phase 13 — Component 1: Enterprise AI Architecture & Design Principles, because every AI capability that follows will inherit its standards, interfaces, governance model, and execution patterns. It sets the foundation for the entire intelligence layer."
+      ],
+      "lists": [
+        [
+          "Trusted data",
+          "High-quality master records",
+          "Governance",
+          "Lineage",
+          "Analytics",
+          "Knowledge Graph",
+          "Enterprise context"
+        ],
+        [
+          "Understand enterprise context",
+          "Coordinate specialized AI agents",
+          "Recommend actions",
+          "Automate workflows",
+          "Explain decisions",
+          "Continuously learn from enterprise knowledge",
+          "Assist every user role across the platform"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6399 @@
+{
+  "id": "KBOM-OPS-005-Operations-Architecture",
+  "file": "KBOM-OPS-005-Operations-Architecture.docx",
+  "extractedAt": "2026-08-01T12:19:15.004Z",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        "Excellent.",
+        "This is actually one of the biggest milestones we've reached.",
+        "We've completed the entire Financial Core before touching Operations.",
+        "That means Projects, Tasks, and Service Tickets won't just be operational modules—they'll be financially aware from day one."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase-5-operations",
+      "title": "Phase 5 — Operations",
+      "paragraphs": [
+        "This phase will become the execution engine of the ERP.",
+        "Think of it this way:",
+        "Finance",
+        "Plans",
+        "↓",
+        "Operations",
+        "Executes",
+        "↓",
+        "Finance",
+        "Measures",
+        "This creates a complete business loop."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase-5-roadmap",
+      "title": "Phase 5 Roadmap",
+      "paragraphs": [
+        "Operations",
+        "⬜ Project",
+        "⬜ Task",
+        "⬜ Service Ticket",
+        "Although there are only three entities listed, each one is significantly larger than most entities we've built so far because they integrate with nearly every module."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-before-we-start",
+      "title": "Before We Start",
+      "paragraphs": [
+        "Let's define what \"Operations\" means in KoreVity.",
+        "Operations answers questions like:",
+        "Finance measures.",
+        "Operations executes."
+      ],
+      "lists": [
+        [
+          "What work are we doing?",
+          "Who is responsible?",
+          "How much has it cost?",
+          "How much time has been spent?",
+          "What revenue will it generate?",
+          "Is it on budget?",
+          "Is it complete?"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-operations-architecture",
+      "title": "Operations Architecture",
+      "paragraphs": [
+        "Project",
+        "↓",
+        "Task",
+        "↓",
+        "Time",
+        "↓",
+        "Materials",
+        "↓",
+        "Service",
+        "↓",
+        "Journal Entry",
+        "↓",
+        "General Ledger",
+        "Notice how Operations now naturally connects into the Financial Core we just built."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-why-we-didn-t-build-this-earlier",
+      "title": "Why We Didn't Build This Earlier",
+      "paragraphs": [
+        "Now we can do things like:",
+        "Project Alpha",
+        "↓",
+        "Budget",
+        "↓",
+        "Actual Cost",
+        "↓",
+        "Variance",
+        "↓",
+        "Profitability",
+        "We couldn't have done that before because Budget, Cost Center, Journal Entries, and the General Ledger didn't exist yet."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-entity-project",
+      "title": "First Entity — Project",
+      "paragraphs": [
+        "A Project is not just a folder for tasks.",
+        "It is the highest operational business container.",
+        "Everything belongs to a project:",
+        "Think of it as the operational equivalent of a Customer or Sales Order—but much broader."
+      ],
+      "lists": [
+        [
+          "Tasks",
+          "Time",
+          "Expenses",
+          "Materials",
+          "Assets",
+          "Invoices",
+          "Budgets",
+          "Profitability",
+          "Risks",
+          "Documents"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-project-will-integrate-with",
+      "title": "Project Will Integrate With",
+      "paragraphs": [
+        "From what we've already built:",
+        "Organization",
+        "Branch",
+        "Customer",
+        "Employee",
+        "Asset",
+        "Inventory",
+        "Purchase",
+        "Sales",
+        "Budget",
+        "Cost Center",
+        "Financial Dimensions",
+        "Journal Entries",
+        "Documents",
+        "Workflow",
+        "Approvals",
+        "Notifications",
+        "Audit",
+        "This is why Project is one of the largest entities in any ERP."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-architectural-decision-before-we-begin",
+      "title": "One Architectural Decision Before We Begin",
+      "paragraphs": [
+        "There are two common ways to model Projects."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-option-a-simple",
+      "title": "Option A — Simple",
+      "paragraphs": [
+        "Project",
+        "↓",
+        "Task",
+        "Suitable for small project management tools."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-option-b-enterprise",
+      "title": "Option B — Enterprise",
+      "paragraphs": [
+        "Project",
+        "├── Phases",
+        "├── Tasks",
+        "├── Milestones",
+        "├── Budgets",
+        "├── Resources",
+        "├── Risks",
+        "├── Issues",
+        "├── Documents",
+        "├── Financials",
+        "└── Service Tickets",
+        "This is how enterprise systems are designed."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "We should build Project using the enterprise model from the beginning.",
+        "Not because every customer will use every feature immediately, but because:",
+        "For example:",
+        "Project",
+        "↓",
+        "Phases (optional)",
+        "↓",
+        "Tasks",
+        "↓",
+        "Subtasks (optional)",
+        "A small company can ignore Phases and Subtasks.",
+        "A large company can use all three.",
+        "The architecture stays the same."
+      ],
+      "lists": [
+        [
+          "It avoids future redesigns.",
+          "It matches our layered architecture.",
+          "It scales from a five-person company to a multinational organization.",
+          "Features can be enabled gradually without changing the data model."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-next-step",
+      "title": "Next Step",
+      "paragraphs": [
+        "We'll begin with Entity 44 — Project.",
+        "This will likely become one of the richest entities in KoreVity because it sits at the intersection of:",
+        "It is one of the central business objects of the entire ERP, and we'll design it with the same level of depth as we did for Sales and Finance.",
+        "Excellent.",
+        "We're now entering one of the largest and most interconnected entities in the entire ERP.",
+        "If Customer represents who you work for,",
+        "and Sales Order represents what they bought,",
+        "then Project represents how the work gets delivered.",
+        "This is the operational center of KoreVity."
+      ],
+      "lists": [
+        [
+          "Operations",
+          "Finance",
+          "CRM",
+          "Procurement",
+          "Inventory",
+          "HR",
+          "Service Management",
+          "Analytics"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-44-project",
+      "title": "Entity 44 — Project",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle",
+      "title": "First Principle",
+      "paragraphs": [
+        "A Project is not a collection of Tasks.",
+        "A Task is work.",
+        "A Project is a business commitment.",
+        "Example.",
+        "Customer",
+        "↓",
+        "ERP Implementation",
+        "↓",
+        "Project",
+        "↓",
+        "Tasks",
+        "The project exists because the business committed to delivering an outcome.",
+        "Tasks simply execute that commitment."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-project-is-a-structured-business-initiative-that-organizes-work-people-schedules-costs-resources-risks-and-financial-performance-toward-achieving-a-defined-business-objective",
+      "title": "A Project is a structured business initiative that organizes work, people, schedules, costs, resources, risks, and financial performance toward achieving a defined business objective.",
+      "paragraphs": [
+        "Notice.",
+        "Business initiative.",
+        "Not task list."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose",
+      "title": "Purpose",
+      "paragraphs": [
+        "Projects become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Professional Services",
+          "Implementations",
+          "Construction",
+          "Software Development",
+          "Consulting",
+          "Internal Initiatives",
+          "Research",
+          "Capital Projects"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "A Project owns:",
+        "It does not perform work.",
+        "Tasks perform work."
+      ],
+      "lists": [
+        [
+          "Scope",
+          "Schedule",
+          "Budget",
+          "Resources",
+          "Deliverables",
+          "Progress",
+          "Financial Performance"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Project Code",
+        "Project Name",
+        "Example",
+        "PRJ-2027-0142",
+        "Hospital ERP Implementation",
+        "Project Codes should be human-friendly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships",
+      "title": "Relationships",
+      "paragraphs": [
+        "Organization",
+        "Branch",
+        "Customer",
+        "Projects may be:",
+        "Customer-facing",
+        "or",
+        "Internal",
+        "Customer should therefore be optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-project-type",
+      "title": "Project Type",
+      "paragraphs": [
+        "Reference Data.",
+        "Customer",
+        "Internal",
+        "Implementation",
+        "Consulting",
+        "Construction",
+        "Maintenance",
+        "Research",
+        "Extensible."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-description",
+      "title": "Description",
+      "paragraphs": [
+        "Business Objective",
+        "Scope Summary",
+        "Defines why the project exists."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-project-manager",
+      "title": "Project Manager",
+      "paragraphs": [
+        "Project Manager",
+        "Single owner."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-sponsor",
+      "title": "Sponsor",
+      "paragraphs": [
+        "Executive Sponsor",
+        "Strategic owner."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-dates",
+      "title": "Dates",
+      "paragraphs": [
+        "Planned Start",
+        "Actual Start",
+        "Planned Finish",
+        "Actual Finish",
+        "Separate planned from actual.",
+        "Always."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "Planned",
+        "Active",
+        "On Hold",
+        "Completed",
+        "Cancelled",
+        "Archived",
+        "Simple.",
+        "Enterprise-ready."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-priority",
+      "title": "Priority",
+      "paragraphs": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical",
+        "Useful for dashboards."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-progress",
+      "title": "Progress",
+      "paragraphs": [
+        "Completion %",
+        "0–100",
+        "Derived where possible."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-health",
+      "title": "Health",
+      "paragraphs": [
+        "Very important.",
+        "Green",
+        "Yellow",
+        "Red",
+        "Executive dashboards love this."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-budget",
+      "title": "Budget",
+      "paragraphs": [
+        "Reference only.",
+        "Budget",
+        "Links to Finance.",
+        "Never duplicate budget data."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-cost-center",
+      "title": "Cost Center",
+      "paragraphs": [
+        "Cost Center",
+        "Supports management accounting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-financial-dimensions",
+      "title": "Financial Dimensions",
+      "paragraphs": [
+        "Dimensions",
+        "Inherited throughout the project."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-estimated-cost",
+      "title": "Estimated Cost",
+      "paragraphs": [
+        "Estimated Cost",
+        "Planning value."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-actual-cost",
+      "title": "Actual Cost",
+      "paragraphs": [
+        "Derived.",
+        "Actual Cost",
+        "Never manually entered."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-revenue",
+      "title": "Revenue",
+      "paragraphs": [
+        "If customer-facing.",
+        "Expected Revenue",
+        "Actual Revenue",
+        "Supports profitability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-profitability",
+      "title": "Profitability",
+      "paragraphs": [
+        "Derived.",
+        "Revenue",
+        "-",
+        "Cost",
+        "=",
+        "Profit",
+        "Automatically calculated."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-1",
+      "title": "Relationships",
+      "paragraphs": [
+        "Project becomes one of the most connected entities.",
+        "Project",
+        "├── Customer",
+        "├── Tasks",
+        "├── Employees",
+        "├── Assets",
+        "├── Inventory",
+        "├── Purchase Orders",
+        "├── Sales Orders",
+        "├── Service Tickets",
+        "├── Budget",
+        "├── Cost Center",
+        "├── Financial Dimensions",
+        "├── Journal Entries",
+        "├── Documents",
+        "├── Risks",
+        "├── Milestones",
+        "├── AI Context",
+        "└── Business Events",
+        "Notice.",
+        "Nearly every module connects here."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Planned",
+        "↓",
+        "Active",
+        "↓",
+        "Completed",
+        "↓",
+        "Archived",
+        "Or.",
+        "Active",
+        "↓",
+        "On Hold",
+        "↓",
+        "Active",
+        "Or.",
+        "Cancelled",
+        "Straightforward."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Project Code unique.",
+        "Project Manager required before activation.",
+        "Completed projects cannot accept new tasks.",
+        "Cancelled projects remain historical.",
+        "Archived projects immutable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Name required.",
+        "Organization required.",
+        "Start Date required.",
+        "Project Type required.",
+        "Status required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions",
+      "title": "Permissions",
+      "paragraphs": [
+        "PROJECT_VIEW",
+        "PROJECT_CREATE",
+        "PROJECT_UPDATE",
+        "PROJECT_ASSIGN",
+        "PROJECT_CLOSE",
+        "PROJECT_ARCHIVE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Manager Assigned",
+        "↓",
+        "Started",
+        "↓",
+        "Paused",
+        "↓",
+        "Completed",
+        "↓",
+        "Archived",
+        "Everything logged."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Project Code",
+        "Customer",
+        "Manager",
+        "Status",
+        "Priority",
+        "Health",
+        "Project Type",
+        "Very common operationally."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes a true project assistant.",
+        "Questions include:",
+        "Example.",
+        "\"Project Alpha is projected to finish 11 days late because infrastructure tasks are consistently slipping.\"",
+        "That's operational intelligence."
+      ],
+      "lists": [
+        [
+          "Which projects are behind schedule?",
+          "Which projects are over budget?",
+          "Which manager has the highest completion rate?",
+          "Which customer projects are least profitable?",
+          "Predict project completion."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Created",
+        "Manager Changed",
+        "Status Changed",
+        "Budget Linked",
+        "Completed",
+        "Archived",
+        "Nothing disappears."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Project Code",
+        "Customer",
+        "Manager",
+        "Status",
+        "Priority",
+        "Start Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example",
+      "title": "Example",
+      "paragraphs": [
+        "Customer",
+        "ABC Hospitals",
+        "Project",
+        "Hospital ERP Implementation",
+        "Status",
+        "Active",
+        "Budget",
+        "$1,250,000",
+        "Progress",
+        "61%",
+        "Health",
+        "Green",
+        "Everything else hangs from this."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-projects-should-never-contain-tasks-directly-in-the-data-model",
+      "title": "Projects Should Never Contain Tasks Directly in the Data Model",
+      "paragraphs": [
+        "Conceptually, yes.",
+        "Operationally, no.",
+        "Instead:",
+        "Project",
+        "↓",
+        "Project Phase (optional)",
+        "↓",
+        "Task",
+        "Why?",
+        "Because a five-year implementation may contain thousands of tasks.",
+        "Grouping them into phases:",
+        "keeps reporting manageable.",
+        "Small organizations can ignore phases.",
+        "Large organizations gain structure."
+      ],
+      "lists": [
+        [
+          "Planning",
+          "Design",
+          "Build",
+          "Testing",
+          "Deployment",
+          "Support"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-projects-should-own-financial-performance-not-accounting",
+      "title": "Projects Should Own Financial Performance, Not Accounting",
+      "paragraphs": [
+        "Projects should display:",
+        "Budget",
+        "Actual Cost",
+        "Revenue",
+        "Profit",
+        "Margin",
+        "But those values should always be derived from:",
+        "The Project should never become another accounting ledger.",
+        "It is the consumer of financial information, not its owner."
+      ],
+      "lists": [
+        [
+          "Budgets",
+          "Journal Entries",
+          "Sales",
+          "Procurement",
+          "Inventory"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-project-as-the-operational-hub",
+      "title": "Project as the Operational Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Project",
+        "├── Scope",
+        "├── Schedule",
+        "├── Resources",
+        "├── Financials",
+        "├── Deliverables",
+        "├── Service",
+        "├── Procurement",
+        "├── Inventory",
+        "├── AI",
+        "└── Executive Reporting",
+        "It becomes the operational hub of the ERP."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Project is not a task list.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A business commitment.",
+          "An operational container.",
+          "A financial performance center.",
+          "A resource management hub.",
+          "A delivery organization.",
+          "The central execution entity of the Operations phase."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-operations-progress",
+      "title": "Operations Progress",
+      "paragraphs": [
+        "Operations",
+        "✅ Project",
+        "⬜ Task",
+        "⬜ Service Ticket"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-significant-architectural-insight",
+      "title": "🏛️ A Significant Architectural Insight",
+      "paragraphs": [
+        "Project is the first entity that truly bridges every major domain of KoreVity.",
+        "CRM",
+        "↓",
+        "Customer",
+        "Operations",
+        "↓",
+        "Project",
+        "Work",
+        "↓",
+        "Tasks",
+        "Service",
+        "↓",
+        "Tickets",
+        "Finance",
+        "↓",
+        "Budgets",
+        "Costs",
+        "Revenue",
+        "Profit",
+        "Documents",
+        "Approvals",
+        "AI",
+        "Analytics",
+        "Unlike Sales Orders, which conclude after fulfillment, Projects are long-lived operational entities. They coordinate work across departments while continuously consuming and producing information from nearly every subsystem we've designed."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-1",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Task.",
+        "Tasks are the atomic units of work.",
+        "Everything measurable inside a Project—progress, effort, time, delays, dependencies, assignments, and eventually Service Tickets—will ultimately be built on Tasks.",
+        "If Projects define what the organization has committed to deliver, Tasks define how that commitment is actually executed.",
+        "Excellent.",
+        "This is where work actually happens.",
+        "Projects don't complete themselves.",
+        "Budgets don't execute.",
+        "Plans don't produce outcomes."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-tasks-do",
+      "title": "Tasks do.",
+      "paragraphs": [
+        "If the Project is the mission,",
+        "then Tasks are the work.",
+        "This is the execution engine of the ERP."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-45-task",
+      "title": "Entity 45 — Task",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-1",
+      "title": "First Principle",
+      "paragraphs": [
+        "A Task is not a checklist item.",
+        "It is a managed unit of work.",
+        "That distinction matters.",
+        "Example.",
+        "Wrong.",
+        "☐ Install Server",
+        "Correct.",
+        "Task",
+        "Install Production Server",
+        "↓",
+        "Owner",
+        "↓",
+        "Deadline",
+        "↓",
+        "Status",
+        "↓",
+        "Dependencies",
+        "↓",
+        "Time",
+        "↓",
+        "Cost",
+        "A Task is an operational object.",
+        "Not a todo."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-1",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-task-is-an-assignable-unit-of-work-within-a-project-that-represents-a-specific-deliverable-activity-or-responsibility-tracked-through-planning-execution-completion-and-performance-measurement",
+      "title": "A Task is an assignable unit of work within a Project that represents a specific deliverable, activity, or responsibility tracked through planning, execution, completion, and performance measurement.",
+      "paragraphs": [
+        "Notice.",
+        "Assignable.",
+        "Trackable.",
+        "Measurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-1",
+      "title": "Purpose",
+      "paragraphs": [
+        "Tasks become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Work Execution",
+          "Scheduling",
+          "Resource Planning",
+          "Time Tracking",
+          "Progress Measurement",
+          "Service Delivery"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-1",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Task owns:",
+        "It does not own the project."
+      ],
+      "lists": [
+        [
+          "Work",
+          "Assignee",
+          "Status",
+          "Schedule",
+          "Dependencies",
+          "Progress",
+          "Time"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-1",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-1",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Task Number",
+        "Task Name",
+        "Example.",
+        "TASK-001248",
+        "Configure Production Database"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-2",
+      "title": "Relationships",
+      "paragraphs": [
+        "Project",
+        "Every Task belongs to one Project."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-parent-task",
+      "title": "Parent Task",
+      "paragraphs": [
+        "Support hierarchy.",
+        "ERP Implementation",
+        "↓",
+        "Infrastructure",
+        "↓",
+        "Database Installation",
+        "Unlimited nesting isn't recommended.",
+        "Two or three levels are sufficient."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase",
+      "title": "Phase",
+      "paragraphs": [
+        "Optional.",
+        "Planning",
+        "Design",
+        "Development",
+        "Testing",
+        "Deployment",
+        "Tasks belong to phases."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-description-1",
+      "title": "Description",
+      "paragraphs": [
+        "Work Description",
+        "Acceptance Criteria",
+        "Acceptance Criteria are extremely valuable.",
+        "A task isn't complete until they are met."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-assignment",
+      "title": "Assignment",
+      "paragraphs": [
+        "Assigned To",
+        "Employee reference."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-assignment-team",
+      "title": "Assignment Team",
+      "paragraphs": [
+        "Future-ready.",
+        "Team",
+        "Optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-priority-1",
+      "title": "Priority",
+      "paragraphs": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-1",
+      "title": "Status",
+      "paragraphs": [
+        "Operational lifecycle.",
+        "Draft",
+        "Ready",
+        "In Progress",
+        "Blocked",
+        "On Hold",
+        "Completed",
+        "Cancelled",
+        "Notice.",
+        "Blocked.",
+        "Very important."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-dates-1",
+      "title": "Dates",
+      "paragraphs": [
+        "Planned Start",
+        "Actual Start",
+        "Planned Finish",
+        "Actual Finish",
+        "Never mix planned and actual."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-estimated-effort",
+      "title": "Estimated Effort",
+      "paragraphs": [
+        "Estimated Hours",
+        "Planning."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-actual-effort",
+      "title": "Actual Effort",
+      "paragraphs": [
+        "Actual Hours",
+        "Derived from time entries.",
+        "Never manually maintained."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-progress-1",
+      "title": "Progress",
+      "paragraphs": [
+        "Completion %",
+        "0–100",
+        "May be manual or calculated."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-due-date",
+      "title": "Due Date",
+      "paragraphs": [
+        "Due Date",
+        "Different from planned finish."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-dependencies",
+      "title": "Dependencies",
+      "paragraphs": [
+        "One of the most important features.",
+        "Depends On",
+        "↓",
+        "Task",
+        "Example.",
+        "Database Configuration",
+        "↓",
+        "Depends On",
+        "↓",
+        "Server Installation",
+        "No server.",
+        "No database.",
+        "Simple."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-blocked-reason",
+      "title": "Blocked Reason",
+      "paragraphs": [
+        "When status equals:",
+        "Blocked.",
+        "Require.",
+        "Blocked Reason",
+        "Very useful operationally."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-cost",
+      "title": "Cost",
+      "paragraphs": [
+        "Reference only.",
+        "Estimated Cost",
+        "Actual Cost",
+        "Derived."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-3",
+      "title": "Relationships",
+      "paragraphs": [
+        "Task",
+        "├── Project",
+        "├── Employee",
+        "├── Time Entries",
+        "├── Service Tickets",
+        "├── Assets",
+        "├── Inventory",
+        "├── Documents",
+        "├── Dependencies",
+        "├── AI Context",
+        "└── Business Events",
+        "Tasks connect everything."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-1",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Ready",
+        "↓",
+        "In Progress",
+        "↓",
+        "Completed",
+        "Or.",
+        "In Progress",
+        "↓",
+        "Blocked",
+        "↓",
+        "In Progress",
+        "Or.",
+        "Cancelled"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-1",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Every Task belongs to one Project.",
+        "Completed Tasks immutable.",
+        "Blocked Tasks require reason.",
+        "Cancelled Tasks preserved.",
+        "Dependencies cannot form loops."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-1",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Project required.",
+        "Task Name required.",
+        "Status required.",
+        "Assignee optional.",
+        "Due Date optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-1",
+      "title": "Permissions",
+      "paragraphs": [
+        "TASK_VIEW",
+        "TASK_CREATE",
+        "TASK_ASSIGN",
+        "TASK_UPDATE",
+        "TASK_COMPLETE",
+        "TASK_CANCEL"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-1",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Assigned",
+        "↓",
+        "Started",
+        "↓",
+        "Blocked",
+        "↓",
+        "Completed",
+        "↓",
+        "Cancelled",
+        "Every transition logged."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-1",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Project",
+        "Employee",
+        "Status",
+        "Priority",
+        "Due Date",
+        "Blocked",
+        "Very common."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-1",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes an execution assistant.",
+        "Questions.",
+        "Example.",
+        "\"Three blocked infrastructure tasks are delaying eleven downstream tasks.\"",
+        "That is extremely valuable."
+      ],
+      "lists": [
+        [
+          "Which tasks are overdue?",
+          "Which employees are overloaded?",
+          "Which tasks block the project?",
+          "Predict completion.",
+          "Detect schedule risk."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-1",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Assignment",
+        "Status",
+        "Progress",
+        "Completion",
+        "Cancellation",
+        "Never lost."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-1",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Project",
+        "Status",
+        "Assigned To",
+        "Priority",
+        "Due Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-1",
+      "title": "Example",
+      "paragraphs": [
+        "Project",
+        "Hospital ERP",
+        "Task",
+        "Configure SQL Cluster",
+        "Status",
+        "Blocked",
+        "Reason",
+        "Awaiting Firewall Rules",
+        "Immediately actionable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-1",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-tasks-should-never-store-time-directly",
+      "title": "Tasks Should Never Store Time Directly",
+      "paragraphs": [
+        "Wrong.",
+        "Task",
+        "↓",
+        "Hours Worked",
+        "Correct.",
+        "Task",
+        "↓",
+        "Time Entries",
+        "↓",
+        "Actual Hours",
+        "Why?",
+        "Multiple employees.",
+        "Multiple days.",
+        "Multiple approvals.",
+        "Time deserves its own entity later.",
+        "Task simply aggregates."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-1",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-tasks-should-support-dependency-graphs",
+      "title": "Tasks Should Support Dependency Graphs",
+      "paragraphs": [
+        "Instead of only parent-child.",
+        "Support:",
+        "Task A",
+        "↓",
+        "Blocks",
+        "↓",
+        "Task B",
+        "And.",
+        "Task C",
+        "↓",
+        "Depends On",
+        "↓",
+        "Task B",
+        "This enables:",
+        "Huge operational value."
+      ],
+      "lists": [
+        [
+          "Critical Path",
+          "Schedule prediction",
+          "AI risk analysis",
+          "Delay propagation"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-task-as-the-execution-engine",
+      "title": "Task as the Execution Engine",
+      "paragraphs": [
+        "Architecturally.",
+        "Task",
+        "├── Work",
+        "├── Assignment",
+        "├── Dependencies",
+        "├── Time",
+        "├── Cost",
+        "├── Progress",
+        "├── AI",
+        "└── Operational Execution",
+        "Everything operational eventually touches Tasks."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-1",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Task is not a checklist item.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A managed work unit.",
+          "A scheduling object.",
+          "A resource assignment.",
+          "A progress tracker.",
+          "A dependency node.",
+          "The execution engine of the ERP."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-operations-progress-1",
+      "title": "Operations Progress",
+      "paragraphs": [
+        "Operations",
+        "✅ Project",
+        "✅ Task",
+        "⬜ Service Ticket"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight",
+      "title": "🏗️ A Major Architectural Insight",
+      "paragraphs": [
+        "With Projects and Tasks complete, KoreVity now has a true work execution model.",
+        "Project",
+        "↓",
+        "Task",
+        "↓",
+        "Time",
+        "↓",
+        "Cost",
+        "↓",
+        "Progress",
+        "↓",
+        "Project Health",
+        "Notice the flow:",
+        "This means Projects don't need to micromanage execution—they simply aggregate operational reality from their Tasks."
+      ],
+      "lists": [
+        [
+          "Projects define business commitments.",
+          "Tasks execute those commitments.",
+          "Time and costs accumulate against Tasks.",
+          "Project progress is derived from Task progress."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I would avoid allowing arbitrary status transitions.",
+        "Instead, define a controlled workflow.",
+        "Example:",
+        "Draft",
+        "↓",
+        "Ready",
+        "↓",
+        "In Progress",
+        "↓",
+        "Completed",
+        "With exceptions:",
+        "In Progress",
+        "↓",
+        "Blocked",
+        "Blocked",
+        "↓",
+        "In Progress",
+        "Ready",
+        "↓",
+        "Cancelled",
+        "This prevents invalid transitions like:",
+        "Completed",
+        "↓",
+        "Draft",
+        "without an explicit reopen action, keeping operational history clean and auditable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-2",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Service Ticket.",
+        "Projects and Tasks manage planned work.",
+        "Service Tickets manage unplanned work:",
+        "The key architectural relationship will be:",
+        "That clean separation keeps service management independent while still allowing support work to become structured project execution when needed.",
+        "↓",
+        "Reopened",
+        "↓",
+        "In Progress",
+        "This reflects real service operations."
+      ],
+      "lists": [
+        [
+          "Customer issues",
+          "Support requests",
+          "Incidents",
+          "Service calls",
+          "Maintenance"
+        ],
+        [
+          "A Service Ticket may create one or more Tasks.",
+          "A Task may resolve one or more Service Tickets."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-service-ticket-as-the-service-hub",
+      "title": "Service Ticket as the Service Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Service Ticket",
+        "├── Customer Request",
+        "├── Communication",
+        "├── SLA",
+        "├── Tasks",
+        "├── Resolution",
+        "├── AI Assistance",
+        "└── Service History",
+        "It becomes the operational hub of service management."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-2",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Service Ticket is not a task.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A service request.",
+          "An incident record.",
+          "A customer communication record.",
+          "An SLA object.",
+          "A service history record.",
+          "The foundation of enterprise service management."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-operations-core-complete",
+      "title": "🎉 Operations Core Complete",
+      "paragraphs": [
+        "Operations",
+        "✅ Project",
+        "✅ Task",
+        "✅ Service Ticket"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-what-we-ve-built",
+      "title": "🏛️ What We've Built",
+      "paragraphs": [
+        "The Operations layer now forms a complete execution engine.",
+        "Customer",
+        "↓",
+        "Project",
+        "↓",
+        "Task",
+        "↑",
+        "Service Ticket",
+        "Notice the relationships:",
+        "Nothing overlaps.",
+        "Everything has a clear responsibility."
+      ],
+      "lists": [
+        [
+          "Projects organize planned business initiatives.",
+          "Tasks execute the work.",
+          "Service Tickets capture incoming requests and issues.",
+          "Tasks perform the actual resolution."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-architectural-refinement",
+      "title": "One Architectural Refinement",
+      "paragraphs": [
+        "After completing the Operations Core, I'd introduce a future Time Entry entity.",
+        "Instead of storing effort directly on Tasks:",
+        "Task",
+        "↓",
+        "Time Entry",
+        "↓",
+        "Employee",
+        "↓",
+        "Hours",
+        "↓",
+        "Billable?",
+        "That enables:",
+        "without complicating the Task model."
+      ],
+      "lists": [
+        [
+          "Timesheets",
+          "Payroll integration",
+          "Project costing",
+          "Customer billing",
+          "Resource utilization"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase-5-complete",
+      "title": "🚀 Phase 5 Complete",
+      "paragraphs": [
+        "Foundation ✅",
+        "Identity & Security ✅",
+        "CRM ✅",
+        "Sales ✅",
+        "Procurement ✅",
+        "Inventory ✅",
+        "Assets ✅",
+        "Finance ✅",
+        "Operations ✅"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-3",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next major phase should be Human Resources (HR).",
+        "Why now?",
+        "Because every major business function is in place.",
+        "HR will naturally connect to everything we've built:",
+        "The first HR entity should be Employee, because it becomes the human identity that ties together nearly every operational and financial process in KoreVity.",
+        "Excellent.",
+        "This is one of the most important entities in the entire ERP.",
+        "Not because it's complicated.",
+        "But because almost every other module already references it.",
+        "Throughout KoreVity we've been saying:",
+        "Until now those were placeholders.",
+        "Now we finally define the person behind them."
+      ],
+      "lists": [
+        [
+          "Employees assigned to Tasks.",
+          "Project Managers leading Projects.",
+          "Approvers in Finance.",
+          "Buyers in Procurement.",
+          "Sales Representatives in CRM.",
+          "Asset custodians.",
+          "Service agents handling Tickets."
+        ],
+        [
+          "Assigned To",
+          "Project Manager",
+          "Sales Representative",
+          "Buyer",
+          "Approver",
+          "Asset Custodian",
+          "Ticket Owner"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase-6-human-resources",
+      "title": "Phase 6 — Human Resources",
+      "paragraphs": [
+        "The HR Core becomes the human layer of the ERP.",
+        "If Organizations define where work happens,",
+        "Projects define what work happens,",
+        "Employees define who performs it."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-47-employee",
+      "title": "Entity 47 — Employee",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-2",
+      "title": "First Principle",
+      "paragraphs": [
+        "An Employee is not a User.",
+        "This is one of the biggest architectural mistakes many ERP systems make.",
+        "A User answers:",
+        "Who can log in?",
+        "An Employee answers:",
+        "Who performs work?",
+        "Examples.",
+        "Warehouse Worker",
+        "Employee",
+        "↓",
+        "No User Account",
+        "Another.",
+        "External Auditor",
+        "User Account",
+        "↓",
+        "Not Employee",
+        "They overlap.",
+        "They are not identical."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-2",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-an-employee-is-an-individual-engaged-by-the-organization-to-perform-work-hold-organizational-responsibilities-participate-in-operational-processes-and-contribute-to-business-activities-regardless-of-system-access",
+      "title": "An Employee is an individual engaged by the organization to perform work, hold organizational responsibilities, participate in operational processes, and contribute to business activities regardless of system access.",
+      "paragraphs": [
+        "Notice.",
+        "Work.",
+        "Not login."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-2",
+      "title": "Purpose",
+      "paragraphs": [
+        "Employees become the foundation for:",
+        "Nearly every module."
+      ],
+      "lists": [
+        [
+          "HR",
+          "Operations",
+          "Finance",
+          "Procurement",
+          "CRM",
+          "Service",
+          "Assets",
+          "Approvals"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-2",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Employee owns:",
+        "It does not own authentication.",
+        "Users do."
+      ],
+      "lists": [
+        [
+          "Employment information",
+          "Organizational assignment",
+          "Reporting relationships",
+          "Job information",
+          "Employment lifecycle"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-2",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-2",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Employee Number",
+        "Example.",
+        "EMP-004821",
+        "Human-friendly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-personal-information",
+      "title": "Personal Information",
+      "paragraphs": [
+        "First Name",
+        "Middle Name",
+        "Last Name",
+        "Preferred Name",
+        "Avoid one \"Full Name\" field.",
+        "Compute it."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employment",
+      "title": "Employment",
+      "paragraphs": [
+        "Employment Type",
+        "Reference Data.",
+        "Examples.",
+        "Full Time",
+        "Part Time",
+        "Contractor",
+        "Intern",
+        "Consultant"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-2",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "Active",
+        "Leave",
+        "Suspended",
+        "Terminated",
+        "Retired",
+        "Never delete employees."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-organization",
+      "title": "Organization",
+      "paragraphs": [
+        "Organization",
+        "Branch",
+        "Every employee belongs somewhere."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-department",
+      "title": "Department",
+      "paragraphs": [
+        "Reference.",
+        "Department",
+        "We'll model Department later."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-manager",
+      "title": "Manager",
+      "paragraphs": [
+        "Very important.",
+        "Reports To",
+        "Self-reference.",
+        "Creates organizational hierarchy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-job-information",
+      "title": "Job Information",
+      "paragraphs": [
+        "Job Title",
+        "Position",
+        "Different concepts.",
+        "Title.",
+        "Senior Software Engineer",
+        "Position.",
+        "Backend Engineering Position #17"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-dates-2",
+      "title": "Dates",
+      "paragraphs": [
+        "Hire Date",
+        "Termination Date",
+        "Historical integrity."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-contact",
+      "title": "Contact",
+      "paragraphs": [
+        "Business Email",
+        "Business Phone",
+        "Business.",
+        "Not personal."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-location",
+      "title": "Location",
+      "paragraphs": [
+        "Work Location",
+        "Reference."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-cost-center-1",
+      "title": "Cost Center",
+      "paragraphs": [
+        "Cost Center",
+        "Direct Finance integration."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-financial-dimension",
+      "title": "Financial Dimension",
+      "paragraphs": [
+        "Dimensions",
+        "Optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-user",
+      "title": "User",
+      "paragraphs": [
+        "Optional.",
+        "User Account",
+        "Some employees never log in."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-4",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employee rapidly becomes one of the most connected entities.",
+        "Employee",
+        "├── User",
+        "├── Organization",
+        "├── Branch",
+        "├── Department",
+        "├── Manager",
+        "├── Projects",
+        "├── Tasks",
+        "├── Service Tickets",
+        "├── Assets",
+        "├── Purchase Requests",
+        "├── Sales",
+        "├── Journal Approvals",
+        "├── Documents",
+        "├── AI Context",
+        "└── Business Events",
+        "Everything eventually connects."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-2",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Active",
+        "↓",
+        "Leave",
+        "↓",
+        "Returned",
+        "↓",
+        "Terminated",
+        "↓",
+        "Archived",
+        "History preserved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-2",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Employee Number unique.",
+        "Manager optional.",
+        "Termination cannot precede Hire Date.",
+        "Archived employees remain searchable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-2",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employee Number required.",
+        "First Name required.",
+        "Last Name required.",
+        "Employment Type required.",
+        "Organization required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-2",
+      "title": "Permissions",
+      "paragraphs": [
+        "EMPLOYEE_VIEW",
+        "EMPLOYEE_CREATE",
+        "EMPLOYEE_UPDATE",
+        "EMPLOYEE_TERMINATE",
+        "EMPLOYEE_ARCHIVE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-2",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Hired",
+        "↓",
+        "Transferred",
+        "↓",
+        "Promoted",
+        "↓",
+        "Manager Changed",
+        "↓",
+        "Leave Started",
+        "↓",
+        "Returned",
+        "↓",
+        "Terminated",
+        "Everything audited."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-2",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Employee Number",
+        "Name",
+        "Department",
+        "Manager",
+        "Status",
+        "Job Title",
+        "Organization",
+        "One of the most frequently used entities."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-2",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI now understands the organization.",
+        "Questions.",
+        "Example.",
+        "\"Sarah currently owns 19 active tasks across four projects and is operating above her average workload.\""
+      ],
+      "lists": [
+        [
+          "Who manages the Finance team?",
+          "Which employees are overloaded?",
+          "Who owns the most projects?",
+          "Which departments have vacancies?",
+          "Recommend project assignments."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-2",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Department",
+        "Manager",
+        "Position",
+        "Employment Status",
+        "Termination",
+        "Transfers",
+        "Complete employment history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-2",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Employee Number",
+        "Organization",
+        "Manager",
+        "Department",
+        "Status",
+        "Hire Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-2",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "EMP-10482",
+        "Name",
+        "Sarah Johnson",
+        "Department",
+        "Professional Services",
+        "Manager",
+        "David Lee",
+        "Status",
+        "Active",
+        "Straightforward."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-2",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employee-user",
+      "title": "Employee ≠ User",
+      "paragraphs": [
+        "Keep them separate.",
+        "Employee",
+        "↓",
+        "Optional",
+        "↓",
+        "User",
+        "Benefits.",
+        "Far more flexible."
+      ],
+      "lists": [
+        [
+          "Contractors without access.",
+          "Factory workers without login.",
+          "Shared kiosks.",
+          "Temporary workers.",
+          "Future integrations."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-2",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employees-should-never-store-salary-directly",
+      "title": "Employees Should Never Store Salary Directly",
+      "paragraphs": [
+        "Many systems do this.",
+        "I wouldn't.",
+        "Instead.",
+        "Employee",
+        "↓",
+        "Employment Agreement",
+        "↓",
+        "Compensation",
+        "Why?",
+        "Salary changes.",
+        "Benefits change.",
+        "Bonuses change.",
+        "Employment agreements change.",
+        "Those deserve their own entities.",
+        "Employee remains stable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employee-as-the-human-hub",
+      "title": "Employee as the Human Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Employee",
+        "├── Identity",
+        "├── Organization",
+        "├── Reporting",
+        "├── Operations",
+        "├── Finance",
+        "├── Service",
+        "├── Assets",
+        "├── AI",
+        "└── Workforce",
+        "Every human activity begins here."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-3",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Employee is not a login.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A workforce identity.",
+          "An organizational member.",
+          "A reporting hierarchy node.",
+          "An operational participant.",
+          "A financial responsibility holder.",
+          "The human foundation of the ERP."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "⬜ Department",
+        "⬜ Position",
+        "⬜ Employment Agreement",
+        "⬜ Compensation",
+        "⬜ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-significant-architectural-insight-1",
+      "title": "🏛️ A Significant Architectural Insight",
+      "paragraphs": [
+        "Employee is the first entity that represents a person, not a business object.",
+        "User",
+        "↓",
+        "Can access the system",
+        "Employee",
+        "↓",
+        "Performs work",
+        "Customer Contact",
+        "↓",
+        "Represents external people",
+        "Keeping these identities separate allows KoreVity to model organizations much more accurately:",
+        "Each identity has a distinct purpose while remaining connected where appropriate."
+      ],
+      "lists": [
+        [
+          "An employee may never log in.",
+          "A user may never be an employee.",
+          "A customer contact may later become an employee.",
+          "An employee may later become a vendor consultant."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-4",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Department.",
+        "Why?",
+        "We've now defined people.",
+        "The next step is defining the organizational units those people belong to.",
+        "Departments become the backbone for:",
+        "Together, Employee and Department will form the core organizational model upon which the rest of the HR module is built.",
+        "Excellent.",
+        "Now we move from people to organizational structure.",
+        "If Employees answer:"
+      ],
+      "lists": [
+        [
+          "Organizational hierarchy",
+          "Employee grouping",
+          "Cost Centers",
+          "Budgets",
+          "Reporting",
+          "Managerial structure",
+          "Workload analytics"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-who-performs-the-work",
+      "title": "\"Who performs the work?\"",
+      "paragraphs": [
+        "Departments answer:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-where-in-the-organization-do-they-belong",
+      "title": "\"Where in the organization do they belong?\"",
+      "paragraphs": [
+        "This becomes the backbone of reporting, budgeting, approvals, and management."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-48-department",
+      "title": "Entity 48 — Department",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-3",
+      "title": "First Principle",
+      "paragraphs": [
+        "A Department is not a Cost Center.",
+        "Many ERP systems incorrectly merge them.",
+        "They are different.",
+        "A Department answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-where-does-this-employee-belong-organizationally",
+      "title": "\"Where does this employee belong organizationally?\"",
+      "paragraphs": [
+        "A Cost Center answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-where-should-costs-be-accumulated-financially",
+      "title": "\"Where should costs be accumulated financially?\"",
+      "paragraphs": [
+        "Often they're the same.",
+        "Sometimes they're not.",
+        "Example:",
+        "Engineering Department",
+        "↓",
+        "Employees",
+        "But.",
+        "Engineering Department",
+        "↓",
+        "Research Cost Center",
+        "↓",
+        "Operations Cost Center",
+        "One Department.",
+        "Two Cost Centers.",
+        "Keep them separate."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-3",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-department-is-an-organizational-unit-responsible-for-grouping-employees-defining-reporting-relationships-and-organizing-business-responsibilities-within-the-enterprise",
+      "title": "A Department is an organizational unit responsible for grouping employees, defining reporting relationships, and organizing business responsibilities within the enterprise.",
+      "paragraphs": [
+        "Notice.",
+        "Organization.",
+        "Not accounting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-3",
+      "title": "Purpose",
+      "paragraphs": [
+        "Departments become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Organizational hierarchy",
+          "Reporting structure",
+          "Workforce management",
+          "Approval routing",
+          "HR analytics",
+          "Operational ownership"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-3",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Department owns:",
+        "It does not own budgets.",
+        "Budgets reference Departments."
+      ],
+      "lists": [
+        [
+          "Organizational identity",
+          "Employee grouping",
+          "Department leadership",
+          "Organizational hierarchy"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-3",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-3",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Department Code",
+        "Department Name",
+        "Example.",
+        "ENG",
+        "Engineering"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-5",
+      "title": "Relationships",
+      "paragraphs": [
+        "Organization",
+        "Branch",
+        "Departments exist within organizations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-parent-department",
+      "title": "Parent Department",
+      "paragraphs": [
+        "Support hierarchy.",
+        "Corporate",
+        "↓",
+        "Technology",
+        "↓",
+        "Engineering",
+        "Unlimited depth isn't recommended.",
+        "Three or four levels are sufficient."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-department-head",
+      "title": "Department Head",
+      "paragraphs": [
+        "Department Head",
+        "Reference Employee.",
+        "One accountable leader."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-cost-center-2",
+      "title": "Cost Center",
+      "paragraphs": [
+        "Optional.",
+        "Default Cost Center",
+        "Used as a default.",
+        "Not ownership."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-description-2",
+      "title": "Description",
+      "paragraphs": [
+        "Purpose",
+        "Responsibilities",
+        "Administrative."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-3",
+      "title": "Status",
+      "paragraphs": [
+        "Active",
+        "Inactive",
+        "Archived",
+        "Never delete."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-display-order",
+      "title": "Display Order",
+      "paragraphs": [
+        "Useful.",
+        "Display Sequence",
+        "For organization charts."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-6",
+      "title": "Relationships",
+      "paragraphs": [
+        "Department",
+        "├── Employees",
+        "├── Manager",
+        "├── Cost Center",
+        "├── Projects",
+        "├── Budgets",
+        "├── Documents",
+        "├── AI Context",
+        "└── Business Events",
+        "Departments become central organizational objects."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-3",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Active",
+        "↓",
+        "Inactive",
+        "↓",
+        "Archived",
+        "Simple."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-3",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Department Code unique.",
+        "Department Head optional.",
+        "Parent hierarchy cannot loop.",
+        "Archived departments cannot receive new employees."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-3",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Code required.",
+        "Name required.",
+        "Organization required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-3",
+      "title": "Permissions",
+      "paragraphs": [
+        "DEPARTMENT_VIEW",
+        "DEPARTMENT_CREATE",
+        "DEPARTMENT_UPDATE",
+        "DEPARTMENT_ARCHIVE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-3",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Manager Assigned",
+        "↓",
+        "Activated",
+        "↓",
+        "Archived"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-3",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Department Code",
+        "Department Name",
+        "Manager",
+        "Organization",
+        "Status",
+        "Common HR operation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-3",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes organizationally aware.",
+        "Questions.",
+        "Example.",
+        "\"Engineering currently has 42 active employees, 11 projects, and the highest average task workload.\""
+      ],
+      "lists": [
+        [
+          "Which department has the highest workload?",
+          "Which department has the most open tasks?",
+          "Which department is growing fastest?",
+          "Which manager oversees the largest team?"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-3",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Department Head changes",
+        "Parent changes",
+        "Status changes",
+        "Archiving",
+        "Complete organizational history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-3",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Department Code",
+        "Organization",
+        "Parent Department",
+        "Department Head",
+        "Status"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-3",
+      "title": "Example",
+      "paragraphs": [
+        "Department",
+        "Professional Services",
+        "Manager",
+        "Sarah Johnson",
+        "Employees",
+        "27",
+        "Status",
+        "Active",
+        "Everything else derives from this."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-3",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-departments-should-not-own-employees",
+      "title": "Departments Should Not Own Employees",
+      "paragraphs": [
+        "Wrong mindset.",
+        "Department",
+        "↓",
+        "Employee List",
+        "Correct mindset.",
+        "Employee",
+        "↓",
+        "Department Reference",
+        "The Employee owns the relationship.",
+        "This avoids duplication and simplifies transfers."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-3",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-department-hierarchies-should-be-recursive",
+      "title": "Department Hierarchies Should Be Recursive",
+      "paragraphs": [
+        "Instead of fixed levels:",
+        "Division",
+        "↓",
+        "Department",
+        "↓",
+        "Team",
+        "Use recursion.",
+        "Department",
+        "↓",
+        "Parent Department",
+        "↓",
+        "Parent Department",
+        "Now organizations of any size are supported without redesign."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-department-as-the-organizational-hub",
+      "title": "Department as the Organizational Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Department",
+        "├── Organization",
+        "├── Employees",
+        "├── Leadership",
+        "├── Projects",
+        "├── Budgets",
+        "├── Reporting",
+        "├── AI",
+        "└── Workforce Organization"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-4",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Department is not an accounting object.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "An organizational unit.",
+          "An employee grouping.",
+          "A reporting hierarchy.",
+          "A management structure.",
+          "A leadership boundary.",
+          "The organizational backbone of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-1",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "⬜ Position",
+        "⬜ Employment Agreement",
+        "⬜ Compensation",
+        "⬜ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-significant-architectural-insight-2",
+      "title": "🏛️ A Significant Architectural Insight",
+      "paragraphs": [
+        "With Employees and Departments complete, KoreVity now has a complete organizational model.",
+        "Organization",
+        "↓",
+        "Branch",
+        "↓",
+        "Department",
+        "↓",
+        "Employee",
+        "This hierarchy is independent of Finance.",
+        "Finance asks:",
+        "Where are costs recorded?",
+        "HR asks:",
+        "Where do people belong?",
+        "Keeping those two perspectives separate gives the ERP much greater flexibility."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-1",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "After designing this, I'd introduce an optional future concept:",
+        "Organizational Unit",
+        "↓",
+        "Department",
+        "↓",
+        "Team",
+        "This allows large enterprises to model Teams, Divisions, Offices, and Departments using the same hierarchical framework while preserving Department as the primary HR entity for most organizations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-5",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Position.",
+        "Why?",
+        "Employees occupy Positions.",
+        "Departments contain Positions.",
+        "Positions define:",
+        "An Employee may change over time.",
+        "A Position is relatively stable.",
+        "Separating the two makes promotions, transfers, succession planning, and workforce planning much more powerful and much easier to manage.",
+        "Excellent.",
+        "This is one of the most overlooked concepts in HR systems.",
+        "Many systems think:",
+        "Employee = Job",
+        "Enterprise systems don't.",
+        "They separate the person from the role.",
+        "That single decision makes promotions, transfers, succession planning, and workforce planning dramatically easier."
+      ],
+      "lists": [
+        [
+          "Responsibilities",
+          "Reporting level",
+          "Hiring requirements",
+          "Salary bands",
+          "Approval authority"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-49-position",
+      "title": "Entity 49 — Position",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-4",
+      "title": "First Principle",
+      "paragraphs": [
+        "A Position is not an Employee.",
+        "A Position exists even when nobody occupies it.",
+        "Example.",
+        "Senior Backend Engineer",
+        "↓",
+        "Vacant",
+        "The position still exists.",
+        "Later.",
+        "Senior Backend Engineer",
+        "↓",
+        "Sarah Johnson",
+        "The position didn't change.",
+        "The employee occupying it did."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-4",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-position-is-a-defined-organizational-role-that-specifies-responsibilities-authority-reporting-relationships-required-competencies-and-organizational-placement-independent-of-the-individual-occupying-it",
+      "title": "A Position is a defined organizational role that specifies responsibilities, authority, reporting relationships, required competencies, and organizational placement independent of the individual occupying it.",
+      "paragraphs": [
+        "Notice.",
+        "Independent of the individual."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-4",
+      "title": "Purpose",
+      "paragraphs": [
+        "Positions become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Organizational planning",
+          "Recruitment",
+          "Promotions",
+          "Transfers",
+          "Succession Planning",
+          "Workforce Planning"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-4",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Position owns:",
+        "It does not own employment history.",
+        "Employees do."
+      ],
+      "lists": [
+        [
+          "Role definition",
+          "Reporting level",
+          "Authority",
+          "Responsibilities",
+          "Required skills"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-4",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-4",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Position Code",
+        "Position Name",
+        "Example.",
+        "POS-ENG-017",
+        "Senior Backend Engineer"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-7",
+      "title": "Relationships",
+      "paragraphs": [
+        "Organization",
+        "Department",
+        "Every position belongs somewhere."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-reports-to",
+      "title": "Reports To",
+      "paragraphs": [
+        "Self-reference.",
+        "Engineering Manager",
+        "↓",
+        "Senior Backend Engineer",
+        "Creates reporting structure."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-job-family",
+      "title": "Job Family",
+      "paragraphs": [
+        "Reference Data.",
+        "Engineering",
+        "Finance",
+        "Sales",
+        "HR",
+        "Operations",
+        "Useful for analytics."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-job-level",
+      "title": "Job Level",
+      "paragraphs": [
+        "Junior",
+        "Mid",
+        "Senior",
+        "Lead",
+        "Manager",
+        "Director",
+        "Executive",
+        "Enterprise reporting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-position-type",
+      "title": "Position Type",
+      "paragraphs": [
+        "Permanent",
+        "Temporary",
+        "Contract",
+        "Intern"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employment-type",
+      "title": "Employment Type",
+      "paragraphs": [
+        "Default.",
+        "Full Time",
+        "Part Time",
+        "Contractor",
+        "Employees may override."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-headcount",
+      "title": "Headcount",
+      "paragraphs": [
+        "Very important.",
+        "Approved Headcount",
+        "Example.",
+        "Senior Engineers",
+        "Approved",
+        "6",
+        "Only four filled?",
+        "Two vacancies remain."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-filled-count",
+      "title": "Filled Count",
+      "paragraphs": [
+        "Derived.",
+        "Current Occupancy",
+        "Never manually entered."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-vacancy",
+      "title": "Vacancy",
+      "paragraphs": [
+        "Derived.",
+        "Vacant Positions"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-description-3",
+      "title": "Description",
+      "paragraphs": [
+        "Role Description"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-5",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Key Responsibilities",
+        "Separate from description."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-qualifications",
+      "title": "Qualifications",
+      "paragraphs": [
+        "Required Skills",
+        "Certifications",
+        "Experience",
+        "Useful for recruiting."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-4",
+      "title": "Status",
+      "paragraphs": [
+        "Active",
+        "Inactive",
+        "Archived"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-8",
+      "title": "Relationships",
+      "paragraphs": [
+        "Position",
+        "├── Department",
+        "├── Employees",
+        "├── Recruitment",
+        "├── Performance",
+        "├── Compensation",
+        "├── AI Context",
+        "└── Business Events",
+        "Very connected."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-4",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Approved",
+        "↓",
+        "Active",
+        "↓",
+        "Inactive",
+        "↓",
+        "Archived",
+        "Simple."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-4",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Position Code unique.",
+        "Department required.",
+        "Approved Headcount cannot be negative.",
+        "Archived positions cannot receive new employees."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-4",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Code required.",
+        "Name required.",
+        "Department required.",
+        "Job Level required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-4",
+      "title": "Permissions",
+      "paragraphs": [
+        "POSITION_VIEW",
+        "POSITION_CREATE",
+        "POSITION_UPDATE",
+        "POSITION_ARCHIVE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-4",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Activated",
+        "↓",
+        "Headcount Changed",
+        "↓",
+        "Archived",
+        "Everything tracked."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-4",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Position",
+        "Department",
+        "Level",
+        "Family",
+        "Status",
+        "Vacancy",
+        "Very common in HR."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-4",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI now understands organizational capacity.",
+        "Questions.",
+        "Example.",
+        "\"Engineering currently has three approved Senior Backend Engineer positions that remain vacant.\""
+      ],
+      "lists": [
+        [
+          "Which positions remain vacant?",
+          "Which departments exceed approved headcount?",
+          "Which positions are hardest to fill?",
+          "Predict hiring demand."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-4",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Department",
+        "Level",
+        "Headcount",
+        "Responsibilities",
+        "Status",
+        "Historical organization preserved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-4",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Position Code",
+        "Department",
+        "Job Family",
+        "Level",
+        "Status"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-4",
+      "title": "Example",
+      "paragraphs": [
+        "Position",
+        "Senior Backend Engineer",
+        "Department",
+        "Engineering",
+        "Headcount",
+        "6",
+        "Filled",
+        "4",
+        "Vacant",
+        "2",
+        "Exactly what HR needs."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-4",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employees-reference-positions",
+      "title": "Employees Reference Positions",
+      "paragraphs": [
+        "Never.",
+        "Position",
+        "↓",
+        "Employee List",
+        "Instead.",
+        "Employee",
+        "↓",
+        "Position",
+        "Employees move.",
+        "Positions remain.",
+        "Much cleaner."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-4",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-headcount-planning",
+      "title": "Headcount Planning",
+      "paragraphs": [
+        "Instead of:",
+        "Engineering",
+        "↓",
+        "100 Employees",
+        "Plan using Positions.",
+        "Backend Engineer",
+        "10",
+        "↓",
+        "Occupied",
+        "8",
+        "↓",
+        "Vacant",
+        "2",
+        "This enables:",
+        "without changing the Employee model."
+      ],
+      "lists": [
+        [
+          "Hiring plans",
+          "Budget planning",
+          "Recruitment forecasting",
+          "Workforce analytics"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-position-as-the-workforce-planning-hub",
+      "title": "Position as the Workforce Planning Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Position",
+        "├── Organizational Role",
+        "├── Headcount",
+        "├── Recruitment",
+        "├── Compensation",
+        "├── Performance",
+        "├── Succession",
+        "├── AI",
+        "└── Workforce Planning"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-5",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Position is not an employee.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "An organizational role.",
+          "A planning object.",
+          "A reporting structure node.",
+          "A headcount planning unit.",
+          "A recruitment target.",
+          "The workforce planning foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-2",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "⬜ Employment Agreement",
+        "⬜ Compensation",
+        "⬜ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight-1",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "We now have three distinct layers of workforce modeling.",
+        "Department",
+        "↓",
+        "Organizational Unit",
+        "Position",
+        "↓",
+        "Role",
+        "Employee",
+        "↓",
+        "Person",
+        "This separation gives KoreVity enterprise-grade flexibility.",
+        "For example:",
+        "Each concept has exactly one responsibility."
+      ],
+      "lists": [
+        [
+          "A Position can exist before hiring.",
+          "An Employee can move to another Position without changing the Position itself.",
+          "A Department can be reorganized without altering employee identities."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-2",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I'd allow an Employee to have a Primary Position and optional Secondary Positions.",
+        "Example:",
+        "Sarah Johnson",
+        "Primary",
+        "↓",
+        "Senior Backend Engineer",
+        "Secondary",
+        "↓",
+        "Security Review Lead",
+        "This supports matrix organizations, temporary assignments, and cross-functional leadership without duplicating employee records."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-6",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Employment Agreement.",
+        "At this point we know:",
+        "Now we need to define the legal and contractual relationship between the organization and the employee.",
+        "Employment Agreements naturally become the parent for compensation, benefits, probation, contract renewals, and future payroll integration while keeping those changing details separate from the stable Employee record.",
+        "Excellent.",
+        "Now we move from who the employee is to the legal relationship between the employee and the company.",
+        "This is where many HR systems make a mistake.",
+        "They put everything on the Employee.",
+        "Salary.",
+        "Benefits.",
+        "Contract.",
+        "Probation.",
+        "Notice Period.",
+        "Employment Type.",
+        "That creates a huge problem.",
+        "People get promoted.",
+        "Contracts renew.",
+        "Compensation changes.",
+        "Benefits change.",
+        "The Employee stays the same.",
+        "So those things belong somewhere else."
+      ],
+      "lists": [
+        [
+          "Who the employee is.",
+          "Where they belong.",
+          "Which role they occupy."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-50-employment-agreement",
+      "title": "Entity 50 — Employment Agreement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-5",
+      "title": "First Principle",
+      "paragraphs": [
+        "An Employment Agreement is not an Employee.",
+        "An Employee can have multiple Employment Agreements during their career.",
+        "Example.",
+        "Sarah Johnson",
+        "↓",
+        "Intern Agreement",
+        "↓",
+        "Junior Engineer Agreement",
+        "↓",
+        "Senior Engineer Agreement",
+        "↓",
+        "Engineering Manager Agreement",
+        "Same employee.",
+        "Four agreements.",
+        "Perfect employment history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-5",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-an-employment-agreement-is-the-formal-contractual-relationship-between-an-organization-and-an-employee-that-defines-employment-terms-working-conditions-contractual-obligations-compensation-framework-and-employment-lifecycle",
+      "title": "An Employment Agreement is the formal contractual relationship between an organization and an employee that defines employment terms, working conditions, contractual obligations, compensation framework, and employment lifecycle.",
+      "paragraphs": [
+        "Notice.",
+        "Relationship.",
+        "Not person."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-5",
+      "title": "Purpose",
+      "paragraphs": [
+        "Employment Agreements become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Employment History",
+          "Compensation",
+          "Benefits",
+          "Probation",
+          "Promotions",
+          "Transfers",
+          "Payroll",
+          "Compliance"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-6",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Employment Agreement owns:",
+        "It does not own the employee."
+      ],
+      "lists": [
+        [
+          "Employment Terms",
+          "Contract Dates",
+          "Working Conditions",
+          "Employment Status",
+          "Contract History"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-5",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-5",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Agreement Number",
+        "Example.",
+        "AGR-2027-00418"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-9",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employee",
+        "Organization",
+        "Department",
+        "Position",
+        "The agreement connects all four."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-agreement-type",
+      "title": "Agreement Type",
+      "paragraphs": [
+        "Reference Data.",
+        "Permanent",
+        "Contract",
+        "Temporary",
+        "Internship",
+        "Consultant",
+        "Apprenticeship",
+        "Extensible."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employment-type-1",
+      "title": "Employment Type",
+      "paragraphs": [
+        "Full Time",
+        "Part Time",
+        "Seasonal",
+        "Contractor",
+        "Different concept."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-effective-dates",
+      "title": "Effective Dates",
+      "paragraphs": [
+        "Effective Date",
+        "End Date",
+        "End Date optional.",
+        "Permanent employees.",
+        "No end date."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-probation",
+      "title": "Probation",
+      "paragraphs": [
+        "Probation Start",
+        "Probation End",
+        "Very common globally."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-working-hours",
+      "title": "Working Hours",
+      "paragraphs": [
+        "Hours Per Week",
+        "Example.",
+        "40"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-work-schedule",
+      "title": "Work Schedule",
+      "paragraphs": [
+        "Reference.",
+        "Standard",
+        "Shift",
+        "Flexible",
+        "Remote",
+        "Hybrid"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-reporting-manager",
+      "title": "Reporting Manager",
+      "paragraphs": [
+        "Stored historically.",
+        "Reporting Manager",
+        "Useful because managers change over time."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-notice-period",
+      "title": "Notice Period",
+      "paragraphs": [
+        "30 Days",
+        "60 Days",
+        "90 Days",
+        "Administrative."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-5",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "Active",
+        "Suspended",
+        "Expired",
+        "Terminated",
+        "Archived",
+        "Simple."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-renewal",
+      "title": "Renewal",
+      "paragraphs": [
+        "Useful.",
+        "Auto Renew",
+        "Yes",
+        "No"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-reason",
+      "title": "Reason",
+      "paragraphs": [
+        "For changes.",
+        "Promotion",
+        "Transfer",
+        "Renewal",
+        "New Hire",
+        "Contract Extension",
+        "Very useful historically."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-10",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employment Agreement",
+        "├── Employee",
+        "├── Department",
+        "├── Position",
+        "├── Compensation",
+        "├── Benefits",
+        "├── Leave",
+        "├── Attendance",
+        "├── Payroll",
+        "├── AI Context",
+        "└── Business Events",
+        "Notice.",
+        "Future HR modules naturally attach here."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-5",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Approved",
+        "↓",
+        "Active",
+        "↓",
+        "Expired",
+        "↓",
+        "Archived",
+        "Or.",
+        "Active",
+        "↓",
+        "Terminated"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-5",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Only one Active Agreement per employee.",
+        "Agreement Dates cannot overlap.",
+        "Position required.",
+        "Department required.",
+        "Archived agreements immutable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-5",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employee required.",
+        "Position required.",
+        "Department required.",
+        "Effective Date required.",
+        "Agreement Type required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-5",
+      "title": "Permissions",
+      "paragraphs": [
+        "AGREEMENT_VIEW",
+        "AGREEMENT_CREATE",
+        "AGREEMENT_APPROVE",
+        "AGREEMENT_UPDATE",
+        "AGREEMENT_TERMINATE"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-5",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Approved",
+        "↓",
+        "Activated",
+        "↓",
+        "Renewed",
+        "↓",
+        "Transferred",
+        "↓",
+        "Terminated",
+        "Complete employment history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-5",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Agreement Number",
+        "Employee",
+        "Department",
+        "Position",
+        "Agreement Type",
+        "Status"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-5",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI now understands employment history.",
+        "Questions.",
+        "Example.",
+        "\"Seven contractor agreements expire within the next 45 days.\"",
+        "Very useful."
+      ],
+      "lists": [
+        [
+          "Which contracts expire next month?",
+          "Which employees are still on probation?",
+          "Predict renewal workload.",
+          "Detect contract anomalies."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-5",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Department",
+        "Position",
+        "Status",
+        "Dates",
+        "Renewals",
+        "Terminations",
+        "Never delete."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-5",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Agreement Number",
+        "Employee",
+        "Status",
+        "Effective Date",
+        "End Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-5",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "Sarah Johnson",
+        "Agreement",
+        "Permanent Employment",
+        "Position",
+        "Senior Backend Engineer",
+        "Status",
+        "Active",
+        "Hours",
+        "40/week",
+        "Simple.",
+        "Complete."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-5",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-compensation-does-not-belong-here",
+      "title": "Compensation Does NOT Belong Here",
+      "paragraphs": [
+        "Many systems add:",
+        "Salary",
+        "Bonus",
+        "Allowance",
+        "Benefits",
+        "I wouldn't.",
+        "Instead.",
+        "Employment Agreement",
+        "↓",
+        "Compensation Package",
+        "Why?",
+        "Salary changes.",
+        "Bonuses change.",
+        "Benefits change.",
+        "The employment agreement remains the legal contract.",
+        "Keep those concerns separate."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-5",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-historical-agreements",
+      "title": "Historical Agreements",
+      "paragraphs": [
+        "Never overwrite.",
+        "Wrong.",
+        "Update Agreement",
+        "Correct.",
+        "Agreement V1",
+        "↓",
+        "Agreement V2",
+        "↓",
+        "Agreement V3",
+        "Perfect employment history.",
+        "Essential for compliance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employment-agreement-as-the-legal-hub",
+      "title": "Employment Agreement as the Legal Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Employment Agreement",
+        "├── Legal Terms",
+        "├── Employment History",
+        "├── Compensation",
+        "├── Benefits",
+        "├── Leave",
+        "├── Payroll",
+        "├── AI",
+        "└── Compliance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-6",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Employment Agreement is not an employee record.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A legal contract.",
+          "A historical employment record.",
+          "A compliance document.",
+          "A workforce planning object.",
+          "A payroll parent.",
+          "The legal foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-3",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "✅ Employment Agreement",
+        "⬜ Compensation",
+        "⬜ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight-2",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "We now have four distinct HR layers.",
+        "Employee",
+        "↓",
+        "Person",
+        "Department",
+        "↓",
+        "Organization",
+        "Position",
+        "↓",
+        "Role",
+        "Employment Agreement",
+        "↓",
+        "Legal Relationship",
+        "Each layer has a single responsibility.",
+        "Nothing overlaps.",
+        "That separation will make future HR features—Payroll, Leave, Performance, Recruitment, Succession Planning—far easier to build without redesigning the core model."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-3",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I'd also introduce an Agreement Amendment entity in a later phase.",
+        "Instead of modifying an active agreement directly:",
+        "Employment Agreement",
+        "↓",
+        "Agreement Amendment",
+        "↓",
+        "Effective Change",
+        "That preserves the original signed agreement while recording legally traceable changes such as revised working hours, notice periods, or reporting managers."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-7",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Compensation.",
+        "Why?",
+        "At this point we know:",
+        "Now we can define how they are compensated.",
+        "Keeping Compensation separate from the Employment Agreement allows salary revisions, bonus plans, allowances, equity, and future payroll calculations to evolve independently while preserving a complete compensation history.",
+        "Excellent.",
+        "Now we arrive at one of the most sensitive entities in the entire ERP.",
+        "Not because it's technically difficult.",
+        "Because it contains some of the most confidential business data.",
+        "This entity should be designed with security first."
+      ],
+      "lists": [
+        [
+          "Who the employee is.",
+          "Where they belong.",
+          "Which role they occupy.",
+          "Under which agreement they are employed."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-51-compensation",
+      "title": "Entity 51 — Compensation",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-6",
+      "title": "First Principle",
+      "paragraphs": [
+        "Compensation is not Salary.",
+        "Salary is only one component.",
+        "Compensation is everything the organization provides in exchange for work.",
+        "Example.",
+        "Compensation",
+        "├── Base Salary",
+        "├── Bonus",
+        "├── Commission",
+        "├── Allowance",
+        "├── Equity",
+        "├── Incentives",
+        "└── Benefits",
+        "Salary is merely one part."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-6",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-compensation-is-the-structured-financial-package-provided-to-an-employee-under-an-employment-agreement-consisting-of-fixed-and-variable-earnings-incentives-allowances-and-employer-provided-financial-benefits",
+      "title": "Compensation is the structured financial package provided to an employee under an Employment Agreement, consisting of fixed and variable earnings, incentives, allowances, and employer-provided financial benefits.",
+      "paragraphs": [
+        "Notice.",
+        "Package.",
+        "Not salary."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-6",
+      "title": "Purpose",
+      "paragraphs": [
+        "Compensation becomes the foundation for:"
+      ],
+      "lists": [
+        [
+          "Payroll",
+          "Budgeting",
+          "HR Planning",
+          "Performance Rewards",
+          "Cost Forecasting",
+          "Executive Compensation"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-7",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Compensation owns:",
+        "It does not calculate payroll.",
+        "Payroll will consume Compensation."
+      ],
+      "lists": [
+        [
+          "Pay structure",
+          "Salary history",
+          "Variable compensation",
+          "Allowances",
+          "Compensation lifecycle"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-6",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-6",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Compensation Number"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-11",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employment Agreement",
+        "Everything flows from the agreement."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-compensation-type",
+      "title": "Compensation Type",
+      "paragraphs": [
+        "Reference Data.",
+        "Salary",
+        "Hourly",
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Annual"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-currency",
+      "title": "Currency",
+      "paragraphs": [
+        "Currency",
+        "Supports multinational organizations."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-base-compensation",
+      "title": "Base Compensation",
+      "paragraphs": [
+        "Base Amount",
+        "Example.",
+        "$120,000/year"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-pay-frequency",
+      "title": "Pay Frequency",
+      "paragraphs": [
+        "Weekly",
+        "Biweekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-variable-compensation",
+      "title": "Variable Compensation",
+      "paragraphs": [
+        "Separate.",
+        "Bonus Eligible",
+        "Commission Eligible",
+        "Profit Sharing",
+        "Equity Eligible",
+        "Booleans or references."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-allowances",
+      "title": "Allowances",
+      "paragraphs": [
+        "Reference.",
+        "Housing",
+        "Transportation",
+        "Meal",
+        "Internet",
+        "Travel",
+        "Not individual columns.",
+        "Allowances should become child records later."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-effective-dates-1",
+      "title": "Effective Dates",
+      "paragraphs": [
+        "Effective Date",
+        "End Date",
+        "Supports salary history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-6",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "Active",
+        "Superseded",
+        "Expired",
+        "Archived"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-reason-1",
+      "title": "Reason",
+      "paragraphs": [
+        "Why compensation changed.",
+        "New Hire",
+        "Promotion",
+        "Merit Increase",
+        "Market Adjustment",
+        "Transfer",
+        "Very useful."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-12",
+      "title": "Relationships",
+      "paragraphs": [
+        "Compensation",
+        "├── Employment Agreement",
+        "├── Payroll",
+        "├── Performance Reviews",
+        "├── Budgets",
+        "├── Cost Centers",
+        "├── Financial Dimensions",
+        "├── AI Context",
+        "└── Business Events"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-6",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Approved",
+        "↓",
+        "Active",
+        "↓",
+        "Superseded",
+        "↓",
+        "Archived",
+        "Notice.",
+        "Never edit active compensation.",
+        "Create a new version."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-6",
+      "title": "Business Rules",
+      "paragraphs": [
+        "One Active Compensation per Employment Agreement.",
+        "Historical records immutable.",
+        "Currency required.",
+        "Base Amount cannot be negative."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-6",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employment Agreement required.",
+        "Base Amount required.",
+        "Pay Frequency required.",
+        "Effective Date required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-6",
+      "title": "Permissions",
+      "paragraphs": [
+        "One of the most restricted entities.",
+        "COMPENSATION_VIEW",
+        "COMPENSATION_CREATE",
+        "COMPENSATION_UPDATE",
+        "COMPENSATION_APPROVE",
+        "Most employees should never see compensation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-6",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Approved",
+        "↓",
+        "Activated",
+        "↓",
+        "Revised",
+        "↓",
+        "Archived",
+        "Everything audited."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-6",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Employee",
+        "Department",
+        "Position",
+        "Agreement",
+        "Status",
+        "Effective Date",
+        "Restricted access only."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-6",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes a workforce planning assistant.",
+        "Questions.",
+        "Example.",
+        "\"Backend Engineering compensation increased 12% this year, primarily due to market adjustments.\""
+      ],
+      "lists": [
+        [
+          "Which departments have the highest compensation growth?",
+          "Predict payroll cost next quarter.",
+          "Identify compression risks.",
+          "Detect unusual salary changes."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-6",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Amount",
+        "Currency",
+        "Approval",
+        "Effective Date",
+        "Reason",
+        "Complete compensation history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-6",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Employment Agreement",
+        "Status",
+        "Effective Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-6",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "Sarah Johnson",
+        "Compensation",
+        "Annual Salary",
+        "Base",
+        "$120,000",
+        "Frequency",
+        "Monthly",
+        "Status",
+        "Active"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-6",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-never-update-salary",
+      "title": "Never Update Salary",
+      "paragraphs": [
+        "Wrong.",
+        "Salary",
+        "↓",
+        "Update Amount",
+        "Correct.",
+        "Salary V1",
+        "↓",
+        "Salary V2",
+        "↓",
+        "Salary V3",
+        "Perfect historical tracking.",
+        "Critical for payroll.",
+        "Critical for compliance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-6",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-components-should-be-child-records",
+      "title": "Components Should Be Child Records",
+      "paragraphs": [
+        "Instead of:",
+        "Salary",
+        "Bonus",
+        "Allowance",
+        "Commission",
+        "Stock",
+        "Use:",
+        "Compensation",
+        "↓",
+        "Compensation Component",
+        "↓",
+        "Component Type",
+        "↓",
+        "Amount",
+        "Now adding new compensation types requires no schema changes.",
+        "Examples.",
+        "Everything fits."
+      ],
+      "lists": [
+        [
+          "Remote Work Allowance",
+          "Certification Bonus",
+          "Shift Premium",
+          "Hazard Pay"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-compensation-as-the-financial-hr-hub",
+      "title": "Compensation as the Financial HR Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Compensation",
+        "├── Base Pay",
+        "├── Variable Pay",
+        "├── Allowances",
+        "├── Payroll",
+        "├── Budgets",
+        "├── Performance",
+        "├── AI",
+        "└── Workforce Costing"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-7",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Compensation is not payroll.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A financial package.",
+          "A salary history.",
+          "A budgeting input.",
+          "A payroll source.",
+          "A workforce planning object.",
+          "The financial foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-4",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "✅ Employment Agreement",
+        "✅ Compensation",
+        "⬜ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight-3",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "At this point the HR model is becoming layered exactly like Finance.",
+        "Employee",
+        "↓",
+        "Employment Agreement",
+        "↓",
+        "Compensation",
+        "↓",
+        "Payroll (Future)",
+        "Each layer has a single responsibility:",
+        "Because these concerns are separated, salary revisions don't require changing contracts, payroll calculations don't modify compensation records, and employment history remains intact."
+      ],
+      "lists": [
+        [
+          "Employee = the person.",
+          "Employment Agreement = the legal relationship.",
+          "Compensation = the financial package.",
+          "Payroll (future) = the calculation and payment process."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-4",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I'd introduce a dedicated Compensation Component entity rather than storing bonuses, commissions, and allowances directly on Compensation.",
+        "The model becomes:",
+        "Compensation",
+        "↓",
+        "Compensation Component",
+        "├── Base Salary",
+        "├── Housing Allowance",
+        "├── Transport Allowance",
+        "├── Performance Bonus",
+        "├── Commission",
+        "└── Equity",
+        "This makes the compensation engine completely configurable and future-proof."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-8",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Leave.",
+        "Why?",
+        "Once compensation exists, the next major operational concern is employee availability.",
+        "Leave management naturally integrates with:",
+        "From there we'll have everything needed to model when employees are available, unavailable, and how that affects operations across the ERP.",
+        "Excellent.",
+        "Now we move from how employees are compensated to when employees are available to work.",
+        "This is where HR begins interacting heavily with Operations.",
+        "Projects.",
+        "Tasks.",
+        "Approvals.",
+        "Payroll.",
+        "Capacity Planning.",
+        "Everything depends on knowing whether someone is actually available."
+      ],
+      "lists": [
+        [
+          "Employment Agreements",
+          "Attendance",
+          "Payroll",
+          "Projects",
+          "Tasks",
+          "Department planning",
+          "Workforce capacity"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-52-leave",
+      "title": "Entity 52 — Leave",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-7",
+      "title": "First Principle",
+      "paragraphs": [
+        "Leave is not Attendance.",
+        "Attendance answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-did-the-employee-work",
+      "title": "\"Did the employee work?\"",
+      "paragraphs": [
+        "Leave answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-was-the-employee-officially-excused-from-work",
+      "title": "\"Was the employee officially excused from work?\"",
+      "paragraphs": [
+        "Example.",
+        "Monday",
+        "↓",
+        "Vacation",
+        "↓",
+        "No attendance expected",
+        "Attendance should never determine leave.",
+        "Leave determines expected attendance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-7",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-leave-is-an-approved-or-recorded-period-during-which-an-employee-is-officially-absent-from-work-under-a-defined-leave-policy-and-employment-agreement",
+      "title": "Leave is an approved or recorded period during which an employee is officially absent from work under a defined leave policy and employment agreement.",
+      "paragraphs": [
+        "Notice.",
+        "Approved.",
+        "Policy-driven."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-7",
+      "title": "Purpose",
+      "paragraphs": [
+        "Leave becomes the foundation for:"
+      ],
+      "lists": [
+        [
+          "Time Off",
+          "Vacation",
+          "Sick Leave",
+          "Maternity/Paternity",
+          "Unpaid Leave",
+          "Leave Balances",
+          "Payroll Adjustments",
+          "Workforce Planning"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-8",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Leave owns:",
+        "It does not own attendance calculations."
+      ],
+      "lists": [
+        [
+          "Leave requests",
+          "Leave periods",
+          "Approval workflow",
+          "Leave balances",
+          "Leave history"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-7",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-7",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Leave Number",
+        "Example.",
+        "LEV-2027-001452"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-13",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employee",
+        "Employment Agreement"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-leave-type",
+      "title": "Leave Type",
+      "paragraphs": [
+        "Reference Data.",
+        "Annual Leave",
+        "Sick Leave",
+        "Casual Leave",
+        "Maternity",
+        "Paternity",
+        "Bereavement",
+        "Compensatory Off",
+        "Unpaid Leave",
+        "Study Leave",
+        "Jury Duty",
+        "Fully configurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-request-dates",
+      "title": "Request Dates",
+      "paragraphs": [
+        "Requested On",
+        "Administrative."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-leave-period",
+      "title": "Leave Period",
+      "paragraphs": [
+        "Start Date",
+        "End Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-duration",
+      "title": "Duration",
+      "paragraphs": [
+        "Derived.",
+        "Days",
+        "Hours",
+        "Never manually entered."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-half-day",
+      "title": "Half-Day",
+      "paragraphs": [
+        "Useful.",
+        "Morning",
+        "Afternoon",
+        "Full Day"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-reason-2",
+      "title": "Reason",
+      "paragraphs": [
+        "Employee Reason",
+        "Optional depending on policy."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-7",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "Submitted",
+        "Approved",
+        "Rejected",
+        "Cancelled",
+        "Completed",
+        "Enterprise workflow."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-approver",
+      "title": "Approver",
+      "paragraphs": [
+        "Approved By",
+        "Reference Employee."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-approval-date",
+      "title": "Approval Date",
+      "paragraphs": [
+        "Approved On"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-balance-impact",
+      "title": "Balance Impact",
+      "paragraphs": [
+        "Deduct Balance",
+        "Yes",
+        "No",
+        "Examples.",
+        "Annual Leave → Yes",
+        "Jury Duty → No"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-remaining-balance",
+      "title": "Remaining Balance",
+      "paragraphs": [
+        "Derived.",
+        "Remaining Leave",
+        "Never stored directly."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-14",
+      "title": "Relationships",
+      "paragraphs": [
+        "Leave",
+        "├── Employee",
+        "├── Employment Agreement",
+        "├── Attendance",
+        "├── Payroll",
+        "├── Department",
+        "├── Projects",
+        "├── AI Context",
+        "└── Business Events",
+        "Notice.",
+        "Projects can now anticipate resource availability."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-7",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "Submitted",
+        "↓",
+        "Approved",
+        "↓",
+        "Completed",
+        "Or.",
+        "Submitted",
+        "↓",
+        "Rejected",
+        "Or.",
+        "Approved",
+        "↓",
+        "Cancelled"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-7",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Start Date ≤ End Date.",
+        "Approved leave cannot overlap another approved leave of the same employee.",
+        "Completed leave immutable.",
+        "Rejected leave preserved."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-7",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employee required.",
+        "Leave Type required.",
+        "Start Date required.",
+        "End Date required.",
+        "Status required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-7",
+      "title": "Permissions",
+      "paragraphs": [
+        "LEAVE_VIEW",
+        "LEAVE_REQUEST",
+        "LEAVE_APPROVE",
+        "LEAVE_CANCEL",
+        "Managers receive approval rights."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-7",
+      "title": "Business Events",
+      "paragraphs": [
+        "Requested",
+        "↓",
+        "Submitted",
+        "↓",
+        "Approved",
+        "↓",
+        "Rejected",
+        "↓",
+        "Cancelled",
+        "↓",
+        "Completed",
+        "Everything audited."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-7",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Employee",
+        "Department",
+        "Leave Type",
+        "Status",
+        "Date Range",
+        "Approver"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-7",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes a workforce planner.",
+        "Questions.",
+        "Example.",
+        "\"Engineering will have five senior developers on leave during the first week of August, affecting two active projects.\""
+      ],
+      "lists": [
+        [
+          "Which departments have staffing shortages next month?",
+          "Who has unused annual leave?",
+          "Which projects are affected by upcoming leave?",
+          "Recommend alternate assignees."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-7",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Leave Dates",
+        "Leave Type",
+        "Approvals",
+        "Status",
+        "Cancellation",
+        "Complete leave history."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-7",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Employee",
+        "Status",
+        "Leave Type",
+        "Start Date",
+        "End Date"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-7",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "Sarah Johnson",
+        "Type",
+        "Annual Leave",
+        "Dates",
+        "Aug 4 – Aug 8",
+        "Duration",
+        "5 Days",
+        "Status",
+        "Approved"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-7",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-leave-balance-should-not-be-stored",
+      "title": "Leave Balance Should Not Be Stored",
+      "paragraphs": [
+        "Wrong.",
+        "Employee",
+        "↓",
+        "Balance = 14 Days",
+        "Correct.",
+        "Leave Policy",
+        "↓",
+        "Accrual",
+        "↓",
+        "Approved Leave",
+        "↓",
+        "Calculated Balance",
+        "Balances should always be derived.",
+        "This prevents inconsistencies."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-7",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-separate-leave-policy",
+      "title": "Separate Leave Policy",
+      "paragraphs": [
+        "Don't hardcode:",
+        "Annual Leave = 20 Days",
+        "Instead.",
+        "Leave Policy",
+        "↓",
+        "Leave Type",
+        "↓",
+        "Accrual Rules",
+        "↓",
+        "Carry Forward Rules",
+        "↓",
+        "Maximum Balance",
+        "Policies differ by:",
+        "Keeping policies separate makes the system globally adaptable."
+      ],
+      "lists": [
+        [
+          "Country",
+          "Department",
+          "Employment Type",
+          "Seniority"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-leave-as-the-availability-hub",
+      "title": "Leave as the Availability Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Leave",
+        "├── Time Off",
+        "├── Approval",
+        "├── Payroll",
+        "├── Attendance",
+        "├── Projects",
+        "├── Capacity Planning",
+        "├── AI",
+        "└── Workforce Availability"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-8",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Leave is not attendance.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A time-off request.",
+          "An approval workflow.",
+          "A workforce planning input.",
+          "A payroll input.",
+          "A leave history record.",
+          "The availability foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-5",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "✅ Employment Agreement",
+        "✅ Compensation",
+        "✅ Leave",
+        "⬜ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight-4",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "The HR model now separates entitlement from usage.",
+        "Leave Policy",
+        "↓",
+        "Defines entitlement",
+        "Leave",
+        "↓",
+        "Records usage",
+        "Attendance",
+        "↓",
+        "Records presence",
+        "Payroll",
+        "↓",
+        "Calculates financial impact",
+        "Each entity has one responsibility.",
+        "Nothing overlaps."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-5",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "I'd introduce a dedicated Leave Balance Ledger in a later phase.",
+        "Instead of simply calculating balances from requests, every change would be recorded as a transaction.",
+        "Leave Balance Ledger",
+        "├── Annual Allocation",
+        "├── Monthly Accrual",
+        "├── Manual Adjustment",
+        "├── Leave Taken",
+        "├── Carry Forward",
+        "└── Expiration",
+        "This mirrors the accounting model we used in Finance and provides a complete, auditable history of every leave balance change."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-9",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Attendance.",
+        "Why?",
+        "Leave tells us when someone is officially absent.",
+        "Attendance tells us when they actually worked.",
+        "Together they form the complete workforce availability model and become the operational input for future payroll, productivity analysis, overtime, shift management, and resource utilization across the entire ERP.",
+        "Excellent.",
+        "Now we reach one of the highest-volume entities in HR.",
+        "An enterprise with 5,000 employees may generate:",
+        "But it will generate millions of Attendance records over time.",
+        "This entity must be designed for performance, accuracy, and auditability."
+      ],
+      "lists": [
+        [
+          "5,000 Employee records",
+          "5,000 Employment Agreements",
+          "5,000 Compensation records"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-53-attendance",
+      "title": "Entity 53 — Attendance",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-8",
+      "title": "First Principle",
+      "paragraphs": [
+        "Attendance is not Time Tracking.",
+        "This distinction is critical.",
+        "Attendance answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-was-the-employee-present",
+      "title": "\"Was the employee present?\"",
+      "paragraphs": [
+        "Time Tracking answers:"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-what-work-did-the-employee-perform",
+      "title": "\"What work did the employee perform?\"",
+      "paragraphs": [
+        "Example.",
+        "8:55 AM",
+        "↓",
+        "Employee Arrived",
+        "↓",
+        "Attendance",
+        "Later.",
+        "9:00–11:00",
+        "Project Alpha",
+        "↓",
+        "Time Entry",
+        "Attendance records presence.",
+        "Time records work.",
+        "Never mix them."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-8",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-is-the-recorded-presence-absence-or-working-status-of-an-employee-for-a-specific-date-and-time-according-to-organizational-working-schedules-and-attendance-policies",
+      "title": "Attendance is the recorded presence, absence, or working status of an employee for a specific date and time according to organizational working schedules and attendance policies.",
+      "paragraphs": [
+        "Notice.",
+        "Presence.",
+        "Not productivity."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-8",
+      "title": "Purpose",
+      "paragraphs": [
+        "Attendance becomes the foundation for:"
+      ],
+      "lists": [
+        [
+          "Daily Presence",
+          "Shift Management",
+          "Overtime",
+          "Payroll",
+          "Compliance",
+          "Workforce Analytics"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-9",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Attendance owns:",
+        "It does not own leave balances."
+      ],
+      "lists": [
+        [
+          "Clock In",
+          "Clock Out",
+          "Working Hours",
+          "Attendance Status",
+          "Attendance Exceptions"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-8",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-8",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Attendance Number",
+        "Usually system-generated."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-15",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employee",
+        "Employment Agreement"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-date",
+      "title": "Attendance Date",
+      "paragraphs": [
+        "Attendance Date",
+        "One operational day."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-shift",
+      "title": "Shift",
+      "paragraphs": [
+        "Reference.",
+        "Assigned Shift",
+        "Future entity."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-clock-in",
+      "title": "Clock In",
+      "paragraphs": [
+        "Clock In Time"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-clock-out",
+      "title": "Clock Out",
+      "paragraphs": [
+        "Clock Out Time"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-worked-hours",
+      "title": "Worked Hours",
+      "paragraphs": [
+        "Derived.",
+        "Worked Hours",
+        "Never manually entered."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-break-duration",
+      "title": "Break Duration",
+      "paragraphs": [
+        "Break Time",
+        "Supports labor laws."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-overtime",
+      "title": "Overtime",
+      "paragraphs": [
+        "Derived.",
+        "Overtime Hours"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-8",
+      "title": "Status",
+      "paragraphs": [
+        "Reference Data.",
+        "Present",
+        "Absent",
+        "Late",
+        "Half Day",
+        "Holiday",
+        "Leave",
+        "Remote",
+        "Business Travel",
+        "Configurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-source",
+      "title": "Attendance Source",
+      "paragraphs": [
+        "Very useful.",
+        "Manual",
+        "Biometric",
+        "Mobile App",
+        "Web Portal",
+        "API",
+        "RFID",
+        "Supports multiple capture methods."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-exception",
+      "title": "Exception",
+      "paragraphs": [
+        "Attendance Exception",
+        "Examples.",
+        "Late Arrival.",
+        "Missing Clock Out.",
+        "Duplicate Entry."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-notes",
+      "title": "Notes",
+      "paragraphs": [
+        "Supervisor Notes",
+        "Optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-16",
+      "title": "Relationships",
+      "paragraphs": [
+        "Attendance",
+        "├── Employee",
+        "├── Employment Agreement",
+        "├── Leave",
+        "├── Payroll",
+        "├── Shift",
+        "├── AI Context",
+        "└── Business Events"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-8",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Recorded",
+        "↓",
+        "Verified",
+        "↓",
+        "Approved",
+        "↓",
+        "Locked",
+        "Payroll consumes locked attendance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-8",
+      "title": "Business Rules",
+      "paragraphs": [
+        "Clock Out ≥ Clock In.",
+        "Only one attendance record per employee per working day.",
+        "Approved attendance immutable.",
+        "Attendance on approved leave becomes:",
+        "Status = Leave",
+        "No duplicate attendance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-8",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employee required.",
+        "Attendance Date required.",
+        "Status required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-8",
+      "title": "Permissions",
+      "paragraphs": [
+        "ATTENDANCE_VIEW",
+        "ATTENDANCE_RECORD",
+        "ATTENDANCE_APPROVE",
+        "ATTENDANCE_CORRECT",
+        "Corrections audited."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-8",
+      "title": "Business Events",
+      "paragraphs": [
+        "Recorded",
+        "↓",
+        "Modified",
+        "↓",
+        "Verified",
+        "↓",
+        "Approved",
+        "↓",
+        "Locked",
+        "Complete audit trail."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-8",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Employee",
+        "Department",
+        "Attendance Date",
+        "Status",
+        "Shift",
+        "Late Employees",
+        "Missing Clock Out",
+        "Very common."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-8",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes a workforce operations assistant.",
+        "Questions.",
+        "Example.",
+        "\"John has worked overtime for 18 consecutive business days and exceeds department averages.\"",
+        "Extremely valuable."
+      ],
+      "lists": [
+        [
+          "Who is frequently late?",
+          "Which departments have poor attendance?",
+          "Predict overtime costs.",
+          "Detect attendance anomalies.",
+          "Identify burnout risk."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-8",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Clock In",
+        "Clock Out",
+        "Status",
+        "Corrections",
+        "Approvals",
+        "Nothing deleted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-8",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Employee",
+        "Attendance Date",
+        "Status",
+        "Shift",
+        "Performance is critical."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-8",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "Sarah Johnson",
+        "Date",
+        "Aug 5",
+        "Clock In",
+        "08:56",
+        "Clock Out",
+        "17:42",
+        "Worked",
+        "8.3 Hours",
+        "Status",
+        "Present"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-8",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-is-daily",
+      "title": "Attendance Is Daily",
+      "paragraphs": [
+        "Wrong.",
+        "Employee",
+        "↓",
+        "Attendance History",
+        "Correct.",
+        "One Employee",
+        "↓",
+        "One Day",
+        "↓",
+        "One Attendance Record",
+        "Simple.",
+        "Fast.",
+        "Scalable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-8",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-should-never-calculate-payroll",
+      "title": "Attendance Should Never Calculate Payroll",
+      "paragraphs": [
+        "Wrong.",
+        "Attendance",
+        "↓",
+        "Salary",
+        "Correct.",
+        "Attendance",
+        "↓",
+        "Payroll Engine",
+        "↓",
+        "Salary",
+        "Attendance provides facts.",
+        "Payroll performs calculations.",
+        "Perfect separation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-attendance-as-the-workforce-activity-hub",
+      "title": "Attendance as the Workforce Activity Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Attendance",
+        "├── Presence",
+        "├── Working Hours",
+        "├── Overtime",
+        "├── Leave Integration",
+        "├── Payroll",
+        "├── AI",
+        "└── Workforce Activity"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-9",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Attendance is not time tracking.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "A daily workforce record.",
+          "A payroll input.",
+          "A compliance record.",
+          "A workforce analytics source.",
+          "An overtime source.",
+          "The activity foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-hr-progress-6",
+      "title": "HR Progress",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "✅ Employment Agreement",
+        "✅ Compensation",
+        "✅ Leave",
+        "✅ Attendance",
+        "⬜ Performance"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-major-architectural-insight-5",
+      "title": "🏛️ A Major Architectural Insight",
+      "paragraphs": [
+        "HR now distinguishes three different concepts of time.",
+        "Leave",
+        "↓",
+        "Authorized absence",
+        "Attendance",
+        "↓",
+        "Presence at work",
+        "Time Entry (Future)",
+        "↓",
+        "Work performed",
+        "This separation is one of the hallmarks of enterprise ERP design.",
+        "An employee can:",
+        "Each concept is modeled independently without conflict."
+      ],
+      "lists": [
+        [
+          "Be present but not billable.",
+          "Be absent on approved leave.",
+          "Be present and split time across multiple projects."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-refinement-i-d-make-6",
+      "title": "One Refinement I'd Make",
+      "paragraphs": [
+        "Rather than storing a single clock-in and clock-out pair, I'd make Attendance capable of supporting multiple attendance events.",
+        "Example:",
+        "Attendance",
+        "↓",
+        "08:55 Clock In",
+        "12:00 Break Out",
+        "12:45 Break In",
+        "17:40 Clock Out",
+        "The Attendance record remains the daily summary, while the underlying attendance events provide complete auditability and support biometric devices, multiple breaks, split shifts, and labor-law compliance."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-10",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next entity should be Performance Review.",
+        "Why?",
+        "We now know:",
+        "The next logical question is:"
+      ],
+      "lists": [
+        [
+          "Who the employee is.",
+          "Where they work.",
+          "Their role.",
+          "Their employment terms.",
+          "Their compensation.",
+          "Their availability.",
+          "Their attendance."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-how-well-are-they-performing",
+      "title": "How well are they performing?",
+      "paragraphs": [
+        "Performance Reviews will become the foundation for promotions, compensation adjustments, training plans, career development, succession planning, and long-term talent management—completing the HR Core before we move into advanced HR capabilities like Recruitment and Payroll.",
+        "Excellent.",
+        "This is the final core entity of Human Resources.",
+        "Everything we've built so far answers:",
+        "Now we answer the most important question."
+      ],
+      "lists": [
+        [
+          "Who is the employee?",
+          "Where do they work?",
+          "What role do they perform?",
+          "Under what agreement?",
+          "How are they compensated?",
+          "When are they available?",
+          "Were they present?"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-how-well-are-they-performing-1",
+      "title": "How well are they performing?",
+      "paragraphs": [
+        "This entity directly influences:"
+      ],
+      "lists": [
+        [
+          "Promotions",
+          "Salary increases",
+          "Bonuses",
+          "Training",
+          "Career paths",
+          "Succession planning"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-entity-54-performance-review",
+      "title": "Entity 54 — Performance Review",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-first-principle-9",
+      "title": "First Principle",
+      "paragraphs": [
+        "A Performance Review is not a Performance Score.",
+        "The review is the process.",
+        "The score is only one outcome.",
+        "Example.",
+        "Performance Review",
+        "↓",
+        "Goals",
+        "↓",
+        "Achievements",
+        "↓",
+        "Feedback",
+        "↓",
+        "Manager Comments",
+        "↓",
+        "Score",
+        "↓",
+        "Development Plan",
+        "Notice.",
+        "The score is one small part."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-korevity-definition-9",
+      "title": "KoreVity Definition",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-a-performance-review-is-a-structured-evaluation-of-an-employee-s-work-behavior-achievements-competencies-and-development-during-a-defined-review-period-resulting-in-documented-feedback-ratings-and-future-objectives",
+      "title": "A Performance Review is a structured evaluation of an employee's work, behavior, achievements, competencies, and development during a defined review period, resulting in documented feedback, ratings, and future objectives.",
+      "paragraphs": [
+        "Notice.",
+        "Evaluation.",
+        "Not ranking."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-purpose-9",
+      "title": "Purpose",
+      "paragraphs": [
+        "Performance Reviews become the foundation for:"
+      ],
+      "lists": [
+        [
+          "Promotions",
+          "Compensation Reviews",
+          "Career Development",
+          "Succession Planning",
+          "Training",
+          "Talent Management"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-responsibilities-10",
+      "title": "Responsibilities",
+      "paragraphs": [
+        "Performance Review owns:",
+        "It does not change compensation.",
+        "It recommends."
+      ],
+      "lists": [
+        [
+          "Review Period",
+          "Ratings",
+          "Feedback",
+          "Goals",
+          "Development Plans"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-core-fields-9",
+      "title": "Core Fields",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-identity-9",
+      "title": "Identity",
+      "paragraphs": [
+        "ID",
+        "Review Number",
+        "Example.",
+        "PR-2027-00112"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-17",
+      "title": "Relationships",
+      "paragraphs": [
+        "Employee",
+        "Employment Agreement",
+        "Reviewer",
+        "Reviewer is usually the manager."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-review-period",
+      "title": "Review Period",
+      "paragraphs": [
+        "Review Start",
+        "Review End",
+        "Examples.",
+        "Quarterly.",
+        "Semiannual.",
+        "Annual."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-review-type",
+      "title": "Review Type",
+      "paragraphs": [
+        "Reference Data.",
+        "Annual",
+        "Quarterly",
+        "Probation",
+        "Promotion",
+        "Special Review",
+        "Configurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-overall-rating",
+      "title": "Overall Rating",
+      "paragraphs": [
+        "Reference.",
+        "Outstanding",
+        "Exceeds Expectations",
+        "Meets Expectations",
+        "Needs Improvement",
+        "Unsatisfactory",
+        "Avoid numeric-only ratings."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-competency-ratings",
+      "title": "Competency Ratings",
+      "paragraphs": [
+        "Not fixed columns.",
+        "Instead.",
+        "Competency Rating",
+        "↓",
+        "Communication",
+        "Leadership",
+        "Technical Skill",
+        "Problem Solving",
+        "Teamwork",
+        "Child records.",
+        "Fully configurable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-goal-achievement",
+      "title": "Goal Achievement",
+      "paragraphs": [
+        "Goals Completed",
+        "Future Goal entity can integrate here."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-employee-comments",
+      "title": "Employee Comments",
+      "paragraphs": [
+        "Self Assessment",
+        "Very valuable."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-manager-comments",
+      "title": "Manager Comments",
+      "paragraphs": [
+        "Manager Feedback",
+        "Separate."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-strengths",
+      "title": "Strengths",
+      "paragraphs": [
+        "Strengths"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-improvement-areas",
+      "title": "Improvement Areas",
+      "paragraphs": [
+        "Development Areas"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-development-plan",
+      "title": "Development Plan",
+      "paragraphs": [
+        "Training",
+        "Mentoring",
+        "Certification",
+        "Coaching",
+        "Action-oriented."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-recommendation",
+      "title": "Recommendation",
+      "paragraphs": [
+        "Promotion",
+        "Salary Review",
+        "Training",
+        "Role Change",
+        "No Action",
+        "Recommendation only."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-status-9",
+      "title": "Status",
+      "paragraphs": [
+        "Draft",
+        "In Review",
+        "Submitted",
+        "Acknowledged",
+        "Closed"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-relationships-18",
+      "title": "Relationships",
+      "paragraphs": [
+        "Performance Review",
+        "├── Employee",
+        "├── Reviewer",
+        "├── Goals",
+        "├── Training",
+        "├── Compensation",
+        "├── Promotions",
+        "├── AI Context",
+        "└── Business Events",
+        "Performance becomes central to talent management."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-lifecycle-9",
+      "title": "Lifecycle",
+      "paragraphs": [
+        "Draft",
+        "↓",
+        "In Review",
+        "↓",
+        "Submitted",
+        "↓",
+        "Acknowledged",
+        "↓",
+        "Closed",
+        "Simple."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-rules-9",
+      "title": "Business Rules",
+      "paragraphs": [
+        "One review per employee per review period.",
+        "Closed reviews immutable.",
+        "Reviewer required.",
+        "Acknowledgement optional."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-validation-rules-9",
+      "title": "Validation Rules",
+      "paragraphs": [
+        "Employee required.",
+        "Reviewer required.",
+        "Review Period required.",
+        "Review Type required."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-permissions-9",
+      "title": "Permissions",
+      "paragraphs": [
+        "PERFORMANCE_VIEW",
+        "PERFORMANCE_CREATE",
+        "PERFORMANCE_SUBMIT",
+        "PERFORMANCE_CLOSE",
+        "Highly restricted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-business-events-9",
+      "title": "Business Events",
+      "paragraphs": [
+        "Created",
+        "↓",
+        "Submitted",
+        "↓",
+        "Reviewed",
+        "↓",
+        "Acknowledged",
+        "↓",
+        "Closed",
+        "Everything audited."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-search-9",
+      "title": "Search",
+      "paragraphs": [
+        "Search by:",
+        "Employee",
+        "Reviewer",
+        "Department",
+        "Review Period",
+        "Overall Rating",
+        "Review Type"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ai-context-9",
+      "title": "AI Context",
+      "paragraphs": [
+        "AI becomes a talent advisor.",
+        "Questions.",
+        "Example.",
+        "\"Sarah has exceeded expectations for three consecutive annual reviews and demonstrates readiness for a Lead Engineer position.\"",
+        "Powerful."
+      ],
+      "lists": [
+        [
+          "Which employees consistently exceed expectations?",
+          "Recommend promotion candidates.",
+          "Detect declining performance.",
+          "Suggest training.",
+          "Predict retention risk."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-audit-behavior-9",
+      "title": "Audit Behavior",
+      "paragraphs": [
+        "Audit:",
+        "Ratings",
+        "Comments",
+        "Reviewer",
+        "Status",
+        "Recommendations",
+        "Nothing deleted."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-database-indexes-9",
+      "title": "Database Indexes",
+      "paragraphs": [
+        "Primary Key",
+        "Employee",
+        "Reviewer",
+        "Review Period",
+        "Status"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-example-9",
+      "title": "Example",
+      "paragraphs": [
+        "Employee",
+        "Sarah Johnson",
+        "Review",
+        "Annual Review 2027",
+        "Overall",
+        "Exceeds Expectations",
+        "Recommendation",
+        "Promotion Review",
+        "Status",
+        "Closed"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-the-biggest-architectural-decision-9",
+      "title": "The Biggest Architectural Decision",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-ratings-should-be-configurable",
+      "title": "Ratings Should Be Configurable",
+      "paragraphs": [
+        "Wrong.",
+        "Technical",
+        "Communication",
+        "Leadership",
+        "Hardcoded forever.",
+        "Correct.",
+        "Performance Review",
+        "↓",
+        "Competency Rating",
+        "↓",
+        "Competency Definition",
+        "Now HR can add:",
+        "without database changes."
+      ],
+      "lists": [
+        [
+          "Innovation",
+          "Customer Focus",
+          "Safety",
+          "Compliance",
+          "Sales Effectiveness"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-another-major-improvement-9",
+      "title": "Another Major Improvement",
+      "paragraphs": [],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-goals-should-become-their-own-entity",
+      "title": "Goals Should Become Their Own Entity",
+      "paragraphs": [
+        "Instead of.",
+        "Goal 1",
+        "Goal 2",
+        "Goal 3",
+        "Use.",
+        "Performance Goal",
+        "↓",
+        "Progress",
+        "↓",
+        "Performance Review",
+        "Goals can then be:",
+        "Much richer."
+      ],
+      "lists": [
+        [
+          "Quarterly",
+          "Annual",
+          "Team Goals",
+          "Individual Goals"
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-performance-review-as-the-talent-hub",
+      "title": "Performance Review as the Talent Hub",
+      "paragraphs": [
+        "Architecturally.",
+        "Performance Review",
+        "├── Evaluation",
+        "├── Competencies",
+        "├── Goals",
+        "├── Development",
+        "├── Promotions",
+        "├── Compensation Recommendations",
+        "├── AI",
+        "└── Talent Management"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-engineering-summary-10",
+      "title": "Engineering Summary",
+      "paragraphs": [
+        "Performance Review is not a score.",
+        "It is:"
+      ],
+      "lists": [
+        [
+          "An evaluation process.",
+          "A talent management tool.",
+          "A development planning system.",
+          "A promotion recommendation source.",
+          "A compensation input.",
+          "The talent foundation of HR."
+        ]
+      ]
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-human-resources-core-complete",
+      "title": "🎉 Human Resources Core Complete",
+      "paragraphs": [
+        "Human Resources",
+        "✅ Employee",
+        "✅ Department",
+        "✅ Position",
+        "✅ Employment Agreement",
+        "✅ Compensation",
+        "✅ Leave",
+        "✅ Attendance",
+        "✅ Performance Review"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-what-we-ve-built-1",
+      "title": "🏛️ What We've Built",
+      "paragraphs": [
+        "HR is now a complete workforce management system.",
+        "Department",
+        "↓",
+        "Position",
+        "↓",
+        "Employee",
+        "↓",
+        "Employment Agreement",
+        "↓",
+        "Compensation",
+        "↓",
+        "Leave",
+        "↓",
+        "Attendance",
+        "↓",
+        "Performance Review",
+        "Each entity has exactly one responsibility.",
+        "No overlap.",
+        "No duplication.",
+        "Every future HR capability naturally plugs into this foundation."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-one-architectural-refinement-1",
+      "title": "One Architectural Refinement",
+      "paragraphs": [
+        "I would introduce a future Performance Goal entity rather than embedding goals inside reviews.",
+        "That creates a continuous performance cycle:",
+        "Performance Goal",
+        "↓",
+        "Progress Updates",
+        "↓",
+        "Performance Review",
+        "↓",
+        "Development Plan",
+        "↓",
+        "Next Performance Goal",
+        "This transforms performance management from a once-a-year event into an ongoing process."
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-phase-6-complete",
+      "title": "🚀 Phase 6 Complete",
+      "paragraphs": [
+        "Foundation ✅",
+        "Identity & Security ✅",
+        "CRM ✅",
+        "Sales ✅",
+        "Procurement ✅",
+        "Inventory ✅",
+        "Assets ✅",
+        "Finance ✅",
+        "Operations ✅",
+        "Human Resources ✅"
+      ],
+      "lists": []
+    },
+    {
+      "id": "KBOM-OPS-005-Operations-Architecture-my-recommendation-11",
+      "title": "My Recommendation",
+      "paragraphs": [
+        "The next major phase should be Document Management.",
+        "Why next?",
+        "Every module we've built now creates documents:",
+        "Instead of every module storing files differently, we'll build a centralized Document Management layer that the entire ERP shares.",
+        "It becomes one of the most reusable and valuable infrastructure modules in KoreVity."
+      ],
+      "lists": [
+        [
+          "Customer contracts",
+          "Sales quotations",
+          "Purchase Orders",
+          "Invoices",
+          "Asset documents",
+          "Employment Agreements",
+          "Performance Reviews",
+          "Project files",
+          "Service attachments"
+        ]
+      ]
+    }
+  ]
+}
