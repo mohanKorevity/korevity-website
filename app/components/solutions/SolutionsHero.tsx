@@ -54,7 +54,8 @@ export default function SolutionsHero() {
             "
           >
 
-            Transforming Challenges
+            Solve Business Problems
+
 
             <br />
 
@@ -69,7 +70,7 @@ export default function SolutionsHero() {
                 text-transparent
               "
             >
-              Into Smarter Solutions
+              With Connected Intelligence
             </span>
 
           </h1>
@@ -88,11 +89,11 @@ export default function SolutionsHero() {
 
             Technology should simplify your operations, not complicate them.
 
-            <br />
+<br />
 
-            KoreVity helps businesses improve efficiency, connect systems,
-            automate repetitive work and unlock better decisions through
-            Business Intelligence, Automation and AI.
+KoreVity connects business knowledge, data, systems and workflows
+through KORTEX, automation and operational intelligence to solve
+real business challenges and help your organization operate smarter.
 
           </p>
 

@@ -10,10 +10,10 @@ import {
 
 const solutions = [
   {
-    number: "1.",
-    title: "Know Exactly What's Happening In Your Business",
-    description:
-      "Get complete visibility with real-time dashboards that bring your key metrics, trends and performance into one place.",
+  number: "1.",
+  title: "See Your Business Clearly",
+  description:
+    "Get complete visibility with real-time dashboards that bring your key metrics, trends and performance into one place.",
     bullets: [
       "Real-time KPIs and performance tracking",
       "Interactive dashboards and drill-down insights",
@@ -27,7 +27,7 @@ const solutions = [
     number: "2.",
     title: "AI That Actually Helps Your Team",
     description:
-      "Empower your team with practical AI assistants that answer questions, summarize documents and automate everyday tasks.",
+        "Give your team AI that understands connected business knowledge and data to identify patterns, uncover insights and provide recommendations that support better decisions.",
     bullets: [
       "AI-powered insights and recommendations",
       "Document intelligence and summarization",
@@ -41,7 +41,7 @@ const solutions = [
     number: "3.",
     title: "Stop Losing Time To Manual Work",
     description:
-      "Automate repetitive processes and approvals so your team can focus on strategic work that drives growth.",
+      "Automate repetitive tasks, approvals and system handoffs so everyday work moves faster with less manual effort and fewer delays.",
     bullets: [
       "End-to-end workflow automation",
       "Real-time notifications and approvals",
@@ -55,7 +55,7 @@ const solutions = [
     number: "4.",
     title: "Connect Everything Together",
     description:
-      "Integrate all your systems and data sources so information flows seamlessly across your organization.",
+      "Connect your business systems, data and knowledge so information can flow across dashboards, workflows and KORTEX without unnecessary manual handoffs.",
     bullets: [
       "Seamless system integrations",
       "Single source of truth for your data",

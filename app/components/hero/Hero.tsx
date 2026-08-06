@@ -343,9 +343,45 @@ export default function Hero() {
 
 </div>
           </div>
+
+          <div
+  className="
+    mt-14
+    w-full
+    max-w-[720px]
+    rounded-[32px]
+    border
+    border-cyan-500/20
+    bg-slate-900/40
+    p-10
+    backdrop-blur-xl
+    lg:p-12
+  "
+>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-400">
+              What Makes KoreVity Different
+            </p>
+
+            <h2 className="mt-6 text-4xl font-black leading-tight text-white">
+              More Than Automation.
+              <br />
+              More Than Analytics.
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-slate-400">
+              Dashboards show you what happened. Automation moves work between
+              systems. AI helps you understand information.
+            </p>
+
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              <span className="font-semibold text-white">
+                KoreVity connects them.
+              </span>{" "}
+              KORTEX brings business knowledge, operational data, existing systems and intelligent workflows together — helping identify opportunities, surface recommendations and continuously improve how your business operates.
+            </p>
+          </div>
           
         </motion.div>
-
         {/* DASHBOARD */}
 
         <motion.div

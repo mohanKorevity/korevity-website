@@ -13,28 +13,28 @@ const challenges = [
     icon: Database,
     title: "Disconnected Data",
     description:
-      "Business information is scattered across spreadsheets, software systems and departments, making visibility difficult.",
+      "Business knowledge and data are spread across documents, spreadsheets, systems and teams, making it difficult to see the complete picture.",
     color: "from-cyan-500 to-blue-600",
   },
   {
     icon: Clock,
     title: "Time-Consuming Processes",
     description:
-      "Teams spend countless hours on repetitive manual tasks that could be automated.",
+      "Repetitive tasks, approvals and manual handoffs consume valuable time and slow down everyday operations.",
     color: "from-purple-500 to-indigo-600",
   },
   {
     icon: FileWarning,
     title: "Limited Insights",
     description:
-      "Without clear reporting and analytics, leaders make decisions without complete information.",
+      "Disconnected information makes it harder to identify patterns, uncover insights and understand what needs attention.",
     color: "from-orange-500 to-red-500",
   },
   {
     icon: TrendingDown,
     title: "Missed Opportunities",
     description:
-      "Slow processes and delayed insights prevent businesses from reaching their full potential.",
+      "Delayed information and inefficient workflows can make improvement opportunities harder to identify and act on.",
     color: "from-emerald-500 to-green-600",
   },
 ];
@@ -63,21 +63,21 @@ export default function IndustryChallenges() {
 
           <h2 className="mt-8 text-5xl font-black text-white lg:text-6xl">
 
-            Every Industry Has
+            Different Industries.
 
             <br />
 
             <span className="bg-gradient-to-r from-cyan-300 via-white to-blue-400 bg-clip-text text-transparent">
-              The Same Growing Problems
+              Similar Operational Challenges.
             </span>
 
           </h2>
 
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
-            KoreVity helps businesses overcome operational complexity,
-            disconnected systems and inefficient processes through intelligent
-            automation and analytics.
+            Across industries, businesses face similar challenges with disconnected
+information, manual work and limited visibility. KoreVity connects knowledge,
+data, systems and workflows to help overcome them.
           </p>
 
         </motion.div>

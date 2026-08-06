@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
+import GlowButton from "../ui/GlowButton";
 export default function AboutCTA() {
 
     
@@ -147,9 +147,9 @@ export default function AboutCTA() {
                 text-slate-300
               "
             >
-              Let's discuss your challenges, identify opportunities
-              and build intelligent solutions that help your business
-              grow with confidence.
+              Let's discuss your challenges, identify where KORTEX, automation,
+connected systems and business intelligence can create value,
+and define the right next steps for your business.
             </p>
 
 
@@ -189,23 +189,10 @@ export default function AboutCTA() {
   href="https://calendly.com/mohan-korevity/30min"
   target="_blank"
   rel="noopener noreferrer"
-  className="
-    rounded-2xl
-    bg-gradient-to-r
-    from-cyan-500
-    to-blue-600
-    px-10
-    py-5
-    text-lg
-    font-semibold
-    text-white
-    shadow-[0_0_35px_rgba(34,211,238,0.35)]
-    transition
-    duration-300
-    hover:scale-105
-  "
 >
-  Book A Free Consultation
+  <GlowButton>
+    Book A Free Consultation
+  </GlowButton>
 </Link>
 
 

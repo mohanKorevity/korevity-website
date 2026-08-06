@@ -1,12 +1,12 @@
 export default function TrustedBy() {
   const industries = [
-    "Manufacturing",
-    "Healthcare",
-    "Finance",
-    "Retail",
-    "Logistics",
-    "Professional Services",
-  ];
+  "Manufacturing",
+  "Healthcare",
+  "Finance",
+  "Retail",
+  "Logistics",
+  "Education",
+];
 
   return (
     <section className="border-y border-slate-800 bg-slate-950 py-14">

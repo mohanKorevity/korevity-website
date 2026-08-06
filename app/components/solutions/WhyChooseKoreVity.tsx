@@ -13,28 +13,28 @@ const reasons = [
     icon: ShieldCheck,
     title: "Business First",
     description:
-      "We solve business problems first. Technology is simply the tool that gets you there.",
+      "We start with the operational problem, then decide how intelligence, automation, data and KORTEX should be applied to solve it.",
     color: "from-cyan-500 to-blue-600",
   },
   {
     icon: Rocket,
-    title: "Practical AI",
+    title: "Connected Intelligence",
     description:
-      "No hype. We implement AI that delivers measurable improvements in productivity and decision making.",
+      "KORTEX brings business knowledge, connected data and AI together to identify patterns, uncover insights and provide recommendations.",
     color: "from-purple-500 to-indigo-600",
   },
   {
     icon: Users,
     title: "Built Around Your Team",
     description:
-      "Solutions are designed around how your people actually work—not the other way around.",
+      "Solutions are designed around your existing workflows, systems, permissions and the way your teams actually operate.",
     color: "from-emerald-500 to-green-600",
   },
   {
     icon: Sparkles,
-    title: "Designed To Scale",
+    title: "Designed To Evolve",
     description:
-      "Our solutions grow alongside your business, ensuring long-term value instead of short-term fixes.",
+      "Your connected systems, workflows and intelligence capabilities can expand as your business priorities and operational needs change.",
     color: "from-orange-500 to-red-500",
   },
 ];

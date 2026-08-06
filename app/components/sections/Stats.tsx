@@ -17,10 +17,10 @@ import {
 const stats = [
 
   {
-    title:"Real-Time",
-    label:"Business Visibility",
-    description:
-      "See what is happening across your business with clearer insights.",
+  title:"Real-Time",
+  label:"Business Visibility",
+  description:
+  "See live performance, business activity and operational changes across your connected systems in real time.",
 
     icon:Eye,
 
@@ -33,10 +33,10 @@ const stats = [
 
 
   {
-    title:"Automated",
-    label:"Everyday Workflows",
-    description:
-      "Reduce repetitive work and improve operational efficiency.",
+  title:"Automated",
+  label:"Everyday Workflows",
+  description:
+    "Automate repetitive tasks, approvals and processes across your connected business systems.",
 
     icon:Workflow,
 
@@ -49,10 +49,10 @@ const stats = [
 
 
   {
-    title:"Connected",
-    label:"Business Systems",
-    description:
-      "Bring your tools and information together seamlessly.",
+  title:"Connected",
+  label:"Business Systems",
+  description:
+    "Connect your ERP, CRM, knowledge and operational tools so information flows across the business.",
 
     icon:Network,
 
@@ -64,11 +64,11 @@ const stats = [
   },
 
 
-  {
-    title:"Actionable",
-    label:"Business Insights",
-    description:
-      "Turn data into decisions that move your business forward.",
+ {
+  title:"Actionable",
+  label:"Business Insights",
+  description:
+    "Turn connected business data and knowledge into clear insights that support faster, better decisions.",
 
     icon:TrendingUp,
 

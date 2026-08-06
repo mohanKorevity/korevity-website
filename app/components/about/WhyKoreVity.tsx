@@ -11,27 +11,27 @@ import {
 const comparisons = [
   {
     typical: "Technology first",
-    korevity: "Business first",
+    korevity: "Business problem first",
   },
   {
     typical: "One-size-fits-all systems",
-    korevity: "Systems designed around your workflows",
+    korevity: "Solutions designed around your workflows",
   },
   {
-    typical: "Project completed Relationship finished",
-    korevity: "Long-term technology partner",
+    typical: "Disconnected tools and platforms",
+    korevity: "KORTEX connects knowledge, data and operations",
   },
   {
     typical: "More software. More complexity.",
-    korevity: "Simpler operations. Better outcomes.",
+    korevity: "Connected systems. Simpler operations.",
   },
   {
-    typical: "Reactive support",
-    korevity: "Continuous optimisation",
+    typical: "Project delivered. Relationship ends.",
+    korevity: "Continuous improvement after launch",
   },
   {
-    typical: "Technology for the sake of technology",
-    korevity: "Built around measurable business value",
+    typical: "Technology for technology's sake",
+    korevity: "Technology tied to measurable business value",
   },
 ];
 
@@ -167,20 +167,18 @@ Business Is What We Improve.
 
 
 <p
-className="
-mx-auto
-mt-8
-max-w-3xl
-text-xl
-leading-9
-text-rose-300
-"
+  className="
+    mx-auto
+    mt-8
+    max-w-3xl
+    text-xl
+    leading-9
+    text-rose-300
+  "
 >
+  We believe technology is only valuable when it improves how a business operates.
 
-We believe technology is only valuable when it solves real business problems.
-
-Every dashboard, automation and AI solution we build is designed to improve the way your business operates—not simply to add another piece of software.
-
+  KoreVity brings KORTEX, connected systems, automation and business intelligence together around your workflows — not as separate tools, but as one coordinated operating environment.
 </p>
 
 

@@ -292,3 +292,31 @@ Mobile Improvements
 
 
 }
+
+/* ===========================
+   Flow Connector Animation
+=========================== */
+
+@keyframes flowPulse {
+  0% {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+.animate-flowPulse {
+  animation: flowPulse 1.8s ease-in-out infinite;
+}

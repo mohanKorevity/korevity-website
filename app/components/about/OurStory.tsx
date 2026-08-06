@@ -52,12 +52,11 @@ export default function OurStory() {
               KoreVity was created to change that.
             </p>
 
-            <p>
-              We help businesses simplify operations,
-              automate repetitive work,
-              transform data into meaningful insights,
-              and build practical AI solutions that create measurable business value.
-            </p>
+           <p>
+  We bring business knowledge, systems, data and workflows together through KORTEX,
+  helping teams reduce manual work, uncover insights
+  and operate with greater clarity.
+</p>
 
             <p className="text-2xl font-semibold text-white">
               Our goal isn't to sell more software.

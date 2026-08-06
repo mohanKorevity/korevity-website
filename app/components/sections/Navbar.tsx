@@ -50,13 +50,17 @@ export default function Navbar() {
       href: "/services",
     },
     {
-      name: "Solutions",
-      href: "/solutions",
-    },
-    {
-      name: "Industries",
-      href: "/industries",
-    },
+  name: "Solutions",
+  href: "/solutions",
+},
+{
+  name: "Platform",
+  href: "/platform",
+},
+{
+  name: "Industries",
+  href: "/industries",
+},
     {
       name: "About",
       href: "/about",
@@ -83,7 +87,7 @@ export default function Navbar() {
       <div
         className="
           mx-auto
-          mt-4
+          mt-0
           max-w-7xl
           px-6
         "

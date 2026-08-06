@@ -6,27 +6,27 @@ import { ArrowRight } from "lucide-react";
 const comparisons = [
   {
     before: "Hours creating reports manually",
-    after: "Live dashboards updated automatically",
+    after: "Live dashboards and reporting updated automatically",
   },
   {
-    before: "Data scattered across spreadsheets",
-    after: "One connected source of truth",
+    before: "Knowledge and data scattered across systems",
+    after: "Connected business knowledge and information through KORTEX",
   },
   {
     before: "Manual repetitive processes",
-    after: "Automated workflows running 24/7",
+    after: "Automated workflows handling routine business tasks",
   },
   {
-    before: "Guesswork and assumptions",
-    after: "Real-time business insights",
+    before: "Decisions based on guesswork and assumptions",
+    after: "Connected data, insights and recommendations supporting decisions",
   },
   {
     before: "Employees buried in admin work",
-    after: "Teams focused on high-value tasks",
+    after: "Teams focused on higher-value work and priorities",
   },
   {
     before: "Disconnected business systems",
-    after: "Seamless integrations across departments",
+    after: "Integrated systems sharing information across workflows",
   },
 ];
 

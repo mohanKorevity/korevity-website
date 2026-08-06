@@ -15,7 +15,7 @@ const industries = [
   {
     title: "Manufacturing",
     description:
-      "Production dashboards, inventory visibility, quality tracking and operational reporting.",
+      "Connect production and operational data into dashboards, reporting and automated workflows for clearer visibility across manufacturing operations.",
     icon: Factory,
     gradient: "from-cyan-400 via-blue-500 to-indigo-600",
     border: "hover:border-cyan-400/30",
@@ -24,7 +24,7 @@ const industries = [
   {
     title: "Healthcare",
     description:
-      "Operational analytics, reporting automation and secure business intelligence solutions.",
+      "Improve administrative reporting, connect operational information and automate routine workflows while keeping the focus on non-clinical business operations.",
     icon: HeartPulse,
     gradient: "from-emerald-400 via-green-500 to-teal-600",
     border: "hover:border-emerald-400/30",
@@ -33,7 +33,7 @@ const industries = [
   {
     title: "Retail & E-Commerce",
     description:
-      "Sales analytics, customer insights, inventory monitoring and executive dashboards.",
+      "Connect sales, customer and inventory data to improve reporting, operational visibility and everyday retail decision-making.",
     icon: ShoppingBag,
     gradient: "from-purple-400 via-fuchsia-500 to-indigo-600",
     border: "hover:border-purple-400/30",
@@ -42,7 +42,7 @@ const industries = [
   {
     title: "Logistics",
     description:
-      "Shipment tracking, operational visibility, KPI dashboards and workflow automation.",
+      "Connect shipment and operational data, improve KPI visibility and automate routine workflows across logistics operations.",
     icon: Truck,
     gradient: "from-orange-400 via-amber-500 to-red-500",
     border: "hover:border-orange-400/30",
@@ -51,7 +51,7 @@ const industries = [
   {
     title: "Construction",
     description:
-      "Project tracking, resource management, reporting and business performance monitoring.",
+      "Bring project, resource and operational information together for clearer reporting, performance tracking and workflow visibility.",
     icon: Building2,
     gradient: "from-blue-400 via-sky-500 to-cyan-500",
     border: "hover:border-blue-400/30",
@@ -60,7 +60,7 @@ const industries = [
   {
     title: "Professional Services",
     description:
-      "Client reporting, automation, financial visibility and productivity improvements.",
+      "Connect client, project and financial information to improve reporting, automate routine processes and give teams clearer operational visibility.",
     icon: Briefcase,
     gradient: "from-rose-400 via-pink-500 to-red-500",
     border: "hover:border-rose-400/30",
@@ -92,10 +92,10 @@ export default function IndustriesSection() {
           </h2>
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
-            Every business operates differently. We design intelligent systems
-            around your workflows, goals and industry challenges — not generic
-            solutions that force you to adapt.
-          </p>
+  Every business operates differently. We adapt dashboards, automation,
+  integrations and KORTEX capabilities around your workflows, systems
+  and operational priorities.
+</p>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">

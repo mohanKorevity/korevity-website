@@ -54,7 +54,8 @@ export default function ServicesHero() {
             "
           >
 
-            Intelligent Systems
+            Technology Services
+
 
             <br />
 
@@ -68,7 +69,7 @@ export default function ServicesHero() {
                 text-transparent
               "
             >
-              Built For Business Growth
+              Built Around Your Business
             </span>
 
           </h1>
@@ -84,9 +85,9 @@ export default function ServicesHero() {
               text-slate-400
             "
           >
-            From automation and AI solutions to business dashboards and
-            connected systems, we build practical technology that helps your
-            team work smarter, make better decisions and scale with confidence.
+            From business intelligence and workflow automation to AI and system
+integrations, KoreVity designs and implements solutions around your
+existing workflows, systems and business priorities.
           </p>
 
 

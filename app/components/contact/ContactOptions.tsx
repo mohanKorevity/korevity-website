@@ -15,7 +15,7 @@ const options = [
     icon: CalendarCheck,
     title: "Schedule A Consultation",
     description:
-      "Discuss your business challenges with our experts and discover where AI, automation and analytics can create measurable value.",
+      "Discuss your business challenges and identify where KORTEX, automation, connected systems and business intelligence can create measurable value.",
     action: "Open Calendar",
     href: "https://calendly.com/mohan-korevity/30min",
     color: "from-cyan-500 to-blue-600",
@@ -31,18 +31,18 @@ const options = [
   },
   {
     icon: BrainCircuit,
-    title: "Explore AI Solutions",
+    title: "Explore KORTEX",
     description:
-      "Identify practical AI opportunities that improve productivity, automate workflows and support smarter decisions.",
-    action: "View Solutions",
-    href: "/services",
+      "See how KORTEX brings business knowledge, connected data and intelligence together to support everyday work and better decisions.",
+    action: "Explore KORTEX",
+    href: "/platform",
     color: "from-emerald-500 to-green-600",
   },
   {
     icon: ClipboardCheck,
     title: "Business Assessment",
     description:
-      "Understand your current processes and discover opportunities for automation and digital improvement.",
+      "Understand your current workflows and systems and identify opportunities for automation, integration and operational improvement.",
     action: "Send Assessment Request",
     href: "/contact?service=Business%20Assessment#contact-form",
     color: "from-orange-500 to-red-500",

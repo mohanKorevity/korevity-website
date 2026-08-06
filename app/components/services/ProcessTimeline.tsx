@@ -15,7 +15,7 @@ const steps = [
     number: "01",
     title: "Discover",
     description:
-      "We learn how your business operates, identify bottlenecks and uncover opportunities where automation, AI and better systems can create the biggest impact.",
+      "We map your workflows, systems, data and operational challenges to understand where automation, intelligence and better visibility can create the most value.",
     icon: Search,
     color: "from-cyan-500 to-blue-600",
   },
@@ -23,7 +23,7 @@ const steps = [
     number: "02",
     title: "Design",
     description:
-      "We design dashboards, automations and AI workflows specifically around your business processes instead of forcing generic software.",
+      "We design the right combination of dashboards, integrations, automation and KORTEX capabilities around the way your business actually works.",
     icon: PenTool,
     color: "from-violet-500 to-fuchsia-600",
   },
@@ -31,7 +31,7 @@ const steps = [
     number: "03",
     title: "Build",
     description:
-      "We build and configure your complete solution while keeping you involved through every milestone.",
+      "We build and configure the solution, connect the required systems and keep you involved through key milestones and reviews.",
     icon: Wrench,
     color: "from-emerald-500 to-teal-600",
   },
@@ -39,7 +39,7 @@ const steps = [
     number: "04",
     title: "Deploy",
     description:
-      "We integrate your solution into your existing business, train your team and ensure everything runs smoothly.",
+      "We test the complete solution, support rollout and help your team start using the new workflows, dashboards and connected tools.",
     icon: Rocket,
     color: "from-orange-500 to-red-500",
   },
@@ -47,7 +47,7 @@ const steps = [
     number: "05",
     title: "Optimize",
     description:
-      "Technology should improve over time. We continuously refine dashboards, automations and AI as your business grows.",
+      "After launch, we review performance, refine workflows and expand the solution as new needs and opportunities emerge.",
     icon: TrendingUp,
     color: "from-blue-500 to-cyan-500",
   },

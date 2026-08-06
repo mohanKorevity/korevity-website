@@ -17,56 +17,56 @@ const industries = [
     icon: Factory,
     title: "Manufacturing",
     description:
-      "Production analytics, inventory intelligence, quality monitoring and operational automation.",
+      "Connect production, inventory and operational information to improve visibility, automate workflows and support faster decisions across manufacturing operations.",
     color: "from-cyan-500 to-blue-600",
   },
   {
     icon: ShoppingBag,
     title: "Retail & eCommerce",
     description:
-      "Sales analytics, customer insights, demand forecasting and marketing intelligence.",
+      "Connect sales, inventory and customer information to improve visibility, automate routine workflows and uncover insights across retail and eCommerce operations.",
     color: "from-violet-500 to-fuchsia-600",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
     description:
-      "Healthcare dashboards, patient reporting, workflow automation and operational visibility.",
+      "Connect operational information, improve reporting and automate administrative workflows to give teams clearer visibility across healthcare operations.",
     color: "from-red-500 to-pink-600",
   },
   {
     icon: Landmark,
     title: "Finance",
     description:
-      "Financial reporting, executive dashboards, forecasting and compliance automation.",
+      "Connect financial and operational data, automate reporting and give teams clearer visibility into performance, KPIs and business trends.",
     color: "from-emerald-500 to-green-600",
   },
   {
     icon: Truck,
     title: "Logistics",
     description:
-      "Fleet tracking, delivery analytics, warehouse reporting and supply chain visibility.",
+      "Connect shipment, warehouse and operational information to improve visibility, automate routine workflows and support more efficient logistics operations.",
     color: "from-orange-500 to-amber-500",
   },
   {
     icon: GraduationCap,
     title: "Education",
     description:
-      "Student analytics, admissions dashboards, reporting and institutional intelligence.",
+      "Connect institutional information, streamline administrative workflows and improve reporting and operational visibility across education organizations.",
     color: "from-indigo-500 to-blue-500",
   },
   {
     icon: Briefcase,
     title: "Professional Services",
     description:
-      "Project analytics, resource utilization, client reporting and workflow automation.",
+      "Connect client, project and operational information to improve reporting, automate routine workflows and give teams clearer visibility across service delivery.",
     color: "from-purple-500 to-indigo-600",
   },
   {
     icon: Building2,
     title: "SMEs",
     description:
-      "Affordable AI, automation and dashboards designed specifically for growing businesses.",
+      "Bring business knowledge, data, automation and intelligence together in connected systems that can evolve as growing businesses scale.",
     color: "from-teal-500 to-cyan-600",
   },
 ];
@@ -91,7 +91,7 @@ export default function IndustriesGrid() {
         >
 
           <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold tracking-[0.18em] text-cyan-300">
-            INDUSTRY EXPERTISE
+            INDUSTRIES WE SUPPORT
           </span>
 
           <h2 className="mt-8 text-5xl font-black text-white lg:text-6xl">
@@ -107,8 +107,8 @@ export default function IndustriesGrid() {
           </h2>
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
-            Every business operates differently. We combine data,
-            automation and AI to solve challenges unique to your industry.
+            Every industry has different workflows, systems and operational priorities.
+KoreVity connects knowledge, data, automation and intelligence to build solutions around the way your business operates.
           </p>
 
         </motion.div>

@@ -51,10 +51,10 @@ export default function ContactInfo() {
 
 
       <p className="mt-8 max-w-xl text-xl leading-9 text-slate-400">
-        Every successful improvement starts with a conversation.
-        We'd love to understand your business, your challenges,
-        and explore where better systems can create the biggest impact.
-      </p>
+  Have a question about KORTEX, automation, business intelligence
+  or connecting your existing systems? Tell us what you're working on
+  and we'll help you understand the best way forward.
+</p>
 
 
       <div className="mt-14 space-y-8">
@@ -106,8 +106,8 @@ export default function ContactInfo() {
 
         <p className="mt-3 leading-8 text-slate-300">
           We typically respond to enquiries within one business day.
-          If your project is time-sensitive, let us know and we'll
-          do our best to prioritise it.
+Share a little about your business, current systems and what
+you'd like to improve, and we'll take it from there.
         </p>
 
       </div>

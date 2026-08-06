@@ -24,8 +24,7 @@ const values = [
     icon: Database,
     title: "Clarity",
     description:
-      "Reliable information leads to confident decisions. We help businesses replace scattered data with clear, meaningful insights that everyone can trust.",
-
+  "Reliable information leads to confident decisions. We connect business knowledge and data so teams can identify patterns, uncover insights and act with greater clarity.",
     gradient: "from-cyan-400 via-blue-500 to-indigo-600",
 
     glow: "bg-blue-500/40",

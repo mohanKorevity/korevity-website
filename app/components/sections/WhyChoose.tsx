@@ -10,7 +10,7 @@ const reasons = [
     title:"Business First",
 
     description:
-      "We don't start with technology. We start by understanding how your business works and where improvements create the biggest impact.",
+  "We start by understanding your workflows, systems and operational challenges before deciding what should be automated, connected or improved.",
 
     icon:"business",
 
@@ -26,7 +26,7 @@ const reasons = [
     title:"Solutions Built Around You",
 
     description:
-      "Every business is different. Your systems, dashboards and automations are designed specifically for your workflows.",
+      "Your dashboards, automations and connected systems are designed around the way your teams actually work, not a one-size-fits-all template.",
 
     icon:"custom",
 
@@ -42,7 +42,7 @@ const reasons = [
     title:"Clear, Practical Advice",
 
     description:
-      "No confusing technical jargon. We explain everything in plain English so you always understand what's being built.",
+      "We keep technology practical and explain what is being built, how it works and the value it is expected to create for your business.",
 
     icon:"clarity",
 
@@ -58,7 +58,7 @@ const reasons = [
     title:"Continuous Improvement",
 
     description:
-      "Your business keeps changing, so we continue refining your systems and finding new opportunities to improve.",
+      "As your business evolves, we continue improving your dashboards, automations and connected systems to support new needs and opportunities.",
 
     icon:"support",
 

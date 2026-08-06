@@ -14,35 +14,35 @@ const steps = [
     icon: Search,
     title: "Discover",
     description:
-      "We begin by understanding your business, your team, your existing systems and the challenges slowing your growth.",
+      "We begin by understanding your workflows, systems, data, team needs and the operational challenges holding your business back.",
     color: "from-cyan-400 to-blue-600",
   },
   {
     icon: ClipboardCheck,
     title: "Strategize",
     description:
-      "Together we create a roadmap focused on measurable business outcomes instead of unnecessary technology.",
+      "We create a roadmap around the right combination of KORTEX, automation, integrations and business intelligence for your goals.",
     color: "from-violet-400 to-purple-600",
   },
   {
     icon: Wrench,
     title: "Build",
     description:
-      "We design dashboards, AI automations and connected systems tailored to your way of working.",
+      "We build and connect the dashboards, workflows, integrations and KORTEX capabilities around the way your business operates.",
     color: "from-emerald-400 to-green-600",
   },
   {
     icon: Rocket,
     title: "Launch",
     description:
-      "Deployment is carefully planned so your team experiences a smooth transition with minimal disruption.",
+      "We test and deploy the complete solution, support adoption and help your team start using the new connected environment confidently.",
     color: "from-orange-400 to-red-500",
   },
   {
     icon: LifeBuoy,
     title: "Grow",
     description:
-      "Our relationship continues after launch through continuous optimisation and long-term support.",
+      "After launch, we continue refining workflows, expanding capabilities and improving the environment as your business evolves.",
     color: "from-yellow-400 to-orange-500",
   },
 ];

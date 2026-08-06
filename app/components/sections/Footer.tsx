@@ -51,10 +51,9 @@ export default function Footer() {
     soon: true,
   },
   {
-    name: "FAQs",
-    href: "/coming-soon",
-    soon: true,
-  },
+  name: "FAQs",
+  href: "/faqs",
+},
   {
     name: "Privacy Policy",
     href: "/privacy",

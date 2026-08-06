@@ -18,7 +18,7 @@ const testimonials = [
     title: "Our Approach",
 
     quote:
-      "We don't believe in selling technology for the sake of technology. Every recommendation we make starts with one question: Will this genuinely help your business grow?",
+      "We recommend technology only when it solves a real business problem, improves how your team works or creates measurable value.",
   },
 
 
@@ -26,7 +26,7 @@ const testimonials = [
     title: "What You Can Expect",
 
     quote:
-      "You'll always know what's happening, why we're doing it and how it benefits your business. Clear communication is part of every project from start to finish.",
+      "You'll know what is being built, why it matters and what outcome it is intended to create. Clear communication stays part of the project from start to finish.",
   },
 
 
@@ -34,7 +34,7 @@ const testimonials = [
     title: "Built For Real Results",
 
     quote:
-      "Technology should create measurable improvements for your business. We focus on solutions that save time, improve visibility and support better decisions.",
+      "We focus on practical improvements that reduce manual work, improve visibility, connect information and support better business decisions.",
   },
 
 ];
@@ -44,46 +44,33 @@ const testimonials = [
 
 
 const values = [
-
   {
     icon: ShieldCheck,
-
     title: "Transparent Advice",
-
     description:
-      "Clear recommendations without unnecessary complexity.",
+      "Clear recommendations focused on what your business actually needs.",
   },
-
 
   {
     icon: Lightbulb,
-
     title: "Practical Solutions",
-
     description:
-      "Technology designed around real business challenges.",
+      "Technology designed to solve real operational challenges.",
   },
-
 
   {
     icon: HeartHandshake,
-
     title: "Long-Term Support",
-
     description:
-      "Continuous improvement as your business evolves.",
+      "Ongoing improvement as your systems and business evolve.",
   },
-
 
   {
     icon: Handshake,
-
     title: "Business Partnership",
-
     description:
-      "Solutions built around your goals and priorities.",
+      "A collaborative approach built around your goals and priorities.",
   },
-
 ];
 
 
@@ -245,7 +232,7 @@ export default function Testimonials() {
           >
 
               
-            with understanding your goals — not just implementing tools.
+            The right technology partner starts by understanding your goals, your workflows and the way your business operates — not just by implementing tools.
 
           </p>
 

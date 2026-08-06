@@ -1,38 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import FAQItem from "./FAQItem";
 
 const faqs = [
   {
-    question: "How do I know if my business actually needs automation?",
+    question: "How do I know if KoreVity is right for my business?",
     answer:
-      "If repetitive tasks, spreadsheets, disconnected software or manual reporting are taking time away from your team, automation can usually deliver immediate value. During our strategy call we'll identify where technology can make the biggest impact for your business.",
+      "KoreVity is a good fit when your team is spending too much time on manual work, disconnected systems, scattered business information or reporting that takes too long. We first understand your workflows, systems and goals before recommending what should be connected, automated or improved.",
   },
   {
     question: "Do I need to replace the software I already use?",
     answer:
-      "Usually not. We first look at how your existing systems can work together. In many cases we improve what you already have before recommending anything new, helping you maximize your existing investment.",
+      "Usually not. KoreVity is designed to work around the systems you already use. We first look at how your existing ERP, CRM, documents, dashboards and other business tools can be connected before recommending anything new.",
   },
   {
-    question: "Do you only work with large businesses?",
+    question: "What is KORTEX?",
     answer:
-      "No. KoreVity works with growing businesses that want better systems, clearer insights and more efficient operations. Every solution is tailored to your business goals, regardless of size.",
+      "KORTEX is KoreVity's intelligence layer. It brings together connected business knowledge, operational data and approved systems so employees can ask questions, understand what is happening and receive relevant business answers based on the information available to them.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "Can KoreVity automate our existing business processes?",
     answer:
-      "It depends on the complexity of your requirements. Smaller automation projects may take only a few weeks, while larger projects involving multiple systems may take longer. Before any work begins you'll receive a clear roadmap with timelines and milestones.",
+      "Yes. We can identify repetitive tasks, approvals, notifications and system handoffs that are suitable for automation. The exact workflows depend on your existing software, available integrations, permissions and the way your business operates.",
   },
   {
-    question: "Will my team receive training?",
+    question: "How long does implementation take?",
     answer:
-      "Absolutely. Technology only creates value when people are confident using it. We provide practical training and documentation so your team can adopt the new systems smoothly.",
+      "Timelines depend on the number of systems, workflows and capabilities involved. A focused implementation may take a few weeks, while a broader connected workspace can take longer. Before work begins, we define the scope, implementation stages and expected timeline.",
   },
   {
-    question: "What happens after the project is completed?",
+    question: "What happens after launch?",
     answer:
-      "We continue supporting your systems after launch, helping you make improvements as your business needs change.",
+      "We can continue supporting and improving your dashboards, automations, integrations and KORTEX workspace as your business evolves. This can include workflow refinements, new integrations, reporting improvements and additional use cases.",
   },
 ];
 
@@ -88,7 +90,41 @@ Here are answers to some common questions before getting started.
           ))}
 
         </div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="mt-12 flex justify-center"
+>
+  <Link
+    href="/faqs"
+    className="
+      group
+      inline-flex
+      items-center
+      gap-2
+      text-lg
+      font-semibold
+      text-cyan-400
+      transition
+      duration-300
+      hover:text-cyan-300
+    "
+  >
+    Still have questions? View all FAQs
 
+    <ArrowRight
+      className="
+        h-5
+        w-5
+        transition-transform
+        duration-300
+        group-hover:translate-x-1
+      "
+    />
+  </Link>
+</motion.div>
       </div>
 
     </section>

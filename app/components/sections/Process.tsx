@@ -9,7 +9,7 @@ const steps = [
     number: "01",
     title: "Discover",
     description:
-      "We learn how your business operates, identify bottlenecks and understand where technology can create the biggest impact.",
+      "We map your workflows, systems, data and operational challenges to identify where automation and intelligence can create the greatest value.",
     icon: "discover",
     gradient:
       "from-cyan-400 via-blue-500 to-indigo-600",
@@ -21,7 +21,7 @@ const steps = [
     number: "02",
     title: "Design",
     description:
-      "Every solution is designed around your workflows instead of forcing your team to adapt to generic software.",
+      "We design the right combination of dashboards, automations, integrations and KORTEX capabilities around the way your business actually works.",
     icon: "design",
     gradient:
       "from-purple-400 via-fuchsia-500 to-indigo-600",
@@ -33,7 +33,7 @@ const steps = [
     number: "03",
     title: "Build & Launch",
     description:
-      "We build, automate and thoroughly test everything so your team can start using it with confidence.",
+      "We build and connect your dashboards, automations and KORTEX workspace, then test the complete solution before your team begins using it.",
     icon: "build",
     gradient:
       "from-emerald-400 via-green-500 to-teal-600",
@@ -45,7 +45,7 @@ const steps = [
     number: "04",
     title: "Optimize & Grow",
     description:
-      "After launch, we monitor performance, improve workflows and help your systems evolve as your business needs change.",
+      "After launch, we review performance, refine workflows and expand your connected systems as new business needs and opportunities emerge.",
     icon: "grow",
     gradient:
       "from-orange-400 via-red-500 to-pink-600",

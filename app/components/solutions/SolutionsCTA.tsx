@@ -135,8 +135,7 @@ export default function SolutionsCTA() {
           ">
 
             Every business has unique challenges.
-            Let's discuss yours and build a practical solution
-            that creates measurable improvements.
+Let's identify where KORTEX, automation, connected systems and business intelligence can create the greatest impact for your operations.
 
           </p>
 

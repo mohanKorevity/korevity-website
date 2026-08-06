@@ -8,27 +8,27 @@ const faqs = [
   {
     question: "Do I need to replace my existing software?",
     answer:
-      "No. We build solutions around the systems you already use whenever possible. Our goal is to connect and improve your existing technology, not replace it unnecessarily.",
+      "No. KoreVity is designed to work with your existing systems wherever practical. We connect and improve the tools you already use through integrations, automation, business intelligence and KORTEX rather than replacing them unnecessarily.",
   },
   {
-    question: "Can you automate our manual business processes?",
+    question: "Can you automate our existing business processes?",
     answer:
-      "Yes. We specialize in identifying repetitive tasks and replacing them with intelligent workflows that save time, reduce errors and improve productivity.",
+      "Yes. We identify repetitive tasks, approvals, notifications and system handoffs that can be automated, then design workflows around the way your business already operates.",
   },
   {
-    question: "Do you provide AI solutions for small businesses?",
+    question: "How does KORTEX fit into your services?",
     answer:
-      "Absolutely. AI isn't only for large enterprises. We build practical AI assistants and automations that deliver measurable value for businesses of all sizes.",
+      "KORTEX is KoreVity's intelligence layer. It brings business knowledge, connected information and AI capabilities together so teams can find information, understand what's happening and receive useful insights and recommendations.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "How long does implementation take?",
     answer:
-      "Every project is different. Small automation projects can take a few weeks, while larger business intelligence platforms may take several months. We always provide a clear roadmap before work begins.",
+      "Implementation depends on the systems, workflows and capabilities involved. Before work begins, we define the scope, key milestones and implementation roadmap so you understand what will be delivered and how the project will progress.",
   },
   {
-    question: "Do you offer ongoing support after delivery?",
+    question: "What happens after implementation?",
     answer:
-      "Yes. We believe technology should continue improving as your business grows. We offer continuous support, enhancements and optimization after deployment.",
+      "We can continue supporting and improving your environment after launch, including dashboards, integrations, automations and KORTEX capabilities as your business needs evolve.",
   },
 ];
 

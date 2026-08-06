@@ -64,24 +64,23 @@ export default function SolutionCard({
 
 
       className={`
-        group
-        relative
-        overflow-hidden
+  group
+  relative
+  overflow-hidden
 
-        rounded-[32px]
+  rounded-[32px]
 
-        border
-        border-white/10
+  border
+  border-white/10
 
-        bg-slate-900/60
+  bg-slate-900/60
 
-        backdrop-blur-xl
+  backdrop-blur-xl
 
-        p-8
+  p-8
 
-        ${large ? "min-h-[340px]" : "min-h-[280px]"}
-
-      `}
+  ${large ? "min-h-[340px]" : "min-h-[280px]"}
+`}
     >
 
 

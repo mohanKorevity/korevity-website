@@ -18,51 +18,51 @@ const services = [
   {
     title: "Business Intelligence",
     description:
-      "Turn scattered business information into clear dashboards and insights that help you understand performance and make faster decisions.",
+      "Connect business data into dashboards, KPIs and reports that give leaders clearer visibility into performance, trends and operations.",
     icon: <BarChart3 className="h-9 w-9 text-white" />,
     gradient: "from-cyan-400 via-sky-500 to-blue-600",
     glow: "shadow-[0_0_45px_rgba(34,211,238,0.35)]",
   },
   {
-    title: "AI Automation",
-    description:
-      "Reduce repetitive work with practical AI-powered automation that helps your team focus on higher-value activities.",
-    icon: <Bot className="h-9 w-9 text-white" />,
-    gradient: "from-violet-500 via-fuchsia-500 to-purple-700",
-    glow: "shadow-[0_0_45px_rgba(168,85,247,0.35)]",
-  },
+  title: "KORTEX & Business Knowledge",
+  description:
+    "Turn company documents, policies, SOPs and connected business information into an intelligent knowledge workspace your team can use every day.",
+  icon: <Bot className="h-9 w-9 text-white" />,
+  gradient: "from-violet-500 via-fuchsia-500 to-purple-700",
+  glow: "shadow-[0_0_45px_rgba(168,85,247,0.35)]",
+},
   {
-    title: "Data Integration",
-    description:
-      "Connect your existing systems so your teams always have the right information when they need it.",
-    icon: <Database className="h-9 w-9 text-white" />,
-    gradient: "from-emerald-400 via-green-500 to-teal-600",
-    glow: "shadow-[0_0_45px_rgba(16,185,129,0.35)]",
-  },
+  title: "Data Integration",
+  description:
+    "Connect your existing business systems and data sources so information can flow reliably across dashboards, workflows and KORTEX.",
+  icon: <Database className="h-9 w-9 text-white" />,
+  gradient: "from-emerald-400 via-green-500 to-teal-600",
+  glow: "shadow-[0_0_45px_rgba(16,185,129,0.35)]",
+},
   {
-    title: "Workflow Automation",
-    description:
-      "Simplify everyday operations with workflows that reduce delays, improve consistency and scale with your business.",
-    icon: <Workflow className="h-9 w-9 text-white" />,
-    gradient: "from-orange-400 via-amber-500 to-yellow-600",
-    glow: "shadow-[0_0_45px_rgba(245,158,11,0.35)]",
-  },
+  title: "Workflow Automation",
+  description:
+    "Automate repetitive tasks, approvals, notifications and system handoffs so everyday business processes move faster with less manual work.",
+  icon: <Workflow className="h-9 w-9 text-white" />,
+  gradient: "from-orange-400 via-amber-500 to-yellow-600",
+  glow: "shadow-[0_0_45px_rgba(245,158,11,0.35)]",
+},
   {
-    title: "AI Assistants",
-    description:
-      "Give your team intelligent assistants that provide answers, automate tasks and improve productivity.",
-    icon: <Cpu className="h-9 w-9 text-white" />,
-    gradient: "from-pink-500 via-rose-500 to-red-600",
-    glow: "shadow-[0_0_45px_rgba(236,72,153,0.35)]",
-  },
+  title: "AI Assistants & Agents",
+  description:
+    "Build task-focused AI assistants and agents that work with KORTEX to answer questions, retrieve information and support specific business tasks.",
+  icon: <Cpu className="h-9 w-9 text-white" />,
+  gradient: "from-pink-500 via-rose-500 to-red-600",
+  glow: "shadow-[0_0_45px_rgba(236,72,153,0.35)]",
+},
   {
-    title: "Executive Dashboards",
-    description:
-      "Track the metrics that matter with executive dashboards built around your business goals.",
-    icon: <LineChart className="h-9 w-9 text-white" />,
-    gradient: "from-blue-500 via-indigo-500 to-cyan-500",
-    glow: "shadow-[0_0_45px_rgba(59,130,246,0.35)]",
-  },
+  title: "AI-Powered Insights",
+  description:
+    "Analyze connected business data to identify trends, anomalies and opportunities, then surface insights and recommendations for better decisions.",
+  icon: <LineChart className="h-9 w-9 text-white" />,
+  gradient: "from-blue-500 via-indigo-500 to-cyan-500",
+  glow: "shadow-[0_0_45px_rgba(59,130,246,0.35)]",
+},
 ];
 
 export default function ServicesGrid() {

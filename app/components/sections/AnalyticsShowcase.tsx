@@ -17,12 +17,12 @@ const showcases = [
     title: "Business Intelligence",
 
     description:
-      "Transform your business data into clear dashboards, performance metrics and actionable insights.",
+      "Connect business data into real-time dashboards that give leaders clear visibility into performance, KPIs, daily operations and trends.",
 
     features: [
       "Real-time KPI tracking",
       "Executive dashboards",
-      "Performance reporting",
+      "Operational reporting",
     ],
 
     icon: BarChart3,
@@ -39,10 +39,10 @@ const showcases = [
     title: "AI-Powered Insights",
 
     description:
-      "Use AI to analyze information, summarize documents and support faster business decisions.",
+      "Use AI to understand business information, surface relevant insights and help your team make faster, better-informed decisions.",
 
     features: [
-      "Automated insights",
+      "AI-powered analysis",
       "Document intelligence",
       "Decision support",
     ],
@@ -61,11 +61,11 @@ const showcases = [
     title: "Workflow Automation",
 
     description:
-      "Reduce repetitive work by connecting systems and automating everyday business processes.",
+      "Connect your business systems and automate repetitive tasks, approvals and workflows so everyday operations move faster.",
 
     features: [
       "Automated workflows",
-      "System connections",
+      "System integrations",
       "Process optimization",
     ],
 
@@ -162,7 +162,7 @@ export default function AnalyticsShowcase() {
             "
           >
 
-            BUSINESS INTELLIGENCE
+            INTELLIGENT BUSINESS OPERATIONS
 
           </span>
 
@@ -185,7 +185,8 @@ export default function AnalyticsShowcase() {
             "
           >
 
-            See How KoreVity Turns
+            See How KoreVity Creates
+
 
             <br />
 
@@ -206,7 +207,7 @@ export default function AnalyticsShowcase() {
               "
             >
 
-              Data Into Decisions.
+              Smarter Business Operations.
 
             </span>
 
@@ -232,9 +233,9 @@ export default function AnalyticsShowcase() {
             "
           >
 
-            From dashboards to automation, we help businesses
-            understand performance, discover opportunities and
-            improve operations.
+            From real-time dashboards and AI-powered insights to automated workflows,
+KoreVity connects intelligence and automation to help your business
+operate with greater clarity, speed and control.
 
           </p>
 

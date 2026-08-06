@@ -13,7 +13,7 @@ const strengths = [
     icon: BrainCircuit,
     title: "Industry-Aware AI",
     description:
-      "We design AI solutions around real business processes, not generic automation.",
+      "KORTEX works with your business knowledge, connected data and workflows to identify patterns, uncover insights and provide relevant recommendations.",
     color: "from-cyan-500 to-blue-600",
     glow: "shadow-[0_0_45px_rgba(34,211,238,0.25)]",
   },
@@ -21,7 +21,7 @@ const strengths = [
     icon: Workflow,
     title: "Connected Operations",
     description:
-      "We integrate your existing tools and systems so information moves seamlessly.",
+      "Connect existing systems, data and workflows so information can move across teams and operations with less manual effort.",
     color: "from-purple-500 to-indigo-600",
     glow: "shadow-[0_0_45px_rgba(168,85,247,0.25)]",
   },
@@ -29,7 +29,7 @@ const strengths = [
     icon: BarChart3,
     title: "Decision Intelligence",
     description:
-      "Transform operational data into dashboards and insights leaders can act on.",
+      "Combine live business data, dashboards and KORTEX insights to give leaders clearer visibility and stronger decision support.",
     color: "from-emerald-500 to-green-600",
     glow: "shadow-[0_0_45px_rgba(16,185,129,0.25)]",
   },
@@ -37,7 +37,7 @@ const strengths = [
     icon: Layers3,
     title: "Scalable Solutions",
     description:
-      "Our solutions grow with your organization as your needs evolve.",
+      "Expand your connected systems, automation and intelligence capabilities as your teams, workflows and operational needs evolve.",
     color: "from-orange-500 to-red-500",
     glow: "shadow-[0_0_45px_rgba(249,115,22,0.25)]",
   },
@@ -87,9 +87,9 @@ export default function WhyKoreVityIndustries() {
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
 
-            From manufacturing floors to executive offices,
-            KoreVity combines artificial intelligence, automation and
-            business intelligence to solve complex operational challenges.
+            Across industries, KoreVity combines KORTEX, connected systems,
+  automation and business intelligence to help organizations improve
+  visibility, streamline operations and make better-informed decisions.
 
           </p>
 

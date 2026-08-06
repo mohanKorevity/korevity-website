@@ -121,7 +121,7 @@ export default function Mission() {
                 text-slate-300
               "
             >
-              We build practical Business Intelligence, AI and automation solutions that solve real business problems—not technology for technology's sake.
+              We build practical, connected business systems that bring knowledge, automation and intelligence together to solve real operational problems—not technology for technology's sake.
             </p>
 
             <div className="mt-14 grid gap-8 md:grid-cols-3">

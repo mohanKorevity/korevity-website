@@ -1,16 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { HelpCircle, Search, ShieldCheck } from "lucide-react";
 
-export default function ContactHero() {
+export default function FAQHero() {
   return (
     <section className="relative overflow-hidden pt-44 pb-28">
 
-
       {/* Background Glow */}
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
 
         <div
           className="
@@ -41,30 +40,22 @@ export default function ContactHero() {
 
       </div>
 
-
-
       <div className="relative mx-auto max-w-7xl px-6">
-
 
         <motion.div
           initial={{
-            opacity:0,
-            y:40,
+            opacity: 0,
+            y: 40,
           }}
-
           animate={{
-            opacity:1,
-            y:0,
+            opacity: 1,
+            y: 0,
           }}
-
           transition={{
-            duration:0.8,
+            duration: 0.8,
           }}
-
           className="mx-auto max-w-5xl text-center"
         >
-
-
 
           <span
             className="
@@ -83,15 +74,9 @@ export default function ContactHero() {
               text-cyan-300
             "
           >
-
-            <Sparkles className="h-4 w-4" />
-
-            CONTACT KOREVITY
-
+            <HelpCircle className="h-4 w-4" />
+            FREQUENTLY ASKED QUESTIONS
           </span>
-
-
-
 
           <h1
             className="
@@ -103,9 +88,7 @@ export default function ContactHero() {
               lg:text-7xl
             "
           >
-
-            Let's Build Your
-
+            Everything You Need
 
             <span
               className="
@@ -119,14 +102,9 @@ export default function ContactHero() {
                 text-transparent
               "
             >
-              Intelligent Future
+              To Know About KoreVity
             </span>
-
-
           </h1>
-
-
-
 
           <p
             className="
@@ -138,37 +116,84 @@ export default function ContactHero() {
               text-slate-400
             "
           >
-
-            Tell us about your business challenges.
-
-We'll identify where KORTEX, connected systems,
-automation and business intelligence can create
-measurable value for your business.
-
+            Learn how KoreVity, KORTEX, business intelligence, automation
+            and connected systems work together — from implementation
+            and security to pricing, support and everyday use.
           </p>
 
-
-
-
-          <p
+          <div
             className="
+              mx-auto
               mt-14
-              text-lg
-              font-medium
-              tracking-wide
-              text-slate-400
+              grid
+              max-w-3xl
+              gap-4
+              sm:grid-cols-3
             "
           >
-            No pressure. Just a conversation about improving your business.
-          </p>
 
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                gap-3
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/[0.03]
+                px-5
+                py-4
+                text-slate-300
+              "
+            >
+              <Search className="h-5 w-5 text-cyan-400" />
+              Clear Answers
+            </div>
 
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                gap-3
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/[0.03]
+                px-5
+                py-4
+                text-slate-300
+              "
+            >
+              <HelpCircle className="h-5 w-5 text-cyan-400" />
+              Practical Guidance
+            </div>
+
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                gap-3
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/[0.03]
+                px-5
+                py-4
+                text-slate-300
+              "
+            >
+              <ShieldCheck className="h-5 w-5 text-cyan-400" />
+              No Technical Jargon
+            </div>
+
+          </div>
 
         </motion.div>
 
-
       </div>
-
 
     </section>
   );

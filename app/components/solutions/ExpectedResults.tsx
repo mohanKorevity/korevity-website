@@ -12,25 +12,25 @@ const results = [
   {
     icon: Clock,
     title: "Save Valuable Time",
-    text: "Reduce hours spent on manual reporting, repetitive tasks and administrative work through intelligent automation.",
+    text: "Reduce time spent on manual reporting, repetitive tasks and routine administration through connected automation and intelligent workflows.",
     color: "from-cyan-500 to-blue-500",
   },
   {
     icon: TrendingUp,
-    title: "Better Business Decisions",
-    text: "Access real-time dashboards and meaningful insights that help leadership make faster, data-driven decisions.",
+    title: "Make Better Decisions",
+    text: "Use connected data, live dashboards and KORTEX to identify patterns, uncover insights and provide recommendations that support faster decisions.",
     color: "from-emerald-500 to-green-500",
   },
   {
     icon: ShieldCheck,
-    title: "Reduce Errors",
-    text: "Automated workflows minimize manual mistakes, improve consistency and strengthen operational reliability.",
+    title: "Improve Reliability",
+    text: "Automated workflows and connected systems reduce manual errors, improve consistency and create more reliable business processes.",
     color: "from-violet-500 to-fuchsia-500",
   },
   {
     icon: Brain,
     title: "Scale With Confidence",
-    text: "Build intelligent systems that grow alongside your business without increasing manual effort.",
+    text: "Build connected systems, automation and intelligence that can evolve as your teams, workflows and operational needs grow.",
     color: "from-orange-500 to-red-500",
   },
 ];

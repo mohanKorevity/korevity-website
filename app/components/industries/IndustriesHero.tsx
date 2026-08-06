@@ -28,13 +28,13 @@ export default function IndustriesHero() {
 
           <h1 className="mt-8 text-6xl font-black leading-tight text-white lg:text-7xl">
 
-            AI & Business Intelligence
+            Intelligent Business Systems
 
             <br />
 
             <span className="bg-gradient-to-r from-cyan-300 via-white to-blue-400 bg-clip-text text-transparent">
 
-              Tailored For Every Industry
+              Built For Every Industry
 
             </span>
 
@@ -43,9 +43,8 @@ export default function IndustriesHero() {
 
           <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-slate-400">
 
-            Every industry has unique challenges.
-            We design intelligent solutions that improve visibility,
-            automate operations and help businesses make smarter decisions.
+            Every industry operates differently.
+KoreVity combines KORTEX, automation, connected systems and business intelligence to improve visibility, streamline operations and support better decisions.
 
           </p>
 

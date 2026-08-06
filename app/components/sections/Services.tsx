@@ -47,13 +47,14 @@ import { useSearchParams } from "next/navigation";
   export default function Services() {
     return (
       <section
-      id="services"
-        className="
-          relative
-          py-36
-          bg-slate-950
-        "
-      >
+  id="services"
+  className="
+    relative
+    pt-20
+    pb-36
+    bg-slate-950
+  "
+>
 
         <div className="mx-auto max-w-7xl px-8">
 

@@ -157,9 +157,7 @@ export default function IndustriesCTA() {
                 text-slate-400
               "
             >
-              Let's identify opportunities,
-              automate processes and build intelligent systems
-              that help your business grow faster.
+              Let's identify where KORTEX, connected systems, automation and business intelligence can improve visibility, streamline operations and create measurable value in your industry.
             </p>
 
 

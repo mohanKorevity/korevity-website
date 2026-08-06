@@ -93,7 +93,7 @@ export default function ContactForm() {
 >
   Thanks for reaching out.
   <br /><br />
-  We've received your request, and one of our specialists will get back to you within 1 business day with the next steps.
+  We've received your message, and we'll get back to you within one business day with the next steps.
   <br /><br />
   We look forward to helping you build smarter business systems.
 </p>
@@ -237,34 +237,33 @@ export default function ContactForm() {
               <option value="" disabled className="text-black">
                 Select a service
               </option>
-
               <option className="text-black">
-                Business Intelligence & Dashboards
-              </option>
+  KORTEX & Business Knowledge
+</option>
 
-              <option className="text-black">
-                Automation & Workflow Improvements
-              </option>
+<option className="text-black">
+  Business Intelligence & Dashboards
+</option>
 
-              <option className="text-black">
-                AI Solutions
-              </option>
+<option className="text-black">
+  Workflow Automation
+</option>
 
-              <option className="text-black">
-                System Integration
-              </option>
+<option className="text-black">
+  System Integrations
+</option>
 
-              <option className="text-black">
+<option className="text-black">
+  AI-Powered Insights
+</option>
+
+<option className="text-black">
   Business Assessment
 </option>
 
-              <option className="text-black">
-                Business Consultation
-              </option>
-
-              <option className="text-black">
-                Not Sure Yet
-              </option>
+<option className="text-black">
+  Not Sure Yet
+</option>
             </select>
           </div>
 
@@ -305,7 +304,7 @@ export default function ContactForm() {
 
   {loading
     ? "Sending..."
-    : "Request A Free Strategy Call"}
+    : "Start the Conversation"}
 </GlowButton>
 
           {/* Bottom */}

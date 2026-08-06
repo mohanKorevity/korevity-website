@@ -5,11 +5,11 @@ import SolutionCard from "./SolutionCard";
 
 const solutions = [
   {
-    title: "Know Exactly What's Happening In Your Business",
+    title: "See Your Business Clearly",
     description:
-      "Get a clear view of your sales, operations and performance with dashboards and insights that help you understand your business and make confident decisions.",
+      "Bring sales, operations and performance data into one clear view so leaders can see what is happening, identify issues earlier and make decisions with confidence.",
     icon: "analytics",
-    large: true,
+    large: false,
 
     gradient:
       "from-cyan-400 via-blue-500 to-indigo-600",
@@ -22,7 +22,7 @@ const solutions = [
   {
     title: "Stop Losing Time To Manual Work",
     description:
-      "Reduce repetitive tasks and streamline everyday processes so your team spends less time managing work and more time growing the business.",
+      "Automate repetitive tasks, approvals and routine processes so work moves faster and your team can focus on higher-value priorities.",
     icon: "automation",
 
     gradient:
@@ -36,7 +36,7 @@ const solutions = [
   {
     title: "Bring Your Tools Together",
     description:
-      "Connect the tools your business already uses so information flows smoothly and your team always has access to what they need.",
+      "Connect your existing business systems so data and information can move between teams, workflows and tools without unnecessary manual handoffs.",
     icon: "integration",
     large: true,
 
@@ -51,7 +51,7 @@ const solutions = [
   {
     title: "Build For What's Next",
     description:
-      "Create flexible systems that adapt as your business grows, without constantly starting over.",
+      "Build connected systems that can evolve as your workflows, teams and operational needs change, without rebuilding everything from the ground up.",
     icon: "growth",
 
     gradient:
@@ -213,7 +213,7 @@ export default function Solutions() {
                 delay:index * 0.08,
                 duration:0.5,
               }}
-
+className="h-full"
             >
 
               <SolutionCard

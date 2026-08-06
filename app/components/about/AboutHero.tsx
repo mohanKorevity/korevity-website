@@ -9,22 +9,22 @@ import Button from "../ui/Button";
 
 const pillars = [
   {
-    title: "Business Intelligence",
-    subtitle: "Smarter Decisions",
+    title: "KORTEX Intelligence",
+    subtitle: "Knowledge Into Action",
     color: "text-cyan-300",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20",
   },
   {
-    title: "AI Automation",
-    subtitle: "Save Time",
+    title: "Intelligent Automation",
+    subtitle: "Less Manual Work",
     color: "text-blue-300",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
   },
   {
-    title: "Connected Systems",
-    subtitle: "One Source Of Truth",
+    title: "Connected Operations",
+    subtitle: "Systems Working Together",
     color: "text-emerald-300",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20",
@@ -141,21 +141,20 @@ export default function AboutHero() {
           </h1>
 
           <p
-            className="
-              mt-10
-              max-w-2xl
-              text-xl
-              leading-9
-              text-slate-400
-            "
-          >
-            Growing businesses shouldn't be held back by manual work, disconnected systems or scattered data.
+  className="
+    mt-10
+    max-w-2xl
+    text-xl
+    leading-9
+    text-slate-400
+  "
+>
+  Growing businesses shouldn't be held back by manual work, disconnected systems or scattered knowledge and data.
 
-            <br />
-            <br />
+  <br />
+  <br />
 
-            KoreVity helps simplify operations through Business Intelligence, AI and Automation—giving leaders clearer visibility, faster decisions and more time to focus on growth.
-          </p>
+KoreVity brings knowledge, systems, automation and intelligence together through KORTEX—helping teams work smarter, uncover insights and make better decisions.</p>
 
           <div
             className="

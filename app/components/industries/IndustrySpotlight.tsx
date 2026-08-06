@@ -41,14 +41,14 @@ export default function IndustrySpotlight() {
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
 
-            Manufacturing businesses generate massive amounts of production,
-            inventory and operational data.
+  Manufacturing businesses generate large amounts of production,
+  inventory, quality and operational information.
 
-            KoreVity transforms that data into real-time dashboards,
-            predictive insights and intelligent automation that improve
-            productivity across the entire organization.
+  KoreVity connects that information with business knowledge,
+  systems and workflows to improve real-time visibility, automate
+  operations, identify patterns and uncover opportunities for improvement.
 
-          </p>
+</p>
 
           <div className="mt-10 space-y-4">
 

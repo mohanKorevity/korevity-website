@@ -13,7 +13,7 @@ export default function Industries() {
         <SectionTitle
           eyebrow="INDUSTRIES"
           title="Helping Businesses Across Industries Work Smarter"
-          description="KoreVity helps businesses improve operations, reduce manual work and make better decisions with practical solutions designed around their unique goals."
+          description="KoreVity connects business knowledge, data and existing systems to help organizations automate work, improve visibility and make better-informed decisions."
         />
 
         <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -22,7 +22,7 @@ export default function Industries() {
             <IndustryCard
               icon="factory"
               title="Manufacturing"
-              description="Improve operational visibility, track performance and identify opportunities to make production more efficient."
+              description="Connect operational data, monitor production performance and automate routine processes to improve visibility across manufacturing operations."
             />
           </FadeIn>
 
@@ -30,7 +30,7 @@ export default function Industries() {
             <IndustryCard
               icon="health"
               title="Healthcare"
-              description="Improve administrative workflows, organize information and support better decision-making with connected systems."
+              description="Connect operational information, streamline administrative workflows and give teams clearer visibility across everyday healthcare operations."
             />
           </FadeIn>
 
@@ -38,15 +38,14 @@ export default function Industries() {
             <IndustryCard
               icon="finance"
               title="Finance"
-              description="Create clearer reporting, improve financial visibility and help teams make confident decisions."
-            />
+description="Connect financial data, automate reporting and give teams clearer visibility into performance, KPIs, financial trends and key business insights."            />
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <IndustryCard
               icon="retail"
               title="Retail"
-              description="Understand customer trends, improve inventory visibility and simplify sales reporting."
+              description="Connect sales and inventory data, monitor performance and automate routine processes to improve visibility across retail operations."
             />
           </FadeIn>
 
@@ -54,7 +53,7 @@ export default function Industries() {
             <IndustryCard
               icon="logistics"
               title="Logistics"
-              description="Improve delivery visibility, streamline operations and make better decisions with clearer business insights."
+              description="Connect operational data, improve shipment visibility and automate routine workflows to help logistics teams operate more efficiently."
             />
           </FadeIn>
 
@@ -62,7 +61,7 @@ export default function Industries() {
             <IndustryCard
               icon="education"
               title="Education"
-              description="Improve administration, organize information and gain clearer insights into institutional performance."
+              description="Connect institutional information, streamline administrative workflows and give teams clearer visibility into operations and performance."
             />
           </FadeIn>
 

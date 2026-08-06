@@ -13,9 +13,9 @@ import Button from "../ui/Button";
 
 
 const benefits = [
-  "Understand where your business can improve",
-  "Identify opportunities to save time and reduce complexity",
-  "Get practical recommendations based on your goals",
+  "Identify where manual work and disconnected systems are slowing you down",
+  "Explore opportunities for automation, intelligence and better visibility",
+  "Define practical next steps based on your business priorities",
 ];
 
 
@@ -212,9 +212,9 @@ export default function CTA() {
                   text-slate-400
                 "
               >
-                Let's understand your business challenges,
-                identify opportunities and explore practical ways
-                technology can help you operate better.
+                Let's understand your workflows, systems and business challenges,
+identify where KORTEX, automation and connected intelligence can create value,
+and map the right next steps for your business.
               </p>
 
 
@@ -312,7 +312,7 @@ export default function CTA() {
                   text-slate-400
                 "
               >
-                A practical conversation focused on improving your business.
+                A focused conversation about your systems, workflows and opportunities for improvement.
               </p>
 
 

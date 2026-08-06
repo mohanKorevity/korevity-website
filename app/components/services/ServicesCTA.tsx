@@ -136,10 +136,9 @@ export default function ServicesCTA() {
               text-slate-300
             "
           >
-            Whether you're looking for business intelligence,
-            AI automation or complete digital transformation,
-            we'll help you identify the right technology approach
-            for your business.
+            Whether you need business intelligence, workflow automation,
+system integration or KORTEX, KoreVity brings the right capabilities
+together around your workflows, systems and business priorities.
           </p>
 
 
