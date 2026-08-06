@@ -2,78 +2,15 @@ import fs from "fs";
 import path from "path";
 import mammoth from "mammoth";
 import { parse } from "node-html-parser";
+import { detectBlockType } from "../app/dashboard/data/knowledge/utils/blockDetector";
+import { parseSpecialBlock } from "../app/dashboard/data/knowledge/utils/blockParser";
+import { detectStructures } from "../app/dashboard/data/knowledge/utils/detectStructures";
+import {
+  ContentBlock,
+  Section,
+} from "./compiler/models/types";
+import { normalizeText } from "./compiler/utils/normalizeText";
 
-function normalizeText(text: string) {
-  return text
-
-    // -----------------------------
-    // Bullets
-    // -----------------------------
-    .replace(/â€¢/g, "•")
-    .replace(/Γ£à/g, "•")
-
-    // -----------------------------
-    // Arrows
-    // -----------------------------
-    .replace(/â†’/g, "→")
-    .replace(/â†“/g, "↓")
-    .replace(/â†�/g, "←")
-    .replace(/ΓåÆ/g, "→")
-
-    // -----------------------------
-    // Dashes
-    // -----------------------------
-    .replace(/ΓÇö/g, "—")
-    .replace(/â€”/g, "—")
-    .replace(/ΓÇô/g, "–")
-    .replace(/â€“/g, "–")
-
-    // -----------------------------
-    // Quotes
-    // -----------------------------
-    .replace(/â€œ/g, "“")
-    .replace(/â€/g, "”")
-    .replace(/â€˜/g, "‘")
-    .replace(/â€™/g, "’")
-
-    // -----------------------------
-    // Ellipsis
-    // -----------------------------
-    .replace(/â€¦/g, "…")
-
-    // -----------------------------
-    // Box drawing
-    // -----------------------------
-    .replace(/â”œ/g, "├")
-    .replace(/â”€/g, "─")
-    .replace(/â””/g, "└")
-    .replace(/â”‚/g, "│")
-    .replace(/â–¼/g, "▼")
-
-    .replace(/Γö£ΓöÇΓöÇ/g, "├──")
-    .replace(/ΓööΓöÇΓöÇ/g, "└──")
-
-    // -----------------------------
-    // Checkboxes
-    // -----------------------------
-    .replace(/Γ¼£/g, "□")
-    .replace(/Γ£î/g, "☑")
-
-    // -----------------------------
-    // Misc icons
-    // -----------------------------
-    .replace(/≡ƒÅ¢∩╕Å/g, "💡")
-    .replace(/∩╕Å/g, "")
-    .replace(/ƒÅ¢/g, "💡")
-
-    // -----------------------------
-    // Cleanup
-    // -----------------------------
-    .replace(/Â/g, "")
-    .replace(/\u00A0/g, " ")
-    .replace(/[ \t]{2,}/g, " ")
-    .trim();
-}
 const documentsPath = path.join(
   process.cwd(),
   "app/dashboard/data/knowledge/KBOM/documents"
@@ -93,12 +30,9 @@ function slugify(text: string) {
 
 // ADD THIS HERE
 const usedIds = new Map<string, number>();
-interface Section {
-  id: string;
-  title: string;
-  paragraphs: string[];
-  lists: string[][];
-}
+
+
+
 function uniqueSlug(text: string) {
   const base = slugify(text);
 
@@ -120,7 +54,7 @@ usedIds.clear();
 
 const normalizedHtml = normalizeText(result.value);
 
-
+fs.writeFileSync("debug.html", normalizedHtml);
 
 const root = parse(normalizedHtml);
 
@@ -178,8 +112,7 @@ if (isHeading) {
   currentSection = {
     id: `${fileName.replace(".docx","")}-${uniqueSlug(text)}`,
     title: text,
-    paragraphs: [],
-    lists: [],
+    blocks: [],
   };
 
   sections.push(currentSection);
@@ -193,16 +126,61 @@ if (!currentSection) {
   currentSection = {
     id: "introduction",
     title: "Introduction",
-    paragraphs: [],
-    lists: [],
+    blocks: [],
   };
 
   sections.push(currentSection);
 }
+// -----------------------------
+// Code Blocks
+// -----------------------------
+const codeElement = element.querySelector("code");
 
-currentSection.paragraphs.push(text);
+if (codeElement) {
+  if (!currentSection) {
+    currentSection = {
+      id: "introduction",
+      title: "Introduction",
+      blocks: [],
+    };
 
-continue;
+    sections.push(currentSection);
+  }
+
+  currentSection.blocks.push({
+    type: "code",
+    language: "text",
+    filename: "",
+    code: normalizeText(codeElement.text),
+  });
+
+  continue;
+}
+const blockType = detectBlockType(text);
+
+// ---------- Paragraph ----------
+if (blockType === "paragraph") {
+
+  // Ignore arrows completely
+  if (
+    text === "↓" ||
+    text === "→"
+  ) {
+    continue;
+  }
+
+  currentSection.blocks.push({
+    type: "paragraph",
+    text,
+  });
+
+} else {
+
+  currentSection.blocks.push(
+    parseSpecialBlock(blockType, text)
+  );
+
+}
 
 }
 
@@ -222,8 +200,7 @@ continue;
       currentSection = {
         id: "introduction",
         title: "Introduction",
-        paragraphs: [],
-        lists: [],
+        blocks: [],
       };
 
       sections.push(currentSection);
@@ -234,14 +211,106 @@ continue;
   .map((li: any) => normalizeText(li.text.trim()))
   .filter(Boolean);
 
-    if (items.length) {
-      currentSection.lists.push(items);
-    }
+if (items.length) {
+  currentSection.blocks.push({
+  type: "list",
+  listType: element.tagName === "OL" ? "ordered" : "unordered",
+  items,
+});
+}
 
     continue;
   }
 
+  
+// -----------------------------
+// Tables
+// -----------------------------
+if (element.tagName === "TABLE") {
+
+  if (!currentSection) {
+
+    currentSection = {
+      id: "introduction",
+      title: "Introduction",
+      blocks: [],
+    };
+
+    sections.push(currentSection);
+  }
+
+  const rows = element
+    .querySelectorAll("tr")
+    .map((tr: any) => {
+      return tr.querySelectorAll("td,th").map((cell: any) =>
+        normalizeText(cell.text.trim())
+      );
+    })
+    .filter((r: string[]) => r.length);
+
+  if (rows.length) {
+
+    currentSection.blocks.push({
+      type: "table",
+      rows,
+    });
+
+  }
+
+  continue;
 }
+}
+// Keep extracted blocks exactly as detected.
+// Flow blocks should only come from detectBlockType()/parseSpecialBlock().
+
+for (const section of sections) {
+  section.blocks = detectStructures(section.blocks);
+
+  const searchText = section.blocks
+    .map((block: any) => {
+      switch (block.type) {
+        case "paragraph":
+        case "note":
+        case "warning":
+        case "risk":
+        case "decision":
+        case "deliverable":
+        case "info":
+        case "success":
+        case "tip":
+          return block.text ?? "";
+
+        case "definition":
+          return `${block.title ?? ""} ${block.text ?? ""}`;
+
+        case "phase":
+        case "milestone":
+          return `${block.title ?? ""} ${block.description ?? ""}`;
+
+        case "timeline":
+          return `${block.label ?? ""} ${block.description ?? ""}`;
+
+        case "list":
+          return (block.items ?? []).join(" ");
+
+        case "table":
+          return (block.rows ?? [])
+            .flat()
+            .join(" ");
+
+        case "flow":
+          return (block.steps ?? []).join(" ");
+
+        default:
+          return "";
+      }
+    })
+    .join(" ")
+    .toLowerCase();
+
+  (section as any).searchText = searchText;
+}
+
 const json = {
   id: fileName.replace(".docx", ""),
   file: fileName,

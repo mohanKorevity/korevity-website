@@ -145,13 +145,7 @@ export default function KnowledgeWorkspace() {
         />
 
       </div>
-            {/* KBOM Timeline */}
-
-      <div className="mt-12">
-
-        <KBOMTimeline />
-
-      </div>
+            
       {/* Knowledge Categories */}
 
       <div
@@ -183,7 +177,11 @@ export default function KnowledgeWorkspace() {
           "
         >
 
-         {knowledgeCategories.map((category) => (
+         {knowledgeCategories.map((category) => {
+
+  
+
+  return (
 
   <Link
     key={category.name}
@@ -223,100 +221,15 @@ export default function KnowledgeWorkspace() {
 
             </Link>
 
-          ))}
+           );
+
+})}
 
         </div>
 
       </div>
-      {/* Document Sections */}
 
-      <div
-        className="
-          mt-12
-          grid
-          gap-6
-          xl:grid-cols-2
-        "
-      >
-
-        {[
-          {
-            title: "Recent Documents",
-            description:
-              "Recently accessed company knowledge and files.",
-          },
-          {
-            title: "Favorites",
-            description:
-              "Important documents saved for quick access.",
-          },
-          {
-            title: "Drafts",
-            description:
-              "Documents currently being prepared.",
-          },
-          {
-            title: "Archived",
-            description:
-              "Old or inactive knowledge resources.",
-          },
-        ].map((section) => (
-
-          <div
-            key={section.title}
-            className="
-              rounded-2xl
-              border
-              border-white/10
-              bg-white/5
-              p-6
-            "
-          >
-
-            <h3
-              className="
-                text-lg
-                font-semibold
-                text-white
-              "
-            >
-              {section.title}
-            </h3>
-
-
-            <p
-              className="
-                mt-2
-                text-sm
-                text-slate-400
-              "
-            >
-              {section.description}
-            </p>
-
-
-            <div
-              className="
-                mt-5
-                rounded-xl
-                border
-                border-dashed
-                border-white/10
-                p-5
-                text-center
-                text-sm
-                text-slate-500
-              "
-            >
-              No documents yet.
-            </div>
-
-
-          </div>
-
-        ))}
-
-      </div>
+      
     </section>
 
   );
