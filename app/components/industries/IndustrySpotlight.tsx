@@ -2,8 +2,33 @@
 
 import { motion } from "framer-motion";
 import { Factory } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function IndustrySpotlight() {
+  const videoContainerRef = useRef<HTMLDivElement | null>(null);
+const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+useEffect(() => {
+  const element = videoContainerRef.current;
+
+  if (!element) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setShouldLoadVideo(true);
+        observer.disconnect();
+      }
+    },
+    {
+      rootMargin: "300px 0px",
+    }
+  );
+
+  observer.observe(element);
+
+  return () => observer.disconnect();
+}, []);
   return (
     <section className="relative py-36">
 
@@ -92,19 +117,28 @@ export default function IndustrySpotlight() {
 
   <div className="aspect-[16/10]">
 
+    <div
+  ref={videoContainerRef}
+  className="aspect-[16/10] w-full"
+>
+  {shouldLoadVideo ? (
     <video
       className="h-full w-full object-cover"
       autoPlay
       muted
       loop
       playsInline
-      preload="auto"
+      preload="metadata"
     >
       <source
         src="/videos/manufacturing.mp4"
         type="video/mp4"
       />
     </video>
+  ) : (
+    <div className="h-full w-full bg-slate-900" />
+  )}
+</div>
 
   </div>
 

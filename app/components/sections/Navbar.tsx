@@ -264,20 +264,19 @@ h-25
           {/* MOBILE MENU BUTTON */}
 
           <button
-
-            onClick={() =>
-              setMobileOpen(!mobileOpen)
-            }
-
-            className="
-              rounded-xl
-              border
-              border-white/10
-              p-3
-              text-white
-              lg:hidden
-            "
-          >
+  type="button"
+  onClick={() => setMobileOpen((open) => !open)}
+  aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+  aria-expanded={mobileOpen}
+  className="
+    rounded-xl
+    border
+    border-white/10
+    p-3
+    text-white
+    lg:hidden
+  "
+>
 
             {
               mobileOpen

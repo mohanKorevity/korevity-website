@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import LazyHeroVideo from "./LazyHeroVideo";
 import HeroStats from "./HeroStats";
 import HeroDashboard from "./HeroDashboard";
 
@@ -34,42 +34,30 @@ export default function Hero() {
       >
         {/* LEFT CONTENT */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-          }}
-          className="
-            pt-12
-            lg:pt-16
-          "
-        >
-          <div
-            className="
-              inline-flex
-              rounded-full
-              border
-              border-cyan-400/20
-              bg-cyan-400/10
-              px-5
-              py-2
-              text-xs
-              font-semibold
-              uppercase
-              tracking-[0.25em]
-              text-cyan-400
-            "
-          >
-            Technology That Helps You Grow
-          </div>
+<div
+  className="
+    pt-12
+    lg:pt-16
+  "
+>
+  <div
+    className="
+      inline-flex
+      rounded-full
+      border
+      border-cyan-400/20
+      bg-cyan-400/10
+      px-5
+      py-2
+      text-xs
+      font-semibold
+      uppercase
+      tracking-[0.25em]
+      text-cyan-400
+    "
+  >
+    Technology That Helps You Grow
+  </div>
 
           <h1
             className="
@@ -320,24 +308,7 @@ export default function Hero() {
 
     {/* Video */}
 
-    <div className="aspect-[4/3]">
-
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="h-full w-full object-cover"
-      >
-
-        <source
-          src="/videos/hero-ai-demo.mp4"
-          type="video/mp4"
-        />
-
-      </video>
-
-    </div>
+    <LazyHeroVideo />
 
   </div>
 
@@ -377,11 +348,11 @@ export default function Hero() {
               <span className="font-semibold text-white">
                 KoreVity connects them.
               </span>{" "}
-              KORTEX brings business knowledge, operational data, existing systems and intelligent workflows together — helping identify opportunities, surface recommendations and continuously improve how your business operates.
+              KORTEX brings business knowledge, operational data, existing systems and intelligent workflows together — helping identify opportunities, strengthen decision-making and continuously improve how your business operates.
             </p>
           </div>
           
-        </motion.div>
+        </div>
         {/* DASHBOARD */}
 
         <motion.div
