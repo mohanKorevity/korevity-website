@@ -483,7 +483,7 @@ setTimeout(() => {
     className="
       max-w-md
       rounded-2xl
-      bg-cyan-500
+      bg-cyan-700
       px-6
       py-4
       text-white
@@ -678,7 +678,7 @@ setTimeout(() => {
   {item}
 </p>
 
-<p className="mt-1 text-xs text-slate-500">
+<p className="mt-1 text-xs text-slate-300">
   Connected Source
 </p>
 

@@ -1,8 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-
 export default function BackgroundGlow() {
   return (
     <div
@@ -12,24 +7,10 @@ export default function BackgroundGlow() {
         inset-0
         overflow-hidden
       "
+      aria-hidden="true"
     >
-
-
       {/* Top Left Blue Glow */}
-
-      <motion.div
-
-        animate={{
-          x: [0, 40, 0],
-          y: [0, 30, 0],
-        }}
-
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-
+      <div
         className="
           absolute
           left-10
@@ -44,26 +25,10 @@ export default function BackgroundGlow() {
 
           blur-[150px]
         "
-
       />
 
-
-
       {/* Bottom Right Cyan Glow */}
-
-      <motion.div
-
-        animate={{
-          x: [0, -50, 0],
-          y: [0, -30, 0],
-        }}
-
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-
+      <div
         className="
           absolute
           bottom-20
@@ -78,27 +43,10 @@ export default function BackgroundGlow() {
 
           blur-[170px]
         "
-
       />
 
-
-
-
       {/* Center Purple Depth Glow */}
-
-      <motion.div
-
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.5, 0.8, 0.5],
-        }}
-
-        transition={{
-          duration: 14,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-
+      <div
         className="
           absolute
 
@@ -117,11 +65,7 @@ export default function BackgroundGlow() {
 
           blur-[140px]
         "
-
       />
-
-
-
     </div>
   );
 }

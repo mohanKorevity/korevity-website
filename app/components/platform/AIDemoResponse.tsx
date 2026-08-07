@@ -80,7 +80,7 @@ useEffect(() => {
   KORTEX
 </p>
 
-<p className="mt-1 text-xs text-slate-500">
+<p className="mt-1 text-xs text-slate-400">
   Enterprise Intelligence Engine
 </p>
 
@@ -104,7 +104,7 @@ useEffect(() => {
                   className={
                     index <= stepIndex
                       ? "text-slate-200"
-                      : "text-slate-500"
+                      : "text-slate-400"
                   }
                 >
                   {step}
@@ -132,7 +132,7 @@ useEffect(() => {
         KORTEX
       </p>
 
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-sm text-slate-400">
         Enterprise Intelligence Engine
       </p>
 
@@ -150,7 +150,7 @@ useEffect(() => {
 
   </div>
 
-  <p className="mt-1 text-xs text-slate-500">
+  <p className="mt-1 text-xs text-slate-400">
     Confidence
     <span className="ml-2 font-semibold text-cyan-300">
       {current.answer.confidence}%
@@ -228,9 +228,9 @@ useEffect(() => {
   transition={{ duration: 0.35 }}
   className="mt-8"
 >
-  <p className="text-xs tracking-[0.18em] text-slate-500">
-    CONNECTED SOURCES
-  </p>
+  <p className="text-xs tracking-[0.18em] text-slate-300">
+  CONNECTED SOURCES
+</p>
 
     <div className="mt-4 flex flex-wrap gap-3">
   {current.answer.sources.map((source: string, index: number) => (

@@ -2,54 +2,48 @@
 
 import { motion } from "framer-motion";
 
-import {
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-} from "recharts";
-
-
-const data = [
-  { month: "Jan", performance: 45 },
-  { month: "Feb", performance: 52 },
-  { month: "Mar", performance: 58 },
-  { month: "Apr", performance: 64 },
-  { month: "May", performance: 70 },
-  { month: "Jun", performance: 76 },
-  { month: "Jul", performance: 82 },
-  { month: "Aug", performance: 88 },
+const points = [
+  { month: "Jan", x: 20, y: 130 },
+  { month: "Feb", x: 60, y: 116 },
+  { month: "Mar", x: 100, y: 103 },
+  { month: "Apr", x: 140, y: 88 },
+  { month: "May", x: 180, y: 72 },
+  { month: "Jun", x: 220, y: 57 },
+  { month: "Jul", x: 260, y: 41 },
+  { month: "Aug", x: 300, y: 25 },
 ];
 
+const linePath = points
+  .map((point, index) => {
+    return `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`;
+  })
+  .join(" ");
+
+const areaPath = `
+  ${linePath}
+  L 300 150
+  L 20 150
+  Z
+`;
 
 export default function DashboardAnalytics() {
-
   return (
-
     <motion.div
-
       initial={{
-        opacity:0,
-        y:30,
+        opacity: 0,
+        y: 30,
       }}
-
       animate={{
-        opacity:1,
-        y:0,
+        opacity: 1,
+        y: 0,
       }}
-
       transition={{
-        duration:0.7,
-        delay:0.3,
+        duration: 0.7,
+        delay: 0.3,
       }}
-
       whileHover={{
-        y:-6,
+        y: -6,
       }}
-
       className="
         group
         relative
@@ -75,26 +69,10 @@ export default function DashboardAnalytics() {
 
         shadow-xl
       "
-
     >
+      {/* Static Glow */}
 
-
-      {/* Animated Glow */}
-
-
-      <motion.div
-
-        animate={{
-          scale:[1,1.25,1],
-          opacity:[0.2,0.5,0.2],
-        }}
-
-        transition={{
-          duration:6,
-          repeat:Infinity,
-          ease:"easeInOut",
-        }}
-
+      <div
         className="
           pointer-events-none
           absolute
@@ -110,10 +88,7 @@ export default function DashboardAnalytics() {
 
           blur-3xl
         "
-
       />
-
-
 
       <div
         className="
@@ -121,18 +96,10 @@ export default function DashboardAnalytics() {
           z-10
         "
       >
-
-
-
         {/* Header */}
 
-
         <div className="mb-6 flex items-start justify-between">
-
-
           <div>
-
-
             <h3
               className="
                 text-2xl
@@ -144,7 +111,6 @@ export default function DashboardAnalytics() {
               Business Performance
             </h3>
 
-
             <p
               className="
                 mt-1
@@ -154,24 +120,9 @@ export default function DashboardAnalytics() {
             >
               A simple view of trends, performance and business progress.
             </p>
-
-
           </div>
 
-
-
-          <motion.div
-
-            animate={{
-              y:[0,-4,0],
-            }}
-
-            transition={{
-              duration:3,
-              repeat:Infinity,
-              ease:"easeInOut",
-            }}
-
+          <div
             className="
               rounded-full
 
@@ -192,20 +143,11 @@ export default function DashboardAnalytics() {
               shadow-cyan-500/10
             "
           >
-
             Executive View
-
-          </motion.div>
-
-
+          </div>
         </div>
 
-
-
-
-
         {/* Trend Card */}
-
 
         <div
           className="
@@ -230,10 +172,7 @@ export default function DashboardAnalytics() {
             hover:bg-white/[0.06]
           "
         >
-
-
           <div>
-
             <p
               className="
                 text-xs
@@ -245,7 +184,6 @@ export default function DashboardAnalytics() {
               Performance Trend
             </p>
 
-
             <p
               className="
                 mt-1
@@ -256,11 +194,7 @@ export default function DashboardAnalytics() {
             >
               Improving
             </p>
-
-
           </div>
-
-
 
           <div
             className="
@@ -279,197 +213,106 @@ export default function DashboardAnalytics() {
               text-emerald-400
             "
           >
-
             +43%
-
           </div>
-
-
         </div>
 
+        {/* Lightweight SVG Chart */}
 
-
-
-
-        {/* Chart */}
-
-
-        <div
-          className="
-            h-52
-            rounded-2xl
-          "
-        >
-
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
+        <div className="h-52 w-full rounded-2xl">
+          <svg
+            viewBox="0 0 320 180"
+            className="h-full w-full"
+            role="img"
+            aria-label="Business performance increasing from January to August"
+            preserveAspectRatio="none"
           >
+            <defs>
+              <linearGradient
+                id="performanceGradient"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+                <stop
+                  offset="0%"
+                  stopColor="#22d3ee"
+                  stopOpacity="0.45"
+                />
 
+                <stop
+                  offset="100%"
+                  stopColor="#22d3ee"
+                  stopOpacity="0"
+                />
+              </linearGradient>
+            </defs>
 
-            <AreaChart
+            {/* Horizontal grid lines */}
 
-              data={data}
-
-              margin={{
-                top:20,
-                right:10,
-                left:-20,
-                bottom:0,
-              }}
-
-            >
-
-
-              <defs>
-
-
-                <linearGradient
-
-                  id="performanceGradient"
-
-                  x1="0"
-
-                  y1="0"
-
-                  x2="0"
-
-                  y2="1"
-
-                >
-
-                  <stop
-                    offset="0%"
-                    stopColor="#22d3ee"
-                    stopOpacity={0.55}
-                  />
-
-
-                  <stop
-                    offset="100%"
-                    stopColor="#22d3ee"
-                    stopOpacity={0}
-                  />
-
-
-                </linearGradient>
-
-
-              </defs>
-
-
-
-
-
-              <CartesianGrid
-
+            {[35, 65, 95, 125, 150].map((y) => (
+              <line
+                key={y}
+                x1="20"
+                y1={y}
+                x2="300"
+                y2={y}
                 stroke="#1e293b"
-
+                strokeWidth="1"
                 strokeDasharray="4 4"
-
-                vertical={false}
-
               />
+            ))}
 
+            {/* Area */}
 
+            <path
+              d={areaPath}
+              fill="url(#performanceGradient)"
+            />
 
+            {/* Performance line */}
 
+            <path
+              d={linePath}
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
 
-              <XAxis
+            {/* Data points */}
 
-                dataKey="month"
-
-                tick={{
-                  fill:"#64748b",
-                  fontSize:12,
-                }}
-
-                axisLine={false}
-
-                tickLine={false}
-
+            {points.map((point) => (
+              <circle
+                key={point.month}
+                cx={point.x}
+                cy={point.y}
+                r="4"
+                fill="#22d3ee"
+                stroke="#020617"
+                strokeWidth="2"
               />
+            ))}
 
+            {/* Month labels */}
 
-
-              <YAxis hide />
-
-
-
-
-
-              <Tooltip
-
-                contentStyle={{
-
-                  background:"#020617",
-
-                  border:"1px solid #1e293b",
-
-                  borderRadius:"14px",
-
-                  color:"#fff",
-
-                }}
-
-                formatter={(value)=>[
-                  `${value}%`,
-                  "Business Growth",
-                ]}
-
-              />
-
-
-
-
-
-              <Area
-
-                type="monotone"
-
-                dataKey="performance"
-
-                stroke="#38bdf8"
-
-                strokeWidth={3}
-
-                fill="url(#performanceGradient)"
-
-
-                dot={{
-                  r:4,
-                  fill:"#22d3ee",
-                  stroke:"#020617",
-                  strokeWidth:2,
-                }}
-
-
-                activeDot={{
-                  r:7,
-                }}
-
-
-                animationDuration={1800}
-
-              />
-
-
-
-            </AreaChart>
-
-
-          </ResponsiveContainer>
-
-
+            {points.map((point) => (
+              <text
+                key={`${point.month}-label`}
+                x={point.x}
+                y="174"
+                textAnchor="middle"
+                fill="#64748b"
+                fontSize="10"
+              >
+                {point.month}
+              </text>
+            ))}
+          </svg>
         </div>
-
-
-
       </div>
-
-
-
     </motion.div>
-
   );
 }

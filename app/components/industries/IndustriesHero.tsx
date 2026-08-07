@@ -1,6 +1,6 @@
-"use client";
+
 import Link from "next/link";
-import { motion } from "framer-motion";
+
 import GlowButton from "../ui/GlowButton";
 
 export default function IndustriesHero() {
@@ -9,15 +9,7 @@ export default function IndustriesHero() {
 
       <div className="mx-auto max-w-7xl px-6">
 
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            ease: "easeOut",
-          }}
-          className="mx-auto max-w-5xl text-center"
-        >
+        <div className="mx-auto max-w-5xl text-center">
 
           <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold tracking-[0.18em] text-cyan-300">
 
@@ -86,7 +78,7 @@ KoreVity combines KORTEX, automation, connected systems and business intelligenc
 </div>
 
 
-        </motion.div>
+        </div>
 
 
       </div>

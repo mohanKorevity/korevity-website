@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import Link from "next/link";
+
 
 import GlowButton from "../ui/GlowButton";
 import Button from "../ui/Button";
@@ -83,11 +83,7 @@ export default function AboutHero() {
 
         {/* LEFT */}
 
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
+        <div>
 
           <span
             className="
@@ -158,18 +154,16 @@ KoreVity brings knowledge, systems, automation and intelligence together through
 
           <div
             className="
-              mt-08
+              mt-8
               flex
               flex-wrap
               gap-5
             "
           >
 
-            <Link href="/services?target=how-we-help">
-              <GlowButton>
-                See How We Can Help
-              </GlowButton>
-            </Link>
+            <GlowButton href="/services?target=how-we-help">
+  See How We Can Help
+</GlowButton>
 
             <a href="#our-story">
 
@@ -185,7 +179,7 @@ KoreVity brings knowledge, systems, automation and intelligence together through
 
           </div>
 
-        </motion.div>
+        </div>
 
         {/* RIGHT */}
 
