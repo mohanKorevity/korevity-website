@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+
 export default function AnimatedBackground() {
   return (
     <div
@@ -7,11 +12,13 @@ export default function AnimatedBackground() {
         inset-0
         overflow-hidden
       "
-      aria-hidden="true"
     >
-      {/* Left Blue Orb */}
 
-      <div
+
+      {/* Left Floating Blue Orb */}
+
+      <motion.div
+
         className="
           absolute
           -left-32
@@ -26,11 +33,27 @@ export default function AnimatedBackground() {
 
           blur-[160px]
         "
+
+        animate={{
+          x: [0, 120, 0],
+          y: [0, -60, 0],
+          opacity: [0.4, 0.8, 0.4],
+        }}
+
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+
       />
+
+
 
       {/* Right Cyan Orb */}
 
-      <div
+      <motion.div
+
         className="
           absolute
           -right-32
@@ -45,11 +68,27 @@ export default function AnimatedBackground() {
 
           blur-[190px]
         "
+
+        animate={{
+          x: [0, -120, 0],
+          y: [0, 80, 0],
+          opacity: [0.5, 0.9, 0.5],
+        }}
+
+        transition={{
+          duration: 24,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+
       />
+
+
 
       {/* Bottom Intelligence Glow */}
 
-      <div
+      <motion.div
+
         className="
           absolute
           bottom-[-120px]
@@ -66,11 +105,25 @@ export default function AnimatedBackground() {
 
           blur-[170px]
         "
+
+        animate={{
+          scale: [1, 1.18, 1],
+          opacity: [0.35, 0.7, 0.35],
+        }}
+
+        transition={{
+          duration: 14,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+
       />
 
-      {/* Center AI Glow */}
 
-      <div
+      {/* Very subtle center AI glow */}
+
+      <motion.div
+
         className="
           absolute
           left-1/2
@@ -87,7 +140,20 @@ export default function AnimatedBackground() {
 
           blur-[120px]
         "
+
+        animate={{
+          scale: [1, 1.25, 1],
+        }}
+
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+
       />
+
+
     </div>
   );
 }

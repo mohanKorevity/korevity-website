@@ -1,10 +1,15 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   CheckCircle2,
   Clock3,
   BrainCircuit,
 } from "lucide-react";
 
+
 const items = [
+
   {
     icon: Clock3,
 
@@ -19,6 +24,7 @@ const items = [
     glow:
       "bg-cyan-500/40",
   },
+
 
   {
     icon: BrainCircuit,
@@ -35,6 +41,7 @@ const items = [
       "bg-purple-500/40",
   },
 
+
   {
     icon: CheckCircle2,
 
@@ -49,10 +56,15 @@ const items = [
     glow:
       "bg-emerald-500/40",
   },
+
 ];
 
+
+
 export default function HeroStats() {
+
   return (
+
     <div
       className="
         grid
@@ -60,162 +72,244 @@ export default function HeroStats() {
         md:grid-cols-3
       "
     >
-      {items.map((item) => {
-        const Icon = item.icon;
 
-        return (
-          <div
-            key={item.title}
-            className="
-              group
-              relative
-              overflow-hidden
+      {
+        items.map((item,index)=>{
 
-              rounded-2xl
+          const Icon = item.icon;
 
-              border
-              border-white/10
 
-              bg-slate-900/60
+          return (
 
-              px-5
-              py-5
+            <motion.div
 
-              backdrop-blur-xl
+              key={item.title}
 
-              transition-all
-              duration-300
 
-              hover:-translate-y-2
-              hover:scale-[1.03]
+              initial={{
+                opacity:0,
+                y:25,
+              }}
 
-              hover:border-white/20
-            "
-          >
-            {/* Static Glow */}
 
-            <div
-              className={`
-                pointer-events-none
+              animate={{
+                opacity:1,
+                y:0,
+              }}
 
-                absolute
 
-                -right-10
-                -top-10
+              transition={{
+                delay:0.65 + index * 0.12,
+                duration:0.5,
+              }}
 
-                h-28
-                w-28
 
-                rounded-full
+              whileHover={{
+                y:-8,
+                scale:1.03,
+              }}
 
-                blur-3xl
 
-                opacity-30
-
-                transition-opacity
-                duration-300
-
-                group-hover:opacity-50
-
-                ${item.glow}
-              `}
-            />
-
-            {/* Icon */}
-
-            <div
-              className={`
+              className="
+                group
                 relative
+                overflow-hidden
 
-                flex
+                rounded-2xl
 
-                h-10
-                w-10
+                border
+                border-white/10
 
-                items-center
-                justify-center
+                bg-slate-900/60
 
-                rounded-xl
+                px-5
+                py-5
 
-                bg-gradient-to-br
+                backdrop-blur-xl
 
-                shadow-lg
-
-                transition-transform
+                transition-all
                 duration-300
 
-                group-hover:-translate-y-1
-                group-hover:rotate-3
+                hover:border-white/20
+              "
 
-                ${item.gradient}
-              `}
             >
-              <Icon
-                className="
-                  h-5
-                  w-5
-                  text-white
-                "
+
+
+
+              {/* Glow */}
+
+              <motion.div
+
+                animate={{
+                  scale:[1,1.25,1],
+                  opacity:[0.25,0.55,0.25],
+                }}
+
+                transition={{
+                  duration:5,
+                  repeat:Infinity,
+                  delay:index,
+                }}
+
+                className={`
+                  absolute
+
+                  -right-10
+                  -top-10
+
+                  h-28
+                  w-28
+
+                  rounded-full
+
+                  blur-3xl
+
+                  ${item.glow}
+                `}
+
               />
-            </div>
 
-            <p
-              className="
-                relative
 
-                mt-5
 
-                text-sm
-                font-bold
 
-                text-white
-              "
-            >
-              {item.title}
-            </p>
 
-            <p
-              className="
-                relative
+              {/* Icon */}
 
-                mt-3
 
-                text-xs
-                leading-6
+              <motion.div
 
-                text-slate-400
-              "
-            >
-              {item.description}
-            </p>
+                animate={{
+                  y:[0,-5,0],
+                  rotate:[0,3,-3,0],
+                }}
 
-            {/* Hover Line */}
+                transition={{
+                  duration:4,
+                  repeat:Infinity,
+                  delay:index*0.4,
+                  ease:"easeInOut",
+                }}
 
-            <div
-              className="
-                absolute
 
-                bottom-0
-                left-0
+                className={`
+                  relative
 
-                h-[2px]
-                w-0
+                  flex
 
-                bg-gradient-to-r
+                  h-10
+                  w-10
 
-                from-cyan-400
-                via-blue-500
-                to-purple-500
+                  items-center
+                  justify-center
 
-                transition-[width]
-                duration-300
+                  rounded-xl
 
-                group-hover:w-full
-              "
-            />
-          </div>
-        );
-      })}
+                  bg-gradient-to-br
+
+                  shadow-lg
+
+                  ${item.gradient}
+                `}
+
+              >
+
+                <Icon
+                  className="
+                    h-5
+                    w-5
+                    text-white
+                  "
+                />
+
+
+              </motion.div>
+
+
+
+
+
+              <p
+  className="
+    relative
+    mt-5
+    text-sm
+    font-bold
+    text-white
+  "
+>
+  {item.title}
+</p>
+
+
+
+
+
+              <p
+
+                className="
+                  relative
+
+                  mt-3
+
+                  text-xs
+
+                  leading-6
+
+                  text-slate-400
+                "
+
+              >
+
+                {item.description}
+
+              </p>
+
+
+
+
+
+              {/* Hover Line */}
+
+              <motion.div
+
+                initial={{
+                  width:0,
+                }}
+
+                whileHover={{
+                  width:"100%",
+                }}
+
+                className="
+                  absolute
+
+                  bottom-0
+                  left-0
+
+                  h-[2px]
+
+                  bg-gradient-to-r
+
+                  from-cyan-400
+                  via-blue-500
+                  to-purple-500
+                "
+
+              />
+
+
+
+            </motion.div>
+
+          );
+
+        })
+      }
+
+
     </div>
+
   );
+
 }

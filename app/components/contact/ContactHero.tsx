@@ -1,5 +1,6 @@
+"use client";
 
-
+import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 export default function ContactHero() {
@@ -45,7 +46,23 @@ export default function ContactHero() {
       <div className="relative mx-auto max-w-7xl px-6">
 
 
-        <div className="mx-auto max-w-5xl text-center">
+        <motion.div
+          initial={{
+            opacity:0,
+            y:40,
+          }}
+
+          animate={{
+            opacity:1,
+            y:0,
+          }}
+
+          transition={{
+            duration:0.8,
+          }}
+
+          className="mx-auto max-w-5xl text-center"
+        >
 
 
 
@@ -147,7 +164,7 @@ measurable value for your business.
 
 
 
-        </div>
+        </motion.div>
 
 
       </div>

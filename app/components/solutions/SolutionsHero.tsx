@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 import GlowButton from "../ui/GlowButton";
 
 export default function SolutionsHero() {
@@ -9,7 +9,20 @@ export default function SolutionsHero() {
 
       <div className="mx-auto max-w-7xl px-8">
 
-        <div className="mx-auto max-w-5xl text-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="mx-auto max-w-5xl text-center"
+        >
 
           <span
             className="
@@ -139,7 +152,7 @@ real business challenges and help your organization operate smarter.
           </div>
 
 
-        </div>
+        </motion.div>
 
       </div>
 

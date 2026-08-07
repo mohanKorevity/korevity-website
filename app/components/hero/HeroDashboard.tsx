@@ -20,10 +20,29 @@ export default function HeroDashboard() {
         opacity: 1,
         x: 0,
         scale: 1,
+        y: [0, -5, 0],
       }}
       transition={{
-        duration: 0.9,
-        delay: 0.25,
+        opacity: {
+          duration: 0.9,
+          delay: 0.25,
+        },
+
+        x: {
+          duration: 0.9,
+          delay: 0.25,
+        },
+
+        scale: {
+          duration: 0.9,
+          delay: 0.25,
+        },
+
+        y: {
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
       }}
       whileHover={{
         scale: 1.012,
@@ -50,15 +69,23 @@ export default function HeroDashboard() {
         shadow-[0_40px_120px_rgba(0,0,0,0.55)]
       "
     >
-      {/* Static Border Glow */}
+      {/* Animated Border Glow */}
 
-      <div
+      <motion.div
+        animate={{
+          rotate: 360,
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "linear",
+        }}
         className="
-          pointer-events-none
           absolute
           inset-[-40%]
 
           bg-gradient-to-r
+
           from-transparent
           via-cyan-400/20
           to-transparent
@@ -90,9 +117,18 @@ export default function HeroDashboard() {
           p-5
         "
       >
-        {/* Static Cyan Glow */}
+        {/* Cyan Glow */}
 
-        <div
+        <motion.div
+          animate={{
+            scale: [1, 1.25, 1],
+            opacity: [0.25, 0.55, 0.25],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           className="
             pointer-events-none
 
@@ -112,9 +148,18 @@ export default function HeroDashboard() {
           "
         />
 
-        {/* Static Blue Glow */}
+        {/* Blue Glow */}
 
-        <div
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.45, 0.2],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           className="
             pointer-events-none
 
@@ -148,7 +193,9 @@ export default function HeroDashboard() {
             bg-gradient-to-r
 
             from-transparent
+
             via-white/10
+
             to-transparent
 
             transition-transform

@@ -380,14 +380,12 @@ Our team will review your message and get back to you with the best next steps.
 
             <div>
 
-              <label
-  htmlFor="service"
-  className="mb-2 block text-sm text-slate-300"
->
-  How can we help?
-</label>
+              <label className="mb-2 block text-sm text-slate-300">
+                How can we help?
+              </label>
 
-<select
+
+              <select
   id="service"
   value={formData.service}
   onChange={(e) =>
@@ -398,38 +396,38 @@ Our team will review your message and get back to you with the best next steps.
   }
   className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition-all duration-300 focus:border-cyan-400"
 >
-  <option value="" disabled className="text-black">
-    Select a service
-  </option>
+              <option value="" disabled className="text-black">
+                Select a service
+              </option>
 
-  <option className="text-black">
-    KORTEX & Business Knowledge
-  </option>
+              <option className="text-black">
+  KORTEX & Business Knowledge
+</option>
 
-  <option className="text-black">
-    Business Intelligence & Dashboards
-  </option>
+<option className="text-black">
+  Business Intelligence & Dashboards
+</option>
 
-  <option className="text-black">
-    Workflow Automation
-  </option>
+<option className="text-black">
+  Workflow Automation
+</option>
 
-  <option className="text-black">
-    System Integrations
-  </option>
+<option className="text-black">
+  System Integrations
+</option>
 
-  <option className="text-black">
-    AI-Powered Insights
-  </option>
+<option className="text-black">
+  AI-Powered Insights
+</option>
 
-  <option className="text-black">
-    Business Assessment
-  </option>
+<option className="text-black">
+  Business Assessment
+</option>
 
-  <option className="text-black">
-    Not Sure Yet
-  </option>
-</select>
+<option className="text-black">
+  Not Sure Yet
+</option>
+            </select>
           </div>
 
 

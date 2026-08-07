@@ -1,6 +1,6 @@
-
+"use client";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 import GlowButton from "../ui/GlowButton";
 
 export default function ServicesHero() {
@@ -9,7 +9,20 @@ export default function ServicesHero() {
 
       <div className="mx-auto max-w-7xl px-8">
 
-        <div className="mx-auto max-w-5xl text-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="mx-auto max-w-5xl text-center"
+        >
 
           <span
             className="
@@ -88,13 +101,15 @@ existing workflows, systems and business priorities.
             "
           >
 
-           <GlowButton
+            <Link
   href="https://calendly.com/mohan-korevity/30min"
   target="_blank"
   rel="noopener noreferrer"
 >
-  Book Free Consultation
-</GlowButton>
+  <GlowButton>
+    Book Free Consultation
+  </GlowButton>
+</Link>
 
 
             <a
@@ -118,7 +133,7 @@ existing workflows, systems and business priorities.
           </div>
 
 
-        </div>
+        </motion.div>
 
       </div>
 
