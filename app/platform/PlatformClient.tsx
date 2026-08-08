@@ -252,7 +252,7 @@ const [thinking, setThinking] = useState(false);
         <section className="relative pt-16 pb-16">
           <div className="mx-auto max-w-7xl px-8 text-center">
             <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-sm font-semibold tracking-[0.18em] text-cyan-300">
-              THE KOREVITY PLATFORM
+              THE KOREVITY™ PLATFORM
             </span>
 
             <h1 className="mt-8 text-6xl font-black leading-tight">

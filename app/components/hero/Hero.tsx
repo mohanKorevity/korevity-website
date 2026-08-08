@@ -330,7 +330,7 @@ export default function Hero() {
   "
 >
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-400">
-              What Makes KoreVity Different
+              What Makes KoreVity™ Different
             </p>
 
             <h2 className="mt-6 text-4xl font-black leading-tight text-white">

@@ -184,7 +184,7 @@ export default function TermsClient() {
                 </p>
 
                 <p className="mt-4">
-                  KoreVity, KBOM and related names, marks, product
+                  KoreVity™, KBOM and related names, marks, product
                   concepts and branding may be protected intellectual property.
                 </p>
 
