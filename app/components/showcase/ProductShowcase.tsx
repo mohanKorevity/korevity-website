@@ -48,7 +48,7 @@ const showcaseItems = [
     title: "AI Business Advisor",
     image: "/images/showcase/advisor.png",
     description:
-      "Ask questions about your business and receive intelligent recommendations instantly.",
+      "Use KoreVity's AI assistant to ask questions about your business and receive intelligent recommendations instantly.",
     features: [
       "AI recommendations",
       "Decision support",
