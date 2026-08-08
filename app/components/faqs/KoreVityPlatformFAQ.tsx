@@ -11,12 +11,12 @@ const faqs = [
   {
     question: "Is KoreVity just another AI chatbot?",
     answer:
-      "No. A general-purpose chatbot primarily responds using broad AI knowledge and whatever information a user provides during a conversation. KoreVity is designed around your organization's own business knowledge, users, permissions and connected environment, making it useful for everyday business work rather than general conversation.",
+      "No. KoreVity is much broader than a general-purpose chatbot. KoreVity's AI assistant works with your organization's business knowledge, users, permissions and connected environment, making it useful for everyday business work rather than general conversation."
   },
   {
     question: "What can employees use KoreVity for?",
     answer:
-      "Employees can use KoreVity to find business information, ask questions about organizational knowledge, understand documents and procedures, summarize relevant information, explore business context and receive insights or recommendations based on the information available to them.",
+      "Employees can use KoreVity's AI assistant to find business information, ask questions about organizational knowledge, understand documents and procedures, summarize relevant information, explore business context and receive insights or recommendations based on the information available to them.",
   },
   {
     question: "What kind of business knowledge can KoreVity work with?",
@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "Can KoreVity summarize documents?",
     answer:
-      "Yes. KoreVity can help summarize relevant business information so users can understand important points more quickly. The original business knowledge remains important, while summaries provide a faster way to understand and navigate it.",
+      "Yes. KoreVity's AI assistant can help summarize relevant business information so users can understand important points more quickly. The original business knowledge remains important, while summaries provide a faster way to understand and navigate it.",
   },
   {
     question: "Can KoreVity identify patterns and uncover insights?",
