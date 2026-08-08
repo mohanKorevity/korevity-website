@@ -475,7 +475,7 @@ export default function Footer() {
                 text-slate-400
               "
             >
-              © {new Date().getFullYear()} KoreVity.
+              © {new Date().getFullYear()} KoreVity™.
               All rights reserved.
             </p>
 
