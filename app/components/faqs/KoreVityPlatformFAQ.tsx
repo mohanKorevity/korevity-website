@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What is KORTEX?",
     answer:
-      "KORTEX is KoreVity's enterprise intelligence platform. It brings an organization's business knowledge, operational information and connected capabilities into an environment where employees can find answers, understand context, identify patterns, uncover insights and receive useful recommendations.",
+      "KoreVity is an intelligent operations platform that brings an organization's business knowledge, operational information and connected capabilities into an environment where employees can find answers, understand context, identify patterns, uncover insights and receive useful recommendations.",
   },
   {
     question: "Is KORTEX just another AI chatbot?",
@@ -95,13 +95,13 @@ const faqs = [
   },
 ];
 
-export default function KortexFAQ() {
+export default function KoreVityPlatformFAQ() {
   return (
     <FAQSection
-      id="kortex"
-      eyebrow="KORTEX"
+      id="korevity-platform"
+      eyebrow="KOREVITY PLATFORM"
       title="Your Business Intelligence Layer"
-      description="Understand what KORTEX is, how your team can use it and how it turns business knowledge and connected information into practical intelligence."
+      description="Understand how the KoreVity platform works, how your team can use it and how it turns business knowledge and connected information into practical intelligence."
       faqs={faqs}
     />
   );

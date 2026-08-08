@@ -13,7 +13,7 @@ const strengths = [
     icon: BrainCircuit,
     title: "Industry-Aware AI",
     description:
-      "KORTEX works with your business knowledge, connected data and workflows to identify patterns, uncover insights and provide relevant recommendations.",
+      "KoreVity works with your business knowledge, connected data and workflows to identify patterns, uncover insights and provide relevant recommendations.",
     color: "from-cyan-500 to-blue-600",
     glow: "shadow-[0_0_45px_rgba(34,211,238,0.25)]",
   },
@@ -29,7 +29,7 @@ const strengths = [
     icon: BarChart3,
     title: "Decision Intelligence",
     description:
-      "Combine live business data, dashboards and KORTEX insights to give leaders clearer visibility and stronger decision support.",
+      "Combine live business data, dashboards and KoreVity insights to give leaders clearer visibility and stronger decision support.",
     color: "from-emerald-500 to-green-600",
     glow: "shadow-[0_0_45px_rgba(16,185,129,0.25)]",
   },
@@ -87,7 +87,7 @@ export default function WhyKoreVityIndustries() {
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
 
-            Across industries, KoreVity combines KORTEX, connected systems,
+            Across industries, KoreVity combines business knowledge, connected systems,
   automation and business intelligence to help organizations improve
   visibility, streamline operations and make better-informed decisions.
 

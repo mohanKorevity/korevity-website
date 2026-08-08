@@ -157,7 +157,7 @@ export default function IndustriesCTA() {
                 text-slate-400
               "
             >
-              Let's identify where KORTEX, connected systems, automation and business intelligence can improve visibility, streamline operations and create measurable value in your industry.
+              Let's identify where KoreVity, connected systems, automation and business intelligence can improve visibility, streamline operations and create measurable value in your industry.
             </p>
 
 

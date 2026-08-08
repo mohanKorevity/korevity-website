@@ -17,9 +17,9 @@ const faqs = [
       "Usually not. KoreVity is designed to work around the systems you already use. We first look at how your existing ERP, CRM, documents, dashboards and other business tools can be connected before recommending anything new.",
   },
   {
-    question: "What is KORTEX?",
+    question: "What is KoreVity?",
     answer:
-      "KORTEX is KoreVity's intelligence layer. It brings together connected business knowledge, operational data and approved systems so employees can ask questions, understand what is happening and receive relevant business answers based on the information available to them.",
+      "KoreVity is an Intelligent Operations Platform that brings together connected business knowledge, operational data and approved systems so employees can ask questions, understand what is happening and receive relevant business answers based on the information available to them.",
   },
   {
     question: "Can KoreVity automate our existing business processes?",
@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "What happens after launch?",
     answer:
-      "We can continue supporting and improving your dashboards, automations, integrations and KORTEX workspace as your business evolves. This can include workflow refinements, new integrations, reporting improvements and additional use cases.",
+      "We can continue supporting and improving your dashboards, automations, integrations and KoreVity environment as your business evolves. This can include workflow refinements, new integrations, reporting improvements and additional use cases."
   },
 ];
 

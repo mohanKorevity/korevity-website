@@ -19,7 +19,7 @@ const comparisons = [
   },
   {
     typical: "Disconnected tools and platforms",
-    korevity: "KORTEX connects knowledge, data and operations",
+    korevity: "KoreVity connects knowledge, data and operations",
   },
   {
     typical: "More software. More complexity.",
@@ -178,7 +178,7 @@ Business Is What We Improve.
 >
   We believe technology is only valuable when it improves how a business operates.
 
-  KoreVity brings KORTEX, connected systems, automation and business intelligence together around your workflows — not as separate tools, but as one coordinated operating environment.
+  KoreVity brings business knowledge, connected systems, automation and business intelligence together around your workflows — not as separate tools, but as one coordinated operating environment.
 </p>
 
 

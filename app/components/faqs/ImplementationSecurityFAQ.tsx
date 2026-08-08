@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How does a KoreVity implementation begin?",
     answer:
-      "We begin by understanding your business objectives, current systems, workflows, users, data and operational challenges. From there, we define the appropriate implementation roadmap and determine which KORTEX, business intelligence, automation and integration capabilities should be introduced.",
+      "We begin by understanding your business objectives, current systems, workflows, users, data and operational challenges. From there, we define the appropriate implementation roadmap and determine which business knowledge, business intelligence, automation and integration capabilities should be introduced.",
   },
   {
     question: "Do we need to prepare everything before working with KoreVity?",
@@ -29,9 +29,9 @@ const faqs = [
       "Our objective is to minimize disruption. Because KoreVity is designed to work around existing business systems wherever practical, implementation can be planned progressively with appropriate testing and validation before new capabilities become part of everyday operations.",
   },
   {
-    question: "Will our employees need technical knowledge to use KORTEX?",
+    question: "Will our employees need technical knowledge to use KoreVity?",
     answer:
-      "No. KORTEX is intended to make business information easier to work with, not require employees to become technical specialists. Users interact with the capabilities relevant to their roles while the underlying technical environment is managed separately.",
+      "No. KoreVity is intended to make business information easier to work with, not require employees to become technical specialists. Users interact with the capabilities relevant to their roles while the underlying technical environment is managed separately.",
   },
   {
     question: "Do you provide onboarding or training?",
@@ -54,9 +54,9 @@ const faqs = [
       "Security is considered across the architecture, access controls, integrations and information flows used in each implementation. The exact safeguards depend on the systems and services involved, and we design the environment around appropriate access, controlled information handling and secure integration practices.",
   },
   {
-    question: "Does KORTEX automatically have access to all of our company data?",
+    question: "Does KoreVity automatically have access to all of our company data?",
     answer:
-      "No. KORTEX does not automatically gain access to every system or piece of information within your company. The knowledge, data sources, integrations and permissions available to it are deliberately configured as part of your environment.",
+      "No. KoreVity does not automatically gain access to every system or piece of information within your company. The knowledge, data sources, integrations and permissions available to it are deliberately configured as part of your environment.",
   },
   {
     question: "Is our business information shared with other KoreVity clients?",

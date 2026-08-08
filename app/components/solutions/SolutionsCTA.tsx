@@ -135,7 +135,7 @@ export default function SolutionsCTA() {
           ">
 
             Every business has unique challenges.
-Let's identify where KORTEX, automation, connected systems and business intelligence can create the greatest impact for your operations.
+Let's identify where KoreVity, automation, connected systems and business intelligence can create the greatest impact for your operations.
 
           </p>
 

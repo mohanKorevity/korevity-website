@@ -297,7 +297,7 @@ animate={{
       text-cyan-300
     "
   >
-    KORTEX
+    KOREVITY
   </p>
 
   <p

@@ -18,7 +18,7 @@ const results = [
   {
     icon: TrendingUp,
     title: "Make Better Decisions",
-    text: "Use connected data, live dashboards and KORTEX to identify patterns, uncover insights and provide recommendations that support faster decisions.",
+    text: "Use connected data, live dashboards and KoreVity to identify patterns, uncover insights and provide recommendations that support faster decisions.",
     color: "from-emerald-500 to-green-500",
   },
   {

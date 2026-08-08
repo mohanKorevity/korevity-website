@@ -23,7 +23,7 @@ const steps = [
     number: "02",
     title: "Design",
     description:
-      "We design the right combination of dashboards, integrations, automation and KORTEX capabilities around the way your business actually works.",
+      "We design the right combination of dashboards, integrations, automation and intelligent capabilities around the way your business actually works.",
     icon: PenTool,
     color: "from-violet-500 to-fuchsia-600",
   },

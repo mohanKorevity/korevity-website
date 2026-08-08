@@ -137,7 +137,7 @@ export default function ServicesCTA() {
             "
           >
             Whether you need business intelligence, workflow automation,
-system integration or KORTEX, KoreVity brings the right capabilities
+system integration or intelligent operations, KoreVity brings the right capabilities
 together around your workflows, systems and business priorities.
           </p>
 

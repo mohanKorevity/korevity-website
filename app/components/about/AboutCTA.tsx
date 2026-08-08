@@ -147,7 +147,7 @@ export default function AboutCTA() {
                 text-slate-300
               "
             >
-              Let's discuss your challenges, identify where KORTEX, automation,
+              Let's discuss your challenges, identify where intelligent operations, automation,
 connected systems and business intelligence can create value,
 and define the right next steps for your business.
             </p>

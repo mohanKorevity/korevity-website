@@ -51,7 +51,7 @@ const faqs = [
   {
     question: "Can KoreVity identify patterns instead of just showing charts?",
     answer:
-      "Yes. The objective is not simply to display charts. By combining business intelligence with KORTEX and appropriate AI capabilities, the wider KoreVity environment can help users identify patterns, uncover insights and understand information in business context.",
+      "Yes. The objective is not simply to display charts. By combining business intelligence with connected business knowledge and appropriate AI capabilities, the KoreVity environment can help users identify patterns, uncover insights and understand information in business context.",
   },
   {
     question: "Can the system provide recommendations based on our data?",

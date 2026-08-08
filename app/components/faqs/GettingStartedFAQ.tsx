@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Do we need to know exactly what solution we want before contacting you?",
     answer:
-      "No. Many businesses know the problems they want to solve but are not sure which technology should be used. We help translate those business challenges into the right combination of KORTEX, automation, integrations and business intelligence.",
+      "No. Many businesses know the problems they want to solve but are not sure which technology should be used. We help translate those business challenges into the right combination of business knowledge, automation, integrations and business intelligence.",
   },
   {
     question: "What should we prepare before the first discussion?",
@@ -34,12 +34,12 @@ const faqs = [
       "Yes. A focused starting point can be a practical way to introduce KoreVity. You can begin with a high-value problem or department and expand the connected environment as additional opportunities are identified.",
   },
   {
-    question: "Can we start with KORTEX and add automation or dashboards later?",
+    question: "Can we start with KoreVity and add automation or dashboards later?",
     answer:
-      "Yes. The environment can be introduced in stages. A business may begin with KORTEX and business knowledge, business intelligence, automation or integrations depending on the most valuable initial use case, then expand over time.",
+      "Yes. The environment can be introduced in stages. A business may begin with KoreVity's business knowledge capabilities, business intelligence, automation or integrations depending on the most valuable initial use case, then expand over time.",
   },
   {
-    question: "Can we begin with automation and add KORTEX later?",
+    question: "Can we begin with automation and add other KoreVity capabilities later?",
     answer:
       "Yes. The implementation can follow the priorities of your business. Existing automation, reporting or integration projects can later become part of a broader connected KoreVity environment.",
   },
@@ -49,7 +49,7 @@ const faqs = [
       "No. Many businesses begin with information spread across spreadsheets, documents and multiple systems. Part of discovery is understanding the current state of your information and determining what needs to be organized, connected or improved.",
   },
   {
-    question: "Do we need to move all of our documents into KORTEX immediately?",
+    question: "Do we need to move all of our documents into KoreVity immediately?",
     answer:
       "No. Knowledge can be introduced progressively. Organizations can begin with the documents and information that are most important to the initial use case and expand the knowledge environment over time.",
   },
@@ -64,9 +64,9 @@ const faqs = [
       "They do not automatically need to be replaced. We assess what is already working, what can be improved and how existing capabilities can fit into the wider connected environment.",
   },
   {
-    question: "Can we see how KORTEX works before committing to a full implementation?",
+    question: "Can we see how KoreVity works before committing to a full implementation?",
     answer:
-      "Yes. KoreVity can demonstrate the KORTEX experience and discuss how it would apply to your business use cases before a full implementation is defined.",
+      "Yes. KoreVity can demonstrate the platform experience and discuss how it would apply to your business use cases before a full implementation is defined.",
   },
   {
     question: "How involved will our team need to be during implementation?",

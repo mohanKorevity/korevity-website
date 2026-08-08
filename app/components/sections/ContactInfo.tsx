@@ -51,7 +51,7 @@ export default function ContactInfo() {
 
 
       <p className="mt-8 max-w-xl text-xl leading-9 text-slate-400">
-  Have a question about KORTEX, automation, business intelligence
+  Have a question about KoreVity, automation, business intelligence
   or connecting your existing systems? Tell us what you're working on
   and we'll help you understand the best way forward.
 </p>

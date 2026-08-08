@@ -6,12 +6,12 @@ const faqs = [
   {
     question: "What exactly does KoreVity do?",
     answer:
-      "KoreVity helps businesses connect knowledge, data, systems and workflows into one intelligent operating environment. We combine KORTEX, business intelligence, automation and integrations so teams can reduce manual work, improve visibility and make better-informed decisions.",
+      "KoreVity helps businesses connect knowledge, data, systems and workflows into one intelligent operating environment. We combine business intelligence, automation, integrations and intelligent capabilities so teams can reduce manual work, improve visibility and make better-informed decisions.",
   },
   {
     question: "Is KoreVity a software company or a consulting company?",
     answer:
-      "KoreVity combines software with implementation. KORTEX is our enterprise intelligence platform, while our team helps configure, integrate and improve the surrounding dashboards, automations and business systems around each client's workflows and goals.",
+      "KoreVity combines software with implementation. Our platform brings business knowledge, intelligence and connected systems together, while our team helps configure, integrate and improve the surrounding dashboards, automations and business systems around each client's workflows and goals.",
   },
   {
     question: "What types of businesses is KoreVity designed for?",
@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Do we need a large IT team to use KoreVity?",
     answer:
-      "No. KoreVity is designed so business users can benefit from the platform without needing to understand the technical architecture behind it. We handle the implementation and integration work, while your team uses the dashboards, workflows and KORTEX capabilities relevant to their roles.",
+      "No. KoreVity is designed so business users can benefit from the platform without needing to understand the technical architecture behind it. We handle the implementation and integration work, while your team uses the dashboards, workflows and intelligent capabilities relevant to their roles.",
   },
   {
     question: "Do you replace the software we already use?",
@@ -31,12 +31,12 @@ const faqs = [
   {
     question: "What makes KoreVity different from a normal automation or BI company?",
     answer:
-      "Traditional projects often deliver a dashboard, an automation or an AI tool separately. KoreVity connects these capabilities through KORTEX so business knowledge, operational data, systems, workflows and intelligence can work together as one coordinated environment.",
+      "Traditional projects often deliver a dashboard, an automation or an AI tool separately. KoreVity connects these capabilities so business knowledge, operational data, systems, workflows and intelligence can work together as one coordinated environment.",
   },
   {
     question: "Does every KoreVity client receive exactly the same system?",
     answer:
-      "No. The core KORTEX platform is consistent, but each business environment is configured around the client's users, permissions, knowledge, integrations, workflows, dashboards and operational priorities.",
+      "No. The core KoreVity platform is consistent, but each business environment is configured around the client's users, permissions, knowledge, integrations, workflows, dashboards and operational priorities.",
   },
   {
   question: "What business problems can KoreVity help solve?",

@@ -213,7 +213,7 @@ export default function CTA() {
                 "
               >
                 Let's understand your workflows, systems and business challenges,
-identify where KORTEX, automation and connected intelligence can create value,
+identify where KoreVity, automation and connected intelligence can create value,
 and map the right next steps for your business.
               </p>
 

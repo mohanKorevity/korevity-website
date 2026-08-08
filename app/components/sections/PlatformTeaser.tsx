@@ -28,7 +28,7 @@ export default function PlatformTeaser() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-slate-400">
-  See how KORTEX connects business knowledge, live systems,
+  See how KoreVity connects business knowledge, live systems,
   operational intelligence and AI inside one intelligent workspace.
 </p>
 
@@ -37,7 +37,7 @@ export default function PlatformTeaser() {
               href="/platform"
               className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(6,182,212,0.35)]"
             >
-              Explore KORTEX
+              Explore KoreVity
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

@@ -348,7 +348,7 @@ export default function Hero() {
               <span className="font-semibold text-white">
                 KoreVity connects them.
               </span>{" "}
-              KORTEX brings business knowledge, operational data, existing systems and intelligent workflows together — helping identify opportunities, strengthen decision-making and continuously improve how your business operates.
+              KoreVity brings business knowledge, operational data, existing systems and intelligent workflows together — helping identify opportunities, strengthen decision-making and continuously improve how your business operates.
             </p>
           </div>
           

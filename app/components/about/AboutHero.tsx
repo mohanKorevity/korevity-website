@@ -9,7 +9,7 @@ import Button from "../ui/Button";
 
 const pillars = [
   {
-    title: "KORTEX Intelligence",
+    title: "KoreVity Intelligence",
     subtitle: "Knowledge Into Action",
     color: "text-cyan-300",
     bg: "bg-cyan-500/10",
@@ -150,7 +150,7 @@ export default function AboutHero() {
   <br />
   <br />
 
-KoreVity brings knowledge, systems, automation and intelligence together through KORTEX—helping teams work smarter, uncover insights and make better decisions.</p>
+KoreVity brings knowledge, systems, automation and intelligence together in one connected environment—helping teams work smarter, uncover insights and make better decisions.</p>
 
           <div
             className="

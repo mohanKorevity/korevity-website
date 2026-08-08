@@ -54,9 +54,9 @@ const faqs = [
       "No. Automation can be designed with human review, approvals and decision points wherever they are needed. The goal is to remove unnecessary repetitive work while preserving human control over activities that require judgment or authorization.",
   },
   {
-    question: "Can KORTEX work with automated workflows?",
+    question: "Can KoreVity work with automated workflows?",
     answer:
-      "Yes. KORTEX, integrations and automation are designed to work as parts of the same connected environment. Depending on the implementation, users can work with business knowledge and intelligence while connected workflows handle appropriate operational actions and information movement.",
+      "Yes. KoreVity, integrations and automation are designed to work as parts of the same connected environment. Depending on the implementation, users can work with business knowledge and intelligence while connected workflows handle appropriate operational actions and information movement.",
   },
   {
     question: "Can automation reduce manual data entry?",

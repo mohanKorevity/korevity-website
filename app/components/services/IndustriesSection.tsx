@@ -93,7 +93,7 @@ export default function IndustriesSection() {
 
           <p className="mt-8 text-xl leading-9 text-slate-400">
   Every business operates differently. We adapt dashboards, automation,
-  integrations and KORTEX capabilities around your workflows, systems
+  integrations and intelligent capabilities around your workflows, systems
   and operational priorities.
 </p>
         </motion.div>

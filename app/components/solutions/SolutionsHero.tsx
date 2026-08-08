@@ -79,7 +79,7 @@ export default function SolutionsHero() {
 <br />
 
 KoreVity connects business knowledge, data, systems and workflows
-through KORTEX, automation and operational intelligence to solve
+through KoreVity, automation and operational intelligence to solve
 real business challenges and help your organization operate smarter.
 
           </p>

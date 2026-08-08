@@ -10,7 +10,7 @@ const comparisons = [
   },
   {
     before: "Knowledge and data scattered across systems",
-    after: "Connected business knowledge and information through KORTEX",
+    after: "Connected business knowledge and information through KoreVity",
   },
   {
     before: "Manual repetitive processes",

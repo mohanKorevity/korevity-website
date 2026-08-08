@@ -21,7 +21,7 @@ const steps = [
     number: "02",
     title: "Design",
     description:
-      "We design the right combination of dashboards, automations, integrations and KORTEX capabilities around the way your business actually works.",
+      "We design the right combination of dashboards, automations, integrations and intelligent capabilities around the way your business actually works.",
     icon: "design",
     gradient:
       "from-purple-400 via-fuchsia-500 to-indigo-600",
@@ -33,7 +33,7 @@ const steps = [
     number: "03",
     title: "Build & Launch",
     description:
-      "We build and connect your dashboards, automations and KORTEX workspace, then test the complete solution before your team begins using it.",
+      "We build and connect your dashboards, automations and KoreVity environment, then test the complete solution before your team begins using it.",
     icon: "build",
     gradient:
       "from-emerald-400 via-green-500 to-teal-600",

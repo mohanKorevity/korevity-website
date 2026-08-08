@@ -462,7 +462,7 @@ setTimeout(() => {
     </div>
 
     <p className="text-sm tracking-[0.18em] text-slate-400">
-  KORTEX
+  KOREVITY
 </p>
 
   </div>
@@ -538,7 +538,7 @@ setTimeout(() => {
     <div className="text-center">
 
       <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300">
-        INSIDE KORTEX
+        INSIDE KOREVITY
       </p>
 
       <h2 className="mt-5 text-5xl font-black leading-tight">
@@ -574,7 +574,7 @@ setTimeout(() => {
 </p>
 
 <p className="mt-3 text-sm text-slate-400">
-  KORTEX identifies the information needed to answer the question.
+  KoreVity identifies the information needed to answer the question.
 </p>
     
     <div className="relative mt-16">
@@ -766,7 +766,7 @@ setTimeout(() => {
     <div className="relative text-center">
 
       <p className="text-2xl font-black tracking-[0.15em] text-cyan-300">
-        KORTEX
+        KOREVITY
       </p>
 
       <p className="mt-2 whitespace-nowrap text-[10px] font-medium tracking-[0.16em] text-slate-400">
@@ -855,7 +855,7 @@ setTimeout(() => {
 </div>
 
     <h3 className="mt-6 text-2xl font-bold">
-  KORTEX
+  KOREVITY
 </h3>
 
 <div className="mt-6 space-y-3 text-left max-w-sm mx-auto">
@@ -994,7 +994,7 @@ setTimeout(() => {
       <div>
 
         <p className="text-xs tracking-[0.18em] text-cyan-300">
-          KORTEX OUTPUT
+          KOREVITY OUTPUT
         </p>
 
         <h3 className="mt-2 text-2xl font-bold">
@@ -1133,7 +1133,7 @@ setTimeout(() => {
       <div className="text-center">
 
         <p className="text-3xl font-black tracking-[0.18em] text-cyan-300">
-          KORTEX
+          KOREVITY
         </p>
 
         <p className="mt-2 whitespace-nowrap text-[12px] font-medium tracking-[0.08em] text-slate-400">
@@ -1190,7 +1190,7 @@ setTimeout(() => {
   "
 />
 
-{/* CRM → KORTEX */}
+{/* CRM → KOREVITY */}
 <motion.div
   initial={{ scaleX: 0 }}
   whileInView={{ scaleX: 1 }}
@@ -1210,7 +1210,7 @@ setTimeout(() => {
   "
 />
 
-{/* Power BI → KORTEX */}
+{/* Power BI → KOREVITY */}
 <motion.div
   initial={{ scaleX: 0 }}
   whileInView={{ scaleX: 1 }}
@@ -1775,7 +1775,7 @@ sm:p-8
 
   <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-400">
   Instead of working across disconnected software, spreadsheets and departments,
-  KORTEX brings your company knowledge and connected business systems together
+  KoreVity brings your company knowledge and connected business systems together
   so employees can find answers, understand what is happening and make better decisions.
 </p>
  </motion.div>
@@ -1804,9 +1804,9 @@ sm:p-8
     </h2>
 
     <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-400">
-  See how KoreVity can build KORTEX around your company knowledge,
-  business systems and workflows to create one intelligent workspace
-  designed for the way your business operates.
+  See how KoreVity can build an intelligent operating environment around your company knowledge,
+business systems and workflows to create one intelligent workspace
+designed for the way your business operates.
 </p>
 
     <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">

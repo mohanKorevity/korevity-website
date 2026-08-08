@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "Do I need to replace my existing software?",
     answer:
-      "No. KoreVity is designed to work with your existing systems wherever practical. We connect and improve the tools you already use through integrations, automation, business intelligence and KORTEX rather than replacing them unnecessarily.",
+      "No. KoreVity is designed to work with your existing systems wherever practical. We connect and improve the tools you already use through integrations, automation, business intelligence and intelligent operations rather than replacing them unnecessarily.",
   },
   {
     question: "Can you automate our existing business processes?",
@@ -16,9 +16,9 @@ const faqs = [
       "Yes. We identify repetitive tasks, approvals, notifications and system handoffs that can be automated, then design workflows around the way your business already operates.",
   },
   {
-    question: "How does KORTEX fit into your services?",
+    question: "How does the KoreVity platform fit into your services?",
     answer:
-      "KORTEX is KoreVity's intelligence layer. It brings business knowledge, connected information and AI capabilities together so teams can find information, understand what's happening and receive useful insights and recommendations.",
+      "KoreVity brings business knowledge, connected information and AI capabilities together so teams can find information, understand what's happening and receive useful insights and recommendations.",
   },
   {
     question: "How long does implementation take?",
@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "What happens after implementation?",
     answer:
-      "We can continue supporting and improving your environment after launch, including dashboards, integrations, automations and KORTEX capabilities as your business needs evolve.",
+      "We can continue supporting and improving your environment after launch, including dashboards, integrations, automations and intelligent capabilities as your business needs evolve.",
   },
 ];
 

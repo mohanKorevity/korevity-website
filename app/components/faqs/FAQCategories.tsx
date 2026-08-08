@@ -19,8 +19,8 @@ const categories = [
     glow: "shadow-[0_0_30px_rgba(34,211,238,0.25)]",
   },
   {
-    title: "KORTEX",
-    href: "#kortex",
+    title: "KoreVity Platform",
+href: "#korevity-platform",
     icon: BrainCircuit,
     gradient: "from-violet-500 to-purple-600",
     glow: "shadow-[0_0_30px_rgba(139,92,246,0.25)]",

@@ -124,7 +124,7 @@ export default function ContactHero() {
 
             Tell us about your business challenges.
 
-We'll identify where KORTEX, connected systems,
+We'll identify where KoreVity, connected systems,
 automation and business intelligence can create
 measurable value for your business.
 

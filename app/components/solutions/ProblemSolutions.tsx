@@ -55,7 +55,7 @@ const solutions = [
     number: "4.",
     title: "Connect Everything Together",
     description:
-      "Connect your business systems, data and knowledge so information can flow across dashboards, workflows and KORTEX without unnecessary manual handoffs.",
+      "Connect your business systems, data and knowledge so information can flow across dashboards, workflows and the KoreVity environment without unnecessary manual handoffs.",
     bullets: [
       "Seamless system integrations",
       "Single source of truth for your data",

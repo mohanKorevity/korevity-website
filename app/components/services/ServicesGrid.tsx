@@ -24,7 +24,7 @@ const services = [
     glow: "shadow-[0_0_45px_rgba(34,211,238,0.35)]",
   },
   {
-  title: "KORTEX & Business Knowledge",
+  title: "Business Knowledge & Intelligence",
   description:
     "Turn company documents, policies, SOPs and connected business information into an intelligent knowledge workspace your team can use every day.",
   icon: <Bot className="h-9 w-9 text-white" />,
@@ -34,7 +34,7 @@ const services = [
   {
   title: "Data Integration",
   description:
-    "Connect your existing business systems and data sources so information can flow reliably across dashboards, workflows and KORTEX.",
+    "Connect your existing business systems and data sources so information can flow reliably across dashboards, workflows and the KoreVity environment.",
   icon: <Database className="h-9 w-9 text-white" />,
   gradient: "from-emerald-400 via-green-500 to-teal-600",
   glow: "shadow-[0_0_45px_rgba(16,185,129,0.35)]",
@@ -50,7 +50,7 @@ const services = [
   {
   title: "AI Assistants & Agents",
   description:
-    "Build task-focused AI assistants and agents that work with KORTEX to answer questions, retrieve information and support specific business tasks.",
+    "Build task-focused AI assistants and agents that work with your business knowledge and connected systems to answer questions, retrieve information and support specific business tasks.",
   icon: <Cpu className="h-9 w-9 text-white" />,
   gradient: "from-pink-500 via-rose-500 to-red-600",
   glow: "shadow-[0_0_45px_rgba(236,72,153,0.35)]",

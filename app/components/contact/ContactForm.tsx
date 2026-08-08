@@ -403,7 +403,7 @@ Our team will review your message and get back to you with the best next steps.
   </option>
 
   <option className="text-black">
-    KORTEX & Business Knowledge
+    Business Knowledge & Intelligence
   </option>
 
   <option className="text-black">

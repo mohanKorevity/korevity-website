@@ -238,7 +238,7 @@ export default function ContactForm() {
                 Select a service
               </option>
               <option className="text-black">
-  KORTEX & Business Knowledge
+  Business Knowledge & Intelligence
 </option>
 
 <option className="text-black">

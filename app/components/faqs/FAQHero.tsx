@@ -116,7 +116,7 @@ export default function FAQHero() {
               text-slate-400
             "
           >
-            Learn how KoreVity, KORTEX, business intelligence, automation
+            Learn how KoreVity, business intelligence, automation
             and connected systems work together — from implementation
             and security to pricing, support and everyday use.
           </p>

@@ -36,7 +36,7 @@ export default function IndustriesHero() {
           <p className="mx-auto mt-10 max-w-3xl text-xl leading-9 text-slate-400">
 
             Every industry operates differently.
-KoreVity combines KORTEX, automation, connected systems and business intelligence to improve visibility, streamline operations and support better decisions.
+KoreVity combines business knowledge, automation, connected systems and business intelligence to improve visibility, streamline operations and support better decisions.
 
           </p>
 

@@ -13,14 +13,14 @@ const reasons = [
     icon: ShieldCheck,
     title: "Business First",
     description:
-      "We start with the operational problem, then decide how intelligence, automation, data and KORTEX should be applied to solve it.",
+      "We start with the operational problem, then decide how intelligence, automation, data and KoreVity should be applied to solve it.",
     color: "from-cyan-500 to-blue-600",
   },
   {
     icon: Rocket,
     title: "Connected Intelligence",
     description:
-      "KORTEX brings business knowledge, connected data and AI together to identify patterns, uncover insights and provide recommendations.",
+      "KoreVity brings business knowledge, connected data and AI together to identify patterns, uncover insights and provide recommendations.",
     color: "from-purple-500 to-indigo-600",
   },
   {

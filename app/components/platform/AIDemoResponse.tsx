@@ -77,7 +77,7 @@ useEffect(() => {
       {thinking ? (
         <div className="py-8">
           <p className="font-semibold text-cyan-300">
-  KORTEX
+  KOREVITY
 </p>
 
 <p className="mt-1 text-xs text-slate-400">
@@ -129,7 +129,7 @@ useEffect(() => {
     <div>
 
       <p className="text-xs tracking-[0.18em] text-cyan-300">
-        KORTEX
+        KOREVITY
       </p>
 
       <p className="mt-1 text-sm text-slate-400">

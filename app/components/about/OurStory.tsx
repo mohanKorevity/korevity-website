@@ -53,7 +53,7 @@ export default function OurStory() {
             </p>
 
            <p>
-  We bring business knowledge, systems, data and workflows together through KORTEX,
+  We bring business knowledge, systems, data and workflows together through the KoreVity platform,
   helping teams reduce manual work, uncover insights
   and operate with greater clarity.
 </p>

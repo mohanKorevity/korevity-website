@@ -21,14 +21,14 @@ const steps = [
     icon: ClipboardCheck,
     title: "Strategize",
     description:
-      "We create a roadmap around the right combination of KORTEX, automation, integrations and business intelligence for your goals.",
+      "We create a roadmap around the right combination of business knowledge, automation, integrations and business intelligence for your goals.",
     color: "from-violet-400 to-purple-600",
   },
   {
     icon: Wrench,
     title: "Build",
     description:
-      "We build and connect the dashboards, workflows, integrations and KORTEX capabilities around the way your business operates.",
+      "We build and connect the dashboards, workflows, integrations and intelligent capabilities around the way your business operates.",
     color: "from-emerald-400 to-green-600",
   },
   {
